@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mobile_Sat_Ob</fullName>
+    <columns>Type__c</columns>
+    <columns>NAME</columns>
+    <columns>Mobile__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>Unit__c</columns>
+    <columns>IMEI__c</columns>
+    <columns>Currently_Assigned__c</columns>
+    <columns>Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Company_Property__c.Mobile_Devices</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Sat Phone</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Obsolete (Binned/Sold)</value>
+    </filters>
+    <label>Mobile Devices - Sat Phones Obsolete</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>HR</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Creation_Type__c</fullName>
+    <label>Creation Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Non-Inventory Item</fullName>
+                <default>false</default>
+                <label>Non-Inventory Item</label>
+            </value>
+            <value>
+                <fullName>Inventory Item - Taken from Local Unit</fullName>
+                <default>false</default>
+                <label>Inventory Item - Taken from Local Unit</label>
+            </value>
+            <value>
+                <fullName>Inventory Item - Ordered from Base Store</fullName>
+                <default>false</default>
+                <label>Inventory Item - Ordered from Base Store</label>
+            </value>
+            <value>
+                <fullName>New Item</fullName>
+                <default>false</default>
+                <label>New Item</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

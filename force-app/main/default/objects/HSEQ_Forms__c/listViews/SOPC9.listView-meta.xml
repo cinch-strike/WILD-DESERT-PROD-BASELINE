@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SOPC9</fullName>
+    <columns>NAME</columns>
+    <columns>SOP_Name__c</columns>
+    <columns>Date__c</columns>
+    <columns>Site__c</columns>
+    <columns>Inducted_By__c</columns>
+    <columns>Attendees__c</columns>
+    <columns>Other_Attendees_Name_Sign__c</columns>
+    <columns>Drops_Area_Inspected__c</columns>
+    <columns>Comments__c</columns>
+    <columns>Daily_Site_Job__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>HSEQ_Forms__c.SOP_Review</value>
+    </filters>
+    <filters>
+        <field>Date__c</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:365</value>
+    </filters>
+    <filters>
+        <field>Unit__c</field>
+        <operation>equals</operation>
+        <value>camp 9</value>
+    </filters>
+    <label>Camp #9 - SOP Review</label>
+    <sharedTo>
+        <group>Camp_9</group>
+        <group>Camp_Supervisor</group>
+        <group>OPs_super</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

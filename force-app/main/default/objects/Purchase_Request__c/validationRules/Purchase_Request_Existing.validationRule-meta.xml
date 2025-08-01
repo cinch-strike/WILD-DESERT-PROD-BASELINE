@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Purchase_Request_Existing</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISNEW(),
+    NOT( ISBLANK( Destination_Store_Item__r.Active_Auto_Purchase_Request__c ) ),
+    Id != Destination_Store_Item__r.Active_Auto_Purchase_Request__c,
+    Source_Store__c !=  Destination_Store__c 
+)</errorConditionFormula>
+    <errorMessage>Can not proceed with the transaction. There is already an in-progress purchase request.</errorMessage>
+</ValidationRule>

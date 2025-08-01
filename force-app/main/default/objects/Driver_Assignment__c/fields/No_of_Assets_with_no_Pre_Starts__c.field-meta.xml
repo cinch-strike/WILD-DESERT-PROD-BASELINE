@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_of_Assets_with_no_Pre_Starts__c</fullName>
+    <label>No. of Assets with no Pre-Starts</label>
+    <summaryFilterItems>
+        <field>Asset_Driver_Assignment__c.Daily_Pre_Start_for_the_Day__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Asset_Driver_Assignment__c.is_Prime_Movers__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Asset_Driver_Assignment__c.Driver_Assignment__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

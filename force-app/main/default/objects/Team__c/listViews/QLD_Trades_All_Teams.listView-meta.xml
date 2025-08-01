@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QLD_Trades_All_Teams</fullName>
+    <columns>Unit__c</columns>
+    <columns>NAME</columns>
+    <columns>No_of_Team_Members__c</columns>
+    <columns>No_of_Vacant_Positions__c</columns>
+    <columns>Team_Manager__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Unit__c</field>
+        <operation>equals</operation>
+        <value>Depot - Roma</value>
+    </filters>
+    <filters>
+        <field>NAME</field>
+        <operation>contains</operation>
+        <value>NDT,Mechanical,Electrical,Auto,Welding,Tradesperson,Apprentice,M-F</value>
+    </filters>
+    <label>Trades Roma | All Teams</label>
+    <sharedTo>
+        <group>BOO</group>
+        <group>Electrician</group>
+        <group>Fabrication</group>
+        <group>HR</group>
+        <group>Managing_Director</group>
+        <group>Mechanics_Roma</group>
+        <group>Projects_and_Maintenance</group>
+    </sharedTo>
+</ListView>

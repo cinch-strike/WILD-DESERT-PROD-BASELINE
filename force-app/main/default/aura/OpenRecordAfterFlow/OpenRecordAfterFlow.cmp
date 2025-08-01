@@ -1,0 +1,10 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 02-18-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<aura:component implements="force:lightningQuickAction,lightning:availableForFlowActions">
+   <aura:attribute name="recordId" type="String" />
+</aura:component>

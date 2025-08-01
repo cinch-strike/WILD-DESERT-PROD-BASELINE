@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Base_Camp_Moomba_In_Transit</fullName>
+    <columns>NAME</columns>
+    <columns>Item_Name_Hyperlink__c</columns>
+    <columns>Work_Order__c</columns>
+    <columns>Asset__c</columns>
+    <columns>Quantity__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Manifest_No__c</columns>
+    <columns>Status__c</columns>
+    <columns>Date_Sent_for_In_Transit__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Destination_Store__c</field>
+        <operation>equals</operation>
+        <value>Base camp - Moomba</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>In Transit</value>
+    </filters>
+    <label>Base Camp - Moomba | In Transit</label>
+</ListView>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Covid_Vax</fullName>
+    <active>true</active>
+    <label>Covid Vax</label>
+    <picklistValues>
+        <picklist>Medical_Centre__c</picklist>
+        <values>
+            <fullName>Medical Practitioner</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Wild Desert Safety Team</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Result__c</picklist>
+        <values>
+            <fullName>Fail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pass</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Incomplete</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Covid Vaccination</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Vaccine_Status__c</picklist>
+        <values>
+            <fullName>1st Vax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1st Vax %2B Cert</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2nd Vax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2nd Vax %2B Cert</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Booster</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Vaccine_Type__c</picklist>
+        <values>
+            <fullName>Astra Zeneca</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moderna</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Novavax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pfizer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

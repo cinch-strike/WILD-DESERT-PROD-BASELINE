@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stock_Pick_List__c</fullName>
+    <label>Stock – Pick List</label>
+    <summarizedField>Purchase_Request__c.Quantity__c</summarizedField>
+    <summaryFilterItems>
+        <field>Purchase_Request__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Pick List</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Purchase_Request__c.From_Order__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Purchase_Request__c.Source_Store_Item__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

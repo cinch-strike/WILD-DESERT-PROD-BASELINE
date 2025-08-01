@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_26_Induction_Visitor_Contractor</fullName>
+    <columns>NAME</columns>
+    <columns>Date__c</columns>
+    <columns>Inducted_By__c</columns>
+    <columns>Name__c</columns>
+    <columns>Drops_Area_Inspected__c</columns>
+    <columns>Visitor__c</columns>
+    <columns>Contractor__c</columns>
+    <columns>Contracting_Company_Name__c</columns>
+    <columns>X3rd_Party_Checklist__c</columns>
+    <columns>Forms_Attached__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>HSEQ_Forms__c.Site_Induction</value>
+    </filters>
+    <filters>
+        <field>Unit__c</field>
+        <operation>equals</operation>
+        <value>Rig 26</value>
+    </filters>
+    <filters>
+        <field>Date__c</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:365</value>
+    </filters>
+    <filters>
+        <field>Drops_Area_Inspected__c</field>
+        <operation>equals</operation>
+        <value>Visitor,3rd Party</value>
+    </filters>
+    <label>Rig #26 - Induction (Visitor/Contractor)</label>
+    <sharedTo>
+        <group>OPs_super</group>
+        <group>Rig_26</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

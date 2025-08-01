@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recruitment_Status__c</fullName>
+    <label>Recruitment Status</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Position Vacant</fullName>
+                <default>false</default>
+                <label>Position Vacant</label>
+            </value>
+            <value>
+                <fullName>Position Filled</fullName>
+                <default>false</default>
+                <label>Position Filled</label>
+            </value>
+            <value>
+                <fullName>Not Required</fullName>
+                <default>false</default>
+                <label>Not Required</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

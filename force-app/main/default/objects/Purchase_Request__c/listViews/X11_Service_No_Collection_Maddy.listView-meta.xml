@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X11_Service_No_Collection_Maddy</fullName>
+    <columns>NAME</columns>
+    <columns>Item__c</columns>
+    <columns>Supplier__c</columns>
+    <columns>Details_for_Supplier__c</columns>
+    <columns>Purchase_Order__c</columns>
+    <columns>PO_Status__c</columns>
+    <columns>Quantity__c</columns>
+    <columns>Quantity_Received__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>For Ordering</value>
+    </filters>
+    <filters>
+        <field>PR_PO_Admin__c</field>
+        <operation>equals</operation>
+        <value>Madeline Whiley</value>
+    </filters>
+    <filters>
+        <field>PO_Status__c</field>
+        <operation>notContain</operation>
+        <value>Completed</value>
+    </filters>
+    <filters>
+        <field>Freight_Collection_Status__c</field>
+        <operation>equals</operation>
+        <value>Service (No Collection)</value>
+    </filters>
+    <filters>
+        <field>Work_Order__c</field>
+        <operation>notContain</operation>
+        <value>WO</value>
+    </filters>
+    <filters>
+        <field>Destination_Store__c</field>
+        <operation>notEqual</operation>
+        <value>Training</value>
+    </filters>
+    <label>11 Service - No Collection | Maddy</label>
+</ListView>

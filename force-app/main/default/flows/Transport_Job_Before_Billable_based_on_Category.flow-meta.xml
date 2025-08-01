@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Billable</name>
+        <label>Assign Billable</label>
+        <locationX>800</locationX>
+        <locationY>460</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Billable__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assign_Non_Billable</name>
+        <label>Assign Non Billable</label>
+        <locationX>808</locationX>
+        <locationY>222</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Billable__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Category_Value</name>
+        <label>Category Value</label>
+        <locationX>363</locationX>
+        <locationY>356</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Lump_Sum</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Lump Sum (Rig Inclusive)</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Non_Billable</targetReference>
+            </connector>
+            <label>Lump Sum</label>
+        </rules>
+        <rules>
+            <name>WD_Internal</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>WD Internal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Non_Billable</targetReference>
+            </connector>
+            <label>WD Internal</label>
+        </rules>
+        <rules>
+            <name>Q_A_Price</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Q.A. Price</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Non_Billable</targetReference>
+            </connector>
+            <label>Q.A. Price</label>
+        </rules>
+        <rules>
+            <name>Hourly_Rates</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Hourly Rates</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Billable</targetReference>
+            </connector>
+            <label>Hourly Rates</label>
+        </rules>
+        <rules>
+            <name>Fixed_Price</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Fixed Price</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Billable</targetReference>
+            </connector>
+            <label>Fixed Price</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>is_Category_changed</name>
+        <label>is Category changed?</label>
+        <locationX>168</locationX>
+        <locationY>356</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Changed</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Category__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Category__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CreatedDate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.LastModifiedDate</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Category_Value</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Transport Job - Before – Billable based on Category {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Transport Job - Before – Billable based on Category</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>43</locationY>
+        <connector>
+            <targetReference>is_Category_changed</targetReference>
+        </connector>
+        <object>Transport_Job__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

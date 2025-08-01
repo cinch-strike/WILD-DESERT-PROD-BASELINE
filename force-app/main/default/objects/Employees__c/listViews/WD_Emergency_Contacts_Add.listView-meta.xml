@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WD_Emergency_Contacts_Add</fullName>
+    <columns>NAME</columns>
+    <columns>Emergency_Contact__c</columns>
+    <columns>Relationship_EC1__c</columns>
+    <columns>EC_1_Mobile__c</columns>
+    <columns>Emergency_Cont__c</columns>
+    <columns>X2nd_Emergency_Contact__c</columns>
+    <columns>Relationship_EC2__c</columns>
+    <columns>EC_2_Mobile__c</columns>
+    <columns>X2nd_Emergency_Contact_Number__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Pre Employment,Active</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Employees__c.Active_Employee</value>
+    </filters>
+    <filters>
+        <field>Emergency_Contact__c</field>
+        <operation>contains</operation>
+        <value>.</value>
+    </filters>
+    <label>WD - Emergency Contacts - Add</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>HR</group>
+    </sharedTo>
+</ListView>

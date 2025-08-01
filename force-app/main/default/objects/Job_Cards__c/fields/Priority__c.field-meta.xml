@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Priority__c</fullName>
+    <inlineHelpText>Normal (1-14 days)
+Urgent (1-7 days)
+Not Roadworthy (Do Not Use)</inlineHelpText>
+    <label>Priority</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Normal</fullName>
+                <default>true</default>
+                <label>Normal</label>
+            </value>
+            <value>
+                <fullName>Urgent</fullName>
+                <default>false</default>
+                <label>Urgent</label>
+            </value>
+            <value>
+                <fullName>Not Roadworthy</fullName>
+                <default>false</default>
+                <label>Not Roadworthy</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_08_WD_Assets</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>Type__c</columns>
+    <columns>Asset_Family__c</columns>
+    <columns>NAME</columns>
+    <columns>Parent_Asset__c</columns>
+    <columns>Asset_ID_Number__c</columns>
+    <columns>Current_Odometer_Reading__c</columns>
+    <columns>Engine_Hours__c</columns>
+    <columns>Inventory_Item__c</columns>
+    <columns>Current_Site__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Unit__c</field>
+        <operation>equals</operation>
+        <value>Rig 8</value>
+    </filters>
+    <label>Rig #08 - WD Assets</label>
+    <sharedTo>
+        <group>OPs_super</group>
+        <group>Purchasing</group>
+        <group>Rig_8</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

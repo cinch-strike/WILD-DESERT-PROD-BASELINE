@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Safety_Equipment__c</fullName>
+    <label>Safety Equipment</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Working At Heights</fullName>
+                <default>false</default>
+                <label>Working At Heights</label>
+            </value>
+            <value>
+                <fullName>Working At Heights Rescue Kit</fullName>
+                <default>false</default>
+                <label>Working At Heights Rescue Kit</label>
+            </value>
+            <value>
+                <fullName>Confined Space Rescue</fullName>
+                <default>false</default>
+                <label>Confined Space Rescue</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Well Control Equipment</fullName>
+                <default>false</default>
+                <label>Well Control Equipment</label>
+            </value>
+            <value>
+                <fullName>Gas Detector</fullName>
+                <default>false</default>
+                <label>Gas Detector</label>
+            </value>
+            <value>
+                <fullName>First Aid Kit</fullName>
+                <default>false</default>
+                <label>First Aid Kit</label>
+            </value>
+            <value>
+                <fullName>Link Bracket</fullName>
+                <default>false</default>
+                <label>Link Bracket</label>
+            </value>
+            <value>
+                <fullName>Harness</fullName>
+                <default>false</default>
+                <label>Harness</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

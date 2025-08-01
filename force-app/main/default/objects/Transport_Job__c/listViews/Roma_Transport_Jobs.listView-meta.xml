@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Roma_Transport_Jobs</fullName>
+    <columns>Transport_Base__c</columns>
+    <columns>NAME</columns>
+    <columns>Job_Date__c</columns>
+    <columns>Description__c</columns>
+    <columns>Unit__c</columns>
+    <columns>Site__c</columns>
+    <columns>Billable__c</columns>
+    <columns>Status__c</columns>
+    <columns>Types__c</columns>
+    <columns>Daily_Site_Job__c</columns>
+    <columns>DSJS_Status__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Billable__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Daily_Site_Job__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Approved</value>
+    </filters>
+    <label>BOOs - List to Check</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>Managing_Director</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

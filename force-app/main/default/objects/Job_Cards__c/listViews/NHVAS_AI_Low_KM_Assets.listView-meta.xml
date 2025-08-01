@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NHVAS_AI_Low_KM_Assets</fullName>
+    <columns>NAME</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Date_Created__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>Unit_of_Asset__c</columns>
+    <columns>Status__c</columns>
+    <columns>NHVAS_Asset__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>01290000000hrfe,0120o000001CtYQ</value>
+    </filters>
+    <filters>
+        <field>NHVAS_Asset__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Open,In Progress</value>
+    </filters>
+    <label>NHVAS - AI | Low KM Assets</label>
+    <sharedTo>
+        <group>Safety</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

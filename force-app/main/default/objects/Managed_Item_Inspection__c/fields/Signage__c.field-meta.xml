@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Signage__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>The sign should be of an approved type visible from a distance of 20m and mounted at a minimum of 2 meters above the ground level, ensure sign is permanently fixed.</inlineHelpText>
+    <label>Signage</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

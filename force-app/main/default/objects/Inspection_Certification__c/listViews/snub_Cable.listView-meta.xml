@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>snub_Cable</fullName>
+    <columns>NAME</columns>
+    <columns>Wire_Cable__c</columns>
+    <columns>Description__c</columns>
+    <columns>Date_In_Service__c</columns>
+    <columns>Next_Inspection__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Inspection_Certification__c.Wire_Cable</value>
+    </filters>
+    <label>Snub Unit - Wire Cable</label>
+    <sharedTo>
+        <group>OPs_super</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

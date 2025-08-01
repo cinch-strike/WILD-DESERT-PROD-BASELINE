@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Water_Testing</fullName>
+    <columns>WD_Asset__c</columns>
+    <columns>NAME</columns>
+    <columns>Description__c</columns>
+    <columns>Inspection_Requirement__c</columns>
+    <columns>Date_Last_Inspection__c</columns>
+    <columns>Days_to_Inspection__c</columns>
+    <columns>Date_of_Next_Inspection__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Inspection_Certification__c.Other_Inspections</value>
+    </filters>
+    <filters>
+        <field>Inspection_Requirement__c</field>
+        <operation>notEqual</operation>
+        <value>6 month Unit Manager,12 month 3rd party,N/A</value>
+    </filters>
+    <filters>
+        <field>WD_Asset__c</field>
+        <operation>notContain</operation>
+        <value>Obsolete Asset</value>
+    </filters>
+    <label>Transport | Water Bombing &amp; Load Permits</label>
+</ListView>

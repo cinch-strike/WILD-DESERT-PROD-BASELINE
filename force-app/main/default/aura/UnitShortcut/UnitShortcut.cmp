@@ -1,0 +1,24 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForAllPageTypes" access="global" controller="UnitShortcutController">
+	<aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="unitPath" type="String"/>
+    <aura:attribute name="unitEmployeesPath" type="String"/>
+    <aura:attribute name="unitName" type="String"/>
+    <aura:attribute name="activeEmployees" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	<div class="slds-grid">
+        <div class="slds-col slds-size_1-of-2">
+            <div style="background-color:#ffffff;font-size:12pt">
+                <lightning:formattedText value="Unit: "/><lightning:formattedUrl value="{!v.unitPath}" tooltip="Click to view Unit" 
+                                                                                 label="{!v.unitName}"
+                                                                                 target="_blank"/>
+            </div>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <div style="background-color:#ffffff;font-size:12pt;">
+                <lightning:formattedText value="Employees List: "/><lightning:formattedUrl value="{!v.unitEmployeesPath}" tooltip="Click to view Unit" 
+                                                                                 label="{!v.activeEmployees}"
+                                                                                 target="_blank"/>
+            </div>
+        </div>
+    </div>
+</aura:component>

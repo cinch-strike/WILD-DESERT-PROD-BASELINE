@@ -1,0 +1,478 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:lightningQuickActionWithoutHeader,force:hasRecordId" access="global" controller="PRCreationScreenController" >
+    
+    <!--Style-->
+    <aura:html tag="style">
+        .slds-modal__container{
+        height : 100%;
+        width: 70%;
+        max-width: 70rem;
+        }
+        .modal-body{
+        height : 1000px !important;
+        max-height: 1000px !important;
+        }
+        
+        .customFooter{
+        display: inline !important;
+        }
+    </aura:html> 
+    
+    <!--Header-->
+    <div class="modal-header slds-docked-form-header slds-modal__header ">
+        <h4 class="title slds-text-heading--medium" >Purchase Request Creation</h4>
+    </div>
+    
+    <!-- Attributes for selector item-->
+    <aura:attribute name="selectItemMasterId" type="String"/>
+    <aura:attribute name="selectItemCode" type="String"/>
+    <aura:attribute name="selectItemPartNumber" type="String"/>
+    <aura:attribute name="selectItemCostPrice" type="String"/>
+    <aura:attribute name="required" type="Boolean" default="false"/>
+    <aura:attribute name="Label" type="String"/>
+    <aura:attribute name="selectItemMasterName" type="String"/>
+    <aura:attribute name="iconName" type="String" default="standard:inventory_item__c"/>
+    <aura:attribute name="searchItemMasterRecords" type="List"/>
+    <aura:attribute name="LoadingText" type="Boolean" default="false"/>
+    
+    <aura:attribute Name="showSwitch" type="Boolean"  default="false" /> 
+    <aura:attribute Name="isNonIventoryItem" type="Boolean" default="false"/>
+    <aura:attribute name="unitList" type="List"/>
+    <aura:attribute name="selectedDestinationUnit" type="String"/>
+    <aura:attribute name="createPRAddAnother" type="Boolean" default="false"/>
+    
+    <aura:attribute name="showNoItem" type="Boolean" default="false"/>
+    <aura:attribute name="disableCostPrice" type="Boolean" default="true"/> <!--02 DEC 2022: Remove code for new Cost Price-->
+    <aura:attribute Name="inventoryItemRecord" type="Store_Item__c"/>
+    <aura:attribute Name="sendDirectToOrder" type="String"/>
+    <aura:attribute Name="hasAssignedUnit" type="Boolean"/>
+    <aura:attribute Name="destinationUnitName" type="String"/>
+    
+    <aura:attribute Name="staffName" type="String"/>
+    <aura:attribute Name="quantity" type="Integer"/> 
+    <aura:attribute Name="hasOpenedPRs" type="Boolean"  default="false" /> 
+    <aura:attribute Name="departmentpvalue" type="List"/>
+    <!--<aura:attribute name="subdepartmentpvaluemap" type="map" description="map to store dependent values with controlling value"/>-->
+    <aura:attribute Name="listDependingValues" type="List"/>
+    <aura:attribute Name="prCostPrice" type="Decimal"/> 
+    <aura:attribute Name="prTotalCostPrice" type="Decimal"/> 
+    <aura:attribute Name="notes" type="String"/>
+    <aura:attribute Name="detailsforsupplier" type="String"/>
+    <aura:attribute name="hasFileUploaded" type="Boolean" default="false"/>
+    <aura:attribute Name="createdRecordId" type="String"/>
+    <aura:attribute Name="listUploadedFiles" type="List"/>
+    <aura:attribute name="isButtonActive" type="Boolean" default="false" />
+    
+    
+    <aura:attribute name="selectedAssetId" type="String" />
+    <aura:attribute name="selectedWorkOrderId" type="String" />
+    <aura:attribute name="selectedCostAllocationId" type="String"/>
+    <aura:attribute name="assetFilter" type="String" />
+    <aura:attribute name="workOrderFilter" type="String" />
+    
+    <!-- data table variables -->
+    <aura:attribute type="Purchase_Request__c[]" name="prList"/>
+    <aura:attribute name="prcolumns" type="List"/>
+    <aura:attribute name="selectedPRs" type="List"/>
+    <aura:attribute name="hasDraftPRs" type="Boolean" default="false"/>
+    
+    
+    <!-- handlers-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="force:refreshView" action="{!c.doInit}" /> 
+    
+    
+    <!--<lightning:overlayLibrary aura:id="overlayLib"/>-->
+    <div class="slds-box slds-theme_default">
+        <div class="slds-form">
+            <div class="slds-form__row">
+                <div class="slds-form-element slds-form-element_horizontal">
+                    <div class="slds-col slds-size_1-of-2">
+                        <label class="slds-form-element__label" for="combosearchbox"><b>Search an item:</b></label>
+                        <div class="slds-form-element__control" name="combosearchbox">
+                            <div class="slds-combobox_container">
+                                <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" aura:id="resultBox" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+                                    <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon slds-input-has-icon_left-right" role="none">
+                                        <aura:if isTrue="{!!empty(v.selectItemMasterId)}">
+                                            <span class="slds-icon_container slds-icon-utility-search slds-input__icon iconheight">
+                                                <lightning:icon class="slds-icon slds-icon slds-icon_small slds-icon-text-default" iconName="!v.iconName}" size="x-small" alternativeText="icon" />
+                                            </span> 
+                                        </aura:if>
+                                        <lightning:input required="{!v.required}" aura:id="userinput" label="{!v.Label}" name="searchText" onchange="{!c.searchField}" value="{!v.selectItemMasterName}" class="leftspace"/>
+                                        <aura:if isTrue="{!empty(v.selectItemMasterId)}">
+                                            <span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right iconheight">
+                                                <lightning:icon class="slds-icon slds-icon slds-icon_small slds-icon-text-default" iconName="utility:search" size="x-small" alternativeText="icon" />
+                                            </span> 
+                                            <aura:set attribute="else">
+                                                <button class="slds-input__icon slds-input__icon_right slds-button slds-button_icon iconheight" onclick="{!c.resetDataNow}">
+                                                    <lightning:icon class="slds-icon slds-icon slds-icon_small slds-icon-text-default slds-p-top_xx-small" iconName="utility:clear" size="x-small" alternativeText="icon" />
+                                                    <span class="slds-assistive-text">Clear</span>
+                                                </button>
+                                            </aura:set>
+                                        </aura:if>
+                                    </div>
+                                    <div id="listbox-id-1" class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid" role="listbox">
+                                        <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                                            <aura:iteration items="{!v.searchItemMasterRecords}" var="item" indexVar="hdtv">
+                                                <li role="presentation" class="slds-listbox__item">
+                                                    <div id="{!item.Id}" data-name="{!item.Name}" data-id="{!hdtv}" onclick="{!c.setSelectedItem}" class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+                                                        <span class="slds-media__figure">
+                                                            <span class="slds-icon_container slds-icon-standard-account">
+                                                                <lightning:icon iconName="{!v.iconName}" class="slds-icon slds-icon slds-icon_small slds-icon-text-default" size="x-small"/>
+                                                            </span>
+                                                        </span>
+                                                        <span class="slds-media__body">
+                                                            <span class="slds-listbox__option-text slds-listbox__option-text_entity">{!item.Name}</span>
+                                                            <span class="slds-listbox__option-meta slds-listbox__option-meta_entity">{!item.Store_Item_Code__c} &nbsp; {!item.Supplier_Part_Number__c} &nbsp; {!item.Cost_Price_formula__c}</span>
+                                                        </span>
+                                                    </div>
+                                                </li>
+                                            </aura:iteration>
+                                            <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                                                <li role="presentation" class="slds-listbox__item">
+                                                    <div onclick="{!c.setNoItem}" id="newItem" class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+                                                        <span class="slds-media__figure">
+                                                            <span class="slds-icon_container slds-icon-standard-account">
+                                                                <!-- blank -->
+                                                            </span>
+                                                        </span>
+                                                        <span class="slds-media__body">
+                                                            <span class="slds-listbox__option-text slds-listbox__option-text_entity">Item not in list. Click to create a PR for this new Item</span>
+                                                        </span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <aura:if isTrue="{!and(v.searchItemMasterRecords.length == 0 , !v.LoadingText)}">
+                                                
+                                            </aura:if>
+                                            <aura:if isTrue="{!v.LoadingText}">
+                                                Loading...
+                                            </aura:if>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+            <aura:if isTrue="{!v.showSwitch}">
+                <br/>
+                <aura:if isTrue="{!v.showNoItem}">
+                    <div class="slds-form__row">
+                        <div class="slds-form-element slds-form-element_stacked">
+                            Item entered is not in the item list. The Purchase Request that will be created needs to be approved by Purchasing Officer as well.
+                            <br/><b><span style="color:red">IMPORTANT: Please ensure that the item you are requesting is really not an existing item in the list. If this is submitted and it turns out there is an existing item, the PR will be canceled and new request has to be created.</span></b> 
+                        </div>
+                    </div>
+                <aura:set attribute="else">
+                    <div class="slds-form__row">
+                        <div class="slds-col slds-size_6-of-12">
+                            <div class="slds-form-element slds-form-element_horizontal">                                
+                                <div class="slds-form-element__control"><b>Item Code:</b>&nbsp;{!v.selectItemCode}&nbsp;&nbsp;<b>Part Number:</b>&nbsp;{!v.selectItemPartNumber}&nbsp;&nbsp;<b>Cost Price:</b>&nbsp;{!v.selectItemCostPrice}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aura:set>
+                </aura:if>
+                <div class="slds-form__row">
+                    <div class="slds-col slds-size_6-of-12">
+                        <div class="slds-form-element slds-form-element_horizontal">
+                            <label class="slds-form-element__label" for="quantityInput"><b>Quantity Requested: &nbsp; &nbsp;</b></label>
+                            <div class="slds-form-element__control">
+                                <span><lightning:input type="number" step="0.01" name="quantityInput" value="{!v.quantity}" onchange="{!c.computeTotalCostPrice}"></lightning:input></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_6-of-12">
+                        &nbsp;
+                    </div>
+                </div>
+                <br />
+                <div class="slds-form__row">   
+                    <div class="slds-col slds-size_6-of-12">
+                        <div class="slds-form-element slds-form-element_horizontal">
+                            <label class="slds-form-element__label" for="CostPriceInput"><b>PR Cost Price (GST exc):</b></label>
+                            <lightning:helptext content="GST not included." class="customIcon"/>
+                            <div class="slds-form-element__control">
+                                <span><lightning:input type="number" formatter="currency" step="0.01" name="CostPriceInput" onchange="{!c.computeTotalCostPrice}" value="{!v.prCostPrice}" disabled="{!v.disableCostPrice}"></lightning:input></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_6-of-12">
+                        &nbsp;
+                    </div>
+                </div>
+                <br/>
+                <div class="slds-form__row">   
+                    <div class="slds-col slds-size_6-of-12">
+                        <div class="slds-form-element slds-form-element_horizontal">
+                            <label class="slds-form-element__label" for="TotalCostPriceInput"><b>Total Cost Price:</b></label>
+                            <div class="slds-form-element__control">
+                                <span><lightning:input type="number" formatter="currency" step="0.01" name="TotalCostPriceInput" value="{!v.prTotalCostPrice}" disabled="true"></lightning:input></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_6-of-12">
+                        &nbsp;
+                    </div>
+                </div>
+                <br />
+                <div class="slds-form__row">
+                    <div class="slds-col slds-size_6-of-12">
+                        <div class="slds-form-element slds-form-element_horizontal"> 
+                            <label class="slds-form-element__label" for="quoteUpload"><b>Notes: </b></label>
+                            <div class="slds-form-element__control">
+                                <span><lightning:textarea value="{!v.notes}" placeholder="Type some purchase request notes here..."/></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_6-of-12">
+                        &nbsp;
+                    </div>
+                </div>
+                <br />
+                <div class="slds-form__row">
+                    <div class="slds-col slds-size_6-of-12">
+                        <div class="slds-form-element slds-form-element_horizontal"> 
+                            <label class="slds-form-element__label" for="quoteUpload"><b>Details for Supplier: </b></label>
+                            <div class="slds-form-element__control">
+                                <span><lightning:textarea value="{!v.detailsforsupplier}" placeholder="Type some information for supplier here..."/></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_6-of-12">
+                        &nbsp;
+                    </div>
+                </div>
+                <br/>
+                <div class="slds-form__row">
+                    <div class="slds-col slds-size_6-of-12">
+                        <b>COST ALLOCATION</b>
+                    </div>
+                </div>
+                <br />
+                <div class="slds-form__row">
+                    <div class="slds-col slds-size_6-of-12">
+                        <div class="slds-form-element slds-form-element_horizontal">
+                            <label class="slds-form-element__label"><b>Cost Allocation Unit: </b></label>
+                            <lightning:helptext content="You need to specify cost allocation unit" class="customIcon"/>
+                            <c:lookupField 
+                                           objectAPIName="Unit__c" 
+                                           returnFields="['Name','Unit_Type__c','Status__c']" 
+                                           queryFields="['Name']"
+                                           selectedId="{!v.selectedCostAllocationId}"
+                                           filter="Cost_Allocation_Unit__c=true"
+                                           errorMessage="No Cost Allocation Unit of that name is found" 
+                                           required="true"
+                                           />
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_6-of-12">
+                        &nbsp;
+                    </div>
+                </div>
+                <br/>
+                <div class="slds-form__row">
+                    <div class="slds-col slds-size_6-of-12">
+                        <div class="slds-form-element slds-form-element_horizontal">
+                            <label class="slds-form-element__label"><b>Work Order: </b></label>
+                            <lightning:helptext content="If Work Order isn’t available, please post why in update in PR for approval." class="customIcon"/>
+                            <c:lookupField 
+                                           objectAPIName="Job_Cards__c" 
+                                           returnFields="['Name','Asset_ID__c','Status__c']" 
+                                           queryFields="['Name','Asset_ID__c','Status__c']"
+                                           selectedId="{!v.selectedWorkOrderId}"
+                                           />
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_6-of-12">
+                        &nbsp;
+                    </div>
+                </div>
+                <br />
+                <div class="slds-form__row">
+                    <div class="slds-col slds-size_6-of-12">
+                        <div class="slds-form-element slds-form-element_horizontal">
+                            <label class="slds-form-element__label"><b>Asset:</b></label>
+                            <lightning:helptext content="If Asset is left blank, value will be auto-populated based on selected Work Order upon PR creation." class="customIcon"/>
+                            <c:lookupField 
+                                           objectAPIName="Asset__c" 
+                                           returnFields="['Name','Asset_ID_Number__c','Model__c','Make__c']" 
+                                           queryFields="['Name','Model__c','Asset_ID_Number__c']"
+                                           selectedId="{!v.selectedAssetId}"
+                                           />
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_6-of-12">
+                        &nbsp;
+                    </div>
+                </div>
+                <br />
+                <aura:if isTrue="{!!v.hasAssignedUnit}">
+                    <div class="slds-form__row">
+                        <div class="slds-form-element slds-form-element_horizontal">
+                            <div class="slds-col slds-size_6-of-12">
+                                <label class="slds-form-element__label" for="selectedDestinationUnit"><b>Destination Unit:</b></label>
+                                <div class="slds-form-element__control">
+                                    <lightning:select name="select" aura:id="selectedDestinationUnit" onchange="{!c.onDestinationChange}">
+                                        <option text="-- Select a Destination Unit --" value=""></option>
+                                        <aura:iteration items="{!v.unitList}" var="eachUnit">
+                                            <option text="{!eachUnit.Name}" value="{!eachUnit.Id}"></option>
+                                        </aura:iteration>
+                                    </lightning:select>
+                                </div>
+                            </div>
+                            <div class="slds-col slds-size_6-of-12">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{!v.hasAssignedUnit}">
+                    <div class="slds-form__row">
+                        <div class="slds-form-element slds-form-element_stacked">
+                            <div class="slds-col slds-size_1-of-12"></div>
+                            <div class="slds-col slds-size_4-of-12">
+                                <label class="slds-form-element__label" for="dest-unit-display"><b>Destination Unit:</b>&nbsp; &nbsp;{!v.destinationUnitName}</label>
+                            </div>
+                            <div class="slds-col slds-size_7-of-12">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{!!v.isNonIventoryItem}">
+                    <div class="slds-form__row">
+                        <div class="slds-col slds-size_2-of-12"></div>
+                        <div class="slds-col slds-size_10-of-12">
+                            <div class="slds-form-element slds-form-element_horizontal">
+                                <label class="slds-form-element__label" for="selectedDestinationUnit"><b>Available Stocks at {!v.destinationUnitName}: &nbsp; &nbsp;</b>
+                                    {!v.inventoryItemRecord.Stock_Available_formula__c}</label>
+                            </div><br/>
+                            <div class="slds-form-element slds-form-element_horizontal">
+                                <label class="slds-form-element__label" for="selectedDestinationUnit"><b>Base Store to order from: &nbsp; &nbsp; </b>
+                                    {!v.inventoryItemRecord.Base_Store__r.Name}</label>
+                            </div><br/>
+                            <div class="slds-form-element slds-form-element_horizontal">
+                                <label class="slds-form-element__label" for="selectedDestinationUnit"><b>Send directly to order? &nbsp; &nbsp;</b>
+                                    {!v.sendDirectToOrder}</label>
+                            </div><br/>
+                        </div>
+                    </div>
+                </aura:if>
+                <div class="slds-form__row">
+                    <div class="slds-col slds-size_6-of-12">
+                        <div class="slds-form-element slds-form-element_horizontal">
+                            <label class="slds-form-element__label" for="selectedDepartment"><b>Department: &nbsp; &nbsp;</b></label>
+                            <div class="slds-form-element__control">
+                                <!--<lightning:select name="select" aura:id="selectedDepartment" onchange="{!c.onDepartmentPicklistChange}">-->
+                                <lightning:select name="select" aura:id="selectedDepartment">
+                                    <option  text="-- None --" value=""></option>
+                                    <aura:iteration items="{!v.departmentpvalue}" var="deptplist">
+                                        <option value="{!deptplist}">{!deptplist}</option>
+                                    </aura:iteration>
+                                </lightning:select>  
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_6-of-12">
+                        &nbsp;
+                    </div>
+                </div> 
+                <!--
+                <div class="slds-form__row">
+                    <div class="slds-col slds-size_6-of-12">
+                        <div class="slds-form-element slds-form-element_horizontal">
+                            <label class="slds-form-element__label" for="selectedsubDepartment"><b>Sub Department: &nbsp; &nbsp;</b></label>
+                            <div class="slds-form-element__control">
+                                <lightning:select name="select" aura:id="selectedsubDepartment">
+                                    <option  text=" None " value=""></option>
+                                    <aura:iteration items="{!v.listDependingValues}" var="subdeptplist">
+                                        <option value="{!subdeptplist}">{!subdeptplist}</option>
+                                    </aura:iteration>
+                                </lightning:select>  
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_6-of-12">
+                        &nbsp;
+                    </div>
+                </div>
+                -->
+                <div class="slds-form__row">
+                    <div class="slds-col slds-size_6-of-12">
+                        <div class="slds-form-element slds-form-element_horizontal">
+                            <label class="slds-form-element__label" for="staffNameInput"><b>Staff Name: &nbsp; &nbsp;</b></label>
+                            <div class="slds-form-element__control">
+                                <span><lightning:input type="text" name="staffNameInput"  value="{!v.staffName}"></lightning:input></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_6-of-12">
+                        &nbsp;
+                    </div>
+                </div>                              
+                <br />
+                <div class="slds-form__row">
+                    <div class="slds-col slds-size_6-of-12">
+                        <div class="slds-form-element slds-form-element_horizontal"> 
+                            <label class="slds-form-element__label" for="quoteUpload"><b>Upload File: </b></label>
+                            <div class="slds-form-element__control">
+                                <span><lightning:fileUpload label="Attach File"
+                                                            name="fileUploader"
+                                                            multiple="true"
+                                                            accept="{!v.filetype}"
+                                                            onuploadfinished="{!c.handleUploadFinished}" /></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_6-of-12">
+                        &nbsp;
+                    </div>
+                </div>
+                <br />
+                <div class="slds-form__row">
+                    <div class="slds-grid" style="width: 50%;background-color:transparent;">
+                        <div class="slds-col slds-p-horizontal_medium" style="width: 50%;">
+                            <lightning:button 
+                                              label="Create Purchase Request" class="slds-button slds-button_brand createPRButton"
+                                              onclick="{!c.createPurchaseRequest}"
+                                              aura:id="createPR"
+                                              />
+                        </div>
+                        
+                        <div class="slds-col slds-p-horizontal_medium" style="width: 50%;">
+                            <lightning:button
+                                              label="Save the PR and Create Another" class="slds-button slds-button_brand createPRButton"
+                                              onclick="{!c.createPurchaseRequest}" disabled= "{!v.isButtonActive}"
+                                              aura:id="createPRAddAnotherBtn"
+                                              />
+                        </div>                   
+                    </div>
+                </div>
+            </aura:if>
+        </div>
+        
+        <br/><br/>
+        <aura:if isTrue="{!v.hasDraftPRs}">
+            <lightning:card title="Draft Purchase Requests" class="slds-card_boundary" iconName="standard:Purchase_Request__c">
+                <lightning:datatable data="{!v.prList}" 
+                                     columns="{!v.prcolumns }" 
+                                     keyField="Id"
+                                     onrowselection="{!c.handleSelect}"
+                                     onrowaction="{!c.handleRowAction}"
+                                     onsave="{!c.handleSavePRs}"
+                                     />
+            </lightning:card>
+            <br/><br/>
+            <lightning:button class="slds-button slds-button_brand slds-align_absolute-center"
+                              label="Save and Send for Approval"
+                              title="Save and Send for Approval" 
+                              disabled="{!empty(v.prList)}"
+                              onclick="{!c.sendForApproval}"
+                              />  
+        </aura:if>
+        
+    </div>
+</aura:component>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_add_new_DJItem_for_expired_Contract</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(
+ISNEW() &amp;&amp; NOT(Daily_Report__r.Contract__r.Contract_Active__c),
+TRUE,
+FALSE
+)</errorConditionFormula>
+    <errorMessage>You cannot add new Daily Job Item for an expired Contract</errorMessage>
+</ValidationRule>

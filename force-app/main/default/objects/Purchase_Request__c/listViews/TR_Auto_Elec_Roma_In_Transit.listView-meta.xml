@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TR_Auto_Elec_Roma_In_Transit</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Item_Name_Hyperlink__c</columns>
+    <columns>Work_Order__c</columns>
+    <columns>Asset__c</columns>
+    <columns>Quantity__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Cost_Allocation_Unit__c</columns>
+    <columns>Destination_Store__c</columns>
+    <columns>Status__c</columns>
+    <columns>Manifest_No__c</columns>
+    <columns>Date_Sent_for_In_Transit__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Destination_Store__c</field>
+        <operation>contains</operation>
+        <value>Rma AE</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>In Transit</value>
+    </filters>
+    <label>TR | Auto Elec Roma | In Transit</label>
+</ListView>

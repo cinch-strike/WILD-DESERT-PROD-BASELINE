@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Load_Restraint__c</fullName>
+    <inlineHelpText>Check that binders and chains are secure and in good condition. Check headboards &amp; tail gates are secure. Check for structural cracks. Check turntables are correctly hooked up (tug test). Check ring feeder and dolly towing eye are engaged (where used).</inlineHelpText>
+    <label>Load Restraint Checks</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pass</fullName>
+                <default>false</default>
+                <label>Pass</label>
+            </value>
+            <value>
+                <fullName>Fault</fullName>
+                <default>false</default>
+                <label>Fault</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

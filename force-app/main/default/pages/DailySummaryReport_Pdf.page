@@ -1,0 +1,870 @@
+<apex:page StandardController="Daily_Summary_Report__c" extensions="DailySummaryReport_PdfCtrl" docType="html-5.0"
+           id="DailySummaryReport_Pdf"
+           applyBodyTag="false"
+           applyHtmlTag="false" showHeader="false" renderAs="advanced_pdf">
+
+    <head>
+        <style type="text/css">
+
+        #wrap {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .left_col {
+            float: left;
+            width: 40%;
+            padding-top: 10px;
+            padding-bottom: 14px;
+        }
+
+        .right_col {
+            float: right;
+            width: 60%;
+            padding-top: 10px;
+            padding-bottom: 14px;
+        }
+
+        .left_col2 {
+            float: left;
+            width: 50%;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .right_col2 {
+            float: right;
+            width: 50%;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        hr.style5 {
+            background-color: #fff;
+            border-top: 2px dashed #8c8b8b;
+        }
+
+        @page {
+            size: 10in;
+            @top-center {
+            content: element(header);
+            }
+
+            @bottom-left {
+            content: element(footer);
+            }
+            }
+
+            div.header {
+            padding: 10px;
+            position: running(header);
+            }
+
+            div.footer {
+            display: block;
+            padding: 15px;
+            position: running(footer);
+            text-align: right
+            /*font-size: 15px;*/
+            }
+
+            .pagenumber:before {
+            content: counter(page);
+            }
+
+            .pagecount:before {
+            content: counter(pages);
+            }
+
+
+
+        </style>
+    </head>
+
+    <body style="font-family: sans-serif; font-size:11pt">
+
+    <div class="header">
+
+    </div>
+    <div class="footer">
+        <div>Page <span class="pagenumber"/> | Report No: {!Daily_Summary_Report__c.Name}</div>
+    </div>
+
+    <div width="100%;">
+
+            <span style="float:right;">
+                <!--<img src="https://company-profile-images.s3.amazonaws.com/images/980952/1170497/logo/wild-desert-logo.jpg"/>-->
+                <apex:image url="{!$Resource.WDLogoTransparent}" style="height:75px;width:300px;"/>
+            </span>
+
+        <div>
+            <apex:outputText value="DAILY SITE JOB SUMMARY" style="font-size:25px;"/>
+        </div>
+
+    </div>
+
+
+    <br/>
+
+    <div id="wrap" width="100%;" style="clear:both;line-height:21px;">
+
+        <div class="left_col">
+            <apex:outputText title="Units"><span
+                    style="font-weight:bold;">Units: </span>{!SUBSTITUTE(unitsAssigned,';',' / ')}
+            </apex:outputText>
+            <br/>
+            <apex:outputText title="Site"><span
+                    style="font-weight:bold;">Site: </span>{!Daily_Summary_Report__c.Site__r.Name}</apex:outputText>
+            <br/>
+            <apex:outputText title="Previous Site"><span
+                    style="font-weight:bold;">Previous Site: </span>{!Daily_Summary_Report__c.Site__r.Previous_Site__c}
+            </apex:outputText>
+            <br/>
+            <apex:outputText title="KM's from Previous Site:"><span
+                    style="font-weight:bold;">KM's from Previous Site: </span>{!Daily_Summary_Report__c.Site__r.No_of_KM_s_from_Previous_Site__c}
+            </apex:outputText>
+        </div>
+
+        <div class="right_col">
+            <apex:outputText title="Client"><span
+                    style="font-weight:bold;">Client: </span>{!Daily_Summary_Report__c.Contract__r.Account__r.Name}
+            </apex:outputText>
+            <br/>
+            <apex:outputText title="Report No:"><span
+                    style="font-weight:bold;">Report No: </span>{!Daily_Summary_Report__c.Name}
+            </apex:outputText>
+            <br/>
+            <apex:outputText value="{0, date, dd-MMM-yy}">
+                <span style="font-weight:bold;">Report Date: </span>
+                <apex:param value="{!Daily_Summary_Report__c.Summary_Report_Date__c}"/>
+            </apex:outputText>
+            <br/>
+            <apex:outputText title="Job Description"><span
+                    style="font-weight:bold;">Job Description: </span>{!Daily_Summary_Report__c.Site__r.Job_Description__c}
+            </apex:outputText>
+
+        </div>
+
+    </div>
+
+
+    <div style="text-align:center;font-size:large;clear:both;background-color:#ffc124;margin-bottom:10px;margin-top:10px;display:{!IF(rigSummaryWrapper.reportPresent,'','none')};">
+        <apex:outputText title="Rig Stats Summary"><span style="font-weight:bold;">Rig Stats Summary</span>
+        </apex:outputText>
+    </div>
+    
+    <table border="0"
+           style="width:100%;page-break-inside:auto;line-height:23px;clear:both;display:{!IF(rigSummaryWrapper.reportPresent,'','none')};">
+        <thead>
+        <tr style="page-break-inside:avoid;">
+            <th scope="col" colspan="1" style="padding:0px;text-align:left;border-bottom-style:solid;width:40%;">
+                <apex:outputText value="Summary Records"/>
+            </th>
+
+            <th scope="col" colspan="1" style="padding:0px;text-align:left;border-bottom-style:solid;width:10%;">
+                <apex:outputText value="Quantity"/>
+            </th>
+
+            <th scope="col" colspan="1" style="padding:0px;text-align:left;border-bottom-style:solid;width:40%;">
+                <apex:outputText value="Summary Items"/>
+            </th>
+
+            <th scope="col" colspan="1" style="padding:0px;text-align:center;border-bottom-style:solid;width:10%;">
+                <apex:outputText value="Quantity"/>
+            </th>
+
+        </tr>
+        </thead>
+
+        <tr>
+            <td valign="top" style="width:40%;">
+                <table border="0" style="width:100%;page-break-inside:auto;line-height:23px;clear:both;">
+                    <tr>
+                        <td>LTI Free Days</td>
+                    </tr>
+                    <tr>
+                        <td>Hazards</td>
+                    </tr>
+                    <apex:repeat value="{!rigSummaryWrapper.hseqCountMap}" var="hseq">
+                        <tr>
+                            <td>
+                                    {!hseq}
+                            </td>
+                        </tr>
+                    </apex:repeat>
+                </table>
+            </td>
+
+            <td valign="top" style="width:10%;">
+                <table border="0" style="width:100%;page-break-inside:auto;line-height:23px;clear:both;">
+                    <tr>
+                        <td style="text-align:center">
+                            <apex:outputText value="{0, number}">
+                                <apex:param value="{!rigSummaryWrapper.ltiRigFreeDays}"/>
+                            </apex:outputText>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center">
+                            <apex:outputText value="{0, number}">
+                                <apex:param value="{!rigSummaryWrapper.hazards}"/>
+                            </apex:outputText>
+                        </td>
+                    </tr>
+                    <apex:repeat value="{!rigSummaryWrapper.hseqCountMap}" var="hseq">
+                        <tr>
+                            <td style="text-align:center">
+                                <apex:outputText value="{0, number}">
+                                    <apex:param value="{!rigSummaryWrapper.hseqCountMap[hseq]}"/>
+                                </apex:outputText>
+                            </td>
+                        </tr>
+                    </apex:repeat>
+                </table>
+            </td>
+
+            <td valign="top" style="width:40%;">
+                <table border="0" style="width:100%;page-break-inside:auto;line-height:23px;clear:both;">
+                    <apex:repeat value="{!rigSummaryWrapper.dailyJobItemQuantityMap}" var="dailySiteJobItem">
+                        <tr>
+                            <td>
+                                    {!dailySiteJobItem}
+                            </td>
+
+                        </tr>
+                    </apex:repeat>
+                </table>
+            </td>
+
+            <td valign="top" style="width:10%;">
+                <table border="0" style="width:100%;page-break-inside:auto;line-height:23px;clear:both;">
+                    <apex:repeat value="{!rigSummaryWrapper.dailyJobItemQuantityMap}" var="dailySiteJobItem">
+                        <tr>
+                            <td style="text-align:center">
+                                <apex:outputText value="{0, number}">
+                                    <apex:param value="{!rigSummaryWrapper.dailyJobItemQuantityMap[dailySiteJobItem]}"/>
+                                </apex:outputText>
+                            </td>
+                        </tr>
+                    </apex:repeat>
+                </table>
+            </td>
+
+        </tr>
+    </table>
+    <div style="text-align:center;font-size:large;clear:both;background-color:#ffc124;margin-bottom:10px;margin-top:10px;display:{!IF(rigSummaryWrapper.reportPresent,'','none')};">
+        <apex:outputText title="General Data - Rig"><span style="font-weight:bold;">General Data - Rig</span>
+        </apex:outputText>
+    </div>
+    <table border="0"
+           style="width:100%;page-break-inside:auto;line-height:23px;clear:both;display:{!IF(rigSummaryWrapper.reportPresent,'','none')};">
+        <thead>
+            <tr style="page-break-inside:avoid;">
+                <th scope="col" colspan="1" style="padding:0px;text-align:left;border-bottom-style:solid;width:40%;">
+                    <apex:outputText value="General Data"/>
+                </th>
+    
+                <th scope="col" colspan="1" style="padding:0px;text-align:left;border-bottom-style:solid;width:10%;">
+                    <apex:outputText value="Quantity"/>
+                </th>
+    
+                <th scope="col" colspan="1" style="padding:0px;text-align:left;border-bottom-style:solid;width:40%;">
+                    <apex:outputText value="General Data"/>
+                </th>
+    
+                <th scope="col" colspan="1" style="padding:0px;text-align:center;border-bottom-style:solid;width:10%;">
+                    <apex:outputText value="Quantity"/>
+                </th>
+    
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td valign="top" style="width:40%;">
+                    Water Levels (L)
+                </td>
+                <td valign="top" style="width:10%;">
+                    <apex:outputText value="{0, number, #,###}">
+                        <apex:param value="{!rigSummaryWrapper.waterLevels}"/>
+                    </apex:outputText>
+                    
+                </td>
+                <td valign="top" style="width:40%;">
+                    Fuel Levels (L)
+                </td>
+                <td valign="top" style="width:10%;">
+                    <apex:outputText value="{0, number, #,###}">
+                        <apex:param value="{!rigSummaryWrapper.fuelLevels}"/>
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top" style="width:40%;">
+                    Rubbish Levels (%)
+                </td>
+                <td valign="top" style="width:10%;">
+                    <apex:outputText value="{0, number, ###.##}">
+                        <apex:param value="{!rigSummaryWrapper.rubbishLevels}"/>
+                    </apex:outputText>%
+                </td>
+                <td valign="top" style="width:40%;">
+                    Fuel Delivered
+                </td>
+                <td valign="top" style="width:10%;">
+                    <apex:outputText value="{0, number, #,###}">
+                        <apex:param value="{!rigSummaryWrapper.fuelDelivered}"/>
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top" style="width:40%;">
+                    Septic Levels
+                </td>
+                <td valign="top" style="width:10%;">
+                    <apex:outputText value="{0, number, #,###}">
+                        <apex:param value="{!rigSummaryWrapper.septicLevels}"/>
+                    </apex:outputText>
+                </td>
+                <td valign="top" style="width:40%;">
+                    &nbsp;
+                </td>
+                <td valign="top" style="width:10%;">
+                    &nbsp;
+                </td>
+            </tr>
+        </tbody>
+        
+    </table>
+    <br/>
+    <div style="text-align:center;font-size:large;clear:both;background-color:#ffc124;margin-bottom:10px;margin-top:10px;display:{!IF(campSummaryWrapper.reportPresent,'','none')};page-break-before:auto; ">
+        <apex:outputText title="Camp Stats Summary"><span style="font-weight:bold;">Camp Stats Summary</span>
+        </apex:outputText>
+    </div>
+
+    <table border="0"
+           style="width:100%;page-break-inside:auto;line-height:23px;clear:both;display:{!IF(campSummaryWrapper.reportPresent,'','none')};">
+        <thead>
+        <tr style="page-break-inside:avoid;">
+            <th scope="col" colspan="1" style="padding:0px;text-align:left;border-bottom-style:solid;width:40%;">
+                <apex:outputText value="Summary Records"/>
+            </th>
+
+            <th scope="col" colspan="1" style="padding:0px;text-align:left;border-bottom-style:solid;width:10%;">
+                <apex:outputText value="Quantity"/>
+            </th>
+
+            <th scope="col" colspan="1" style="padding:0px;text-align:left;border-bottom-style:solid;width:40%;">
+                <!--<apex:outputText value="Summary Items"/>-->&nbsp;
+            </th>
+
+            <th scope="col" colspan="1" style="padding:0px;text-align:center;border-bottom-style:solid;width:10%;">
+                <!--<apex:outputText value="Quantity"/>-->&nbsp;
+            </th>
+
+        </tr>
+        </thead>
+
+        <tr>
+            <td valign="top" style="width:40%;">
+                <table border="0" style="width:100%;page-break-inside:auto;line-height:23px;clear:both;">
+                    <tr>
+                        <td>LTI Free Days</td>
+                    </tr>
+                    <tr>
+                        <td>Hazards</td>
+                    </tr>
+                    <apex:repeat value="{!campSummaryWrapper.hseqCountMap}" var="hseq">
+                        <tr>
+                            <td>
+                                    {!hseq}
+                            </td>
+                        </tr>
+                    </apex:repeat>
+                </table>
+            </td>
+
+            <td valign="top" style="width:10%;">
+                <table border="0" style="width:100%;page-break-inside:auto;line-height:23px;clear:both;">
+                    <tr>
+                        <td style="text-align:center">
+                            <apex:outputText value="{0, number}">
+                                <apex:param value="{!campSummaryWrapper.ltiRigFreeDays}"/>
+                            </apex:outputText>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center">
+                            <apex:outputText value="{0, number}">
+                                <apex:param value="{!campSummaryWrapper.hazards}"/>
+                            </apex:outputText>
+                        </td>
+                    </tr>
+                    <apex:repeat value="{!campSummaryWrapper.hseqCountMap}" var="hseq">
+                        <tr>
+                            <td style="text-align:center">
+                                <apex:outputText value="{0, number}">
+                                    <apex:param value="{!campSummaryWrapper.hseqCountMap[hseq]}"/>
+                                </apex:outputText>
+                            </td>
+                        </tr>
+                    </apex:repeat>
+                </table>
+            </td>
+
+            <td valign="top" style="width:40%;">
+                <table border="0" style="width:100%;page-break-inside:auto;line-height:23px;clear:both;">
+                    <apex:repeat value="{!campSummaryWrapper.dailyJobItemQuantityMap}" var="dailySiteJobItem">
+                        <tr>
+                            <td>
+                                    <!--{!dailySiteJobItem}-->&nbsp;
+                            </td>
+
+                        </tr>
+                    </apex:repeat>
+                </table>
+            </td>
+
+            <td valign="top" style="width:10%;">
+                <table border="0" style="width:100%;page-break-inside:auto;line-height:23px;clear:both;">
+                    <apex:repeat value="{!campSummaryWrapper.dailyJobItemQuantityMap}" var="dailySiteJobItem">
+                        <tr>
+                            <td style="text-align:center">
+                                <!--<apex:outputText value="{0, number}">
+                                    <apex:param value="{!campSummaryWrapper.dailyJobItemQuantityMap[dailySiteJobItem]}"/></apex:outputText>--> &nbsp;
+                            </td>
+                        </tr>
+                    </apex:repeat>
+                </table>
+            </td>
+
+        </tr>
+    </table>
+    
+    <div style="text-align:center;font-size:large;clear:both;background-color:#ffc124;margin-bottom:10px;margin-top:10px;display:{!IF(campSummaryWrapper.reportPresent,'','none')};">
+        <apex:outputText title="General Data - Camp"><span style="font-weight:bold;">General Data - Camp</span>
+        </apex:outputText>
+    </div>
+    
+    
+    <table border="0"
+           style="width:100%;page-break-inside:auto;line-height:23px;clear:both;display:{!IF(campSummaryWrapper.reportPresent,'','none')};">
+        <thead>
+            <tr style="page-break-inside:avoid;">
+                <th scope="col" colspan="1" style="padding:0px;text-align:left;border-bottom-style:solid;width:40%;">
+                    <apex:outputText value="General Data"/>
+                </th>
+    
+                <th scope="col" colspan="1" style="padding:0px;text-align:left;border-bottom-style:solid;width:10%;">
+                    <apex:outputText value="Quantity"/>
+                </th>
+    
+                <th scope="col" colspan="1" style="padding:0px;text-align:left;border-bottom-style:solid;width:40%;">
+                    <apex:outputText value="General Data"/>
+                </th>
+    
+                <th scope="col" colspan="1" style="padding:0px;text-align:center;border-bottom-style:solid;width:10%;">
+                    <apex:outputText value="Quantity"/>
+                </th>
+    
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td valign="top" style="width:40%;">
+                    Water Levels (L)
+                </td>
+                <td valign="top" style="width:10%;">
+                    <apex:outputText value="{0, number, #,###}">
+                        <apex:param value="{!campSummaryWrapper.waterLevels}"/>
+                    </apex:outputText>
+                </td>
+                <td valign="top" style="width:40%;">
+                    Fuel Levels (L)
+                </td>
+                <td valign="top" style="width:10%;">
+                    <apex:outputText value="{0, number, #,###}">
+                        <apex:param value="{!campSummaryWrapper.fuelLevels}"/>
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top" style="width:40%;">
+                    Rubbish Levels (%)
+                </td>
+                <td valign="top" style="width:10%;">
+                    <apex:outputText value="{0, number, ###.##}">
+                        <apex:param value="{!campSummaryWrapper.rubbishLevels}"/>
+                    </apex:outputText>%
+                </td>
+                <td valign="top" style="width:40%;">
+                    Fuel Delivered
+                </td>
+                <td valign="top" style="width:10%;">
+                    <apex:outputText value="{0, number, #,###}">
+                        <apex:param value="{!campSummaryWrapper.fuelDelivered}"/>
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top" style="width:40%;">
+                    Septic Levels
+                </td>
+                <td valign="top" style="width:10%;">
+                    <apex:outputText value="{0, number, #,###}">
+                        <apex:param value="{!campSummaryWrapper.septicLevels}"/>
+                    </apex:outputText>
+                </td>
+                <td valign="top" style="width:40%;">
+                    &nbsp;
+                </td>
+                <td valign="top" style="width:10%;">
+                    &nbsp;
+                </td>
+            </tr>
+        </tbody>
+        
+    </table>
+    <br/>
+    
+    <div style="text-align:center;font-size:large;clear:both;background-color:#ffc124;margin-bottom:10px;margin-top:10px;page-break-before:auto">
+        <apex:outputText title="All Assigned Personnels"><span style="font-weight:bold;">All Assigned Personnels</span>
+        </apex:outputText>
+        <!--<hr style="border-style:solid;"/>-->
+    </div>
+
+    <table border="0" style="width:100%;page-break-inside:auto;line-height:23px;clear:both;">
+        <thead>
+        <tr style="page-break-inside:avoid;">
+
+            <th scope="col" style="text-align:center;border-bottom-style:solid;">
+                <apex:outputText styleClass="slds-truncate" value="Unit"/>
+            </th>
+
+            <th scope="col" style="text-align:center;border-bottom-style:solid;">
+                <apex:outputText styleClass="slds-truncate" value="Employee Name"/>
+            </th>
+
+            <th scope="col" style="text-align:center;border-bottom-style:solid;">
+                <apex:outputText styleClass="slds-truncate" value="Position"/>
+            </th>
+
+            <th scope="col" style="text-align:center;border-bottom-style:solid;">
+                <apex:outputText styleClass="slds-truncate" value="Shift"/>
+            </th>
+
+            <th scope="col" style="text-align:center;border-bottom-style:solid;">
+                <apex:outputText styleClass="slds-truncate" value="Crew Change"/>
+            </th>
+        </tr>
+        </thead>
+
+
+        <tbody>
+        <apex:repeat value="{!activePersonnelList}" var="ap">
+
+            <tr style="page-break-inside:avoid;">
+
+                <td style="text-align:center;">
+                    <apex:outputText value="{!ap.Daily_Report__r.Unit__r.Name}"/>
+                </td>
+
+                <td style="text-align:center;">
+                    <apex:outputText value="{!ap.Personnel_Name__c}"/>
+                </td>
+                <td style="text-align:center;">
+                    <apex:outputText value="{!ap.Position__r.Name}"/>
+                </td>
+                <td style="text-align:center;">
+                    <apex:outputText value="{!ap.Shift__c}"/>
+                </td>
+                <!--<td style="text-align:center;">
+                        <apex:outputText value="{!ap.Locale__c}"/>
+                    </td>-->
+                <td style="text-align:center;">
+                    <apex:outputText value="{!ap.Crew_Change__c}"/>
+                </td>
+            </tr>
+        </apex:repeat>
+        </tbody>
+
+    </table>
+
+    <br/>
+
+    <div style="text-align:center;font-size:large;clear:both;background-color:#ffc124;margin-bottom:10px;margin-top:10px;page-break-before:auto;">
+        <apex:outputText title="Daily Site Job - Contract Items"><span style="font-weight:bold;">Daily Site Job - Contract Items</span>
+        </apex:outputText>
+    </div>
+
+    <div style="border-bottom:2px solid black;width:50%;padding:5px;display:{!IF(rigSummaryWrapper.reportPresent,'','none')};">
+        <apex:outputText title="Unit"><span style="font-weight:bold;">Unit: </span>{!rigDailyReport.Unit__r.Name}
+        </apex:outputText>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <apex:outputText title="Site Job"><span style="font-weight:bold;">Site Job: </span>{!rigDailyReport.Name}
+        </apex:outputText>
+    </div>
+
+    <table border="0"
+           style="width:100%;page-break-inside:auto;line-height:23px;clear:both;display:{!IF(rigSummaryWrapper.reportPresent,'','none')};">
+
+        <thead>
+        <tr style="page-break-inside:avoid;">
+            <th scope="col" style="text-align:center;border-bottom-style:solid;">
+                <apex:outputText styleClass="slds-truncate" value="Item"/>
+            </th>
+
+            <th scope="col" style="text-align:center;border-bottom-style:solid;">
+                <apex:outputText styleClass="slds-truncate" value="Description"/>
+            </th>
+
+            <th scope="col" style="text-align:center;border-bottom-style:solid;">
+                <apex:outputText styleClass="slds-truncate" value="Start - Finish"/>
+            </th>
+
+            <th scope="col" style="text-align:center;border-bottom-style:solid;">
+                <apex:outputText styleClass="slds-truncate" value="Quantity"/>
+            </th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+        <apex:repeat value="{!rigDailyReport.Daily_Report_Items__r}" var="dailyReportItem">
+            <tr style="page-break-inside:avoid;">
+                <td style="padding:5px;width:30%">
+                        {!dailyReportItem.Contract_Job_Item__r.Name}
+                </td>
+                <td style="padding:5px;width:30%;max-width:30%;">
+                   {!dailyReportItem.Description__c}
+                </td>
+                <td style="text-align:center;padding:5px;width:25%">
+                        {!IF(dailyReportItem.RecordType.DeveloperName = 'Per_Hour' ,dailyReportItem.StartTime__c + ' - ' + dailyReportItem.EndTime__c,'-' )}
+                </td>
+                <td style="text-align:center;padding:5px;width:15%">
+                    <apex:outputText value="{0, number}"><apex:param value="{!dailyReportItem.Quantity_Hour__c}" /> </apex:outputText>
+                </td>
+            </tr>
+        </apex:repeat>
+
+        </tbody>
+    </table>
+    <br/>
+
+    <div style="border-bottom:2px solid black;width:50%;padding:5px;display:{!IF(campSummaryWrapper.reportPresent,'','none')};page-break-before:auto;">
+        <apex:outputText title="Unit"><span style="font-weight:bold;">Unit: </span>{!campDailyReport.Unit__r.Name}
+        </apex:outputText>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <apex:outputText title="Site Job: "><span style="font-weight:bold;">Site Job: </span>{!campDailyReport.Name}
+        </apex:outputText>
+    </div>
+
+    <table border="0"
+           style="width:100%;page-break-inside:auto;line-height:23px;clear:both;display:{!IF(campSummaryWrapper.reportPresent,'','none')};">
+
+        <thead>
+        <tr style="page-break-inside:avoid;">
+            <th scope="col" style="text-align:center;border-bottom-style:solid;">
+                <apex:outputText styleClass="slds-truncate" value="Item"/>
+            </th>
+
+            <th scope="col" style="text-align:center;border-bottom-style:solid;">
+                <apex:outputText styleClass="slds-truncate" value="Description"/>
+            </th>
+
+            <th scope="col" style="text-align:center;border-bottom-style:solid;">
+                <apex:outputText styleClass="slds-truncate" value="Start - Finish"/>
+            </th>
+
+            <th scope="col" style="text-align:center;border-bottom-style:solid;">
+                <apex:outputText styleClass="slds-truncate" value="Quantity"/>
+            </th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+        <apex:repeat value="{!campDailyReport.Daily_Report_Items__r}" var="dailyReportItem">
+            <tr style="page-break-inside:avoid;">
+                <td style="padding:5px;width:30%">
+                        {!dailyReportItem.Contract_Job_Item__r.Name}
+                </td>
+                <td style="padding:5px;width:30%;max-width:30%;">
+                    {!dailyReportItem.Description__c}
+                </td>
+                <td style="text-align:center;padding:5px;width:25%">
+                        {!IF(dailyReportItem.RecordType.DeveloperName = 'Per_Hour' ,dailyReportItem.StartTime__c + ' - ' + dailyReportItem.EndTime__c,'-' )}
+                </td>
+                <td style="text-align:center;padding:5px;width:15%">
+                       <apex:outputText value="{0, number}" > <apex:param value="{!dailyReportItem.Quantity_Hour__c}" /> </apex:outputText>
+                </td>
+            </tr>
+        </apex:repeat>
+
+        </tbody>
+    </table>
+    <br/>
+	<!-- 19 MAY 2021 - made a repeat section for multiple transport job DSJ 
+    <div style="border-bottom:2px solid black;width:50%;padding:5px;display:{!IF(transportSummaryWrapper.reportPresent,'','none')};">
+        <apex:outputText title="Unit"><span style="font-weight:bold;">Unit: </span>{!transportDailyReport.Unit__r.Name}
+        </apex:outputText>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <apex:outputText title="Site Job"><span style="font-weight:bold;">Site Job: </span>{!transportDailyReport.Name}
+        </apex:outputText>
+    </div>
+    <table border="0"
+           style="width:100%;page-break-inside:auto;line-height:23px;clear:both;display:{!IF(transportSummaryWrapper.reportPresent,'','none')};">
+
+        <thead>
+        <tr style="page-break-inside:avoid;">
+            <th scope="col" style="text-align:center;border-bottom-style:solid;">
+                <apex:outputText styleClass="slds-truncate" value="Item"/>
+            </th>
+
+            <th scope="col" style="text-align:center;border-bottom-style:solid;">
+                <apex:outputText styleClass="slds-truncate" value="Description"/>
+            </th>
+
+            <th scope="col" style="text-align:center;border-bottom-style:solid;">
+                <apex:outputText styleClass="slds-truncate" value="Start - Finish"/>
+            </th>
+
+            <th scope="col" style="text-align:center;border-bottom-style:solid;">
+                <apex:outputText styleClass="slds-truncate" value="Quantity"/>
+            </th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+        <apex:repeat value="{!transportDailyReport.Daily_Report_Items__r}" var="dailyReportItem">
+            <tr style="page-break-inside:avoid;">
+                <td style="padding:5px;width:30%">
+                        {!dailyReportItem.Contract_Job_Item__r.Name}
+                </td>
+                <td style="padding:5px;width:30%;max-width:30%;">
+                   {!dailyReportItem.Description__c}
+                </td>
+                <td style="text-align:center;padding:5px;width:25%">
+                        {!IF(dailyReportItem.RecordType.DeveloperName = 'Per_Hour' ,dailyReportItem.StartTime__c + ' - ' + dailyReportItem.EndTime__c,'-' )}
+                </td>
+                <td style="text-align:center;padding:5px;width:15%">
+                    <apex:outputText value="{0, number}"><apex:param value="{!dailyReportItem.Quantity_Hour__c}" /> </apex:outputText>
+                </td>
+            </tr>
+        </apex:repeat>
+
+        </tbody>
+    </table>
+     END OF ORIGINAL CODE-->
+     <!-- 19 May 2021: Start of new code -->
+     <apex:repeat value="{!transportSummaryWrapperList}" var="transportSummaryWrapper">
+        <div style="border-bottom:2px solid black;width:50%;padding:5px;display:{!IF(transportSummaryWrapper.reportPresent,'','none')};">
+            <apex:outputText title="Unit"><span style="font-weight:bold;">Unit: </span>{!transportSummaryWrapper.dr.Unit__r.Name}
+            </apex:outputText>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:outputText title="Site Job"><span style="font-weight:bold;">Site Job: </span>{!transportSummaryWrapper.dr.Name}
+            </apex:outputText>
+        </div>
+        <table border="0"
+               style="width:100%;page-break-inside:auto;line-height:23px;clear:both;display:{!IF(transportSummaryWrapper.reportPresent,'','none')};">
+    
+            <thead>
+            <tr style="page-break-inside:avoid;">
+                <th scope="col" style="text-align:center;border-bottom-style:solid;">
+                    <apex:outputText styleClass="slds-truncate" value="Item"/>
+                </th>
+    
+                <th scope="col" style="text-align:center;border-bottom-style:solid;">
+                    <apex:outputText styleClass="slds-truncate" value="Description"/>
+                </th>
+    
+                <th scope="col" style="text-align:center;border-bottom-style:solid;">
+                    <apex:outputText styleClass="slds-truncate" value="Start - Finish"/>
+                </th>
+    
+                <th scope="col" style="text-align:center;border-bottom-style:solid;">
+                    <apex:outputText styleClass="slds-truncate" value="Quantity"/>
+                </th>
+    
+            </tr>
+            </thead>
+    
+            <tbody>
+            <apex:repeat value="{!transportSummaryWrapper.dr.Daily_Report_Items__r}" var="dailyReportItem">
+                <tr style="page-break-inside:avoid;">
+                    <td style="padding:5px;width:30%">
+                            {!dailyReportItem.Contract_Job_Item__r.Name}
+                    </td>
+                    <td style="padding:5px;width:30%;max-width:30%;">
+                       {!dailyReportItem.Description__c}
+                    </td>
+                    <td style="text-align:center;padding:5px;width:25%">
+                            {!IF(dailyReportItem.RecordType.DeveloperName = 'Per_Hour' ,dailyReportItem.StartTime__c + ' - ' + dailyReportItem.EndTime__c,'-' )}
+                    </td>
+                    <td style="text-align:center;padding:5px;width:15%">
+                        <apex:outputText value="{0, number}"><apex:param value="{!dailyReportItem.Quantity_Hour__c}" /> </apex:outputText>
+                    </td>
+                </tr>
+            </apex:repeat>
+    
+            </tbody>
+        </table>
+     </apex:repeat>
+     <!-- end of new code-->
+    <br/>
+    <!--<div style="display:{!IF(approvalWrapperList.size > 0,'','none;')}">-->
+        <div style="text-align:center;font-size:large;clear:both;background-color:#ffc124;margin-bottom:10px;margin-top:10px;page-break-before:auto; ">
+            <apex:outputText title="Approvals History"><span style="font-weight:bold;">Approvals History</span>
+            </apex:outputText>
+        </div>
+        <div style="font-style:italic;width:100;clear:both;">Electronic Signature History</div>
+
+        <table width="100%" style="padding-top:15px;">
+            <thead>
+            <tr border="1">
+                <td style="text-align:center">
+                    Date | Time
+                </td>
+
+                <td style="text-align:center">
+                    Operations Manager
+                </td>
+                <td style="text-align:center">
+                    Date | Time
+                </td>
+                <td style="text-align:center">
+                    Client Representive
+                </td>
+                <td style="text-align:center">
+                    Email
+                </td>
+            </tr>
+            </thead>
+
+
+            <tbody>
+
+            <apex:repeat value="{!approvalWrapperList}" var="approvalWrap">
+                <tr>
+                    <td style="text-align:center;padding:5px;">
+                        <div style="display:{!IF(NOT(ISBLANK(approvalWrap.opsMgrApprovalDate)),'','none;')}">
+                        <apex:outputText value="{0, date, dd-MMM-yy}">
+                            <apex:param value="{!approvalWrap.opsMgrApprovalDate}"/>
+                        </apex:outputText>&nbsp;|&nbsp;{!approvalWrap.opsMgrApprovalTime}&nbsp;|&nbsp;{!approvalWrap.type}
+                        </div>
+                    </td>
+                    <td style="text-align:center;padding:5px;">{!approvalWrap.opsManagerName}</td>
+                    <td style="text-align:center;padding:5px;">
+                        <div style="display:{!IF(NOT(ISBLANK(approvalWrap.clientRepApprovalDate)),'','none;')}" >
+                            <apex:outputText value="{0, date, dd-MMM-yy}">
+                                <apex:param value="{!approvalWrap.clientRepApprovalDate}"/>
+                            </apex:outputText>&nbsp;|&nbsp;{!approvalWrap.clientRepApprovalTime}
+                        </div>
+                    </td>
+                    <td style="text-align:center;padding:5px;">{!approvalWrap.clientRepresentativeName}</td>
+                    <td style="text-align:center;padding:5px;">{!approvalWrap.clientRepEmailAddress}</td>
+                </tr>
+            </apex:repeat>
+            </tbody>
+
+
+        </table>
+    </body>
+
+</apex:page>

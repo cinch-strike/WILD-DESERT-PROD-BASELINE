@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category_of_Work_Task__c</fullName>
+    <label>Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Air Conditioning</fullName>
+                <default>false</default>
+                <label>Air Conditioning/Ice Pack</label>
+            </value>
+            <value>
+                <fullName>Air System</fullName>
+                <default>false</default>
+                <label>Air System</label>
+            </value>
+            <value>
+                <fullName>Brakes</fullName>
+                <default>false</default>
+                <label>Brakes</label>
+            </value>
+            <value>
+                <fullName>Camp Maintenance</fullName>
+                <default>false</default>
+                <label>Camp Maintenance</label>
+            </value>
+            <value>
+                <fullName>Communications</fullName>
+                <default>false</default>
+                <label>Communications</label>
+            </value>
+            <value>
+                <fullName>Electrical General</fullName>
+                <default>false</default>
+                <label>Electrical General</label>
+            </value>
+            <value>
+                <fullName>Engine</fullName>
+                <default>false</default>
+                <label>Engine/Gearbox/Driveline</label>
+            </value>
+            <value>
+                <fullName>Fabricate</fullName>
+                <default>false</default>
+                <label>Fabricate</label>
+            </value>
+            <value>
+                <fullName>Fit Out/Assemble</fullName>
+                <default>false</default>
+                <label>Fit Out/Assemble</label>
+            </value>
+            <value>
+                <fullName>Fuel/Water Tank</fullName>
+                <default>false</default>
+                <label>Fuel/Water Tank</label>
+            </value>
+            <value>
+                <fullName>Guardian/Geotab</fullName>
+                <default>false</default>
+                <label>Guardian/Geotab</label>
+            </value>
+            <value>
+                <fullName>Hub Metre</fullName>
+                <default>false</default>
+                <label>Hub Metre</label>
+            </value>
+            <value>
+                <fullName>Hubs</fullName>
+                <default>false</default>
+                <label>Hubs</label>
+            </value>
+            <value>
+                <fullName>Hydraulics</fullName>
+                <default>false</default>
+                <label>Hydraulics</label>
+            </value>
+            <value>
+                <fullName>Lights</fullName>
+                <default>false</default>
+                <label>Lights/Gauges/Auto Elec</label>
+            </value>
+            <value>
+                <fullName>Managed Item</fullName>
+                <default>false</default>
+                <label>Managed Item</label>
+            </value>
+            <value>
+                <fullName>Oilfield Equipment</fullName>
+                <default>false</default>
+                <label>Oilfield Equipment</label>
+            </value>
+            <value>
+                <fullName>Paint</fullName>
+                <default>false</default>
+                <label>Paint</label>
+            </value>
+            <value>
+                <fullName>Cab Panels</fullName>
+                <default>false</default>
+                <label>Panels/Guards/Doors/Bonnet</label>
+            </value>
+            <value>
+                <fullName>Plumbing</fullName>
+                <default>false</default>
+                <label>Plumbing</label>
+            </value>
+            <value>
+                <fullName>Pumps</fullName>
+                <default>false</default>
+                <label>Pumps</label>
+            </value>
+            <value>
+                <fullName>Radiator</fullName>
+                <default>false</default>
+                <label>Radiator</label>
+            </value>
+            <value>
+                <fullName>Rims</fullName>
+                <default>false</default>
+                <label>Rims</label>
+            </value>
+            <value>
+                <fullName>Signage</fullName>
+                <default>false</default>
+                <label>Signage</label>
+            </value>
+            <value>
+                <fullName>Steering</fullName>
+                <default>false</default>
+                <label>Steering</label>
+            </value>
+            <value>
+                <fullName>Structure/Welding Repair</fullName>
+                <default>false</default>
+                <label>Structure/Welding Repair</label>
+            </value>
+            <value>
+                <fullName>Suspension</fullName>
+                <default>false</default>
+                <label>Suspension</label>
+            </value>
+            <value>
+                <fullName>Trays/Side Boxes/Tool Boxes</fullName>
+                <default>false</default>
+                <label>Trays/Side Boxes/Tool Boxes</label>
+            </value>
+            <value>
+                <fullName>Turntable</fullName>
+                <default>false</default>
+                <label>Turntable/Ring Feeder/King Pin/Dolly Pull</label>
+            </value>
+            <value>
+                <fullName>Tyres</fullName>
+                <default>false</default>
+                <label>Tyres</label>
+            </value>
+            <value>
+                <fullName>Valves</fullName>
+                <default>false</default>
+                <label>Valves</label>
+            </value>
+            <value>
+                <fullName>Vehicle Interior</fullName>
+                <default>false</default>
+                <label>Vehicle Interior</label>
+            </value>
+            <value>
+                <fullName>Well Control Equipment</fullName>
+                <default>false</default>
+                <label>Well Control Equipment</label>
+            </value>
+            <value>
+                <fullName>Windscreen/Window</fullName>
+                <default>false</default>
+                <label>Windscreen/Window</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Status_Change_for_Invalid_Items</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( ISCHANGED( Status__c ) , 
+       NOT( ISPICKVAL( Status__c ,&quot;Open&quot;) ),
+          Total_Invalid_Unit_Price_Items__c &gt; 0 )</errorConditionFormula>
+    <errorMessage>You can&apos;t change the Status till Unit Price for all the Invoice Line Items have been filled in with appropriate values</errorMessage>
+</ValidationRule>

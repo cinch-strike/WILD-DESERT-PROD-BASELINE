@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X11_Ready_for_Collection_TPT_RMA</fullName>
+    <columns>NAME</columns>
+    <columns>Destination_Store__c</columns>
+    <columns>Item__c</columns>
+    <columns>Supplier__c</columns>
+    <columns>Details_for_Supplier__c</columns>
+    <columns>Freight_Type__c</columns>
+    <columns>Freight_Location__c</columns>
+    <columns>Freight_Dimensions__c</columns>
+    <columns>Freight_Notes__c</columns>
+    <columns>Purchase_Order__c</columns>
+    <columns>PO_Status__c</columns>
+    <columns>Supplier_Shipping_Address__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>For Ordering</value>
+    </filters>
+    <filters>
+        <field>PO_Link__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>PO_Status__c</field>
+        <operation>notContain</operation>
+        <value>Completed</value>
+    </filters>
+    <filters>
+        <field>Freight_Collection_Status__c</field>
+        <operation>equals</operation>
+        <value>Ready for Collection</value>
+    </filters>
+    <filters>
+        <field>Work_Order__c</field>
+        <operation>notContain</operation>
+        <value>WO</value>
+    </filters>
+    <filters>
+        <field>Destination_Store__c</field>
+        <operation>notEqual</operation>
+        <value>Training</value>
+    </filters>
+    <filters>
+        <field>Destination_Store__c</field>
+        <operation>equals</operation>
+        <value>Transport - Roma</value>
+    </filters>
+    <label>11 Ready for Collection | TPT RMA</label>
+</ListView>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Qualification_Level__c</fullName>
+    <description>Professional Developments requires different levels of achievement to be identified</description>
+    <label>Qualification Level</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+                <label>Not Applicable</label>
+            </value>
+            <value>
+                <fullName>PMASUP236</fullName>
+                <default>false</default>
+                <label>PMASUP236</label>
+            </value>
+            <value>
+                <fullName>ISI</fullName>
+                <default>false</default>
+                <label>ISI</label>
+            </value>
+            <value>
+                <fullName>DCGI</fullName>
+                <default>false</default>
+                <label>DCGI</label>
+            </value>
+            <value>
+                <fullName>VOE</fullName>
+                <default>false</default>
+                <label>VOE</label>
+            </value>
+            <value>
+                <fullName>Superseded</fullName>
+                <default>false</default>
+                <label>Superseded</label>
+            </value>
+            <value>
+                <fullName>P1 (Red)</fullName>
+                <default>false</default>
+                <label>P1 (Red)</label>
+            </value>
+            <value>
+                <fullName>P2 (Green)</fullName>
+                <default>false</default>
+                <label>P2 (Green)</label>
+            </value>
+            <value>
+                <fullName>C</fullName>
+                <default>false</default>
+                <label>C</label>
+            </value>
+            <value>
+                <fullName>LR</fullName>
+                <default>false</default>
+                <label>LR</label>
+            </value>
+            <value>
+                <fullName>MR</fullName>
+                <default>false</default>
+                <label>MR</label>
+            </value>
+            <value>
+                <fullName>HR</fullName>
+                <default>false</default>
+                <label>HR</label>
+            </value>
+            <value>
+                <fullName>HC</fullName>
+                <default>false</default>
+                <label>HC</label>
+            </value>
+            <value>
+                <fullName>MC</fullName>
+                <default>false</default>
+                <label>MC</label>
+            </value>
+            <value>
+                <fullName>RIIVEH305F</fullName>
+                <default>false</default>
+                <label>RIIVEH305F</label>
+            </value>
+            <value>
+                <fullName>CA (Auto)</fullName>
+                <default>false</default>
+                <label>CA (Auto)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

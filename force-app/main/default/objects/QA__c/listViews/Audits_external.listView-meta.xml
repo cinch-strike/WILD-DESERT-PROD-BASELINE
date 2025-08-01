@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Audits_external</fullName>
+    <columns>NAME</columns>
+    <columns>Due_Date__c</columns>
+    <columns>Date_Conducted__c</columns>
+    <columns>WD_Unit__c</columns>
+    <columns>Details__c</columns>
+    <columns>Conducted_by__c</columns>
+    <columns>Closure_Target_Date__c</columns>
+    <columns>Status__c</columns>
+    <columns>Document_Attached__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>QA__c.Audit</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>External Audit</value>
+    </filters>
+    <filters>
+        <field>Date_Conducted__c</field>
+        <operation>greaterThan</operation>
+        <value>12/31/2020</value>
+    </filters>
+    <label>Audits - External</label>
+    <sharedTo>
+        <group>HR</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Safety</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

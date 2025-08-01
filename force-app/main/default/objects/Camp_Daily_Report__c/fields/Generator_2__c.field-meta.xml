@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Generator_2__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <inlineHelpText>If there are two generators on site this data will be required.  Look up the asset Name</inlineHelpText>
+    <label>Generator (2)</label>
+    <referenceTo>Asset__c</referenceTo>
+    <relationshipLabel>Camp Daily Reports (Generator (2))</relationshipLabel>
+    <relationshipName>Remote_Camp_Job_Orders1</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

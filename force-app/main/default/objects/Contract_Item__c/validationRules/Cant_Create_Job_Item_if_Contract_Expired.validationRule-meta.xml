@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_Create_Job_Item_if_Contract_Expired</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( 
+NOT( Contract__r.Contract_Active__c ), 
+TRUE, 
+FALSE 
+)</errorConditionFormula>
+    <errorMessage>One cannot create or edit Contract Job Item for an Inactive Contract</errorMessage>
+</ValidationRule>

@@ -1,0 +1,64 @@
+<apex:page standardController="Job_Orders__c" extensions="skedWDRextension">
+
+<apex:form >
+
+<apex:pageBlock >
+
+<apex:pageBlockSection title="WD Reports" columns="1">
+
+<apex:pageBlockSectionItem >
+    <apex:selectList value="{!selectedRecordType}" multiselect="false" size="1" >
+        <apex:selectOptions value="{!RecordTypeList}" />
+    </apex:selectList>
+    <apex:commandButton value="Create" action="{!showWDRPage}"/>
+</apex:pageBlockSectionItem>
+
+   <apex:outputPanel id="redirectPanel" >
+            <apex:outputText rendered="{!shouldRedirect}">
+                <script type="text/javascript">
+                    window.top.location.href = '{!redirectUrl}';
+                </script>
+            </apex:outputText>
+        </apex:outputPanel>
+
+<apex:pageBlockSectionItem >
+<!-- A list of WD Reports -->
+<apex:pageBlockTable value="{!WDRWrapperList}" var="item" id="newWDR">
+
+    <apex:column headerValue="Date">
+        <apex:outputField value="{!item.Report.Date__c}"/>                      
+    </apex:column>
+    <apex:column headerValue="Record Type">   
+    <apex:outputText >{!item.RecordTypeName}</apex:outputText>                        
+    </apex:column>
+    <apex:column headerValue="JO #">
+        <apex:outputLink target="_top" value="/{!item.Report.Id}" >{!item.Report.Name} </apex:outputLink>
+    </apex:column> 
+    <apex:column headerValue="WDR #">
+        <apex:outputField value="{!item.Report.Hard_Copy__c}"/>
+    </apex:column>     
+    <apex:column headerValue="Operating Hrs">
+        <apex:outputField value="{!item.Report.Operating_Hrs__c}"/>
+    </apex:column>     
+    <apex:column headerValue="Rig Move Hrs">
+        <apex:outputField value="{!item.Report.Rig_Move_Hrs__c}"/>
+    </apex:column> 
+     <apex:column headerValue="Travel Hrs">
+        <apex:outputField value="{!item.Report.Travel_Hrs__c}"/>
+    </apex:column>  
+      <apex:column headerValue="Standby WC Hrs">
+        <apex:outputField value="{!item.Report.Standby_WC_Hrs__c}"/>
+    </apex:column> 
+      <apex:column headerValue="Repair Hrs">
+        <apex:outputField value="{!item.Report.Repair_Hrs__c}"/>
+    </apex:column>   
+</apex:pageBlockTable>
+</apex:pageBlockSectionItem>
+
+</apex:pageBlockSection>
+
+</apex:pageBlock>
+
+</apex:form>
+
+</apex:page>

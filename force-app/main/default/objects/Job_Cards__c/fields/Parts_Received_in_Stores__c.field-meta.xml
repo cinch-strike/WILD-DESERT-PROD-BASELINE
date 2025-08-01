@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parts_Received_in_Stores__c</fullName>
+    <inlineHelpText>The person responsible for completing the work order must order the required parts on the PR board and update this list to Ordered and updated to Received once the parts are collected by the responsible person</inlineHelpText>
+    <label>Parts</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Initial Consult</fullName>
+                <default>true</default>
+                <label>Initial Consult</label>
+            </value>
+            <value>
+                <fullName>From Stock</fullName>
+                <default>false</default>
+                <label>From Stock/Not Required</label>
+            </value>
+            <value>
+                <fullName>Parts to be Ordered</fullName>
+                <default>false</default>
+                <label>Parts to be Ordered</label>
+            </value>
+            <value>
+                <fullName>WaitingonParts</fullName>
+                <default>false</default>
+                <label>Waiting on Parts</label>
+            </value>
+            <value>
+                <fullName>Received</fullName>
+                <default>false</default>
+                <label>Received</label>
+            </value>
+            <value>
+                <fullName>PR Created</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PR Created</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

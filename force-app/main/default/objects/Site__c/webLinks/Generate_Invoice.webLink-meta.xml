@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Generate_Invoice</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Generate Invoice</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)}
+
+var contractId = &apos;{!Site__c.ContractId__c}&apos;;
+var sitId = &apos;{!Site__c.Id}&apos;;
+var siteStatus = &apos;{!Site__c.Site_Status__c}&apos;;
+var invoiceResult;
+console.log(&quot;SiteStatus&quot;);
+console.log(siteStatus);
+if (siteStatus !== null &amp;&amp; siteStatus == &apos;Closed&apos;) {
+    if (sitId !== null &amp;&amp; contractId !== null) {
+        invoiceResult = sforce.apex.execute(&quot;GenerateInvoice&quot;, &quot;generateInvoiceRecord&quot;, {
+            contId: contractId,
+            siteId: sitId
+        });
+
+        if (invoiceResult[0].length == 18) {
+            alert(&quot;You have successfully generated an Invoice&quot;);
+            window.location = &apos;/&apos; + invoiceResult;
+        } else {
+            alert(invoiceResult);
+        }
+    }
+} else {
+    alert(&quot;Cannot Generate an Invoice for a Site that is not Closed.&quot;);
+}</url>
+</WebLink>

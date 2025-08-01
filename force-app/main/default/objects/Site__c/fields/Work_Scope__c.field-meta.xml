@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Work_Scope__c</fullName>
+    <inlineHelpText>Select Type and add more to Job Description (EG: Washdown)</inlineHelpText>
+    <label>Work Scope</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Work Over</fullName>
+                <default>false</default>
+                <label>Work Over</label>
+            </value>
+            <value>
+                <fullName>Initial Completion</fullName>
+                <default>false</default>
+                <label>Initial Completion</label>
+            </value>
+            <value>
+                <fullName>Flush</fullName>
+                <default>false</default>
+                <label>Flush</label>
+            </value>
+            <value>
+                <fullName>Suspension</fullName>
+                <default>false</default>
+                <label>Suspension</label>
+            </value>
+            <value>
+                <fullName>Plug and Abandon</fullName>
+                <default>false</default>
+                <label>Plug and Abandon</label>
+            </value>
+            <value>
+                <fullName>Transport</fullName>
+                <default>false</default>
+                <label>Transport</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Camp</fullName>
+                <default>false</default>
+                <label>Camp</label>
+            </value>
+            <value>
+                <fullName>Surface Repair</fullName>
+                <default>false</default>
+                <label>Surface Repair</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

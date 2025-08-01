@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Work_Hours__c</fullName>
+    <label>Total Work Hours</label>
+    <summarizedField>Work_Task__c.Hours_of_Work__c</summarizedField>
+    <summaryForeignKey>Work_Task__c.Work_Order__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

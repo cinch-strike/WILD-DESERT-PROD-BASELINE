@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Standard</fullName>
+    <active>true</active>
+    <label>Standard</label>
+    <picklistValues>
+        <picklist>Progress_Details__c</picklist>
+        <values>
+            <fullName>Booked</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Link Provided</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted to RTO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uploaded</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on Cert</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workbook Provided</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Qualification_Level__c</picklist>
+        <values>
+            <fullName>C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CA %28Auto%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DCGI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P1 %28Red%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P2 %28Green%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PMASUP236</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RIIVEH305F</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Superseded</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VOE</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Required_By_Unit__c</picklist>
+        <values>
+            <fullName>Camp 01</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp 03</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp 04</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp 06</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp 07</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp 08</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp 09</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp 10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp 11</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp 12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp Base Moomba</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp Base Roma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Depot Moomba</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Depot Roma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 02</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 04</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 06</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 08</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 16</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 20</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 22</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 24</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 26</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 28</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 32</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 34</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transport Moomba</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transport Roma</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incomplete</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

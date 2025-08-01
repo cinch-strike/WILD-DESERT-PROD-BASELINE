@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Re_Assign_Job_Card</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>page</linkType>
+    <masterLabel>Re-Assign Job Card</masterLabel>
+    <openType>replace</openType>
+    <page>Reassignjobcard</page>
+    <protected>false</protected>
+</WebLink>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Site__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Site</label>
+    <lookupFilter>
+        <active>true</active>
+        <booleanFilter>1 AND ((2 AND 3) OR 4 OR 5)</booleanFilter>
+        <filterItems>
+            <field>Site__c.Site_Status__c</field>
+            <operation>equals</operation>
+            <value>Open, Open - Inactive, Open, Open - Inactive, Closed</value>
+        </filterItems>
+        <filterItems>
+            <field>Site__c.WD_Camp__c</field>
+            <operation>equals</operation>
+            <value></value>
+        </filterItems>
+        <filterItems>
+            <field>Site__c.WD_Rig__c</field>
+            <operation>equals</operation>
+            <value></value>
+        </filterItems>
+        <filterItems>
+            <field>Site__c.WD_Camp__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.Unit__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>Site__c.WD_Rig__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.Unit__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Site__c</referenceTo>
+    <relationshipLabel>Transport Jobs</relationshipLabel>
+    <relationshipName>Transport_Jobs</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

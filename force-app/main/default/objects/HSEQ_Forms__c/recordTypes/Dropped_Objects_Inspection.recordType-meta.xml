@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dropped_Objects_Inspection</fullName>
+    <active>true</active>
+    <label>Dropped Objects Inspection</label>
+    <picklistValues>
+        <picklist>Alarm_clearly_audible_from_all_areas__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Drops_Area_Inspected__c</picklist>
+        <values>
+            <fullName>Derrick %26 Crown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monkey Board %26 Rod Basket</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Work Benches%2C Mud Tank %26 Mud Pump</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Work Floor %26 Pipe Rack</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Evacuation_Required__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Personnel__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason_for_Review__c</picklist>
+        <values>
+            <fullName>3 Months %28or more%29 since Team Performed Routine Task</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>At Manager%27s Discretion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Critical SOP %28See Critical SOPs%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Employee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Promotion of Existing Employee</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Response_Rating__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_of_Emergency_Drill_Conducted__c</picklist>
+        <values>
+            <fullName>Environmental Spill</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flood</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Heights Rescue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Injury%2FIllness</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle%2FMachinery</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Visitors_Accounted_For__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visitors not present</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

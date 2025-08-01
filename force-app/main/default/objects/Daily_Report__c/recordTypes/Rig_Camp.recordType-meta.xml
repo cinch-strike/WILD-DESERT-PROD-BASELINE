@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_Camp</fullName>
+    <active>true</active>
+    <label>Rig Camp</label>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invoiced</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manager - Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Ops - Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Camp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Medical</fullName>
+    <active>true</active>
+    <label>Medical</label>
+    <picklistValues>
+        <picklist>Medical_Centre__c</picklist>
+        <values>
+            <fullName>Medical Practitioner</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Wild Desert Safety Team</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Result__c</picklist>
+        <values>
+            <fullName>Fail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pass</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incomplete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2Fa</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Austroads Medical %2B50</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Austroads Medical %2B50 Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Austroads Medical -49</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Austroads Medical -49 Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covid Vaccination</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covid Vaccination %282nd%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drug %26 Alcohol Test</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eye Test</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hearing Test</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical_3_Yearly_Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onboarding Medical</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Vaccine_Status__c</picklist>
+        <values>
+            <fullName>1st Vax %2B Cert</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2nd Vax %2B Cert</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Booster</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Vaccine_Type__c</picklist>
+        <values>
+            <fullName>Astra Zeneca</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moderna</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Novavax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pfizer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

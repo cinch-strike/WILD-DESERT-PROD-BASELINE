@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NHVAS_Primemovers</fullName>
+    <columns>NAME</columns>
+    <columns>Date_Created__c</columns>
+    <columns>Unit_of_Asset__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>Details_of_Issue_Work_Requested__c</columns>
+    <columns>Managed_By__c</columns>
+    <columns>Relevant_Dept__c</columns>
+    <columns>Status__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Work_Tasks_Completed__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Job_Cards__c.Fault_Report_Approved</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Requested,Open,In Progress,Defer/Monitor</value>
+    </filters>
+    <filters>
+        <field>NHVAS_Asset__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Relevant_Dept__c</field>
+        <operation>equals</operation>
+        <value>Auto Electrician - Moomba,Auto Electrician - Roma,General - Moomba,General - Roma,Mechanical - Moomba,Mechanical - Roma</value>
+    </filters>
+    <filters>
+        <field>Date_Created__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>1/1/2025</value>
+    </filters>
+    <filters>
+        <field>Date_Created__c</field>
+        <operation>lessOrEqual</operation>
+        <value>3/31/2025</value>
+    </filters>
+    <label>NHVAS - FR | Open @ end of QTR</label>
+    <sharedTo>
+        <group>Managing_Director</group>
+        <group>Projects_and_Maintenance</group>
+        <group>Safety</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

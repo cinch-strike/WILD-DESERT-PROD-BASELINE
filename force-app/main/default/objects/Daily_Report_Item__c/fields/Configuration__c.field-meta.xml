@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Configuration__c</fullName>
+    <description>Configuration</description>
+    <externalId>false</externalId>
+    <formula>TEXT(Driver_Assignment__r.Configuration_pklist__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>From Driver Assignment</inlineHelpText>
+    <label>Configuration</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

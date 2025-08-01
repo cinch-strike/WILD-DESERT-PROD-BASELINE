@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Driver_Assignment_Accepted_alert</fullName>
+        <description>Driver Assignment Accepted alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Transport_Job/Driver_Assignment_Accepted_template</template>
+    </alerts>
+    <alerts>
+        <fullName>Transport_Job_Cancelled_Assignment</fullName>
+        <description>Transport Job - Cancelled Assignment</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Transport_Job/Transport_Job_Cancelled_Assignment</template>
+    </alerts>
+    <alerts>
+        <fullName>Transport_Job_New_Assigned_Assignment</fullName>
+        <description>Transport Job - New Assigned Assignment</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Transport_Job/Transport_Job_New_Assignment</template>
+    </alerts>
+    <alerts>
+        <fullName>Transport_Job_Updated_Assignment</fullName>
+        <description>Transport Job - Updated Assignment</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Transport_Job/Transport_Job_Updated_Assignment</template>
+    </alerts>
+</Workflow>

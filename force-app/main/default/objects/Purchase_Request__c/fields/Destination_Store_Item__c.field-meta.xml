@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Destination_Store_Item__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Destination Store Item</label>
+    <referenceTo>Store_Item__c</referenceTo>
+    <relationshipLabel>Purchase Requests (Destination Store Item)</relationshipLabel>
+    <relationshipName>Purchase_Requests</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

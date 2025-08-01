@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Item_and_Store_ID__c</fullName>
+    <description>Combination of Item Name ID and Store ID to be used for checking duplicate records.</description>
+    <externalId>false</externalId>
+    <label>Item and Store ID</label>
+    <length>100</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

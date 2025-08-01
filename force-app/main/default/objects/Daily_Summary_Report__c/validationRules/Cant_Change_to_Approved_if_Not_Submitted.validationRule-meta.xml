@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_Change_to_Approved_if_Not_Submitted</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF(
+ISPICKVAL( Status__c , &quot;Approved&quot;)  &amp;&amp; NOT(ISPICKVAL(PRIORVALUE(Status__c ),&quot;Submitted&quot;)),
+TRUE,
+FALSE
+)</errorConditionFormula>
+    <errorMessage>A Daily Site Job Summary can be Approved only if it has been Submitted</errorMessage>
+</ValidationRule>

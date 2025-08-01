@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Update_Site_End_Date_WFU</fullName>
+        <field>End_Date__c</field>
+        <formula>NOW()</formula>
+        <name>Update Site End Date WFU</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Site_Name_on_Previous_Site_WFU</fullName>
+        <field>Previous_Site__c</field>
+        <formula>Previous_Site_Look_up__r.Name</formula>
+        <name>Update Site Name on Previous Site WFU</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Site_Start_Date_WFU</fullName>
+        <field>Start_Date__c</field>
+        <formula>NOW()</formula>
+        <name>Update Site Start Date WFU</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Site_Status_Open_Inactive_FU</fullName>
+        <field>Site_Status__c</field>
+        <literalValue>Open - Inactive</literalValue>
+        <name>Update Site Status Open Inactive FU</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Site_to_Open_WFU</fullName>
+        <field>Site_Status__c</field>
+        <literalValue>Open</literalValue>
+        <name>Update Site to Open WFU</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Update Site End Date WFR</fullName>
+        <actions>
+            <name>Update_Site_End_Date_WFU</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( PRIORVALUE( Site_Active__c ) = true, Site_Active__c = false,  NOT( ISBLANK( Contract__c ) )  )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Site Name on Previous Site</fullName>
+        <actions>
+            <name>Update_Site_Name_on_Previous_Site_WFU</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>NOT(ISBLANK(Previous_Site_Look_up__c)) &amp;&amp;  Site_Active__c &amp;&amp;  NOT( ISBLANK( Contract__c ) )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Site Start Date WFR</fullName>
+        <actions>
+            <name>Update_Site_Start_Date_WFU</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>Site_Active__c &amp;&amp;  NOT( ISBLANK( Contract__c ) )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Site Status Open Inactive WFR</fullName>
+        <actions>
+            <name>Update_Site_Status_Open_Inactive_FU</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Updates Site Status to Open - Inactive when Site marked Inactive</description>
+        <formula>IF( AND( PRIORVALUE(Site_Active__c) = true, Site_Active__c = false ), true, false ) &amp;&amp;  NOT( ISBLANK( Contract__c ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Site to Open</fullName>
+        <actions>
+            <name>Update_Site_to_Open_WFU</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Site__c.Site_Active__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

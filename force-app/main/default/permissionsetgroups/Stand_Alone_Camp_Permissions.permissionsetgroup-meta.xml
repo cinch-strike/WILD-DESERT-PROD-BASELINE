@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Extra permissions for stand alone camp</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Stand Alone Camp Permissions</label>
+    <permissionSets>Delete_Site_Job_Summary</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

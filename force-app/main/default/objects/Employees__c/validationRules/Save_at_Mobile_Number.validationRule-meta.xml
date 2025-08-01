@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Save_at_Mobile_Number</fullName>
+    <active>true</active>
+    <description>+614########</description>
+    <errorConditionFormula>OR(
+    NOT(BEGINS( Mobile__c , &quot;614&quot;)),
+    CONTAINS(Mobile__c, &quot; &quot;),
+    LEN(Mobile__c) != 11
+)</errorConditionFormula>
+    <errorDisplayField>Mobile__c</errorDisplayField>
+    <errorMessage>You must save as a mobile format. 
+EG: 614######## [61429786541]</errorMessage>
+</ValidationRule>

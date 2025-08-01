@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IncompleteTDR</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+   ISCHANGED( Status__c ),
+   ISPICKVAL(Status__c, &apos;Closed&apos;),
+   NOT( All_related_records_are_complete__c )
+)</errorConditionFormula>
+    <errorMessage>Please ensure all related records are approved or complete before changing the status to Closed.</errorMessage>
+</ValidationRule>

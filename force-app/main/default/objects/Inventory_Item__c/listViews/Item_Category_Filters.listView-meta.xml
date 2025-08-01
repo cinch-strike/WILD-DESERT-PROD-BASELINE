@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Item_Category_Filters</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
+    <columns>Store_Item_Code__c</columns>
+    <columns>NAME</columns>
+    <columns>Part_Category__c</columns>
+    <columns>Item_Category__c</columns>
+    <columns>Supplier_Part_Number__c</columns>
+    <columns>Preferred_Supplier_1st__c</columns>
+    <columns>Item_Notes__c</columns>
+    <columns>Active__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Non_Searchable_Item__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>NAME</field>
+        <operation>contains</operation>
+        <value>filter</value>
+    </filters>
+    <filters>
+        <field>Part_Category__c</field>
+        <operation>notContain</operation>
+        <value>Filter - Oil,Filter - Fuel,Filter - Air,Filter - Hydraulic,Filter - Water,Filter - Kits,Filter - Other,Filter – Separator</value>
+    </filters>
+    <label>Item Category &gt; Filters</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>Managing_Director</group>
+        <group>Purchasing</group>
+    </sharedTo>
+</ListView>

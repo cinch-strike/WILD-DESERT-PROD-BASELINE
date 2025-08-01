@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PR_PO_Admin__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>PR/PO Admin</label>
+    <referenceTo>Employees__c</referenceTo>
+    <relationshipLabel>Unit</relationshipLabel>
+    <relationshipName>Unit</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

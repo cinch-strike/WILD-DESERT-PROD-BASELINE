@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Client_Contract_Reference__c</fullName>
+    <description>Contract Item Name in Clients Contract</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Contract Item Name in Clients Contract</inlineHelpText>
+    <label>Client Contract Reference</label>
+    <length>225</length>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

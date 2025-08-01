@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Camp_8</fullName>
+    <columns>NAME</columns>
+    <columns>Job_Date__c</columns>
+    <columns>Unit__c</columns>
+    <columns>Description__c</columns>
+    <columns>Site__c</columns>
+    <columns>Billable__c</columns>
+    <columns>Status__c</columns>
+    <columns>Types__c</columns>
+    <columns>Daily_Site_Job__c</columns>
+    <columns>DSJS_Status__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Unit__c</field>
+        <operation>equals</operation>
+        <value>Camp 8</value>
+    </filters>
+    <label>Camp 8</label>
+</ListView>

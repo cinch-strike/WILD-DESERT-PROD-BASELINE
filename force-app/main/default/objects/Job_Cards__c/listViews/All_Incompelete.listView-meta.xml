@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Incompelete</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>NAME</columns>
+    <columns>Date_Created__c</columns>
+    <columns>Status__c</columns>
+    <columns>Unit_of_Asset__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Requested,Open,In Progress,Defer/Monitor</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Job_Cards__c.Fault_Report_Approval_Pending,Job_Cards__c.Fault_Report_Approved</value>
+    </filters>
+    <label>All | Incompelete</label>
+    <sharedTo>
+        <role>Managing_Director</role>
+    </sharedTo>
+</ListView>

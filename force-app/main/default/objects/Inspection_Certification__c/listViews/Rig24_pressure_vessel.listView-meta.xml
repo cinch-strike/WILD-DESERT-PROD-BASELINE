@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig24_pressure_vessel</fullName>
+    <columns>NAME</columns>
+    <columns>Pressure_Vessels__c</columns>
+    <columns>Description__c</columns>
+    <columns>Serial_Number__c</columns>
+    <columns>Date_In_Service__c</columns>
+    <columns>Certificate_Number__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>Asset_ID__c</columns>
+    <columns>Inspection_Requirement__c</columns>
+    <columns>Interval_days__c</columns>
+    <columns>Date_Last_Inspection__c</columns>
+    <columns>Days_to_Inspection__c</columns>
+    <columns>Date_of_Next_Inspection__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Inspection_Certification__c.Pressure_Vessels</value>
+    </filters>
+    <filters>
+        <field>WD_Unit__c</field>
+        <operation>equals</operation>
+        <value>Rig 24</value>
+    </filters>
+    <label>Rig #24 - Pressure Vessels Register</label>
+    <sharedTo>
+        <group>OPs_super</group>
+        <group>Purchasing</group>
+        <group>Rig_24</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

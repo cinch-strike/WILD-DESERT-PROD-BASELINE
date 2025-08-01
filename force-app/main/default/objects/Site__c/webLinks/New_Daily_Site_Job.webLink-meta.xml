@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Daily_Site_Job</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Daily Site Job</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/apex/DailySiteJobStandard_VF
+?contractId={!Site__c.ContractId__c}
+&amp;siteId={!Site__c.Id}
+&amp;retURL={!Site__c.Id}
+&amp;unitId={!IF(
+    CONTAINS($User.Username,&apos;rig&apos;) &amp;&amp; NOT(ISBLANK(Site__c.WD_Rig__c)),
+    Site__c.WD_RigId__c,
+    IF(
+        CONTAINS($User.Username,&apos;camp&apos;) &amp;&amp; NOT(ISBLANK(Site__c.WD_Camp__c)),
+        Site__c.WD_CampId__c,
+        &apos;null&apos;
+    )
+)}
+&amp;unitType={!IF(
+    CONTAINS($User.Username,&apos;rig&apos;) &amp;&amp; NOT(ISBLANK(Site__c.WD_Rig__c)),
+    &apos;Rig&apos;,
+    IF(
+        CONTAINS($User.Username,&apos;camp&apos;) &amp;&amp; NOT(ISBLANK(Site__c.WD_Camp__c)),
+        &apos;Camp&apos;,
+        &apos;null&apos;
+    )
+)}
+&amp;id=new</url>
+</WebLink>

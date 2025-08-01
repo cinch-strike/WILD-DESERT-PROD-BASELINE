@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_of_Vacant_Positions__c</fullName>
+    <inlineHelpText>No of team members not assigned to Employees</inlineHelpText>
+    <label>No of Vacant Positions</label>
+    <summaryFilterItems>
+        <field>Team_Member__c.Recruitment_Status__c</field>
+        <operation>equals</operation>
+        <value>Position Vacant</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Team_Member__c.Team__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,856 @@
+<apex:page id="myPage" applyBodyTag="false" applyHtmlTag="true" controller="DailySiteJob_Controller"
+           standardStylesheets="true" docType="html-5.0" showHeader="true" sidebar="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+    <apex:includeScript value="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"/>
+
+    <apex:slds >
+        <div class="slds-scope slds-spinner_container secureLoading" style="position:fixed !important;display:none;">
+            <div class="slds-spinner--brand slds-spinner slds-spinner--large" role="alert">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </apex:slds>
+
+
+    <script type="text/javascript">
+        document.getElementsByClassName("secureLoading")[0].style.display = 'block';
+
+    </script>
+
+    <style>
+            .lookupHoverDetail , #InlineEditDialogX, #InlineEditDialog_buttons, #InlineEditDialog{
+            display:none !important;
+            }
+            
+            .dateFormat{display:none;}
+            
+            a.slds-inputdisplaynone{
+            display:none;
+            }
+            
+            .slds-scope img {
+            max-width: 120%;
+            height: auto;
+            }
+            
+            .slds-lookup{
+            background-color:transparent !important;
+            }
+            a.slds-lookup {
+            background-size: 25px 25px;
+            border: 0px !important;
+            width: 10% !important;
+            background-color: transparent !important;
+            padding : 0rem !important;
+            margin-left : 0.5rem !important;
+            }   
+            
+            img.lookupIcon {
+            background: url("/resource/SLDS232/assets/icons/utility/search_60.png") no-repeat center;
+            background-size: 20px 20px;
+            //margin-left: -5px;
+            width: 30px !important;
+            border: 0px !important;
+            }
+            
+            img.lookupIconOn {
+            background: url("/resource/SLDS232/assets/icons/utility/search_60.png") no-repeat center;
+            background-size: 20px 20px;
+            // margin-left: -5px;
+            width: 30px !important;
+            border: 0px !important;
+            }
+            
+            a.Contact {
+            border: 0px solid   #d8dde6   !important;
+            width: 20px !important;
+            padding: 0 0px 0 0px !important;
+            margin-left: 12px;
+            }
+            
+            a.Contact:active, a.Contact:focus,a.Contact:visited,a.Contact:hover {
+            border: 0px solid   #d8dde6   !important;
+            }
+            
+            a.Contact:active {
+            border: 0px solid   #d8dde6   !important;
+            box-shadow: 0 0 0px  #0070D2  !important;
+            }
+            
+            a.Contact:focus {
+            border: 0px solid   #d8dde6   !important;
+            box-shadow: 0 0 0px  #0070D2  !important
+            }
+            
+            a.Contact:visited{
+            border: 0px solid   #d8dde6   !important;
+            }
+            
+            a.Contact:hover {
+            border: 0px solid   #d8dde6   !important;
+            }
+            
+            .slds-spinner:before, .slds-spinner:after, .slds-spinner__dot-a:before, .slds-spinner__dot-b:before, .slds-spinner__dot-a:after, .slds-spinner__dot-b:after {
+            background: #0070d2 !important;
+            }
+            
+            .closeIcon{
+            display:none;
+            }
+            
+            .emptyDependentLookup{
+            width:90% !important;
+            }
+            
+            .hideMainTabs{
+            display:none;
+            }
+            
+            input{
+            
+            }
+            
+            
+            
+
+    </style>
+
+    <apex:slds />
+    <div class="slds-scope">
+        <apex:form id="theMainForm">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-size_12-of-12 slds-medium-size_12-of-12 slds-large-size_12-of-12">
+
+                    <apex:actionstatus id="counterStatus">
+                        <apex:facet name="start">
+                            <div class="slds-spinner_container" style="position:fixed !important;">
+                                <div class="slds-spinner--brand slds-spinner slds-spinner--large" role="alert">
+                                    <span class="slds-assistive-text">Loading</span>
+                                    <div class="slds-spinner__dot-a"></div>
+                                    <div class="slds-spinner__dot-b"></div>
+                                </div>
+                            </div>
+                        </apex:facet>
+                    </apex:actionstatus>
+
+                    <apex:actionFunction name="callSaveMethod" action="{!saveSiteJob}" reRender="tabPanel"
+                                         status="counterStatus">
+                        <apex:param name="myValue" value="" assignTo="{!saveReport}"/>
+                        <apex:param name="tabNum" value="" assignTo="{!nextTab}"/>
+                        <apex:param name="srce" value="" assignTo="{!source}"/>
+                    </apex:actionFunction>
+
+                    <apex:actionFunction name="SaveandNext" action="{!SaveandNext}" reRender="tabPanel"
+                                         status="counterStatus">
+                        <apex:param name="myValue" value="" assignTo="{!saveReport}"/>
+                        <apex:param name="tabNum" value="" assignTo="{!nextTab}"/>
+                        <apex:param name="srce" value="" assignTo="{!source}"/>
+                    </apex:actionFunction>
+
+                    <!--<apex:actionFunction name="SaveandClose" action="{!SaveandClose}" reRender="tabPanel"
+                                         status="counterStatus">
+                        <apex:param name="myValue" value="" assignTo="{!saveReport}"/>
+                        <apex:param name="tabNum" value="" assignTo="{!nextTab}"/>
+                        <apex:param name="srce" value="" assignTo="{!source}"/>
+                    </apex:actionFunction>-->
+
+                    <apex:actionFunction name="SaveandSubmitAf" action="{!SaveandSubmit}" reRender="tabPanel,tab6"
+                                         status="counterStatus">
+                        <apex:param name="myValue" value="" assignTo="{!saveReport}"/>
+                        <apex:param name="tabNum" value="" assignTo="{!nextTab}"/>
+                        <apex:param name="srce" value="" assignTo="{!source}"/>
+                    </apex:actionFunction>
+                    
+                    
+                    <apex:outputPanel layout="block" rendered="{!approvalEnabled}">
+                        <h1>
+                            <b>Daily Site Job Manager Approval</b><br/>
+                            
+                        </h1>
+                        <apex:outputLabel value="Approval Notes"/><br/>
+                        <apex:inputTextArea value="{!managerApprovalNotes}" style="width:33%;height:100px;"/><br/>
+                        <apex:commandButton styleClass="slds-button slds-button--brand" value="Approve" action="{!approveDailySiteJob}"/>
+                        <apex:commandButton styleClass="slds-button slds-button--destructive" value="Reject" action="{!rejectDailySiteJob}"/>
+                    </apex:outputPanel>
+                    <apex:outputPanel id="tabPanel">
+
+                            <div class="slds-tabs_default">
+                            <ul class="slds-tabs_default__nav" role="tablist">
+                                <li class="slds-tabs_default__item {!IF(tabView==1,'slds-is-active','')}"
+                                    title="Daily Site Job" role="presentation"><a class="slds-tabs_default__link"
+                                                                                  href="#"
+                                                                                  onclick="changeTab(false,1,'tab');return false;"
+                                                                                  role="tab" tabindex="0"
+                                                                                  aria-selected="{!IF(tabView==1,true,false)}"
+                                                                                  aria-controls=""
+                                                                                  id="tab-default-1__item">Daily Site
+                                    Job</a></li>
+                                <li class="slds-tabs_default__item {!IF(tabView==2,'slds-is-active','')} {!IF(dailyReport.Id != null,'','hideMainTabs')}"
+                                    title="Site Job Items" role="presentation"><a class="slds-tabs_default__link"
+                                                                                  href="#"
+                                                                                  onclick="changeTab(false,2,'tab');return false;"
+                                                                                  role="tab" tabindex="-1"
+                                                                                  aria-selected="{!IF(tabView==2,true,false)}"
+                                                                                  aria-controls=""
+                                                                                  id="tab-default-2__item">Site Job
+                                    Items</a></li>
+                                <li class="slds-tabs_default__item {!IF(tabView==3,'slds-is-active','')} {!IF(dailyReport.Id != null && dailyReport.Type__c!='Transport','','hideMainTabs')}"
+                                    title="Active Personnels" role="presentation"><a class="slds-tabs_default__link"
+                                                                                     href="#"
+                                                                                     onclick="changeTab(false,3,'tab');return false;"
+                                                                                     role="tab" tabindex="-1"
+                                                                                     aria-selected="{!IF(tabView==2,true,false)}"
+                                                                                     aria-controls=""
+                                                                                     id="tab-default-3__item">Active
+                                    Personnels</a></li>
+                                <li class="slds-tabs_default__item {!IF(tabView==4,'slds-is-active','')} {!IF(dailyReport.Id != null  && dailyReport.Type__c!='Transport','','hideMainTabs')}"
+                                    title="Hazards" role="presentation"><a class="slds-tabs_default__link" href="#"
+                                                                           onclick="changeTab(false,4,'tab');return false;"
+                                                                           role="tab" tabindex="-1"
+                                                                           aria-selected="{!IF(tabView==2,true,false)}"
+                                                                           aria-controls=""
+                                                                           id="tab-default-4__item">Hazards</a>
+                                </li>
+
+                                <li class="slds-tabs_default__item {!IF(tabView==5,'slds-is-active','')} {!IF(dailyReport.Id != null  && dailyReport.Type__c!='Transport','','hideMainTabs')}"
+                                    title="HSEQ" role="presentation"><a class="slds-tabs_default__link" href="#"
+                                                                        onclick="changeTab(false,5,'tab');return false;"
+                                                                        role="tab" tabindex="-1"
+                                                                        aria-selected="{!IF(tabView==2,true,false)}"
+                                                                        aria-controls=""
+                                                                        id="tab-default-5__item">HSEQ</a>
+                                </li>
+
+                                <li class="slds-tabs_default__item {!IF(tabView==6,'slds-is-active','')} {!IF(dailyReport.Id != null  && dailyReport.Type__c!='Transport','','hideMainTabs')}"
+                                    title="Work Order" role="presentation"><a class="slds-tabs_default__link" href="#"
+                                                                              onclick="changeTab(false,6,'tab');return false;"
+                                                                              role="tab" tabindex="-1"
+                                                                              aria-selected="{!IF(tabView==2,true,false)}"
+                                                                              aria-controls=""
+                                                                              id="tab-default-6__item">Work Order</a>
+                                </li>
+
+                            </ul>
+
+                            <apex:outputPanel rendered="{!OR(tabView=2,tabView=3)}">
+                                <div class="slds-size_4-of-4 slds-grid slds-wrap slds-p-top_x-small">
+                                    <div class="slds-size_1-of-4 slds-text-heading_small slds-m-bottom--xx-small">
+                                        <label>Site: </label>
+                                        <apex:outputField value="{!dailyReport.Site__c}"></apex:outputField>
+                                    </div>
+                                    <div class="slds-size_1-of-4 slds-text-heading_small slds-m-bottom--xx-small">
+                                        <label>Status: </label>
+                                        <apex:outputField value="{!dailyReport.Status__c}"></apex:outputField>
+                                    </div>
+                                    <div class="slds-size_2-of-4">
+                                    </div>
+
+                                    <div class="slds-size_1-of-4 slds-text-heading_small">
+                                        <label>Unit: </label>
+                                        <apex:outputField value="{!dailyReport.Unit__c}"></apex:outputField>
+                                    </div>
+
+                                    <div class="slds-size_2-of-4 slds-text-heading_small slds-m-bottom--xx-small">
+                                        <label>Report Date: </label>
+                                        <apex:outputText value="{0, date, MMMM d','yyyy}">
+                                            <apex:param value="{!dailyReport.Report_Date__c}"/>
+                                        </apex:outputText>
+                                    </div>
+
+                                    <div class="slds-size_1-of-4">
+                                    </div>
+
+                                    <div class="slds-size_1-of-4 slds-text-heading_small slds-m-bottom--xx-small">
+                                        <label>Type: </label>
+                                        <apex:outputField value="{!dailyReport.Type__c}"></apex:outputField>
+                                    </div>
+
+
+                                </div>
+                            </apex:outputPanel>
+
+                            <apex:outputPanel id="tab1" rendered="{!IF(tabView=1,true,false)}">
+                                <apex:pageMessages id="mainPageError_Id"/>
+                                <div id="tab-default-1" class="slds-tabs_default__content slds-show" role="tabpanel"
+                                     aria-labelledby="tab-default-1__item" style="padding:0px !important;">
+                                    <div class="slds-grid slds-wrap slds-grid_pull-padded">
+
+                                        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small"
+                                             style="Display:{!IF(NOT(ISBLANK(dailyReport.Id)),"block","none")};">
+                                            <apex:outputLabel styleClass="slds-form-element__label">Site Job Name
+                                            </apex:outputLabel>
+                                            <div class="slds-form-element__control">
+                                                <apex:outputField value="{!dailyReport.Name}"/>
+                                            </div>
+                                        </div>
+                                        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                            <apex:outputLabel styleClass="slds-form-element__label">Contract
+                                            </apex:outputLabel>
+                                            <div class="slds-form-element__control">
+                                                <apex:inputField value="{!dailyReport.Contract__c}"
+                                                                     styleClass="slds-input Contact"
+                                                                     rendered="{!ISBLANK(dailyReport.Id)}"
+                                                                     style="max-width: 90% !important;"/>
+                                                <apex:outputField value="{!dailyReport.Contract__c}"
+                                                                      rendered="{!NOT(ISBLANK(dailyReport.Id))}"/>
+                                                <!--<apex:outputField value="{!dailyReport.Contract__c}"/>-->
+                                            </div>
+                                        </div>
+                                        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                            <apex:outputLabel styleClass="slds-form-element__label">Site
+                                            </apex:outputLabel>
+                                            <div class="slds-form-element__control">
+                                                <apex:inputField value="{!dailyReport.Site__c}"
+                                                                     styleClass="slds-input Contact"
+                                                                     rendered="{!ISBLANK(dailyReport.Id)}"
+                                                                     style="max-width: 90% !important;"/>
+                                                <apex:outputField value="{!dailyReport.Site__c}" rendered="{!NOT(ISBLANK(dailyReport.Id))}"/>
+                                            </div>
+                                        </div>
+                                        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                            <apex:outputLabel styleClass="slds-form-element__label">Type
+                                            </apex:outputLabel>
+                                            <div class="slds-form-element__control">
+                                                <!--<apex:actionFunction name="call" status="counterStatus" reRender="spool,slipped" action="{!displayLineFields}"/>-->
+                                                <apex:actionRegion id="ar">
+                                                    <apex:inputField styleClass="slds-input"
+                                                                     value="{!dailyReport.Type__c}"
+                                                                     rendered="{!ISBLANK(dailyReport.Id)}">
+                                                        <apex:actionSupport event="onchange"
+                                                                            action="{!displayLineFields}"
+                                                                            reRender="previousSiteWell1,lineSlippedPanel,lineOnSpoolPanel,previousSitee"
+                                                                            status="counterStatus"/>
+                                                    </apex:inputField>
+                                                </apex:actionRegion>
+                                                <apex:outputField value="{!dailyReport.Type__c}"
+                                                                  rendered="{!NOT(ISBLANK(dailyReport.Id))}"/>
+
+                                            </div>
+                                        </div>
+                                        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                            <apex:outputLabel styleClass="slds-form-element__label">Unit
+                                            </apex:outputLabel>
+                                            <div class="slds-form-element__control">
+                                                <apex:inputField styleClass="slds-input slds-lookup"
+                                                                 value="{!dailyReport.Unit__c}"
+                                                                 style="max-width: 90% !important;"
+                                                                 rendered="{!ISBLANK(dailyReport.Id)}"/>
+                                                <apex:outputField value="{!dailyReport.Unit__c}"
+                                                                  rendered="{!NOT(ISBLANK(dailyReport.Id))}"/>
+                                            </div>
+                                        </div>
+                                        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                            <apex:outputLabel styleClass="slds-form-element__label">Report Date
+                                            </apex:outputLabel>
+                                            <div class="slds-form-element__control">
+                                                <apex:inputField styleClass="slds-input" showDatePicker="true"
+                                                                 value="{!dailyReport.Report_Date__c}"
+                                                                 rendered="{!isReportDateEditable}">
+                                                </apex:inputField>
+                                                <apex:outputField value="{!dailyReport.Report_Date__c}"
+                                                                  rendered="{!!isReportDateEditable}"/>
+                                            </div>
+                                        </div>
+                                        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small" style="display:{!IF(NOT(ISBLANK(dailyReport.Id)),'','none;')}">
+                                            <apex:outputLabel styleClass="slds-form-element__label">Status
+                                            </apex:outputLabel>
+                                            <div class="slds-form-element__control">
+                                                <!--<apex:inputField styleClass="slds-input"
+                                                                 value="{!dailyReport.Status__c}"
+                                                                 rendered="{!ISBLANK(dailyReport.Id)}"/>-->
+                                                <apex:outputField value="{!dailyReport.Status__c}"
+                                                                  rendered="{!NOT(ISBLANK(dailyReport.Id))}"/>
+                                            </div>
+                                        </div>
+                                        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                            <apex:outputLabel styleClass="slds-form-element__label">Description
+                                            </apex:outputLabel>
+                                            <div class="slds-form-element__control">
+                                                <apex:inputField styleClass="slds-textarea"
+                                                                 value="{!dailyReport.Description__c}"
+                                                                 style="resize:none;"
+                                                                 rendered="{!IF(isRecordLocked = false,true,false)}"/>
+                                            </div>
+                                        </div>
+                                        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                            <apex:outputLabel rendered="{!dailyReport.Type__c!='Transport'}" styleClass="slds-form-element__label">Auto Create Daily
+                                                Report Items
+                                            </apex:outputLabel>
+                                            <div class="slds-form-element__control">
+                                                <apex:inputCheckbox value="{!dailyReport.Auto_Create_Daily_Report_Items__c}"
+                                                        rendered="{!ISBLANK(dailyReport.Id)&&dailyReport.Type__c!='Transport'}"/>
+                                                <apex:outputField value="{!dailyReport.Auto_Create_Daily_Report_Items__c}"
+                                                        rendered="{!NOT(ISBLANK(dailyReport.Id))&&dailyReport.Type__c!='Transport'}"/>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        
+                                        <apex:outputPanel layout="none" rendered="{!dailyReport.Type__c!='Transport'}">
+                                            <div class="slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1 slds-p-top_large slds-m-right_x-small">
+                                                <div class="slds-section slds-is-open">
+                                                    <h3 class="slds-section__title slds-theme_shade">
+                                                            <span class="slds-truncate slds-p-horizontal_small"
+                                                                  title="Section Title">General Data</span>
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                                <apex:outputLabel styleClass="slds-form-element__label">Water Levels (L)
+                                                </apex:outputLabel>
+                                                <div class="slds-form-element__control">
+                                                    <apex:inputField styleClass="slds-input"
+                                                                     value="{!dailyReport.Water_Levels__c}"
+                                                                     rendered="{!IF(isRecordLocked = false,true,false)}"/>
+                                                    <apex:outputField value="{!dailyReport.Water_Levels__c}"
+                                                                      rendered="{!IF(isRecordLocked = true, true, false)}"/>
+                                                </div>
+                                            </div>
+    
+                                            <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                                <apex:outputLabel styleClass="slds-form-element__label">Fuel Levels (L)
+                                                </apex:outputLabel>
+                                                <div class="slds-form-element__control">
+                                                    <apex:inputField styleClass="slds-input"
+                                                                     value="{!dailyReport.Fuel_Levels__c}"
+                                                                     rendered="{!IF(isRecordLocked = false,true,false)}"/>
+                                                    <apex:outputField value="{!dailyReport.Fuel_Levels__c}"
+                                                                      rendered="{!IF(isRecordLocked = true, true, false)}"/>
+                                                </div>
+                                            </div>
+    
+                                            <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                                <apex:outputLabel styleClass="slds-form-element__label">Septic Levels (L)
+                                                </apex:outputLabel>
+                                                <div class="slds-form-element__control">
+                                                    <apex:inputField styleClass="slds-input"
+                                                                     value="{!dailyReport.Septic_Levels__c}"
+                                                                     rendered="{!IF(isRecordLocked = false,true,false)}"/>
+                                                    <apex:outputField value="{!dailyReport.Septic_Levels__c}"
+                                                                      rendered="{!IF(isRecordLocked = true, true, false)}"/>
+                                                </div>
+                                            </div>
+    
+                                            <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                                <apex:outputLabel styleClass="slds-form-element__label">Rubbish Levels (%)
+                                                </apex:outputLabel>
+                                                <div class="slds-form-element__control">
+                                                    <apex:inputField styleClass="slds-input"
+                                                                     value="{!dailyReport.Rubbish_Levels__c}"
+                                                                     rendered="{!IF(isRecordLocked = false,true,false)}"/>
+                                                    <apex:outputField value="{!dailyReport.Rubbish_Levels__c}"
+                                                                      rendered="{!IF(isRecordLocked = true, true, false)}"/>
+                                                </div>
+                                            </div>
+                                            <!-- 10 Feb 2020: D BANEZ: Added Fuel Delivered (L) -->
+                                            <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                                <apex:outputLabel styleClass="slds-form-element__label">Fuel Delivered
+                                                </apex:outputLabel>
+                                                <div class="slds-form-element__control">
+                                                    <apex:inputField styleClass="slds-input"
+                                                                     value="{!dailyReport.Fuel_Delivered__c}"
+                                                                     rendered="{!IF(isRecordLocked = false,true,false)}"/>
+                                                    <apex:outputField value="{!dailyReport.Fuel_Delivered__c}"
+                                                                      rendered="{!IF(isRecordLocked = true, true, false)}"/>
+                                                </div>
+                                            </div>
+                                            <apex:outputPanel id="previousSitee" styleClass="slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-p-horizontal_small slds-m-vertical_xx-small">
+                                                <apex:outputPanel id="previousSite" rendered="{!displayLineField}">
+                                                    <apex:outputLabel styleClass="slds-form-element__label">Previous Site
+                                                    </apex:outputLabel>
+                                                    <div class="slds-form-element__control">
+                                                        <apex:inputField styleClass="slds-input"
+                                                                         value="{!dailyReport.Previous_Site__c}"
+                                                                         rendered="{!IF(isRecordLocked = false,true,false)}"/>
+                                                        <apex:outputField value="{!dailyReport.Previous_Site__c}"
+                                                                          rendered="{!IF(isRecordLocked = true, true, false)}"/>
+                                                    </div>
+                                                </apex:outputPanel>
+                                            </apex:outputPanel>
+    
+                                            <apex:outputPanel id="previousSiteWell1" styleClass="slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-p-horizontal_small slds-m-vertical_xx-small">
+    
+                                                <apex:outputPanel id="previousSiteWell" rendered="{!displayLineField}">
+                                                    <apex:outputLabel styleClass="slds-form-element__label">#No of KM's from
+                                                        Previous Site
+                                                    </apex:outputLabel>
+                                                    <div class="slds-form-element__control">
+                                                        <apex:inputField styleClass="slds-input"
+                                                                         value="{!dailyReport.No_of_KM_s_from_Previous_Site__c}"
+                                                                         rendered="{!IF(isRecordLocked = false,true,false)}"/>
+                                                        <apex:outputField value="{!dailyReport.No_of_KM_s_from_Previous_Site__c}"
+                                                                rendered="{!IF(isRecordLocked = true, true, false)}"/>
+                                                    </div>
+                                                </apex:outputPanel>
+    
+                                            </apex:outputPanel>
+    
+                                            <apex:outputPanel id="lineSlippedPanel" styleClass="slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-p-horizontal_small slds-m-vertical_xx-small">
+                                                <apex:outputPanel rendered="{!displayLineField}">
+                                                    <apex:outputLabel styleClass="slds-form-element__label">Line Slipped
+                                                    </apex:outputLabel>
+                                                    <div class="slds-form-element__control">
+                                                        <apex:inputField styleClass="slds-input"
+                                                                         value="{!dailyReport.Line_Slipped__c}" style=""
+                                                                         rendered="{!IF(isRecordLocked = false,true,false)}"/>
+                                                        <apex:outputField value="{!dailyReport.Line_Slipped__c}"
+                                                                          rendered="{!IF(isRecordLocked = true, true, false)}"/>
+                                                    </div>
+                                                </apex:outputPanel>
+                                            </apex:outputPanel>
+    
+    
+                                            <apex:outputPanel id="lineOnSpoolPanel" styleClass="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                                <apex:outputPanel rendered="{!displayLineField}">
+                                                    <apex:outputLabel styleClass="slds-form-element__label">Line on Spool
+                                                    </apex:outputLabel>
+                                                    <div class="slds-form-element__control">
+                                                        <apex:inputField styleClass="slds-input"
+                                                                         value="{!dailyReport.Line_on_Spool__c}"
+                                                                         rendered="{!IF(isRecordLocked = false,true,false)}"/>
+                                                        <apex:outputField value="{!dailyReport.Line_on_Spool__c}"
+                                                                          rendered="{!IF(isRecordLocked = true, true, false)}"/>
+                                                    </div>
+                                                </apex:outputPanel>
+                                            </apex:outputPanel>
+                                        </apex:outputPanel>
+                                    </div>
+
+                                </div>
+                            </apex:outputPanel>
+
+                            <apex:outputPanel id="tab2" rendered="{!IF(tabView==2,true,false)}">
+                                <apex:pageMessages id="siteJobItem_Error"/>
+                                <div id="tab-default-2" class="slds-tabs_default__content slds-show" role="tabpanel"
+                                     aria-labelledby="tab-default-2__item" style="padding:0px !important;">
+                                    <c:SiteJobItem_VFComponent DailyReportRecordId="{!dailyReport.Id}"
+                                                               ShowSaveNextButtons="true" id="myComponent2" isRecordLocked="{!isRecordLocked}"/>
+                                </div>
+                            </apex:outputPanel>
+
+                            <apex:outputPanel id="tab3" rendered="{!IF(tabView=3,true,false)}">
+
+                                <apex:pageMessages id="activePersonnel_Error"/>
+                                <div id="tab-default-3" class="slds-tabs_default__content slds-show" role="tabpanel"
+                                     aria-labelledby="tab-default-3__item">
+
+                                    <div class="slds-size_12-of-12 {!IF(activePersonnelList.size = 0 , 'slds-m-top_large' , '')} ">
+                                        <div class="slds-grid slds-wrap">
+                                            <apex:dataTable id="dTab" value="{!activePersonnelList}" var="ap"
+                                                            style="width:100%;"
+                                                            styleclass="slds-table slds-table--bordered slds-table_striped slds-table_bordered slds-no-row-hover">
+
+                                                <apex:column headerValue="Employee" id="empHeader1"
+                                                             styleClass="slds-cell-wrap">
+                                                    <apex:outputField value="{!ap.Employees__c}"
+                                                                      rendered="{!NOT(ISBLANK(ap.Id))}"/>
+                                                    <apex:inputField value="{!ap.Employees__c}"
+                                                                     styleClass="slds-input Contact"
+                                                                     rendered="{!AND(isRecordLocked = false,ISBLANK(ap.Id))}"
+                                                                     style="width:auto;"
+                                                                     onkeydown="if(event.keyCode==13){this.blur();}"/>
+                                                </apex:column>
+
+                                                <apex:column headerValue="Position" id="empHeader2"
+                                                             styleClass="slds-cell-wrap">
+                                                    <!--<apex:outputField value="{!ap.Position__c}" rendered="{!NOT(ISBLANK(ap.Id))}"/>-->
+                                                    <apex:inputField value="{!ap.Position__c}"
+                                                                     styleClass="slds-input Contact" style="width:auto;"
+                                                                     onkeydown="if(event.keyCode==13){this.blur();}"
+                                                                     rendered="{!IF(isRecordLocked = false,true,false)}"/>
+                                                    <apex:outputField value="{!ap.Position__c}"
+                                                                      rendered="{!IF(isRecordLocked = true, true, false)}"/>
+                                                </apex:column>
+                                                <apex:column headerValue="Shift" id="empHeader4"
+                                                             styleClass="slds-cell-wrap">
+                                                    <apex:inputField value="{!ap.Shift__c}" styleClass="slds-input"
+                                                                     rendered="{!IF(isRecordLocked = false,true,false)}"/>
+                                                    <apex:outputField value="{!ap.Shift__c}" styleClass="slds-output"
+                                                                      rendered="{!IF(isRecordLocked = true, true, false)}"/>
+                                                </apex:column>
+
+                                                <apex:column headerValue="Crew Change" id="empHeader5"
+                                                             styleClass="slds-cell-wrap">
+                                                    <apex:inputField value="{!ap.Crew_Change__c}"
+                                                                     styleClass="slds-input" style="width:auto;"
+                                                                     rendered="{!IF(isRecordLocked = false,true,false)}"/>
+                                                    <apex:outputField value="{!ap.Crew_Change__c}"
+                                                                      rendered="{!IF(isRecordLocked = true, true, false)}"/>
+                                                </apex:column>
+<apex:column headerValue="Travel Hrs" style="width:100px;" styleClass="slds-cell-wrap">
+    <apex:inputField value="{!ap.Travel_Hrs__c}" styleClass="slds-input" style="min-width: 50px;" rendered="{!NOT(ISBLANK(ap.Id))}"/>
+</apex:column>
+
+<apex:column headerValue="Work Hrs" style="width:100px;" styleClass="slds-cell-wrap">
+    <apex:inputField value="{!ap.Work_Hrs__c}" styleClass="slds-input" style="min-width: 50px;" rendered="{!NOT(ISBLANK(ap.Id))}"/>
+</apex:column>
+
+<apex:column headerValue="RM Notes" styleClass="slds-cell-wrap" style="width:300px;">
+    <apex:inputField value="{!ap.RM_Notes__c}"
+                     styleClass="slds-input" rendered="{!IF(isRecordLocked = false,true,false)}"/>
+    <apex:outputField value="{!ap.RM_Notes__c}" rendered="{!IF(isRecordLocked = true,true,false)}"/>
+</apex:column>
+
+                                                <apex:column headerValue="Action" id="empHeader6"
+                                                             styleClass="slds-cell-wrap"
+                                                             rendered="{!IF(isRecordLocked = false,true,false)}">
+                                                    <apex:commandButton styleClass="slds-button slds-button--brand"
+                                                                        rendered="{!NOT(ISBLANK(ap.Id))}"
+                                                                        action="{!deleteSelectedActivePersonnel}"
+                                                                        status="counterStatus" reRender="tab3"
+                                                                        id="delButton" alt="Delete" value="Delete"
+                                                                        onkeydown="if(event.keyCode==13){this.blur();}">
+                                                        <apex:param name="personnelId" value="{!ap.id}"/>
+                                                    </apex:commandButton>
+                                                </apex:column>
+
+
+                                            </apex:dataTable>
+
+
+                                            <apex:outputPanel rendered="{!IF(activePersonnelList.size = 0 , true , false)}" styleClass="slds-p-around_small" >
+                                                No records to display.
+                                            </apex:outputPanel>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </apex:outputPanel>
+
+                            <apex:outputPanel id="tab4" rendered="{!IF(tabView=4,true,false)}">
+                                <apex:pageMessages id="safetyData_Error"/>
+                                <div id="tab-default-4" class="slds-tabs_default__content slds-show" role="tabpanel"
+                                     aria-labelledby="tab-default-4__item">
+                                    <div class="slds-grid slds-wrap">
+
+                                        <div class="slds-p-around_xxx-small slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+                                            <c:RelatedListComponent_VFC Id="hazardCardId" SObjectAPI="Hazard_Card__c"
+                                                                        RelatedToField="Daily_Site_Job__c"
+                                                                        RelatedToId="{!dailyReport.Id}"
+                                                                        FieldSetName="HazardsRelatedListFieldSet"
+                                                                        RelatedListName="Hazards"
+                                                                        NumberOfRecordPerPage="5"
+                                                                        NewButtonUrl="{!newHazardUrl}"
+                                                                        ShowNewButton="{!IF(isRecordLocked = false,true,false)}"
+                                                                        ShowEditButton="{!IF(isRecordLocked = false,true,false)}"
+                                                                        ShowDeleteButton="{!IF(isRecordLocked = false,true,false)}"
+                                            ></c:RelatedListComponent_VFC>
+
+                                            <hr/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </apex:outputPanel>
+
+                            <apex:outputPanel id="tab5" rendered="{!IF(tabView=5,true,false)}">
+                                <apex:pageMessages id="HseqData_Error"/>
+                                <div id="tab-default-5" class="slds-tabs_default__content slds-show" role="tabpanel"
+                                     aria-labelledby="tab-default-5__item">
+                                    <div class="slds-grid slds-wrap">
+                                        <div class="slds-p-around_xxx-small slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+                                            <c:RelatedListComponent_VFC Id="hseqId" SObjectAPI="HSEQ_Forms__c"
+                                                                        RelatedToField="Daily_Site_Job__c"
+                                                                        RelatedToId="{!dailyReport.Id}"
+                                                                        FieldSetName="HseqRelatedListFieldSet"
+                                                                        RelatedListName="HSEQ Forms"
+                                                                        NumberOfRecordPerPage="5"
+                                                                        NewButtonUrl="{!newHseqUrl}"
+                                                                        ShowNewButton="{!IF(isRecordLocked = false,true,false)}"
+                                                                        ShowEditButton="{!IF(isRecordLocked = false,true,false)}"
+                                                                        ShowDeleteButton="{!IF(isRecordLocked = false,true,false)}"
+                                            ></c:RelatedListComponent_VFC>
+
+                                            <hr/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </apex:outputPanel>
+
+                            <apex:outputPanel id="tab6" rendered="{!IF(tabView=6,true,false)}">
+                                <apex:pageMessages id="WorkOrderData_Error"/>
+                                <div id="tab-default-6" class="slds-tabs_default__content slds-show" role="tabpanel"
+                                     aria-labelledby="tab-default-6__item">
+                                    <div class="slds-grid slds-wrap">
+                                        <div class="slds-p-around_xxx-small slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+                                            <c:RelatedListComponent_VFC Id="workIrderId" SObjectAPI="Job_Cards__c"
+                                                                        RelatedToField="Daily_Site_Job__c"
+                                                                        RelatedToId="{!dailyReport.Id}"
+                                                                        FieldSetName="WorkOrderRelatedListFieldSet"
+                                                                        RelatedListName="Work Order"
+                                                                        NumberOfRecordPerPage="5"
+                                                                        NewButtonUrl="{!newWorkOrderUrl}"
+                                                                        ShowNewButton="{!IF(isRecordLocked = false,true,false)}"
+                                                                        ShowEditButton="{!IF(isRecordLocked = false,true,false)}"
+                                                                        ShowDeleteButton="{!IF(isRecordLocked = false,true,false)}"></c:RelatedListComponent_VFC>
+                                        </div>
+                                    </div>
+                                </div>
+                            </apex:outputPanel>
+
+                            <apex:outputPanel id="buttonPanel">
+
+                                <div class="slds-grid slds-wrap">
+                                    <div class="slds-size_1-of-1 slds-medium-size_12-of-12 slds-large-size_12-of-12 slds-p-top_x-large">
+                                        <div class="slds-p-horizontal_xx-small slds-size_1-of-1 slds-medium-size_1-of-12 slds-large-size_1-of-12 slds-float_right"
+                                             style="width:auto">
+                                            <apex:outputPanel rendered="{!IF(isRecordLocked = false,true,false)}">
+                                                <apex:commandLink reRender="dummy"
+                                                                  styleClass="slds-button slds-button--brand"
+                                                                  status="counterStatus"
+                                                                  onclick="changeTab(true,{!tabView},'saveandSubmit')"
+                                                                  rendered="{!IF(tabView==6 && NOT(isApprovalStatusPending),true,false)}"
+                                                                  value="Save & Submit"></apex:commandLink>
+                                            </apex:outputPanel>
+                                        </div>
+
+                                        <div class="slds-p-horizontal_xx-small slds-size_1-of-1 slds-medium-size_1-of-12 slds-large-size_1-of-12 slds-float_right"
+                                             style="width:auto">
+
+                                            <apex:commandLink reRender="dummy"
+                                                              id="savenextId"
+                                                              styleClass="slds-button slds-button--brand"
+                                                              status="counterStatus"
+                                                              onclick="changeTab(false,{!tabView},'next')"
+                                                              rendered="{!AND(tabView!=2,tabView!=6)}"
+                                                              value="{!IF(IF(isRecordLocked = false,true,false),IF(OR(tabView=1,tabView=3),'Save & Next','Next'),'Next')}"></apex:commandLink>
+
+                                        </div>
+
+                                        <div class="slds-p-horizontal_xx-small slds-size_1-of-1 slds-medium-size_1-of-12 slds-large-size_1-of-12 slds-float_right"
+                                             style="width:auto">
+                                            <apex:outputPanel rendered="{!IF(isRecordLocked = false,true,false)}">
+                                                <apex:commandLink reRender="dummy"
+                                                                  styleClass="slds-button slds-button--brand"
+                                                                  status="counterStatus"
+                                                                  onclick="changeTab(true,{!tabView},'next')"
+                                                                  rendered="{!IF(OR(tabView=1,tabView=3),true,false)}"
+                                                                  value="Save"></apex:commandLink>
+                                            </apex:outputPanel>
+                                        </div>
+
+                                        <div class="slds-p-horizontal_xx-small slds-size_1-of-1 slds-medium-size_1-of-12 slds-large-size_1-of-12 slds-float_right"
+                                             style="width:auto">
+                                            <apex:commandLink reRender="closePopup"
+                                                              immediate="true"
+                                                              styleClass="slds-button slds-button--brand"
+                                                              status="counterStatus" action="{!showCancelModal}"
+                                                              rendered="{!IF(tabView!=2,true,false)}"
+                                                              value="Close"></apex:commandLink>
+                                        </div>
+
+                                        <div class="slds-p-horizontal_xx-small slds-size_1-of-1 slds-medium-size_1-of-12 slds-large-size_1-of-12 slds-float_right"
+                                             style="width:auto">
+                                            <apex:commandLink reRender="tabPanel" immediate="true"
+                                                              styleClass="slds-button slds-button--brand"
+                                                              status="counterStatus" action="{!closeSiteJob}"
+                                                              rendered="{!IF(dailyReport.Id = null && hasError=true,true,false)}"
+                                                              value="Cancel"></apex:commandLink>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </apex:outputPanel>
+
+
+                        </div>
+                    </apex:outputPanel>
+                    <apex:outputPanel id="closePopup">
+                        <apex:outputPanel rendered="{!showCancelPopup}">
+                            <div role="dialog" tabindex="-1" aria-labelledby="modal-heading-01"
+                                 aria-describedby="modal-content-id-1"
+                                 class="slds-modal slds-fade-in-open closeDialog">
+                                <div class="slds-modal__container">
+                                    <div class="slds-modal__header">
+                                        <button class="slds-button slds-button--icon-inverse slds-modal__close"
+                                                onclick="closeCancelDialog();return false;">
+                                            <span style="font-size: x-large;">X</span>
+                                            <span class="slds-assistive-text">Close</span>
+                                        </button>
+                                        <h2 id="header43" class="slds-text-heading--medium"></h2>
+                                    </div>
+                                    <div id="DealModalBoxContent"
+                                         class="slds-modal__content slds-p-around--medium slds-text-align--center">
+                                        <apex:pageMessages id="modalMessage"/>
+                                        <div id="" class="slds-text-heading--small">Do You Want To Save Before Closing
+                                            ?
+                                        </div>
+                                    </div>
+                                    <div class="slds-modal__footer">
+                                        <apex:commandLink reRender="closePopup"
+                                                          styleClass="slds-button slds-button--brand"
+                                                          status="counterStatus"
+                                                          action="{!SaveandClose}"
+                                                          rendered="{!IF(tabView!=2,true,false)}" value="Yes">
+                                            <apex:param name="myValue" value="true" assignTo="{!saveReport}"/>
+                                            <apex:param name="tabNum" value="{!tabView}" assignTo="{!nextTab}"/>
+                                            <apex:param name="srce" value="saveandClose" assignTo="{!source}"/>
+                                        </apex:commandLink>
+                                        <apex:commandLink reRender="closePopup"
+                                                          styleClass="slds-button slds-button--brand"
+                                                          status="counterStatus" action="{!closeSiteJob}"
+                                                          immediate="true" rendered="{!IF(tabView!=2,true,false)}"
+                                                          value="No"></apex:commandLink>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="createnewbackdrop" class="slds-backdrop slds-backdrop--open"></div>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                    <script>
+                        //var $ = jQuery.noConflict();
+
+                        $("input").keypress(function(e) {
+                            if(e.which == 13) {
+                            }
+                        });
+                        
+                        $(document).ready(function() {
+                            $('.requiredInput').next().css('display','none');
+                        });
+                        
+                        function changeTab(booleanValue, tNum, calledFrm) {
+                            console.log('booleanValue: ' + booleanValue);
+                            console.log('tNum: ' + tNum);
+                            console.log('calledFrm: ' + calledFrm);
+                            var sav = booleanValue;
+                            var tabNum = tNum;
+                            var calledFrom = calledFrm;
+                            if (sav == true && calledFrom == 'saveandClose') {
+                                //SaveandClose(sav,tabNum, calledFrom);
+                            } else if (sav == true && calledFrom == 'saveandSubmit') {
+                                SaveandSubmitAf(sav, tabNum, calledFrom);
+                            } else if (sav == true) {
+                                callSaveMethod(sav, tabNum, calledFrom);
+                            } else {
+                                SaveandNext(sav, tabNum, calledFrom);
+                            }
+                        }
+                        
+                        function closeCancelDialog(){
+                            $('.closeDialog').removeClass( "slds-fade-in-open" ).addClass( "slds-fade-in-hide" );
+                            $('#createnewbackdrop').removeClass( "slds-backdrop--open" ).addClass( "slds-backdrop--hide" );
+                        }
+                        
+                        /*function tempFunction(){
+                            console.log('tempFunction called');
+                            call();
+                        }*/
+                    </script>
+
+
+                </div>
+            </div>
+        </apex:form>
+    </div>
+
+    <script type="text/javascript">
+       document.getElementsByClassName("secureLoading")[0].style.display = 'none';
+    </script>
+
+    </html>
+
+</apex:page>

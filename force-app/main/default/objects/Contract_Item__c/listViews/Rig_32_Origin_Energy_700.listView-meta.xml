@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_32_Origin_Energy_700</fullName>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>Contract__c</columns>
+    <columns>NAME</columns>
+    <columns>Job_Item_Description__c</columns>
+    <columns>Client_Contract_Reference__c</columns>
+    <columns>Special_Item_Details__c</columns>
+    <columns>Rate__c</columns>
+    <columns>Item_Frequency__c</columns>
+    <columns>Service_Type__c</columns>
+    <columns>Auto_Populate_in_Daily_Report__c</columns>
+    <columns>Unit_Type__c</columns>
+    <columns>Active__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contract__c</field>
+        <operation>equals</operation>
+        <value>700</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Open,Closed</value>
+    </filters>
+    <label>Rig 32 - Origin Energy (700)</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

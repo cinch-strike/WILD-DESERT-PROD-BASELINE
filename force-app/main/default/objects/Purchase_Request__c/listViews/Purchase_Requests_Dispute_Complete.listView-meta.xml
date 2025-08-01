@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Purchase_Requests_Dispute_Complete</fullName>
+    <columns>NAME</columns>
+    <columns>Item_Name_Formula__c</columns>
+    <columns>Quantity__c</columns>
+    <columns>Source_Store__c</columns>
+    <columns>Destination_Requested_by__c</columns>
+    <columns>Status__c</columns>
+    <columns>Completion_Status__c</columns>
+    <columns>Dispute_Reason__c</columns>
+    <columns>Work_Order__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Dispute</value>
+    </filters>
+    <filters>
+        <field>Completion_Status__c</field>
+        <operation>equals</operation>
+        <value>Dispute Complete</value>
+    </filters>
+    <label>13 All Dispute Complete</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>Purchasing</group>
+    </sharedTo>
+</ListView>

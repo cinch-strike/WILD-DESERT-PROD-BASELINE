@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Managed_By_DONT__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <inlineHelpText>The person who is responsible for ensuring that the work order is completed, by ensuring all Work Tasks have been completed and approved.</inlineHelpText>
+    <label>Managed By DONT USE</label>
+    <referenceTo>Employees__c</referenceTo>
+    <relationshipLabel>Work Orders (Managed By)</relationshipLabel>
+    <relationshipName>Job_Cards</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

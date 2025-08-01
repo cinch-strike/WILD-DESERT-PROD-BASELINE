@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bay_Field__c</fullName>
+    <label>Workshop Bay</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1A - Transport Bay</fullName>
+                <default>false</default>
+                <label>1A - Transport Bay</label>
+            </value>
+            <value>
+                <fullName>1B - Transport Bay</fullName>
+                <default>false</default>
+                <label>1B - Transport Bay</label>
+            </value>
+            <value>
+                <fullName>2 - Mech Bay</fullName>
+                <default>false</default>
+                <label>2 - Mech Bay</label>
+            </value>
+            <value>
+                <fullName>3 - Mech Bay</fullName>
+                <default>false</default>
+                <label>3 - Mech Bay</label>
+            </value>
+            <value>
+                <fullName>4 - Fab Bay</fullName>
+                <default>false</default>
+                <label>4 - Fab Bay</label>
+            </value>
+            <value>
+                <fullName>5 - Fab Bay</fullName>
+                <default>false</default>
+                <label>5 - Fab Bay</label>
+            </value>
+            <value>
+                <fullName>TBA</fullName>
+                <default>false</default>
+                <label>TBA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

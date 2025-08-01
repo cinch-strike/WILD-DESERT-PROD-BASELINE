@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_Carriers_and_Flushby</fullName>
+    <columns>NAME</columns>
+    <columns>Unit__c</columns>
+    <columns>Asset_ID_Number__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Inventory_Item__c</columns>
+    <columns>Asset_Family__c</columns>
+    <columns>Date_Acquired__c</columns>
+    <columns>NDT_Inspection_Date__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Make__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Inventory_Item__c</field>
+        <operation>notEqual</operation>
+        <value>Stacked,Obsolete</value>
+    </filters>
+    <filters>
+        <field>NAME</field>
+        <operation>contains</operation>
+        <value>Carrier</value>
+    </filters>
+    <label>Rig Carriers and Flushby</label>
+    <sharedTo>
+        <group>Finance</group>
+    </sharedTo>
+</ListView>

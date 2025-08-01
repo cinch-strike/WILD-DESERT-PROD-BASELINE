@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UOM__c</fullName>
+    <label>UOM</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Hour</fullName>
+                <default>false</default>
+                <label>Hour</label>
+            </value>
+            <value>
+                <fullName>Litre</fullName>
+                <default>false</default>
+                <label>Litre</label>
+            </value>
+            <value>
+                <fullName>Piece</fullName>
+                <default>false</default>
+                <label>Piece</label>
+            </value>
+            <value>
+                <fullName>Day</fullName>
+                <default>false</default>
+                <label>Day</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

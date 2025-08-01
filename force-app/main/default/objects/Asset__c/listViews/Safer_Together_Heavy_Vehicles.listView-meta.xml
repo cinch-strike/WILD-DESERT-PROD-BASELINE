@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Safer_Together_Heavy_Vehicles</fullName>
+    <columns>Unit__c</columns>
+    <columns>NAME</columns>
+    <columns>Registration_Number__c</columns>
+    <columns>ABS_Status__c</columns>
+    <columns>GeoTab__c</columns>
+    <columns>Guardian__c</columns>
+    <columns>Daytime_Running_Lights__c</columns>
+    <columns>Door_Alarm__c</columns>
+    <columns>Reverse_Beeper__c</columns>
+    <columns>ST_Compliant__c</columns>
+    <columns>Safer_Together_Compliance_No__c</columns>
+    <columns>Safer_Together_Date_of_Assessment__c</columns>
+    <columns>Inventory_Item__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Asset__c.Prime_Mover</value>
+    </filters>
+    <filters>
+        <field>Unit__c</field>
+        <operation>notContain</operation>
+        <value>Obsolete,Moomba,YLE</value>
+    </filters>
+    <filters>
+        <field>NAME</field>
+        <operation>notContain</operation>
+        <value>Tipper,carrier</value>
+    </filters>
+    <filters>
+        <field>ST_Compliant__c</field>
+        <operation>equals</operation>
+        <value>Yes</value>
+    </filters>
+    <label>Safer Together - Heavy Vehicles</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Projects_and_Maintenance</group>
+        <group>Safety</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

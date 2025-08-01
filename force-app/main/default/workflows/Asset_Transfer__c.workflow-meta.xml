@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Asset_Transfer</fullName>
+        <description>Asset Transfer</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>andrew.spinks@wilddesert.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>gina.tedford@wilddesert.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rose.steers@wilddesert.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Purchase/Purchase_Order_Approved</template>
+    </alerts>
+    <rules>
+        <fullName>Asset Transfer</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Asset_Transfer__c.Date_on_Hire__c</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Asset_Transfer__c.Date_Off_Hire__c</field>
+            <operation>greaterThan</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Asset_Transfer__c.Status__c</field>
+            <operation>equals</operation>
+            <value>On Hire,Off Hire</value>
+        </criteriaItems>
+        <failedMigrationToolVersion>238.18.1</failedMigrationToolVersion>
+        <triggerType>onCreateOnly</triggerType>
+        <workflowTimeTriggers>
+            <offsetFromField>Asset_Transfer__c.CreatedDate</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+</Workflow>

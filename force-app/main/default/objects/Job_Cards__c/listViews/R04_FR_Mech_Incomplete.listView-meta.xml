@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>R04_FR_Mech_Incomplete</fullName>
+    <columns>NAME</columns>
+    <columns>Date_Created__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>NHVAS_Asset__c</columns>
+    <columns>Details_of_Issue_Work_Requested__c</columns>
+    <columns>Relevant_Dept__c</columns>
+    <columns>Status__c</columns>
+    <columns>Parts_Received_in_Stores__c</columns>
+    <columns>Action__c</columns>
+    <columns>Actionby__c</columns>
+    <columns>Assigned_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Unit_of_Asset__c</field>
+        <operation>equals</operation>
+        <value>Rig 4,Camp 7</value>
+    </filters>
+    <filters>
+        <field>Date_Created__c</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:730</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Job_Cards__c.Fault_Report_Pre_Approval,Job_Cards__c.Fault_Report_Approved</value>
+    </filters>
+    <filters>
+        <field>Relevant_Dept__c</field>
+        <operation>equals</operation>
+        <value>Auto Electrician - Moomba,Auto Electrician - Roma,Mechanical,Mechanical - Moomba,Mechanical - Roma</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Requested,Open,In Progress,Defer/Monitor</value>
+    </filters>
+    <label>R04 C07 | FR Mech / AE | Incomplete</label>
+    <sharedTo>
+        <group>Mechanics_Moomba</group>
+        <group>OPs_super</group>
+        <group>Rig_4</group>
+    </sharedTo>
+</ListView>

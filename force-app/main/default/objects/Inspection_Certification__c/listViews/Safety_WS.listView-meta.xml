@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Safety_WS</fullName>
+    <columns>NAME</columns>
+    <columns>Electricial__c</columns>
+    <columns>Last_Inspection_Date__c</columns>
+    <columns>Inspected_By__c</columns>
+    <columns>Licence__c</columns>
+    <columns>Next_Inspection__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Inspection_Certification__c.Safety_Equipment</value>
+    </filters>
+    <filters>
+        <field>WD_Unit__c</field>
+        <operation>equals</operation>
+        <value>roma depot,Roma Office</value>
+    </filters>
+    <label>Depot/Workshop - Safety Equipment</label>
+    <sharedTo>
+        <group>Electrician</group>
+        <group>OPs_super</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

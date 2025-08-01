@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ForPackingList_NotPickList</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISCHANGED(Status__c ) ,
+    ISPICKVAL( Status__c , &apos;Packing List&apos;),
+    NOT(ISPICKVAL( PRIORVALUE(Status__c), &apos;Pick List&apos;))
+)</errorConditionFormula>
+    <errorMessage>Only purchase request with status of Pick List can be changed to Packing List.</errorMessage>
+</ValidationRule>

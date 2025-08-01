@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Training</fullName>
+    <active>true</active>
+    <label>Training</label>
+    <picklistValues>
+        <picklist>Category__c</picklist>
+        <values>
+            <fullName>HR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Induction - Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Induction - WD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Licencing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recruit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training - RTO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training - WD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training - WD Online</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Compulsory_To_Unit__c</picklist>
+        <values>
+            <fullName>Field Personnel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Field Safety</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remote Camp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Well Servicing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Expiry_Status__c</picklist>
+        <values>
+            <fullName>Does not expire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expire and clone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expire and set for refresh</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Required_By_Unit__c</picklist>
+        <values>
+            <fullName>Camp 01</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp 03</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp 04</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp 06</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp 07</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp 08</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp 09</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp 10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp 11</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp 12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp Base Moomba</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp Base Roma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Depot Moomba</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Depot Roma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 02</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 04</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 06</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 08</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 16</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 20</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 22</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 24</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 26</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 28</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 32</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig 34</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transport Moomba</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transport Roma</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Requirement_Type__c</picklist>
+        <values>
+            <fullName>As per Matrix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manager to Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mandatory By Position</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Requires_Renewal__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

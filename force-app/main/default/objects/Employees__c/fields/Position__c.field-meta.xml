@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Position__c</fullName>
+    <inlineHelpText>INACTIVE - DO NOT USE</inlineHelpText>
+    <label>Position 1</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Accountant</fullName>
+                <default>false</default>
+                <label>Accountant</label>
+            </value>
+            <value>
+                <fullName>Accounts &amp; Payroll Officer</fullName>
+                <default>false</default>
+                <label>Accounts &amp; Payroll Officer</label>
+            </value>
+            <value>
+                <fullName>Administration Officer</fullName>
+                <default>false</default>
+                <label>Administration Officer</label>
+            </value>
+            <value>
+                <fullName>Assistant Driller</fullName>
+                <default>false</default>
+                <label>Assistant Driller</label>
+            </value>
+            <value>
+                <fullName>Auto Electrician</fullName>
+                <default>false</default>
+                <label>Auto Electrician</label>
+            </value>
+            <value>
+                <fullName>Camp Attendant</fullName>
+                <default>false</default>
+                <label>Camp Attendant</label>
+            </value>
+            <value>
+                <fullName>Camp Cook</fullName>
+                <default>false</default>
+                <label>Camp Cook</label>
+            </value>
+            <value>
+                <fullName>Camp Manager</fullName>
+                <default>false</default>
+                <label>Camp Manager</label>
+            </value>
+            <value>
+                <fullName>Chief Operating Officer</fullName>
+                <default>false</default>
+                <label>Chief Operating Officer</label>
+            </value>
+            <value>
+                <fullName>Derrickman</fullName>
+                <default>false</default>
+                <label>Derrickman</label>
+            </value>
+            <value>
+                <fullName>Diesel Fitter</fullName>
+                <default>false</default>
+                <label>Diesel Fitter</label>
+            </value>
+            <value>
+                <fullName>Driller</fullName>
+                <default>false</default>
+                <label>Driller</label>
+            </value>
+            <value>
+                <fullName>Electrician</fullName>
+                <default>false</default>
+                <label>Electrician</label>
+            </value>
+            <value>
+                <fullName>Fabrications Leading Hand</fullName>
+                <default>false</default>
+                <label>Fabrications Leading Hand</label>
+            </value>
+            <value>
+                <fullName>Field Safety Officer</fullName>
+                <default>false</default>
+                <label>Field Safety Officer</label>
+            </value>
+            <value>
+                <fullName>Field Supervisor</fullName>
+                <default>false</default>
+                <label>Field Supervisor</label>
+            </value>
+            <value>
+                <fullName>Finance Manager</fullName>
+                <default>false</default>
+                <label>Finance Manager</label>
+            </value>
+            <value>
+                <fullName>Floorhand</fullName>
+                <default>false</default>
+                <label>Floorhand</label>
+            </value>
+            <value>
+                <fullName>Groundskeeper</fullName>
+                <default>false</default>
+                <label>Groundskeeper</label>
+            </value>
+            <value>
+                <fullName>HR Manager</fullName>
+                <default>false</default>
+                <label>HR Manager</label>
+            </value>
+            <value>
+                <fullName>Junior Administration Officer</fullName>
+                <default>false</default>
+                <label>Junior Administration Officer</label>
+            </value>
+            <value>
+                <fullName>Labourer</fullName>
+                <default>false</default>
+                <label>Labourer</label>
+            </value>
+            <value>
+                <fullName>Lead Floorhand</fullName>
+                <default>false</default>
+                <label>Lead Floorhand</label>
+            </value>
+            <value>
+                <fullName>Lead Station Hand</fullName>
+                <default>false</default>
+                <label>Lead Station Hand</label>
+            </value>
+            <value>
+                <fullName>Leasehand</fullName>
+                <default>false</default>
+                <label>Leasehand</label>
+            </value>
+            <value>
+                <fullName>Maintenance Manager</fullName>
+                <default>false</default>
+                <label>Maintenance Manager</label>
+            </value>
+            <value>
+                <fullName>Managing Director</fullName>
+                <default>false</default>
+                <label>Managing Director</label>
+            </value>
+            <value>
+                <fullName>Mechanic</fullName>
+                <default>false</default>
+                <label>Mechanic</label>
+            </value>
+            <value>
+                <fullName>Mechanical Supervisor</fullName>
+                <default>false</default>
+                <label>Mechanical Supervisor</label>
+            </value>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+            <value>
+                <fullName>NDT Technician</fullName>
+                <default>false</default>
+                <label>NDT Technician</label>
+            </value>
+            <value>
+                <fullName>Office Manager</fullName>
+                <default>false</default>
+                <label>Office Manager</label>
+            </value>
+            <value>
+                <fullName>Park Attendant</fullName>
+                <default>false</default>
+                <label>Park Attendant</label>
+            </value>
+            <value>
+                <fullName>Personnel Coordinator</fullName>
+                <default>false</default>
+                <label>Personnel Coordinator</label>
+            </value>
+            <value>
+                <fullName>Property Manager</fullName>
+                <default>false</default>
+                <label>Property Manager</label>
+            </value>
+            <value>
+                <fullName>Purchasing Officer</fullName>
+                <default>false</default>
+                <label>Purchasing Officer</label>
+            </value>
+            <value>
+                <fullName>Receptionist</fullName>
+                <default>false</default>
+                <label>Receptionist</label>
+            </value>
+            <value>
+                <fullName>Recruitment Officer</fullName>
+                <default>false</default>
+                <label>Recruitment Officer</label>
+            </value>
+            <value>
+                <fullName>Rig Manager</fullName>
+                <default>false</default>
+                <label>Rig Manager</label>
+            </value>
+            <value>
+                <fullName>Rig Superintendent</fullName>
+                <default>false</default>
+                <label>Rig Superintendent</label>
+            </value>
+            <value>
+                <fullName>Safety Manager</fullName>
+                <default>false</default>
+                <label>Safety Manager</label>
+            </value>
+            <value>
+                <fullName>Senior Operations Manager</fullName>
+                <default>false</default>
+                <label>Senior Operations Manager</label>
+            </value>
+            <value>
+                <fullName>Team Leader</fullName>
+                <default>false</default>
+                <label>Team Leader</label>
+            </value>
+            <value>
+                <fullName>Training &amp; Development</fullName>
+                <default>false</default>
+                <label>Training &amp; Development</label>
+            </value>
+            <value>
+                <fullName>Transport &amp; Logistics Officer</fullName>
+                <default>false</default>
+                <label>Transport &amp; Logistics Officer</label>
+            </value>
+            <value>
+                <fullName>Transport Manager</fullName>
+                <default>false</default>
+                <label>Transport Manager</label>
+            </value>
+            <value>
+                <fullName>Truck Driver</fullName>
+                <default>false</default>
+                <label>Truck Driver</label>
+            </value>
+            <value>
+                <fullName>Welder</fullName>
+                <default>false</default>
+                <label>Welder</label>
+            </value>
+            <value>
+                <fullName>Welding Manager</fullName>
+                <default>false</default>
+                <label>Welding Manager</label>
+            </value>
+            <value>
+                <fullName>Workshop Assistant</fullName>
+                <default>false</default>
+                <label>Workshop Assistant</label>
+            </value>
+            <value>
+                <fullName>Mechanical Trade Assistant</fullName>
+                <default>false</default>
+                <label>Mechanical Trade Assistant</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

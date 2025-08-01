@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Create_Edit_Job_Item_if_Activated</fullName>
+    <active>false</active>
+    <description>This rule prevents a User from creating or editing Contract Job Item if Status is Activated</description>
+    <errorConditionFormula>OR(
+ISPICKVAL( Contract__r.Status__c , &quot;Activated&quot;),
+ISPICKVAL( Contract__r.Status__c , &quot;In Approval Process&quot;),
+ISPICKVAL( Contract__r.Status__c , &quot;Changed After Initial Approval&quot;)
+)</errorConditionFormula>
+    <errorMessage>Contract Job Item cannot be created or edited if the Contract Status is In Approval Process or Activated/Changed After Initial Approval. Please, Contact your Ops-Manager.</errorMessage>
+</ValidationRule>

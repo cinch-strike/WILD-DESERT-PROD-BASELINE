@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fault_Report_Type__c</fullName>
+    <inlineHelpText>Maintenance - keeping something in proper condition
+Equipment Failure - Equipment is no longer able to be used as it is unsafe or out of date (SCI)</inlineHelpText>
+    <label>Fault Report Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Maintenance</fullName>
+                <default>false</default>
+                <label>Maintenance</label>
+            </value>
+            <value>
+                <fullName>Equipment Failure</fullName>
+                <default>false</default>
+                <label>Equipment Failure</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

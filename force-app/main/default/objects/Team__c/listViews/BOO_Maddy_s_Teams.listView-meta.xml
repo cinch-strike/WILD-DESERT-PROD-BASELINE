@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BOO_Maddy_s_Teams</fullName>
+    <columns>Unit__c</columns>
+    <columns>NAME</columns>
+    <columns>No_of_Team_Members__c</columns>
+    <columns>No_of_Vacant_Positions__c</columns>
+    <columns>Team_Manager__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Unit__c</field>
+        <operation>equals</operation>
+        <value>rig 20,rig 24</value>
+    </filters>
+    <label>BOO | Maddy&apos;s Teams</label>
+    <sharedTo>
+        <group>BOO</group>
+        <group>HR</group>
+        <group>OPs_super</group>
+        <group>Rig_20</group>
+        <group>Rig_24</group>
+    </sharedTo>
+</ListView>

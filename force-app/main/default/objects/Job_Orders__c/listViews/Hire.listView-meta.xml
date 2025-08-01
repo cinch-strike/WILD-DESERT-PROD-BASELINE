@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hire</fullName>
+    <columns>NAME</columns>
+    <columns>Client__c</columns>
+    <columns>Job_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>WD_Unit__c</columns>
+    <columns>Description__c</columns>
+    <columns>Job_Status__c</columns>
+    <columns>Client_PO__c</columns>
+    <columns>Printed_for_Invoicing__c</columns>
+    <columns>Invoice__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Job_Date__c</field>
+        <operation>greaterThan</operation>
+        <value>1/1/2014</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Job_Orders__c.Hire_Equipment</value>
+    </filters>
+    <label>All WD - Hire Items</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>OPs_super</group>
+    </sharedTo>
+</ListView>

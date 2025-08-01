@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>For_Ordering_Training</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Quantity__c</columns>
+    <columns>Item_Name_Hyperlink__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Supplier__c</columns>
+    <columns>Details_for_Supplier__c</columns>
+    <columns>Destination_Store__c</columns>
+    <columns>Cost_Price_GST_exc__c</columns>
+    <columns>Freight_Collection_Status__c</columns>
+    <columns>PR_PO_Admin__c</columns>
+    <columns>Purchase_Order__c</columns>
+    <columns>PO_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>For Ordering</value>
+    </filters>
+    <filters>
+        <field>Destination_Store__c</field>
+        <operation>equals</operation>
+        <value>Training</value>
+    </filters>
+    <filters>
+        <field>PO_Status__c</field>
+        <operation>notContain</operation>
+        <value>Partially Fulfilled,Sent to Supplier,Draft</value>
+    </filters>
+    <label>For Ordering | Training</label>
+</ListView>

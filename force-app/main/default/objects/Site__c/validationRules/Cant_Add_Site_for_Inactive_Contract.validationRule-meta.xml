@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_Add_Site_for_Inactive_Contract</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( 
+NOT(ISBLANK( Contract__c )) &amp;&amp; 
+ISNEW() &amp;&amp; NOT( Contract__r.Contract_Active__c ), 
+TRUE, 
+FALSE 
+)</errorConditionFormula>
+    <errorMessage>Cannot create new Site for an Inactive Contract</errorMessage>
+</ValidationRule>

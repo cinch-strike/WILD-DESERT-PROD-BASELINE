@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SO</fullName>
+    <columns>WD_SO__c</columns>
+    <columns>NAME</columns>
+    <columns>Date__c</columns>
+    <columns>WD_Unit__c</columns>
+    <columns>Job_description__c</columns>
+    <columns>Details_Comments__c</columns>
+    <columns>TD__c</columns>
+    <columns>Inv__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>WD_SO__c</field>
+        <operation>equals</operation>
+        <value>00002214</value>
+    </filters>
+    <label>By Sales Order #</label>
+    <sharedTo>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Crew 1</fullName>
+        <default>false</default>
+        <label>Crew 1</label>
+    </customValue>
+    <customValue>
+        <fullName>Crew 2</fullName>
+        <default>false</default>
+        <label>Crew 2</label>
+    </customValue>
+    <customValue>
+        <fullName>Crew 3</fullName>
+        <default>false</default>
+        <label>Crew 3</label>
+    </customValue>
+    <customValue>
+        <fullName>Crew 4</fullName>
+        <default>false</default>
+        <label>Crew 4</label>
+    </customValue>
+    <customValue>
+        <fullName>Extra</fullName>
+        <default>false</default>
+        <label>Extra</label>
+    </customValue>
+    <masterLabel>CrewList</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

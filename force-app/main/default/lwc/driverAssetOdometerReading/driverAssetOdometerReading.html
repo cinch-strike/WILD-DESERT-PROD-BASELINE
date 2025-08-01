@@ -1,0 +1,86 @@
+<template>
+    <lightning-card title="Odometer Reading for Today" icon-name="utility:truck">
+    <table>
+        <tr>
+            <td valign = "top" style="padding:10px;font-size: 16px;">
+                <b>Asset Name </b>
+                <lightning-helptext content="Press backspace to close the dropdown list." ></lightning-helptext><br />
+                <c-asset-odometer-list> </c-asset-odometer-list>
+            </td>
+        </tr>
+         <tr>
+            <td  style="text-align:right;padding:10px;font-size: 16px;"><lightning-button label="Add Asset" variant="brand" onclick={createAssetOdometer}></lightning-button> </td>                    
+        </tr>
+    </table> <br />
+    <template if:true={isOdometerRecord}>
+            <!--<label><b>Odometer Reading</b></label>-->
+            <!--
+            <table class='cssTable' style="font-size: 16px;">
+                <thead><tr>
+                    <th width="40%" style="padding:10px;">Asset Name</th>
+                    <th width="25%" style="padding:10px;">Current Odometer</th>
+                    <th width="25%" style="padding:10px;">Odometer Today</th>   
+                    <th width="10%" style="padding:10px;"></th>                  
+                </tr></thead>
+                <tbody>
+                    <template for:each={assetOdometerList} for:item="assetOdometer">
+                        <tr  key={assetOdometer.Id}>
+                             If Odometer Today not yet populated
+                            <template lwc:if={assetOdometer.Blank_Odometer_Today_formula__c}>
+                                <td style="padding:10px;">{assetOdometer.Asset__r.Name}</td>
+                                <td style="padding:10px;"><lightning-input type="number" readonly value={assetOdometer.Current_Odometer__c} data-currentodometer={assetOdometer.Id} variant="label-hidden" class='cssInput'></lightning-input></td> 
+                                <td style="padding:10px;"><lightning-input type="number" pattern="[0-9]*" data-field="odometerReading" data-odometertoday={assetOdometer.Id} value={assetOdometer.Odometer_Today__c} 
+                                    max="9999999" variant="label-hidden" class='cssInput'></lightning-input></td>  
+                                <td style="padding:10px;">
+                                        <lightning-icon icon-name="action:record" alternative-text="Record Odometer Reading" title="Record Odometer Reading" data-aorid={assetOdometer.Id} 
+                                    data-assetid={assetOdometer.Asset__c} onclick={updateOdometerReading}  size="x-small"></lightning-icon>
+                                        <lightning-icon icon-name="action:delete" alternative-text="Delete Odometer Reading" title="Delete Odometer Reading" data-aoriddelete={assetOdometer.Id} 
+                                    onclick={deleteOdometerReading}  size="x-small"></lightning-icon>
+                                </td> 
+                            </template>
+    
+                             If Odometer Today already populated 
+                            <template lwc:else>
+                                <td style="padding:10px;">{assetOdometer.Asset__r.Name}</td>
+                                <td style="padding:10px;"><lightning-input type="number" readonly value={assetOdometer.Odometer_Today__c} variant="label-hidden" class='cssInput'></lightning-input></td> 
+                                <td style="padding:10px;"><lightning-input type="number" readonly value={assetOdometer.Odometer_Today__c} variant="label-hidden" class='cssInput'></lightning-input></td> 
+                                <td> </td> 
+                            </template>                           
+                        </tr>
+                    </template>
+                </tbody>
+            </table>    
+            <br/><br/> -->
+            <!--new-->
+            <table class='cssTable'>
+                <tbody>
+                    <template for:each={assetOdometerList} for:item="assetOdometer">
+                        <tr  key={assetOdometer.Id} style="border-top: 1px solid; border-bottom: 1px solid;">
+                            <!-- If Odometer Today not yet populated -->
+                            <template lwc:if={assetOdometer.Blank_Odometer_Today_formula__c}>
+                                <td style="padding:10px;font-size: 16px;">Asset Name: <b>{assetOdometer.Asset__r.Name}</b><br/>
+                                    Current Odometer: <b><lightning-formatted-number value={assetOdometer.Current_Odometer__c}></lightning-formatted-number></b><lightning-input type="number" readonly value={assetOdometer.Current_Odometer__c} data-currentodometer={assetOdometer.Id} variant="label-hidden" class='slds-hide'></lightning-input><br/>
+                                    Odometer Today: <lightning-input type="number" pattern="[0-9]*" data-field="odometerReading" data-odometertoday={assetOdometer.Id} value={assetOdometer.Odometer_Today__c} 
+                                    max="9999999" variant="label-hidden" class='cssInput'></lightning-input><br/>
+                                    <center><lightning-icon icon-name="action:record" alternative-text="Record Odometer Reading" title="Record Odometer Reading" data-aorid={assetOdometer.Id} 
+                                    data-assetid={assetOdometer.Asset__c} onclick={updateOdometerReading}></lightning-icon> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <lightning-icon icon-name="action:delete" alternative-text="Delete Odometer Reading" title="Delete Odometer Reading" data-aoriddelete={assetOdometer.Id} 
+                                    onclick={deleteOdometerReading}></lightning-icon></center>
+                                </td>
+                             </template>
+   
+                            <!-- If Odometer Today already populated -->
+                            <template lwc:else>
+                                <td style="padding:10px;font-size: 16px;">Asset Name: <b>{assetOdometer.Asset__r.Name}</b><br/>
+                                    Current Odometer: <b><lightning-formatted-number value={assetOdometer.Odometer_Today__c}></lightning-formatted-number></b><br/>
+                                    Odometer Today: <b><lightning-formatted-number value={assetOdometer.Odometer_Today__c}></lightning-formatted-number></b><br/>
+                                </td>
+                            </template>                           
+                        </tr>
+                    </template>
+                </tbody>
+            </table>   
+
+    </template>
+    </lightning-card><br /><br />
+</template>

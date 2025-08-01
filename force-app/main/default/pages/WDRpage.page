@@ -1,0 +1,285 @@
+<apex:page controller="skedWDPageController" docType="html-5.0">
+
+
+<apex:form >
+   <apex:pageMessages />
+
+
+<!---------------------------------------WD Report --------------------------------------------------------->
+
+<apex:pageBlock title="WD Report">
+
+<!---------------------------------------WD Report 12 Hour Rig Information--------------------------------------------------------->
+<apex:outputPanel >
+<apex:pageblockSection title="WD Report Detail" columns="2" collapsible="false" >
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="Job Order #:"/>
+ <!--<apex:outputText >{!JobOrderId}</apex:outputText>-->
+ <apex:inputField value="{!WDR.Sales_Order__c}" required="true" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="Record Type:"/>
+ <apex:outputPanel >
+ <apex:outputText value="{!WDPageRecordType}" />
+   </apex:outputPanel>
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem rendered="{!NOT(OR ('Transport' == WDPageRecordType, 'Transport (Approved)' == WDPageRecordType))}" >
+ 
+  <apex:outputLabel value="WD Report #:"/>
+ <apex:inputField value="{!WDR.Hard_Copy__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem rendered="{!OR ('Transport' == WDPageRecordType, 'Transport (Approved)' == WDPageRecordType)}" >
+<apex:outputLabel value="Truck docket #:"/>
+ <apex:inputField value="{!WDR.Hard_Copy__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem > 
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem > 
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="WD Unit:"/>
+ <apex:inputField value="{!WDR.WD_Unit__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="Date:"/>
+ <apex:inputField value="{!WDR.Date__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="Site:"/>
+ <apex:inputField value="{!WDR.Site__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="Job Description:"/>
+ <apex:inputField value="{!WDR.Job_Description__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="Client:"/>
+ <apex:inputField value="{!WDR.Client__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="Status:"/>
+ <apex:inputField value="{!WDR.Status__c}" />
+</apex:pageBlockSectionItem>
+
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="Approved By:"/>
+ 
+ <apex:outputPanel styleClass="requiredInput" layout="block" >
+<apex:outputPanel styleClass="requiredBlock" layout="block"/>
+ <apex:inputField value="{!WDR.Approved_By__c}" />
+</apex:outputPanel>
+
+</apex:pageBlockSectionItem>
+    
+
+</Apex:pageblockSection>
+
+<!---------------------------------------WD Report Transport Details--------------------------------------------------------->
+
+<apex:pageblockSection title="Transport Details" columns="1" collapsible="false"  rendered="{!OR (WDPageRecordType  == 'Transport',  WDPageRecordType  == 'Transport (Approved)')}" >
+
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="Truck on Job:"/>
+  <apex:selectList value="{!WDR.Trucks_on_Job__c}" multiselect="true" size="4" >
+        <apex:selectOptions value="{!TruckList}" />
+  </apex:selectList>
+</apex:pageBlockSectionItem>
+
+</Apex:pageblockSection>
+
+
+
+<!---------------------------------------WD Report 12 Hour Rig Daily Operating Total Hours--------------------------------------------------------->
+<!--
+<apex:pageblockSection title="Daily Operating Total Hours" columns="2" collapsible="false"  rendered="{!OR (WDPageRecordType  == '12 Hour Rig', WDPageRecordType  == '12 Hour Rig (Approved)')}" >
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="Operating Hrs:"/>
+ <apex:inputField value="{!WDR.Operating_Hrs__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="Repair Hrs:"/>
+ <apex:inputField value="{!WDR.Repair_Hrs__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="Rig Move Hrs:"/>
+ <apex:inputField value="{!WDR.Rig_Move_Hrs__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="Travel Hrs:"/>
+ <apex:inputField value="{!WDR.Travel_Hrs__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="Standby WC Hrs:"/>
+ <apex:inputField value="{!WDR.Standby_WC_Hrs__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="Standby WOC Hrs:"/>
+ <apex:inputField value="{!WDR.Standby_WOC_Hrs__c}" />
+</apex:pageBlockSectionItem>
+
+
+</Apex:pageblockSection>
+-->
+<!---------------------------------------WD Report 12 Hour Rig Extra Charges--------------------------------------------------------->
+<!---
+<apex:pageblockSection title="Extra Charges" columns="1" collapsible="false"  rendered="{!OR (WDPageRecordType  == '12 Hour Rig', WDPageRecordType  == '12 Hour Rig (Approved)')}" >
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="Extra Man (#):"/>
+ <apex:inputField value="{!WDR.Extra_Man__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="Hire Items - Charge:"/>
+ <apex:inputField value="{!WDR.Hire_Items_Charge__c}" />
+</apex:pageBlockSectionItem>
+
+</Apex:pageblockSection>
+-->
+<!-----------------------------------WD Fuel Management---------------------------------------------------->
+
+<apex:pageblockSection title="General" columns="2" collapsible="false"  rendered="{!NOT(OR (WDPageRecordType  == 'Transport', WDPageRecordType  == 'Transport (Approved)'))}" >
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="Weather:"/>
+ <apex:inputField value="{!WDR.Weather__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem rendered="{!NOT(OR (WDPageRecordType  == 'Remote Camp', WDPageRecordType  == 'Remote Camp (Approved)'))}" >
+ <apex:outputLabel value="Fuel Used:"/>
+ <apex:inputField value="{!WDR.Fuel_Used__c}" />
+</apex:pageBlockSectionItem>
+
+
+<apex:pageBlockSectionItem rendered="{!NOT(OR (WDPageRecordType  == 'Remote Camp', WDPageRecordType  == 'Remote Camp (Approved)'))}" >
+ <apex:outputLabel value="Camp:"/>
+ <apex:inputField value="{!WDR.Camp__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem rendered="{!NOT(OR (WDPageRecordType  == 'Remote Camp', WDPageRecordType  == 'Remote Camp (Approved)'))}" >
+ <apex:outputLabel value="Fuel Delivered:"/>
+ <apex:inputField value="{!WDR.Fuel_Delivered__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem rendered="{!NOT(OR (WDPageRecordType  == 'Remote Camp', WDPageRecordType  == 'Remote Camp (Approved)'))}" >
+ <apex:outputLabel value="Fuel on Hand:"/>
+ <apex:outputField value="{!WDR.Fuel_On_Hand__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem rendered="{!NOT(OR (WDPageRecordType  == 'Remote Camp', WDPageRecordType  == 'Remote Camp (Approved)'))}" >
+ <apex:outputLabel value="Line on Spool:"/>
+ <apex:inputField value="{!WDR.Line_on_Spool__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem > 
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem rendered="{!NOT(OR (WDPageRecordType  == 'Remote Camp', WDPageRecordType  == 'Remote Camp (Approved)'))}" >
+ <apex:outputLabel value="Line Slipped:"/>
+ <apex:inputField value="{!WDR.Line_Slipped__c}" />
+</apex:pageBlockSectionItem>
+
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="Pay Ending Date:"/>
+  <apex:selectList value="{!selectedPayEnding}" multiselect="false" size="1" >
+        <apex:selectOptions value="{!PayEndingList}" />
+  </apex:selectList>
+</apex:pageBlockSectionItem>
+
+
+</Apex:pageblockSection>
+
+<!-----------------------------------WD Safety---------------------------------------------------->
+<apex:pageblockSection title="Safety Data" columns="2" collapsible="false"  rendered="{!NOT(OR (WDPageRecordType  == 'Transport', WDPageRecordType  == 'Transport (Approved)'))}" >
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="LTI Free Days:"/>
+ <apex:inputField value="{!WDR.LTI_Free_Days__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="Hazards Raised:"/>
+ <apex:inputField value="{!WDR.Hazards_Raised__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem rendered="{!NOT(OR (WDPageRecordType  == 'Remote Camp', WDPageRecordType  == 'Remote Camp (Approved)'))}" >
+ <apex:outputLabel value="TBM:"/>
+ <apex:inputField value="{!WDR.TBM__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="Safety Meetings:"/>
+ <apex:inputField value="{!WDR.Safety_Meetings__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="SOP Review:"/>
+ <apex:inputField value="{!WDR.SOP_Review__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="Emergency Drill:"/>
+ <apex:inputField value="{!WDR.Emergency_Drill__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem rendered="{!NOT(OR (WDPageRecordType  == 'Remote Camp', WDPageRecordType  == 'Remote Camp (Approved)'))}" >
+ <apex:outputLabel value="Permit to Work:"/>
+ <apex:inputField value="{!WDR.Permit_to_Work__c}" />
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+ <apex:outputLabel value="Inductions Employee:"/>
+ <apex:inputField value="{!WDR.Inductions_Employee__c}" />
+</apex:pageBlockSectionItem>
+
+
+</Apex:pageblockSection>
+
+</apex:outputPanel>
+
+
+</apex:pageBlock>
+
+
+<!-----------------------------------WD Personnel Component---------------------------------------------------->
+<c:skedWDPersonnel PersonnelList="{!PersonnelList}" WDPpageController="{!this}" componentKey="component1" rendered="{!NOT(OR (WDPageRecordType  == 'Transport', WDPageRecordType  == 'Transport (Approved)'))}" />
+
+
+<!-----------------------------------WD Services Received---------------------------------------------------->
+<c:skedWDServiceReceived WDSRWrappers="{!WDSRWrapperList}" WDPpageController="{!this}" componentKey="component3" />
+
+
+<apex:commandButton value="Save All" action="{!WDRSavePage}"/><apex:commandButton value="Cancel" action="{!Cancel}" immediate="true"/>
+
+</apex:form>
+</apex:page>

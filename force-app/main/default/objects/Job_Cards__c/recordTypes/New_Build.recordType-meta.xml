@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Build</fullName>
+    <active>false</active>
+    <label>New Build</label>
+    <picklistValues>
+        <picklist>Action__c</picklist>
+        <values>
+            <fullName>Action</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Followup</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Bay_Field__c</picklist>
+        <values>
+            <fullName>1A - Transport Bay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1B - Transport Bay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 - Mech Bay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 - Mech Bay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 - Fab Bay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 - Fab Bay</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Category_of_Work_Task__c</picklist>
+        <values>
+            <fullName>Air Conditioning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brakes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lights</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oilfield Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suspension</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tyres</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Interior</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Windscreen%2FWindow</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Classification__c</picklist>
+        <values>
+            <fullName>Maintenance</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Fault_Report_Type__c</picklist>
+        <values>
+            <fullName>Equipment Failure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maintenance</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Follow_Up_Job_Required__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Is_this_a_MANAGED_ITEM__c</picklist>
+        <values>
+            <fullName>NO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YES</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Parts_Received_in_Stores__c</picklist>
+        <values>
+            <fullName>Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WaitingonParts</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority__c</picklist>
+        <values>
+            <fullName>Normal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Roadworthy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Urgent</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Progress_Report__c</picklist>
+        <values>
+            <fullName>Asset Stacked</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asset in Use</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monitoring Fault</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parts to be Ordered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on Parts</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Relevant_Dept__c</picklist>
+        <values>
+            <fullName>Electrical - Moomba</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electrical - Roma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fabrication - Mooma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fabrication - Roma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General - Roma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mechanical - Moomba</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mechanical - Roma</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Risk_Assessment_Attached__c</picklist>
+        <values>
+            <fullName>NO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YES</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Safety_Critical_Item__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Source__c</picklist>
+        <values>
+            <fullName>External Audit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hazard Observation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incident%2C HIPO%2C Near Miss</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Audit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety Drill</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suggestion for Improvement</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_of_Change__c</picklist>
+        <values>
+            <fullName>Document</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organisation Structure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Procedure%2FProcess</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_of_Maintenance__c</picklist>
+        <values>
+            <fullName>KM Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Truck%2FTrailer%2FDolly A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Truck%2FTrailer%2FDolly B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Truck%2FTrailer%2FDolly C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Type 1 - 250Hrs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Type 2 - 500Hrs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Type 3 - 1000Hrs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Type 4 - 2000Hrs</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Work_Tasks_Completed__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

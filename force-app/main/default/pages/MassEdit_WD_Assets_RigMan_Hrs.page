@@ -1,0 +1,42 @@
+<apex:page standardController="Asset__c" recordSetVar="unused" sidebar="false">
+
+<!-- for this page to work with a specific custom object, change standController="entityname" to custom object api name  
+    For example, if custom object name is Warehouse__c, change first part of the first line to standardController="warehouse__c" -->
+
+    
+<apex:includeScript value="{!$Resource.UtilJS}" />
+<apex:form >
+<apex:pageBlock >
+<apex:pageMessages />
+<apex:pageBlock >
+Note: All modifications made on the page will be lost if Return button is clicked without clicking the Save button first. 
+</apex:pageBlock>
+<apex:pageBlockButtons >
+<apex:commandButton value="Save" action="{!save}"/>
+<apex:commandButton value="Return" action="{!cancel}"/>
+</apex:pageBlockButtons>
+<apex:pageBlockTable value="{!selected}" var="a" id="table">
+    <apex:column headerValue="Name">
+       <apex:outputField value="{!a.name}"/>
+    </apex:column>
+    <apex:column headerValue="Engine Hours">
+        <apex:inputField value="{!a.Engine_Hours__c}"/>
+    </apex:column>   
+    <apex:column headerValue="Asset ID Number">
+        <apex:outputField value="{!a.Asset_ID_Number__c}"/>
+    </apex:column>
+    <apex:column headerValue="Old Asset ID Number">
+        <apex:outputField value="{!a.Old_Asset_ID__c}"/>
+    </apex:column>
+    <apex:column headerValue="Unit">
+        <apex:outputField value="{!a.Unit__c}"/>
+    </apex:column>
+    <apex:column headerValue="Current Site">
+        <apex:outputField value="{!a.Current_Site__c}"/>
+    </apex:column>
+    
+    
+</apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

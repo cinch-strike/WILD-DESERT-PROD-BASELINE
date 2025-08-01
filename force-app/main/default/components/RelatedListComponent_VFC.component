@@ -1,0 +1,466 @@
+<apex:component controller="RelatedListComponent_Controller" allowDML="TRUE">
+
+    <apex:includeScript value="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"/>
+    <apex:attribute name="SObjectAPI" description="Related list for SObject" type="String" required="true"
+                    assignTo="{!sObjName}"></apex:attribute>
+    <apex:attribute name="FieldSetName" description="Columns to be displayed on the table" type="String" required="true"
+                    assignTo="{!fieldSet}"></apex:attribute>
+    <apex:attribute name="RelatedToField" description="Related to field on SObject" type="String" required="true"
+                    assignTo="{!relatedField}"></apex:attribute>
+    <apex:attribute name="RelatedToId" description="Parent record id" type="Id" required="true"
+                    assignTo="{!relatedId}"></apex:attribute>
+    <apex:attribute name="DefaultOrderByField" description="Must be sorted by field" type="String"
+                    assignTo="{!orderByField}" default="Name"></apex:attribute>
+    <apex:attribute name="NumberOfRecordPerPage" description="Number of records that must be displayed per page"
+                    type="Integer" assignTo="{!recordsPerPage}"></apex:attribute>
+    <apex:attribute name="NewButtonUrl" description="Url to be set when new button clicked"
+                    type="String"></apex:attribute>
+
+    <apex:attribute name="RelatedListIcon" description="Icon for the related list" type="String"></apex:attribute>
+    <apex:attribute name="RelatedListName" description="Name of the related list" type="String"
+                    required="true"></apex:attribute>
+
+    <apex:attribute name="ShowNewButton" description="Control visibility for create new record button" type="Boolean"
+                    assignTo="{!showNew}" default="true"></apex:attribute>
+    <apex:attribute name="ShowEditButton" description="Control visibility for edit record button" type="Boolean"
+                    assignTo="{!showEdit}" default="true"></apex:attribute>
+    <apex:attribute name="ShowDeleteButton" description="Control visibility for delete record button" type="Boolean"
+                    assignTo="{!showDelete}" default="true"></apex:attribute>
+    <apex:attribute name="TableHeaderFontSize" description="Font size to be assigned table header" type="Decimal"
+                    default="10"></apex:attribute>
+    <apex:attribute name="TableDataFontSize" description="Font size to be assigned table data" type="Decimal"
+                    default="10.5"></apex:attribute>
+
+
+    <apex:includeScript value="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"/>
+    <!--<apex:stylesheet value="https://cdn.datatables.net/1.10.7/css/jquery.dataTables.css"/>-->
+
+
+    <style>
+
+        .slds-spinner:before, .slds-spinner:after, .slds-spinner__dot-a:before, .slds-spinner__dot-b:before, .slds-spinner__dot-a:after, .slds-spinner__dot-b:after {
+        background: #0070d2 !important;
+
+        .headerWidth td{
+        width:11.11% !important;
+        }
+
+        .toggleActionMenu{
+        display:none !important;
+        }
+
+        .tableHeaderFontSizeClass{
+        font-size:{!TableHeaderFontSize}px;
+        }
+
+        .tableDataFontSizeClass{
+        font-size:{!TableDataFontSize}px;
+        }
+
+
+
+
+    </style>
+
+    <apex:slds />
+    <div class="slds-scope">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-small-size--12-of-12 slds-medium-size--12-of-12 slds-large-size--12-of-12">
+                <apex:outputPanel id="mainPanel">
+
+                    <!--<apex:actionstatus id="counterStatus">
+                        <apex:facet name="start">
+                            <div class="waitingSearchDiv" id="el_loading"
+                                 style="background-color:#fbfbfb; height:100%;opacity:50;width:100%;">
+                                <div class="waitingHolder" style="top: 100px; width: 100px;">
+                                    <div class="slds-spinner_container">
+                                        <div class="slds-spinner slds-spinner&#45;&#45;medium" aria-hidden="false" role="alert">
+                                            <div class="slds-spinner__dot-a"></div>
+                                            <div class="slds-spinner__dot-b"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </apex:facet>
+                    </apex:actionstatus>-->
+
+                    <apex:actionstatus id="counterStatus">
+                        <apex:facet name="start">
+                            <div class="slds-spinner_container" style="position:fixed !important;">
+                                <div class="slds-spinner--brand slds-spinner slds-spinner--large" role="alert">
+                                    <span class="slds-assistive-text">Loading</span>
+                                    <div class="slds-spinner__dot-a"></div>
+                                    <div class="slds-spinner__dot-b"></div>
+                                </div>
+                            </div>
+                        </apex:facet>
+                    </apex:actionstatus>
+
+                    <apex:actionFunction name="deleteActionFunction{!SObjectAPI}" action="{!deleteSelectedRecord}"
+                                         status="counterStatus" reRender="relatedListPanel">
+                        <apex:param name="recordIdToBeDeleted" assignTo="{!recIdToBeDeleted}" value=""/>
+                    </apex:actionFunction>
+
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+                            <div class="slds-page-header" style="padding: 0.5rem !important;width:100%;">
+
+                                <div class="slds-grid slds-wrap">
+                                    <div class="slds-media slds-small-size--12-of-12 slds-medium-size--12-of-12 slds-large-size--12-of-12">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container slds-icon-standard-related-list"
+                                                  title="Related list icon">
+                                                <svg aria-hidden="true"
+                                                     class="slds-icon slds-icon--large slds-icon-standard-related-list">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                         xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/standard-sprite/svg/symbols.svg#related_list')}"></use>
+                                                </svg>
+                                            </span>
+                                        </div>
+
+                                        <div class="slds-media__body">
+                                            <h1 class="slds-page-header__title slds-truncate slds-align-middle"
+                                                title="{!RelatedListName}">{!RelatedListName}
+
+                                                <apex:commandLink action="/{!IF(NOT(ISBLANK(NewButtonUrl)),NewButtonUrl,objectPrefix+'/e?retURL='+currentUrl)}"
+                                                                  styleClass="slds-button slds-float--right slds-button_neutral"
+                                                                  target="_self" style="display:{!IF(ShowNewButton=true,'block','none')};">
+                                                    New
+                                                </apex:commandLink>
+                                            </h1>
+                                            <p class="slds-text-body_small slds-line-height_reset">{!totalItems}
+                                                items.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <apex:outputPanel id="relatedListPanel">
+                        <div class="slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+                            <table class="slds-table slds-table--bordered slds-table_striped slds-table_bordered slds-no-row-hover datatablesort_{!sObjName}_{!relatedId}"
+                                   style="width:100%;">
+
+                                <thead>
+                                <tr class="slds-text-title_caps">
+                                    <apex:repeat value="{!fields}" var="field">
+                                        <th scope="col" class="headerWidth tableHeaderFontSizeClass"
+                                            style="font-weight:bold;" onclick="headerColor();return false;">
+                                            <apex:outputText value="{!field.label}"/>
+                                        </th>
+                                    </apex:repeat>
+                                    <th scope="col" class="headerWidth tableHeaderFontSizeClass"
+                                        style="font-weight:bold;display:{!IF(OR(ShowEditButton,ShowDeleteButton),'','none')};">
+                                        <apex:outputText value="Action"/>
+                                    </th>
+                                </tr>
+                                </thead>
+
+
+                                <tbody>
+                                <apex:repeat value="{!SOjectRecordList}" var="record">
+                                    <tr>
+                                        <apex:repeat value="{!fields}" var="field">
+                                            <td class="slds-cell-wrap tableDataFontSizeClass">
+                                                <apex:outputLink value="/{!record.Id}" rendered="{!IF(field = 'Name', true, false)}">{!record[field.fieldPath]}</apex:outputLink>
+                                                <apex:outputField value="{!record[field.fieldPath]}" rendered="{!IF(field != 'Name',true,false)}"/>
+                                            </td>
+                                        </apex:repeat>
+                                        <td class="slds-cell-wrap tableDataFontSizeClass" style="display:{!IF(OR(ShowEditButton,ShowDeleteButton),'','none')};">
+                                            <button id="ShowMoreId"
+                                                    class="slds-button slds-button_icon slds-button_icon-border-filled slds-dropdown-trigger slds-dropdown-trigger_click slds-button_last"
+                                                    aria-haspopup="true" title="Show More"
+                                                    onclick="showActionMenu('{!record.Id}');return false;">
+                                                <svg class="slds-button__icon slds-button__icon--small"
+                                                     aria-hidden="true">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                         xlink:href="{!URLFOR($Asset.SLDS,'assets/icons/utility-sprite/svg/symbols.svg#down')}"/>
+                                                </svg>
+                                                <span class="slds-assistive-text">Show More</span>
+                                            </button>
+                                            <div id="{!record.Id}"
+                                                 class="slds-dropdown slds-dropdown_right overflowmenu toggleActionMenu"
+                                                 style="display:none;">
+                                                <ul class="slds-dropdown__list" role="menu">
+                                                    <li class="slds-dropdown__item" role="presentation" style="display:{!IF(ShowEditButton=true,'','none')};">
+                                                        <a href="/{!record.Id}/e?retURL={!currentUrl}" role="menuitem"
+                                                           tabindex="-1" target="_self">
+                                                            <span class="slds-truncate" title="Edit">Edit</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="slds-dropdown__item" role="presentation" style="display:{!IF(ShowDeleteButton=true,'','none')};">
+                                                        <a href="#"
+                                                           onclick="deleteActionFunction{!SObjectAPI}('{!record.Id}');"
+                                                           role="menuitem" tabindex="-1">
+                                                            <span class="slds-truncate" title="Delete">Delete</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </apex:repeat>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <script>
+                            //loadDataTable{!sObjName}();
+
+
+                        </script>
+                    </apex:outputPanel>
+
+
+                    <apex:outputPanel id="paginationPanel">
+                        <div class="paginator" style="margin-bottom:14px;margin-top:14px">
+
+                        <span class="left">
+                            <!-- Show records per page>-->
+                    <apex:outputPanel rendered="{!IF(NOT(ISBLANK(stdSetCon.resultSize)) && stdSetCon.resultSize > 0, true, false)}">
+                        <apex:outputLabel >Records per page:&nbsp;</apex:outputLabel>
+                    <apex:selectList label="Records Per Page" size="1" value="{!selectedRecordsPerPage}"
+                                     multiSelect="false">
+                    <apex:selectOption itemValue="5"/>
+                    <apex:selectOption itemValue="10"/>
+                    <apex:selectOption itemValue="15"/>
+                       <apex:selectOption itemValue="20"/>
+                    <apex:actionSupport event="onchange" reRender="relatedListPanel" action="{!setRecordPerPage}"
+                                        status="counterStatus"/>
+                    </apex:selectList>
+                    </apex:outputPanel>
+                        </span>
+
+                            <apex:outputPanel id="prevNextPanel">
+
+
+                            <span class="prevNextLinks">
+
+                            <span class="prevNext">
+                                <!-- Show first button if page set has previous page-->
+                                <apex:outputPanel rendered="{!IF(NOT(ISBLANK(stdSetCon.resultSize)) && stdSetCon.resultSize > 0, true, false)}">
+                                    <apex:commandLink value="" action="{!stdSetCon.first}"
+                                                      rendered="{!stdSetCon.pageNumber != 1}"
+                                                      rerender="relatedListPanel,prevNextPanel"
+                                                      title="First"
+                                                      status="counterStatus">
+                                        <img class="first" src="/s.gif" alt=""/>
+                                    </apex:commandLink>
+                                    <apex:outputPanel rendered="{!NOT(stdSetCon.hasPrevious)}">
+                                        <img class="firstoff" src="/s.gif" alt=""/>
+                                    </apex:outputPanel>
+                                </apex:outputPanel>
+                            </span>
+
+                                <!-- Previous Button -->
+                            <span class="prevNext">
+                                <apex:outputPanel rendered="{!IF(NOT(ISBLANK(stdSetCon.resultSize)) && stdSetCon.resultSize > 0, true, false)}">
+                                    <apex:commandLink value="" action="{!stdSetCon.previous}"
+                                                      rendered="{!stdSetCon.hasPrevious}"
+                                                      rerender="relatedListPanel,prevNextPanel"
+                                                      status="counterStatus">
+                                        <img class="prev" src="/s.gif" alt=""/>Previous
+                                    </apex:commandLink>
+                                    <apex:outputPanel rendered="{!NOT(stdSetCon.hasPrevious)}">
+                                        <img class="prevoff" src="/s.gif" alt=""/>Previous
+                                    </apex:outputPanel>
+                                </apex:outputPanel>
+                            </span>
+
+
+                            <span class="prevNext">
+                                <!-- Show next button if page set has next -->
+                                <apex:outputPanel rendered="{!IF(NOT(ISBLANK(stdSetCon.resultSize)) && stdSetCon.resultSize > 0, true, false)}">
+                                    <apex:commandLink value="" action="{!stdSetCon.next}"
+                                                      rendered="{!stdSetCon.hasNext}"
+                                                      rerender="relatedListPanel,prevNextPanel"
+                                                      status="counterStatus">
+                                        Next<img class="next" alt="Next" title="Next" src="/s.gif"/>
+                                    </apex:commandLink>
+                                    <apex:outputPanel rendered="{!NOT(stdSetCon.hasNext)}">
+                                        Next<img class="nextOff" alt="Next" title="Next" src="/s.gif"/>
+                                    </apex:outputPanel>
+                                </apex:outputPanel>
+                            </span>
+
+                                <!-- Last Button -->
+                            <span class="prevNext">
+                                <!-- Show last button if page set has next -->
+                                <apex:outputPanel rendered="{!IF(NOT(ISBLANK(stdSetCon.resultSize)) && stdSetCon.resultSize > 0, true, false)}">
+                                    <apex:commandLink value="" action="{!stdSetCon.last}"
+                                                      rendered="{!stdSetCon.hasNext}"
+                                                      title="Last" rerender="relatedListPanel,prevNextPanel"
+                                                      status="counterStatus">
+                                        <img class="last" src="/s.gif" alt=""/>
+                                    </apex:commandLink>
+
+                                    <!-- Show disabled last button if page set has no next -->
+                                    <apex:outputPanel rendered="{!NOT(stdSetCon.hasNext)}">
+                                        <img class="lastoff" src="/s.gif" alt=""/>
+                                    </apex:outputPanel>
+                                </apex:outputPanel>
+                            </span>
+                        </span>
+
+                            </apex:outputPanel>
+
+
+                            <span class="right pagenumber" style="margin-right: 9px;">
+                            Page
+                            <apex:outputPanel rendered="{!IF(NOT(ISBLANK(stdSetCon.resultSize)) && stdSetCon.resultSize > 0, true, false)}">
+                                <apex:inputText value="{!stdSetCon.pageNumber}" styleClass="pageInput"
+                                                onkeypress="return SwitchTo(event,this)">
+                                    <apex:actionSupport event="onchange"
+                                                        rerender="relatedListPanel,prevNextPanel"
+                                                        status="counterStatus"/>
+                                </apex:inputText>
+                            </apex:outputPanel>
+                            of
+                            <apex:outputPanel rendered="{!IF(NOT(ISBLANK(stdSetCon.resultSize)) && stdSetCon.resultSize > 0, true, false)}">
+                                    {!CEILING(stdSetCon.ResultSize / stdSetCon.pageSize)}
+                            </apex:outputPanel>
+                        </span>
+
+                        </div>
+                    </apex:outputPanel>
+
+
+                </apex:outputPanel>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+    var showHideBoolean = false;
+
+    function showActionMenu(recId){
+    /*var divEle = document.getElementsByClassName('overflowmenu');
+    console.log('divEle: ' + divEle);*/
+
+    $(".overflowmenu").each(function() {
+    $(this).css("display","none");
+    });
+
+    var eleId = '#' + recId;
+    console.log('eleId: ' + eleId);
+    if(showHideBoolean === false){
+        console.log('showHideBoolean: ' + showHideBoolean);
+    $(eleId).css("display","block");
+    showHideBoolean = true;
+    }
+    else{
+        console.log('else');
+    $(eleId).css("display","none");
+    showHideBoolean = false;
+    }
+
+    }
+
+    /*function showActionMenu(recId){
+        var recrdId = '.' + recId;
+        $(recrdId).toggleClass('toggleActionMenu');
+        }*/
+
+    /*var visibleDivId = null;
+    var prev_visibleDivId = null;
+
+    function showActionMenu(divId) {
+        //divId = divId.id;
+        if(visibleDivId === divId) {
+            prev_visibleDivId = visibleDivId;
+            visibleDivId = null;
+        } else {
+            prev_visibleDivId = visibleDivId;
+            visibleDivId = divId;
+        }
+        hideNonVisibleDivs(divId,prev_visibleDivId);
+    }
+    function hideNonVisibleDivs(divId,prev_visibleDivId) {
+        var div = document.getElementById(divId);
+        var prev_visibleDiv = null;
+        if(prev_visibleDivId !== null){
+            prev_visibleDiv = document.getElementById(prev_visibleDivId);
+        }
+        if(visibleDivId === divId) {
+            if(prev_visibleDivId !== null){
+                prev_visibleDiv.style.display = "none";
+            }
+            div.style.display = "block";
+        } else {
+            div.style.display = "none";
+        }
+    }*/
+
+
+
+    function deleteFunction(rcid){
+        var deleteRecordId = rcid;
+        deleteActionFunction{!SObjectAPI}(deleteRecordId);
+    }
+
+    $(document).ready(function() {
+
+    $("table.datatablesort_{!sObjName}_{!relatedId}").each(function() {
+    $(this).DataTable({
+    "bPaginate": false,
+    "bFilter": false,
+    "bLengthChange" : false,
+    "bInfo" : false
+    });
+    });
+
+
+
+    console.log('headerColor');
+        $('.sorting_asc').css({
+            'background-color': "#dee4ed",
+            'background-image':'none'
+        });
+
+        $('.sorting_desc').css({
+            'background-color': "#f4f6f9",
+            'background-image':'none'
+         });
+
+        $('.sorting').css({
+            'background-color': "#ffffff",
+            'background-image':'none'
+        });
+
+    });
+
+
+
+    /*window.onload = function(){
+        $('.oRight').removeClass('oRight');
+        headerColor();
+    }*/
+
+
+    function headerColor(){
+        console.log('headerColor');
+        $('.sorting_asc').css({
+            'background-color': "#dee4ed",
+            'background-image':'none'
+        });
+
+        $('.sorting_desc').css({
+            'background-color': "#f4f6f9",
+            'background-image':'none'
+         });
+
+        $('.sorting').css({
+            'background-color': "#ffffff",
+            'background-image':'none'
+        });
+
+        }
+
+    </script>
+
+
+</apex:component>

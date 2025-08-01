@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Points_Of_Inspection_Pass__c</fullName>
+    <label>Points Of Inspection [Pass]</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Hinge</fullName>
+                <default>false</default>
+                <label>Hinge</label>
+            </value>
+            <value>
+                <fullName>Hinge Pin</fullName>
+                <default>false</default>
+                <label>Hinge Pin</label>
+            </value>
+            <value>
+                <fullName>Bail Ears</fullName>
+                <default>false</default>
+                <label>Bail Ears</label>
+            </value>
+            <value>
+                <fullName>Latch</fullName>
+                <default>false</default>
+                <label>Latch</label>
+            </value>
+            <value>
+                <fullName>Latch Pin</fullName>
+                <default>false</default>
+                <label>Latch Pin</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

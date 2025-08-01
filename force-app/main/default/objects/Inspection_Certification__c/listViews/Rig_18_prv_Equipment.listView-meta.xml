@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_18_prv_Equipment</fullName>
+    <columns>NAME</columns>
+    <columns>Pressure_Relief_Valve__c</columns>
+    <columns>Description__c</columns>
+    <columns>Date_In_Service__c</columns>
+    <columns>Certificate_Number__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>Asset_ID__c</columns>
+    <columns>Inspection_Requirement__c</columns>
+    <columns>Interval_days__c</columns>
+    <columns>Date_Last_Inspection__c</columns>
+    <columns>Date_of_Next_Inspection__c</columns>
+    <columns>Days_to_Inspection__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Inspection_Certification__c.Pressure_Relief_Valve</value>
+    </filters>
+    <filters>
+        <field>WD_Unit__c</field>
+        <operation>equals</operation>
+        <value>rig 18</value>
+    </filters>
+    <label>Rig #18 - PRV Register</label>
+    <sharedTo>
+        <group>OPs_super</group>
+        <group>Purchasing</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

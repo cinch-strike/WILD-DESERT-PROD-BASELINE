@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>keys_Camp</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>NAME</columns>
+    <columns>Location__c</columns>
+    <columns>Description__c</columns>
+    <columns>Currently_Assigned__c</columns>
+    <columns>Assigned_To__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Company_Property__c.Keys</value>
+    </filters>
+    <filters>
+        <field>Location__c</field>
+        <operation>equals</operation>
+        <value>Camp (Roma Yard)</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Obsolete (Binned/Sold)</value>
+    </filters>
+    <label>Key Register (Roma Camp)</label>
+    <sharedTo>
+        <group>Base_Camp</group>
+        <group>HR</group>
+        <group>Purchasing</group>
+    </sharedTo>
+</ListView>

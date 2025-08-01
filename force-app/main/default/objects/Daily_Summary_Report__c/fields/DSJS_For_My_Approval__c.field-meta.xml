@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DSJS_For_My_Approval__c</fullName>
+    <formula>$User.Id =  Ops_Supervisor__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>DSJS For My Approval</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

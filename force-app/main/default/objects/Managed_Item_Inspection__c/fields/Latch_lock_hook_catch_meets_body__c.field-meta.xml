@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Latch_lock_hook_catch_meets_body__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>clearance allowance depend on hooks size - refer to  TABLE 6 Aust Standard</inlineHelpText>
+    <label>Latch lock hook catch meets body</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

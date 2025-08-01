@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>At_WD_Unit__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>If hire item to be situated at a WD UNIT please tick. A hire item may be situated at a WD Unit or at a 3rd Party location eg. Schlumberger</inlineHelpText>
+    <label>At WD Unit</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

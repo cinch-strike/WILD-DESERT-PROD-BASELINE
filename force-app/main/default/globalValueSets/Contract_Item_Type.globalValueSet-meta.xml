@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Rig_Operating</fullName>
+        <default>false</default>
+        <label>Rig Operating</label>
+    </customValue>
+    <customValue>
+        <fullName>SBWC</fullName>
+        <default>false</default>
+        <label>SBWC</label>
+    </customValue>
+    <customValue>
+        <fullName>SBWOC</fullName>
+        <default>false</default>
+        <label>SBWOC</label>
+    </customValue>
+    <customValue>
+        <fullName>NPT</fullName>
+        <default>false</default>
+        <label>NPT (Downtime, Repair)</label>
+    </customValue>
+    <customValue>
+        <fullName>Maintenance</fullName>
+        <default>false</default>
+        <label>Maintenance</label>
+    </customValue>
+    <customValue>
+        <fullName>Rig Move</fullName>
+        <default>false</default>
+        <label>Rig Move</label>
+    </customValue>
+    <customValue>
+        <fullName>Equipment</fullName>
+        <default>false</default>
+        <label>Equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Recharge</fullName>
+        <default>false</default>
+        <label>Recharge</label>
+    </customValue>
+    <customValue>
+        <fullName>Service</fullName>
+        <default>false</default>
+        <label>Service</label>
+    </customValue>
+    <customValue>
+        <fullName>QA</fullName>
+        <default>false</default>
+        <label>QA</label>
+    </customValue>
+    <customValue>
+        <fullName>Rig_Personnel</fullName>
+        <default>false</default>
+        <label>Rig Personnel</label>
+    </customValue>
+    <customValue>
+        <fullName>Camp Personnel</fullName>
+        <default>false</default>
+        <label>Camp Personnel</label>
+    </customValue>
+    <customValue>
+        <fullName>Field Personnel</fullName>
+        <default>false</default>
+        <label>Field Personnel</label>
+    </customValue>
+    <customValue>
+        <fullName>Trades Personnel</fullName>
+        <default>false</default>
+        <label>Trades Personnel</label>
+    </customValue>
+    <customValue>
+        <fullName>Camp Operating</fullName>
+        <default>false</default>
+        <label>Camp Operating</label>
+    </customValue>
+    <customValue>
+        <fullName>Camp Move</fullName>
+        <default>false</default>
+        <label>Camp Move</label>
+    </customValue>
+    <customValue>
+        <fullName>Mobe / Demobe</fullName>
+        <default>false</default>
+        <label>Mobe / Demobe</label>
+    </customValue>
+    <customValue>
+        <fullName>Transport</fullName>
+        <default>false</default>
+        <label>Transport</label>
+    </customValue>
+    <description>Contact Item Type</description>
+    <masterLabel>Contract Item Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

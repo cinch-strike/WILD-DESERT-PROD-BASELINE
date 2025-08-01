@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Change__c</fullName>
+    <inlineHelpText>May select more than one eg.  a modification in equipment may result in document change</inlineHelpText>
+    <label>Type of Change</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Document</fullName>
+                <default>false</default>
+                <label>Document</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+                <label>Equipment</label>
+            </value>
+            <value>
+                <fullName>Procedure/Process</fullName>
+                <default>false</default>
+                <label>Procedure/Process</label>
+            </value>
+            <value>
+                <fullName>Organisation Structure</fullName>
+                <default>false</default>
+                <label>Organisation Structure</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

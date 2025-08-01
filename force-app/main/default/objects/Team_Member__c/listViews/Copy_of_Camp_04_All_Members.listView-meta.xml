@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_Camp_04_All_Members</fullName>
+    <columns>NAME</columns>
+    <columns>Team__c</columns>
+    <columns>Roster__c</columns>
+    <columns>Crew__c</columns>
+    <columns>Position__c</columns>
+    <columns>Recruitment_Status__c</columns>
+    <columns>Current_Personnel__c</columns>
+    <columns>Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Team_Member__c.TM</value>
+    </filters>
+    <filters>
+        <field>Team__c</field>
+        <operation>contains</operation>
+        <value>camp 4</value>
+    </filters>
+    <label>Camp 04 | All Members</label>
+    <sharedTo>
+        <group>BOO</group>
+        <group>Camp_4</group>
+        <group>Camp_Supervisor</group>
+        <group>HR</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+    </sharedTo>
+</ListView>

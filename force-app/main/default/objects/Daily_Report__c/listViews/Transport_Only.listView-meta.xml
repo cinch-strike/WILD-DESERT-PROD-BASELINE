@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Transport_Only</fullName>
+    <columns>Status__c</columns>
+    <columns>NAME</columns>
+    <columns>Report_Date__c</columns>
+    <columns>Unit__c</columns>
+    <columns>Site__c</columns>
+    <columns>Daily_Summary_Report__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Unit__c</field>
+        <operation>equals</operation>
+        <value>Transport - Roma</value>
+    </filters>
+    <label>Transport Only</label>
+    <sharedTo>
+        <group>OPs_super</group>
+        <group>Transport</group>
+        <role>Administration</role>
+        <role>Transport_Admin</role>
+        <role>Transport_Ops_Manager</role>
+    </sharedTo>
+</ListView>

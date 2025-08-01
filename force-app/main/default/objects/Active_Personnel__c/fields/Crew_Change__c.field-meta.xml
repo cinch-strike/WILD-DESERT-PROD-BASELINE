@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Crew_Change__c</fullName>
+    <label>Crew Change</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>In</fullName>
+                <default>false</default>
+                <label>In</label>
+            </value>
+            <value>
+                <fullName>Out</fullName>
+                <default>false</default>
+                <label>Out</label>
+            </value>
+            <value>
+                <fullName>Short Change</fullName>
+                <default>false</default>
+                <label>Short Change</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

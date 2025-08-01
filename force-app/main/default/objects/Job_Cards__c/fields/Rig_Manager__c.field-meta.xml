@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_Manager__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <inlineHelpText>The Rig Manager should view the task is completed correctly and approve</inlineHelpText>
+    <label>Manager</label>
+    <referenceTo>Employees__c</referenceTo>
+    <relationshipLabel>Work Orders (Approving Rig Manager)</relationshipLabel>
+    <relationshipName>Work_Orders</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PO_s_for_Fuel</fullName>
+    <columns>NAME</columns>
+    <columns>Supplier__c</columns>
+    <columns>Total_Price__c</columns>
+    <columns>For_Approval_Notes__c</columns>
+    <columns>Status__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PO_Approver__c</field>
+        <operation>equals</operation>
+        <value>David Whiley</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>For Approval,PO Approved,Sent to Supplier,Partially Fulfilled,Completed</value>
+    </filters>
+    <filters>
+        <field>Supplier__c</field>
+        <operation>contains</operation>
+        <value>Ampol</value>
+    </filters>
+    <label>PO&apos;s for Fuel</label>
+    <sharedTo>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

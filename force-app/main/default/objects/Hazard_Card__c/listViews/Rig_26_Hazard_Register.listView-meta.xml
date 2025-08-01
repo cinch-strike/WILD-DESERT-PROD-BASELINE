@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_26_Hazard_Register</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Date__c</columns>
+    <columns>Hazard_Description__c</columns>
+    <columns>Imediate_Actions_Taken__c</columns>
+    <columns>Risk_Rating__c</columns>
+    <columns>Reported_By__c</columns>
+    <columns>Unit_Manager__c</columns>
+    <columns>Unit_Manager_Report__c</columns>
+    <columns>Ops_Manager_Report__c</columns>
+    <columns>Date_Closed__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Unit__c</field>
+        <operation>equals</operation>
+        <value>Rig 26</value>
+    </filters>
+    <filters>
+        <field>Date__c</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:365</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Hazard_Card__c.Hazard_Card</value>
+    </filters>
+    <label>Rig #26 - Hazard Register</label>
+    <sharedTo>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Rig_26</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

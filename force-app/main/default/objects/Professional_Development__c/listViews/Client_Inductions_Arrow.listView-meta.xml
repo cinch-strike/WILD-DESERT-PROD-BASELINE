@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Client_Inductions_Arrow</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>Record_Type_Name__c</columns>
+    <columns>NAME</columns>
+    <columns>Requirement_Type__c</columns>
+    <columns>Required_By__c</columns>
+    <columns>Requires_Renewal__c</columns>
+    <columns>Days_until_renewal_is_required__c</columns>
+    <columns>Number_Days_for_Expiry_Reminder__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Professional_Development__c.Inductions</value>
+    </filters>
+    <filters>
+        <field>Required_By__c</field>
+        <operation>contains</operation>
+        <value>Arrow</value>
+    </filters>
+    <filters>
+        <field>Inactive__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Client Inductions | Arrow</label>
+    <sharedTo>
+        <group>HR</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

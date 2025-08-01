@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ExceedsLimit_SendToSupplier</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+   ISCHANGED( Status__c ) ,
+   ISPICKVAL(Status__c , &apos;Sent to Supplier&apos;),
+   Exceeds_Maximum_Limit__c = TRUE,
+   Is_PO_Approved__c = FALSE
+)</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>Needs to send for approval first. Total price is greater than maximum limit of $10K.</errorMessage>
+</ValidationRule>

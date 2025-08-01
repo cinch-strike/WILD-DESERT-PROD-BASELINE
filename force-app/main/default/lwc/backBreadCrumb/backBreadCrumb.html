@@ -1,0 +1,16 @@
+<template>
+    <template if:false={back_label}>
+        <lightning-breadcrumbs>
+            <lightning-breadcrumb label="Back" href="javascript:window.history.back();">
+            </lightning-breadcrumb>
+        </lightning-breadcrumbs>   
+    </template>
+    <template if:true={back_label}>
+        <lightning-breadcrumbs>
+            <lightning-breadcrumb label={back_label} href={back_url}>
+            </lightning-breadcrumb>
+            <lightning-breadcrumb label={current_label} href="javascript:void(0);">
+            </lightning-breadcrumb>
+        </lightning-breadcrumbs>   
+    </template>
+</template>

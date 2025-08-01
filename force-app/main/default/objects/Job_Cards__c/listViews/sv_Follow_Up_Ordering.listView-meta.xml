@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>sv_Follow_Up_Ordering</fullName>
+    <columns>NAME</columns>
+    <columns>Date_Created__c</columns>
+    <columns>Unit_of_Asset__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>Details_of_Issue_Work_Requested__c</columns>
+    <columns>Comments__c</columns>
+    <columns>Relevant_Dept__c</columns>
+    <columns>Parts_Received_in_Stores__c</columns>
+    <columns>Action__c</columns>
+    <columns>Actionby__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Unit_of_Asset__c</field>
+        <operation>equals</operation>
+        <value>rig 22,rig 24,rig 20,rig 8,rig 28,rig 30,rig 32,Depot - Roma,Base camp - Roma,camp 6,transport - roma</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Job_Cards__c.Scheduled_Service</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Requested,Not Approved,Completed,Not Required</value>
+    </filters>
+    <filters>
+        <field>Date_Created__c</field>
+        <operation>lessOrEqual</operation>
+        <value>12/31/2014</value>
+    </filters>
+    <label>Qld /Servicing | Follow Up/Ordering</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>Mechanics_Roma</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Real_Contract_items</fullName>
+    <columns>Contract__c</columns>
+    <columns>Contract_unit__c</columns>
+    <columns>WD_Unit__c</columns>
+    <columns>NAME</columns>
+    <columns>Description__c</columns>
+    <columns>Rate__c</columns>
+    <columns>Status__c</columns>
+    <columns>Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Client__c</field>
+        <operation>equals</operation>
+        <value>Real Energy Corporation Limited</value>
+    </filters>
+    <filters>
+        <field>WD_Unit__c</field>
+        <operation>equals</operation>
+        <value>rig 16,transport,camp 7</value>
+    </filters>
+    <filters>
+        <field>Contract_unit__c</field>
+        <operation>equals</operation>
+        <value>015</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Services_Received__c.Operations_Rig</value>
+    </filters>
+    <label>015-Real Energy Rig #16/Camp #7</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>OPs_super</group>
+        <group>Rig_16</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

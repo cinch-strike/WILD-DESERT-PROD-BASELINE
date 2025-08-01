@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Generate_Invoice_JS</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Generate Invoice</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)}
+
+var totalInvalidItems = &apos;{!Invoice__c.Total_Invalid_Unit_Price_Items__c}&apos;;
+if(totalInvalidItems &gt; 0){
+ alert(&apos;You cannot Generate an Invoice till Unit Price for all the Invoice Line Items have been filled in with appropriate values.&apos;);
+} else {
+  var url = &apos;/apex/GenerateInvoice_Pdf?id=&apos; + &apos;{!Invoice__c.Id}&apos;
+  window.open(url);
+}</url>
+</WebLink>

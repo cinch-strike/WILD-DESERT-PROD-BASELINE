@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Update_Item_Rate</fullName>
+        <field>Item_Rate__c</field>
+        <formula>Value(Item_Rate_Formula__c)</formula>
+        <name>Update Item Rate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Total_Cost</fullName>
+        <field>Total_Cost__c</field>
+        <formula>Total_Cost_Formula__c</formula>
+        <name>Update Total Cost</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Update SR Fields</fullName>
+        <actions>
+            <name>Update_Item_Rate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Total_Cost</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>AND(NOT( ISNULL(Item__c )),  NOT( ISNULL(Item_total__c )))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

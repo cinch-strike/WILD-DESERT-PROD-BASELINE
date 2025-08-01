@@ -1,0 +1,48 @@
+<apex:page standardController="biz3__Purchase_Order__c"  extensions="PurchaseOrderExtensionController"   >
+<apex:stylesheet id="customstyles" value="{!$Resource.customstyles}"/>
+  <apex:form >
+  <apex:pageBlock title="Assign Items to Asset/Unit" mode="edit">
+          <apex:pageblockButtons >
+ 
+                <apex:commandButton action="{!saveAll}" value="Save & Refresh"/>
+                <apex:commandButton action="{!saveAllAndExit}" value="Save & Exit"/>
+        </apex:pageblockButtons>
+  
+   <apex:pageBlockSection >
+      <apex:outputField value="{!biz3__Purchase_Order__c.Name}"/>
+      <apex:outputField value="{!biz3__Purchase_Order__c.biz3__Status__c}"/>
+      <apex:outputField value="{!biz3__Purchase_Order__c.biz3__Account__c}"/>
+      <apex:outputField value="{!biz3__Purchase_Order__c.biz3__Due__c}"/>
+
+      <apex:pageBlockSectionItem />
+      <apex:outputField value="{!biz3__Purchase_Order__c.biz3__Total_inc_Tax__c}"/>
+   </apex:pageBlockSection>
+      
+    <apex:pageBlockTable value="{!POItems}" var="POitem">
+                <apex:column width="75">
+                        <apex:facet name="header">Item</apex:facet>
+                        <apex:outputText value="{!POitem.biz3__Item__r.Name}"/>
+                </apex:column>
+                <apex:column width="75">
+                        <apex:facet name="header">PO Item Description</apex:facet>
+                        <apex:outputField value="{!POitem.biz3__Line_Description__c}"/>
+                </apex:column>
+                <apex:column width="75">
+                        <apex:facet name="header">Quantity</apex:facet>
+                        <apex:outputField value="{!POitem.biz3__Quantity__c}"/>
+                </apex:column>
+                <apex:column style="width:100px" styleClass="assetname" >
+                        <apex:facet name="header" >Asset Name</apex:facet>
+                        <apex:inputField value="{!POitem.WD_Asset__c}"/>
+                </apex:column>                 
+     </apex:pageBlockTable>   
+
+
+  
+
+    
+
+   </apex:pageBlock>
+     
+  </apex:form>
+</apex:page>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unit_Type__c</fullName>
+    <inlineHelpText>If not selected then auto-populated from Item</inlineHelpText>
+    <label>Unit Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>true</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Rig</fullName>
+                <default>false</default>
+                <label>Rig</label>
+            </value>
+            <value>
+                <fullName>Camp</fullName>
+                <default>false</default>
+                <label>Camp</label>
+            </value>
+            <value>
+                <fullName>Transport</fullName>
+                <default>false</default>
+                <label>Transport</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

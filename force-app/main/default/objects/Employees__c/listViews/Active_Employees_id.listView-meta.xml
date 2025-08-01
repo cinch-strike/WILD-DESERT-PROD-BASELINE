@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Employees_id</fullName>
+    <columns>NAME</columns>
+    <columns>PositionLookup__c</columns>
+    <columns>Assigned_to_Unit__c</columns>
+    <columns>Em_ID__c</columns>
+    <columns>USI__c</columns>
+    <columns>Santos_Security_Number__c</columns>
+    <columns>Geotab__c</columns>
+    <columns>PID_Letter_Uploaded__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Employees__c.Active_Employee</value>
+    </filters>
+    <label>WD - ID Numbers</label>
+    <sharedTo>
+        <group>HR</group>
+        <group>OPs_super</group>
+        <group>Transport</group>
+        <role>Ops_Manager</role>
+        <role>Rig_Manager</role>
+    </sharedTo>
+</ListView>

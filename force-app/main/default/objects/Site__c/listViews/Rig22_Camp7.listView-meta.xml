@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig22_Camp7</fullName>
+    <columns>Account__c</columns>
+    <columns>NAME</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>Previous_Site__c</columns>
+    <columns>Site_Active__c</columns>
+    <columns>Site_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Start_Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>11/1/2019</value>
+    </filters>
+    <filters>
+        <field>Contract__c</field>
+        <operation>equals</operation>
+        <value>557</value>
+    </filters>
+    <label>Rig 4/Camp 7 - Santos SA (557)</label>
+    <sharedTo>
+        <group>Camp_7</group>
+        <group>Camp_Supervisor</group>
+        <group>Finance</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Rig_4</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

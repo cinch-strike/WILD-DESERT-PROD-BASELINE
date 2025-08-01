@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_HSEQ_Forms_Custom</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New HSEQ Forms (classic)</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/setup/ui/recordtypeselect.jsp?ent=01I90000001d7IR&amp;retURL={!Daily_Report__c.Id}&amp;save_new_url=/a1L/e?CF00N0o00000Mpkmx={!Daily_Report__c.Name}&amp;CF00N0o00000Mpkmx_lkid={!Daily_Report__c.Id}&amp;CF00N9000000Dxdwv={!Daily_Report__c.Site__c}&amp;CF00N9000000BFFEm={!Daily_Report__c.Unit__c}</url>
+</WebLink>

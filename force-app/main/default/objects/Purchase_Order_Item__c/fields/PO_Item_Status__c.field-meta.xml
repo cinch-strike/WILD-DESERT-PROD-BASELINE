@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PO_Item_Status__c</fullName>
+    <label>PO Item Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Draft</fullName>
+                <default>false</default>
+                <label>Draft</label>
+            </value>
+            <value>
+                <fullName>Ordered</fullName>
+                <default>false</default>
+                <label>Ordered</label>
+            </value>
+            <value>
+                <fullName>Partially Fulfilled</fullName>
+                <default>false</default>
+                <label>Partially Fulfilled</label>
+            </value>
+            <value>
+                <fullName>Fulfilled</fullName>
+                <default>false</default>
+                <label>Fulfilled</label>
+            </value>
+            <value>
+                <fullName>Non-PR Related</fullName>
+                <default>true</default>
+                <label>Non-PR Related</label>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <label>Cancelled</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fuel_Card_Register</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>NAME</columns>
+    <columns>Fuel_Company__c</columns>
+    <columns>Currently_Assigned__c</columns>
+    <columns>Assigned_To__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>Unit__c</columns>
+    <columns>Expiry_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Company_Property__c.Fuel_Cards</value>
+    </filters>
+    <label>Fuel Card Register</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>HR</group>
+    </sharedTo>
+</ListView>

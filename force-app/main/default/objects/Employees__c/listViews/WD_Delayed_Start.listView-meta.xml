@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WD_Delayed_Start</fullName>
+    <columns>NAME</columns>
+    <columns>Mobile__c</columns>
+    <columns>Assigned_to_Unit__c</columns>
+    <columns>PositionLookup__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>Personal_Email__c</columns>
+    <columns>Street_Address__c</columns>
+    <columns>City__c</columns>
+    <columns>State__c</columns>
+    <columns>Post_Code__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PositionLookup__c</field>
+        <operation>equals</operation>
+        <value>Delayed Start</value>
+    </filters>
+    <label>WD - Delayed Start</label>
+    <sharedTo>
+        <group>HR</group>
+    </sharedTo>
+</ListView>

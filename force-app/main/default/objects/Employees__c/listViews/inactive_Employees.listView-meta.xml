@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>inactive_Employees</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>NAME</columns>
+    <columns>PositionLookup__c</columns>
+    <columns>Finish_Date__c</columns>
+    <columns>Status__c</columns>
+    <columns>Assigned_to_Unit__c</columns>
+    <columns>Geotab__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Employees__c.Inactive_Employee</value>
+    </filters>
+    <label>WD - Inactive</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>HR</group>
+    </sharedTo>
+</ListView>

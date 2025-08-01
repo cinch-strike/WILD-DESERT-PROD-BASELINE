@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Managed_Items</fullName>
+    <columns>NAME</columns>
+    <columns>Store_Item_Code__c</columns>
+    <columns>Item_Category__c</columns>
+    <columns>Cost_Price__c</columns>
+    <columns>Tax_Code__c</columns>
+    <columns>Preferred_Supplier_1st__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Non_Searchable_Item__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Item_Category__c</field>
+        <operation>equals</operation>
+        <value>Managed items</value>
+    </filters>
+    <label>All - Managed Items</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Purchasing</group>
+    </sharedTo>
+</ListView>

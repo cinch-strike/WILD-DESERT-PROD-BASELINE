@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Water_Key_Type__c</fullName>
+    <label>Water Key Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Roma Potable Water</fullName>
+                <default>false</default>
+                <label>Roma Potable Water</label>
+            </value>
+            <value>
+                <fullName>Roma Truck Wash</fullName>
+                <default>false</default>
+                <label>Roma Truck Wash</label>
+            </value>
+            <value>
+                <fullName>Western Downs (Standpipe)</fullName>
+                <default>false</default>
+                <label>Western Downs (Standpipe)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

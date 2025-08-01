@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>1</activeVersionNumber>
+    <description>When MOC status changes to complete automatically update completion date to be todays date</description>
+    <masterLabel>MOC Completed Date auto update when status is complete</masterLabel>
+</FlowDefinition>

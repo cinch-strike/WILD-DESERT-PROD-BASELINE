@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>of_Broken_Wires_over_30_times_diameter__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Count the number of broken wires within a length of Wire Cable - 30 times the diameter (Diameter is the distance around the outside of the Wire Cable) (Nominal is the diameter at the start of its life)</inlineHelpText>
+    <label># of Broken Wires over 30 x diameter</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Send_email_to_training</fullName>
+        <ccEmails>training@wilddesert.com.au</ccEmails>
+        <description>Send email to training</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Professional_Development/New_PD_Reminder</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Change_status_to_expired</fullName>
+        <field>Status__c</field>
+        <literalValue>Expired</literalValue>
+        <name>Change status to expired</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Check_the_box</fullName>
+        <field>Complete__c</field>
+        <literalValue>1</literalValue>
+        <name>Check the box</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Mark_Dev_Record_Expired</fullName>
+        <description>This will check Expired checkbox.</description>
+        <field>Expired__c</field>
+        <literalValue>1</literalValue>
+        <name>Mark Dev Record Expired</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PD_Text</fullName>
+        <field>PD_Type_Text__c</field>
+        <formula>PD_Type__c</formula>
+        <name>PD Text</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_DRrenewal_date</fullName>
+        <field>Date_Renewal_Required__c</field>
+        <formula>Date_of_Training__c + Renewal_Period_Days__c</formula>
+        <name>Update DR renewal date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Renewal_Date</fullName>
+        <field>Date_Renewal_Required__c</field>
+        <formula>Date_of_Training__c + Professional_Development_Type__r.Days_until_renewal_is_required__c</formula>
+        <name>Update Renewal Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status</fullName>
+        <field>Expired__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_2</fullName>
+        <field>Status__c</field>
+        <literalValue>Expired</literalValue>
+        <name>Update Status 2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_date_of_training_when_st_complete</fullName>
+        <field>Date_of_Training__c</field>
+        <formula>Today()</formula>
+        <name>Update date of training when st complete</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Check when completed</fullName>
+        <actions>
+            <name>Check_the_box</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Development_Records__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Complete</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Mark Development record when expired</fullName>
+        <actions>
+            <name>Change_status_to_expired</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Mark_Dev_Record_Expired</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Development_Records__c.Date_of_Training__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Development_Records__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Complete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Development_Records__c.No_of_days_left_for_Renewal__c</field>
+            <operation>lessOrEqual</operation>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Development_Records__c.Requires_Renewal__c</field>
+            <operation>equals</operation>
+            <value>YES</value>
+        </criteriaItems>
+        <description>This workflow marks the development record if it expires.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <offsetFromField>Development_Records__c.Date_Renewal_Required__c</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Send email alert for Dev Record Expiry</fullName>
+        <actions>
+            <name>Send_email_to_training</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Development_Records__c.Expiry_Reminder_Date__c</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <failedMigrationToolVersion>238.18.1</failedMigrationToolVersion>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set PD type text for sharing</fullName>
+        <actions>
+            <name>PD_Text</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Development_Records__c.CreatedDate</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Status of DR</fullName>
+        <actions>
+            <name>Update_Status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Status_2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Development_Records__c.Days_for_renewal_required__c</field>
+            <operation>lessThan</operation>
+            <value>0</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update dates on DR</fullName>
+        <actions>
+            <name>Update_date_of_training_when_st_complete</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Development_Records__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Complete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Development_Records__c.Date_of_Training__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update expiry dates on DR</fullName>
+        <actions>
+            <name>Update_DRrenewal_date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Development_Records__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Complete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Development_Records__c.Date_of_Training__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Development_Records__c.Renewal_Period_Days__c</field>
+            <operation>greaterThan</operation>
+            <value>-1</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

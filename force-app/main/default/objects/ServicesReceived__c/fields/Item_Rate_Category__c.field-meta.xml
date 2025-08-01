@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Item_Rate_Category__c</fullName>
+    <inlineHelpText>This is the type that the rate is managed by e.g. hourly, daily or lump sum rate</inlineHelpText>
+    <label>Item Rate Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Day Rate</fullName>
+                <default>false</default>
+                <label>Day Rate</label>
+            </value>
+            <value>
+                <fullName>Hourly</fullName>
+                <default>false</default>
+                <label>Hourly</label>
+            </value>
+            <value>
+                <fullName>Lump Sum</fullName>
+                <default>false</default>
+                <label>Lump Sum</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

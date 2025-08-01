@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PO_Creation_Checker__c</fullName>
+    <description>0 = No Error
+1 = No Supplier and with PO
+2 = No Supplier
+3 = with PO (Not Cancelled)</description>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(Supplier__c) &amp;&amp; NOT(ISBLANK(PO_Status__c)) &amp;&amp; PO_Status__c != &apos;Cancelled&apos;, 1,
+  IF(ISBLANK(Supplier__c), 2,
+    IF(NOT(ISBLANK(PO_Status__c)) &amp;&amp; PO_Status__c != &apos;Cancelled&apos;, 3, 0)
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>PO Creation Checker</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Progress_Report__c</fullName>
+    <label>Progress Report</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Parts to be Ordered</fullName>
+                <default>true</default>
+                <label>Parts to be Ordered</label>
+            </value>
+            <value>
+                <fullName>Waiting on Parts</fullName>
+                <default>false</default>
+                <label>Waiting on Parts</label>
+            </value>
+            <value>
+                <fullName>Asset in Use</fullName>
+                <default>false</default>
+                <label>Asset in Use</label>
+            </value>
+            <value>
+                <fullName>Asset Stacked</fullName>
+                <default>false</default>
+                <label>Asset Stacked</label>
+            </value>
+            <value>
+                <fullName>Monitoring Fault</fullName>
+                <default>false</default>
+                <label>Monitoring Fault</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

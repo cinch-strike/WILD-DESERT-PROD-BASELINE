@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fuel_Levels_Required_If_Rig_Camp</fullName>
+    <active>true</active>
+    <description>Fuel Levels (L) is required field if Unit Type is Rig or Camp</description>
+    <errorConditionFormula>AND(
+   OR(ISPICKVAL( Type__c , &quot;Rig&quot;), 
+      ISPICKVAL( Type__c , &quot;Camp&quot;)
+   ),
+ ISBLANK( Fuel_Levels__c ) 
+)</errorConditionFormula>
+    <errorDisplayField>Fuel_Levels__c</errorDisplayField>
+    <errorMessage>Complete this field.</errorMessage>
+</ValidationRule>

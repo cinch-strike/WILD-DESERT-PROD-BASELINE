@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>PR_Approval_Email_1</fullName>
+        <description>PR Approval Email 1</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Purchase_Request_Approver__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>PR_Approval_Email_Templates/New_Purchase_Request_Approval_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Purchase_Request_For_Pricing_Approval_Email_Alert</fullName>
+        <description>Purchase Request - For Pricing Approval Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Purchase_Request_Approver__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Purchase/Purchase_Request_For_Pricing_Approval_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Purchase_Request_Rejected_Email_Alert</fullName>
+        <description>Purchase Request - Rejected Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Purchase/Purchase_Request_Rejected_Template</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Tag_as_For_Order</fullName>
+        <field>From_Order__c</field>
+        <literalValue>1</literalValue>
+        <name>Tag as For Order</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_For_Allocation</fullName>
+        <field>Status__c</field>
+        <literalValue>Pick List</literalValue>
+        <name>Update For Allocation (Pick List)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_For_Item_Approval</fullName>
+        <field>Status__c</field>
+        <literalValue>For Item Approval</literalValue>
+        <name>Update For Item Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_For_Ordering</fullName>
+        <field>Status__c</field>
+        <literalValue>For Ordering</literalValue>
+        <name>Update For Ordering</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_For_Pricing_Approval</fullName>
+        <field>Status__c</field>
+        <literalValue>For Pricing Approval</literalValue>
+        <name>Update For Pricing Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_For_Quoting</fullName>
+        <field>Status__c</field>
+        <literalValue>For Quoting</literalValue>
+        <name>Update For Quoting</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_InApproval_Status</fullName>
+        <field>Status__c</field>
+        <literalValue>For Approval</literalValue>
+        <name>Update InApproval Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Rejected_Status</fullName>
+        <field>Status__c</field>
+        <literalValue>Cancelled</literalValue>
+        <name>Update Rejected Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

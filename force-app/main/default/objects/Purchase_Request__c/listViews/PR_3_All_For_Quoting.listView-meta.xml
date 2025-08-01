@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PR_3_All_For_Quoting</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Quantity__c</columns>
+    <columns>Item_Name_Hyperlink__c</columns>
+    <columns>Supplier__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Destination_Store__c</columns>
+    <columns>Work_Order__c</columns>
+    <columns>Asset__c</columns>
+    <columns>Quoted_Created__c</columns>
+    <columns>Cost_Price_GST_exc__c</columns>
+    <columns>Total_Cost_Price_GST_exc__c</columns>
+    <columns>Cost_Allocation_Unit__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>For Quoting</value>
+    </filters>
+    <filters>
+        <field>Quoted_Created__c</field>
+        <operation>notContain</operation>
+    </filters>
+    <label>03 All For Quoting - In Progress</label>
+    <sharedTo>
+        <group>Managing_Director</group>
+        <group>Purchasing</group>
+    </sharedTo>
+</ListView>

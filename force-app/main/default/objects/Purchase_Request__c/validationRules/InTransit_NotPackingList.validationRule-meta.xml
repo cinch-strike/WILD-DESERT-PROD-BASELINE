@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InTransit_NotPackingList</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISCHANGED(Status__c ) ,
+    ISPICKVAL( Status__c , &apos;In Transit&apos;),
+    NOT(ISPICKVAL( PRIORVALUE(Status__c), &apos;Packing List&apos;))
+)</errorConditionFormula>
+    <errorMessage>Only purchase request with status of Packing List can be changed to In Transit.</errorMessage>
+</ValidationRule>

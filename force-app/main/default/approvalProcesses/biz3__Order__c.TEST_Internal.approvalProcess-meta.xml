@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>biz3__Actual_Total_Costs__c</field>
+        <field>biz3__Actual_Inventory_Costs__c</field>
+        <field>biz3__Actual_Purchase_Costs__c</field>
+        <field>RecordType</field>
+        <field>Order_Number__c</field>
+        <field>biz3__Status__c</field>
+        <field>biz3__Stage__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <type>userHierarchyField</type>
+            </approver>
+        </assignedApprover>
+        <entryCriteria>
+            <criteriaItems>
+                <field>biz3__Order__c.biz3__Actual_Total_Costs__c</field>
+                <operation>greaterThan</operation>
+                <value>1</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
+        <label>TEST - Internal</label>
+        <name>TEST_Internal</name>
+    </approvalStep>
+    <enableMobileDeviceAccess>true</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>biz3__Order__c.RecordType</field>
+            <operation>equals</operation>
+            <value>Order</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>biz3__Order__c.biz3__Status__c</field>
+            <operation>equals</operation>
+            <value>Not Started</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <label>TEST - Internal</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>false</useApproverFieldOfRecordOwner>
+        <userHierarchyField>approver__c</userHierarchyField>
+    </nextAutomatedApprover>
+    <processOrder>1</processOrder>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

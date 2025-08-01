@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Account_Name__c</columns>
+    <columns>Description__c</columns>
+    <columns>Contract_Details__c</columns>
+    <columns>Company_Manager__c</columns>
+    <columns>Manager_Ops_Sup__c</columns>
+    <columns>Contract_Start_Date__c</columns>
+    <columns>Contract_End_Date__c</columns>
+    <columns>Contract_Active__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contract_Start_Date__c</field>
+        <operation>greaterThan</operation>
+        <value>1/1/2022</value>
+    </filters>
+    <label>All</label>
+    <sharedTo>
+        <group>Finance</group>
+    </sharedTo>
+</ListView>

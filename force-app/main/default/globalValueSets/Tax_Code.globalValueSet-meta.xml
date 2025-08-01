@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>GST on Expenses</fullName>
+        <default>true</default>
+        <label>GST on Expenses</label>
+    </customValue>
+    <customValue>
+        <fullName>GST Free Expenses</fullName>
+        <default>false</default>
+        <label>GST Free Expenses</label>
+    </customValue>
+    <masterLabel>Tax Code</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

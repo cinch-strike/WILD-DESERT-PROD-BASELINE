@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gauges__c</fullName>
+    <label>Gauges</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pressure Gauge</fullName>
+                <default>false</default>
+                <label>Pressure Gauge</label>
+            </value>
+            <value>
+                <fullName>Kane Instruments Weight Indicator</fullName>
+                <default>false</default>
+                <label>Kane Instruments Weight Indicator</label>
+            </value>
+            <value>
+                <fullName>Digital Crystal Gauge</fullName>
+                <default>false</default>
+                <label>Digital Crystal Gauge</label>
+            </value>
+            <value>
+                <fullName>Accumulator Pressure Gauge</fullName>
+                <default>false</default>
+                <label>Accumulator Pressure Gauge</label>
+            </value>
+            <value>
+                <fullName>Annular Pressure Gauge</fullName>
+                <default>false</default>
+                <label>Annular Pressure Gauge</label>
+            </value>
+            <value>
+                <fullName>Manifold Pressure Gauge</fullName>
+                <default>false</default>
+                <label>Manifold Pressure Gauge</label>
+            </value>
+            <value>
+                <fullName>Rig Smart Systems</fullName>
+                <default>false</default>
+                <label>Rig Smart Systems</label>
+            </value>
+            <value>
+                <fullName>Rod Tong Pressure Gauge</fullName>
+                <default>false</default>
+                <label>Rod Tong Pressure Gauge</label>
+            </value>
+            <value>
+                <fullName>Rig Smart Weight Indicator</fullName>
+                <default>false</default>
+                <label>Rig Smart Weight Indicator</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

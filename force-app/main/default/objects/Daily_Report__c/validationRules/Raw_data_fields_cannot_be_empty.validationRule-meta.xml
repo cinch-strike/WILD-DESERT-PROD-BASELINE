@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Raw_data_fields_cannot_be_empty</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(
+AND(
+ ISPICKVAL(Type__c,&apos;Rig&apos;),   
+OR(TEXT(Status__c) = &apos;Submitted&apos;,TEXT(Status__c) = &apos;Approved&apos;,TEXT(Status__c) = &apos;Invoiced&apos;),
+OR(ISBLANK(No_of_KM_s_from_Previous_Site__c),ISBLANK(Line_on_Spool__c),ISBLANK(Line_Slipped__c))
+),
+TRUE,
+FALSE
+)</errorConditionFormula>
+    <errorMessage>Fields #No of KM&apos;s from Previous Site, Line on Spool &amp; Line Slipped cannot be empty.</errorMessage>
+</ValidationRule>

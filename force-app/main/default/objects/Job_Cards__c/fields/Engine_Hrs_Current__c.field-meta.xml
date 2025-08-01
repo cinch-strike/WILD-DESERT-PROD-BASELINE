@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Engine_Hrs_Current__c</fullName>
+    <description>Engine Hrs (On the Asset) Current</description>
+    <externalId>false</externalId>
+    <formula>WD_Asset__r.Engine_Hours__c</formula>
+    <inlineHelpText>Engine Hrs (On the Asset) Current</inlineHelpText>
+    <label>Engine Hrs (Current)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

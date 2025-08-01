@@ -1,0 +1,324 @@
+<apex:page applyBodyTag="false" applyHtmlTag="true" StandardController="Daily_Summary_Report__c"
+           extensions="DailySummaryReport_Controller" standardStylesheets="false" docType="html-5.0"
+           id="DailySummaryReport_VF">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+    <apex:stylesheet value="{!URLFOR($Resource.SLDS232, 'assets/styles/salesforce-lightning-design-system.min.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.SLDS232, 'assets/styles/salesforce-lightning-design-system.css')}"/>
+
+    <style>
+            
+            .slds-section__title {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            background: #1797bf;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            color: currentColor;
+            font-size: initial;
+            color: white;
+            padding-left: 10px;
+            }
+
+            .slds-section__title{
+                background:#ffc124 !important;
+                color:black;
+            }
+            
+
+    </style>
+
+    <div class="slds-form-element">
+
+        <!-- General Data Start -->
+        <div class="slds-section">
+            <h3 class="slds-section__title slds-page-header__title">
+                <apex:outputText styleClass="slds-m-left_small" value="General Data"/>
+            </h3>
+        </div>
+
+        <table class="slds-table slds-table_bordered slds-table--striped slds-no-row-hover">
+            <tr>
+                <td style="width:15%">
+                    <apex:outputText styleClass="slds-truncate" value="Units Assigned"/>
+                </td>
+                <td style="width:35%">
+                    <apex:outputText styleClass="slds-truncate" value="{!unitsAssigned}"/>
+                </td>
+                <!--<td style="width:15%">
+                            <apex:outputText styleClass="slds-truncate" value="Weather"/>
+                        </td>
+                        <td style="width:35%">
+                            <apex:outputText styleClass="slds-truncate" value="{!weatherData}"/>
+                        </td>-->
+                <td style="width:15%">
+                    <apex:outputText styleClass="slds-truncate" value="Previous Site"/>
+                </td>
+                <td style="width:35%">
+                    <apex:outputText styleClass="slds-truncate"
+                                     value="{!IF(rigDailyReport != null && rigDailyReport.size>0,rigDailyReport[0].Previous_Site__c,'')}"/>
+                </td>
+            </tr>
+            <tr>
+
+                <td style="width:15%">
+                    <apex:outputText styleClass="slds-truncate" value="Line on Spool"/>
+                </td>
+                <td style="width:35%">
+                    <apex:outputText styleClass="slds-truncate"
+                                     value="{!IF(rigDailyReport != null && rigDailyReport.size>0,rigDailyReport[0].Line_on_Spool__c,'')}"/>
+                </td>
+
+                <td style="width:15%">
+                    <apex:outputText styleClass="slds-truncate" value="#No of KM's from Previous Site"/>
+                </td>
+                <td style="width:35%">
+                    <apex:outputText styleClass="slds-truncate"
+                                     value="{!IF(rigDailyReport != null && rigDailyReport.size>0,rigDailyReport[0].No_of_KM_s_from_Previous_Site__c,'')}"/>
+                </td>
+
+            </tr>
+            <tr>
+                <td style="width:15%">
+                    <apex:outputText styleClass="slds-truncate" value="Line Slipped"/>
+                </td>
+                <td style="width:35%">
+                    <apex:outputText styleClass="slds-truncate"
+                                     value="{!IF(rigDailyReport != null && rigDailyReport.size>0,rigDailyReport[0].Line_Slipped__c,'')}"/>
+                </td>
+
+            </tr>
+        </table>
+        <!-- General Data End -->
+
+        <!-- Safety Data Start -->
+        <div class="slds-section">
+            <h3 class="slds-section__title slds-page-header__title">
+                <apex:outputText styleClass="slds-m-left_small" value="Safety Data"/>
+            </h3>
+        </div>
+
+
+        <table class="slds-table slds-table_bordered slds-table--striped slds-no-row-hover">
+            <tr>
+                <td style="width:25%">
+                    <apex:outputText styleClass="slds-truncate" value="Hazards"/>
+                </td>
+                <td style="width:75%">
+                    <apex:outputText styleClass="slds-truncate" value="{!hazardCount}"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="width:25%">
+                    <apex:outputText styleClass="slds-truncate" value="LTI Free Days(Rig)"/>
+                </td>
+                <td style="width:75%">
+                    <apex:outputText styleClass="slds-truncate"
+                                     value="{!Daily_Summary_Report__c.LTI_Free_Days_Rig__c}"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="width:25%">
+                    <apex:outputText styleClass="slds-truncate" value="LTI Free Days(Camp)"/>
+                </td>
+                <td style="width:75%">
+                    <apex:outputText styleClass="slds-truncate"
+                                     value="{!Daily_Summary_Report__c.LTI_Free_Days_Camp__c}"/>
+                </td>
+            </tr>
+
+            <apex:repeat value="{!hseqRollupMap}" var="hseq">
+                <tr>
+                    <td style="width:25%">
+                        <apex:outputText styleClass="slds-truncate" value="{!hseq}"/>
+                    </td>
+                    <td style="width:75%">
+                        <apex:outputText styleClass="slds-truncate" value="{!hseqRollupMap[hseq]}"/>
+                    </td>
+                </tr>
+            </apex:repeat>
+
+        </table>
+        <!-- Safety Data End -->
+
+        <!-- Active Personnels Start -->
+        <div class="slds-section">
+            <h3 class="slds-section__title slds-page-header__title">
+                <apex:outputText styleClass="slds-m-left_small" value="Active Personnels"/>
+            </h3>
+        </div>
+
+
+        <apex:repeat value="{!activePersonalsMap}" var="type">
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table--striped slds-no-row-hover">
+                <thead>
+                <tr class="slds-text-title_caps">
+                    <th scope="col" style="width:20%;">
+                        <apex:outputText styleClass="slds-truncate" value="Employee Name"/>
+                    </th>
+                    <th scope="col" style="width:20%;">
+                        <apex:outputText styleClass="slds-truncate" value="Position"/>
+                    </th>
+
+                    <th scope="col" style="width:20%;">
+                        <apex:outputText styleClass="slds-truncate" value="Crew"/>
+                    </th>
+
+                    <th scope="col" style="width:20%;">
+                        <apex:outputText styleClass="slds-truncate" value="Shift"/>
+                    </th>
+
+                    <!--<th scope="col" style="width:25%;">
+                        <apex:outputText styleClass="slds-truncate" value="Locale"/>
+                    </th>-->
+
+                    <th scope="col" style="width:20%;">
+                        <apex:outputText styleClass="slds-truncate" value="Crew Change"/>
+                    </th>
+                </tr>
+                <tr styleClass="slds-text-title_caps">
+                    <div class="slds-section">
+                        <h3 class="slds-section__title slds-page-header__title">
+                            <apex:outputText styleClass="slds-m-left_small" value="{!type}"/>
+                        </h3>
+                    </div>
+                </tr>
+                </thead>
+
+                <tbody>
+                <apex:repeat value="{!activePersonalsMap[type]}" var="ap">
+
+                    <tr>
+                        <td>
+                            <apex:outputText styleClass="slds-truncate" value="{!ap.Personnel_Name__c}"/>
+                        </td>
+                        <td>
+                            <apex:outputText styleClass="slds-truncate" value="{!ap.Position__r.Name}"/>
+                        </td>
+                        <td>
+                            <apex:outputText styleClass="slds-truncate" value="{!ap.Crew__c}"/>
+                        </td>
+                        <td>
+                            <apex:outputText styleClass="slds-truncate" value="{!ap.Shift__c}"/>
+                        </td>
+                        <!--<td>
+                                        <apex:outputText styleClass="slds-truncate" value="{!ap.Locale__c}"/>
+                                    </td>-->
+                        <td>
+                            <apex:outputText styleClass="slds-truncate" value="{!ap.Crew_Change__c}"/>
+                        </td>
+                    </tr>
+                </apex:repeat>
+                </tbody>
+            </table>
+        </apex:repeat>
+        <!-- Active Personnels End -->
+
+        <!-- Daily Job Items Start -->
+       <!-- <div class="slds-text-heading_medium" style="{!IF(displayCost,'display: block','display: none')}">
+            Total Charge Across Site:&nbsp;
+            <apex:outputText value="{0, number, Currency}">
+                <apex:param value="{!totalCost}"/>
+            </apex:outputText>
+        </div>-->
+
+
+        <div class="slds-section">
+            <h3 class="slds-section__title slds-page-header__title">
+                <!--<apex:outputText styleClass="slds-m-left_small" value="Site: {!Daily_Summary_Report__c.Site__r.Name}"/>-->
+                <apex:outputText styleClass="slds-m-left_small" value="Daily Job Items"/>
+            </h3>
+        </div>
+        <div>
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table--striped slds-no-row-hover">
+                <tr styleClass="slds-text-title_caps">
+                    <thead>
+                    <tr class="slds-text-title_caps">
+                        <th scope="col" style="width:25%;">
+                            <apex:outputText styleClass="slds-truncate" value="Item"/>
+                        </th>
+
+                        <th scope="col" style="width:25%;">
+                            <apex:outputText styleClass="slds-truncate" value="Quantity"/>
+                        </th>
+
+                        <th scope="col" style="{!IF(displayCost,'display: block','display: none')};width:25%;">
+                            <apex:outputText styleClass="slds-truncate" value="Total Charge"/>
+                        </th>
+                    </tr>
+                    </thead>
+                    <apex:repeat value="{!siteWrapperMap}" var="stName">
+                        <tbody>
+                        <apex:variable value="{!0}" var="overallTotalQuantity"/>
+                        <apex:variable value="{!0}" var="overallTotalCostGroup"/>
+                        <apex:repeat value="{!siteWrapperMap[stName]}" var="grp">
+                            <tr>
+                                <td>
+                                    <apex:outputText styleClass="slds-truncate" value="{!grp.groupName}"/>
+                                </td>
+
+                                <td>
+                                    <apex:variable value="{!overallTotalQuantity + grp.totalQuantity}"
+                                                   var="overallTotalQuantity"/>
+                                    <apex:outputText styleClass="slds-truncate" value="{0, number, 0.00}">
+                                        <apex:param value="{!grp.totalQuantity}"/>
+                                    </apex:outputText>
+                                </td>
+                                <td style="{!IF(displayCost,'display: block','display: none')}">
+                                    <apex:variable value="{!overallTotalCostGroup + grp.totalCostGroup}"
+                                                   var="overallTotalCostGroup"/>
+                                    <apex:outputText value="{0, number, Currency}">
+                                        <apex:param value="{!grp.totalCostGroup}"/>
+                                    </apex:outputText>
+                                </td>
+                            </tr>
+                        </apex:repeat>
+                        <tr>
+                            <td style="{!IF(displayCost,'','display: none')}">
+                                <b>
+                                    <apex:outputText styleClass="slds-truncate"
+                                                     value="Total"/>
+                                </b>
+                            </td>
+
+                            <!--<td>
+                                <b>-->
+                            <!--apex:outputText styleClass="slds-truncate" value="{0, number, 0.00}">
+                                                <apex:param value="{!overallTotalQuantity}"/>
+                                                </apex:outputText-->
+                            <!--</b>
+                        </td>-->
+
+                            <td style="{!IF(displayCost,'','display: none')}">
+                                <b>
+                                    <!--<apex:outputText styleClass="slds-truncate" value="{0, number, 0.00}">
+                                                    <apex:param value="{!overallTotalQuantity}"/>
+                                                </apex:outputText>-->
+                                </b>
+                            </td>
+
+                            <td style="{!IF(displayCost,'','display: none')}">
+                                <b>
+                                    <apex:outputText value="{0, number, Currency}">
+                                        <apex:param value="{!overallTotalCostGroup}"/>
+                                    </apex:outputText>
+                                </b>
+                            </td>
+
+                        </tr>
+                        </tbody>
+                    </apex:repeat>
+                </tr>
+            </table>
+        </div>
+        <br/>
+        <!-- Daily Job Items End -->
+
+
+    </div>
+    </html>
+</apex:page>

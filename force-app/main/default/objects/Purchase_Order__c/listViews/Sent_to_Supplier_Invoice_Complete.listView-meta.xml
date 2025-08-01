@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sent_to_Supplier_Invoice_Complete</fullName>
+    <columns>NAME</columns>
+    <columns>Supplier__c</columns>
+    <columns>Supplier_Invoice_Number__c</columns>
+    <columns>Total_Price__c</columns>
+    <columns>PO_Date__c</columns>
+    <columns>Status__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Sent to Supplier</value>
+    </filters>
+    <filters>
+        <field>All_Invoice_Processed__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>All_Invoice_Processed__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Sent to Supplier (Invoice Complete)</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>Purchasing</group>
+    </sharedTo>
+</ListView>

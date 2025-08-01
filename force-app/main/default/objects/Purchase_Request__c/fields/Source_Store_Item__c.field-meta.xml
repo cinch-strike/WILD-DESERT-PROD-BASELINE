@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_Store_Item__c</fullName>
+    <label>Source Store Item</label>
+    <referenceTo>Store_Item__c</referenceTo>
+    <relationshipLabel>Purchase Requests (Source Store Item)</relationshipLabel>
+    <relationshipName>Purchase_Requests2</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

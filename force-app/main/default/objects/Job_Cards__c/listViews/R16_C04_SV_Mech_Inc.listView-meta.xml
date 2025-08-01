@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>R16_C04_SV_Mech_Inc</fullName>
+    <columns>NAME</columns>
+    <columns>Date_Created__c</columns>
+    <columns>Unit_of_Asset__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>NHVAS_Asset__c</columns>
+    <columns>Type_of_Maintenance__c</columns>
+    <columns>Odometer_Current__c</columns>
+    <columns>Engine_Hrs_Current__c</columns>
+    <columns>Status__c</columns>
+    <columns>Parts_Received_in_Stores__c</columns>
+    <columns>Action__c</columns>
+    <columns>Actionby__c</columns>
+    <columns>Assigned_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Unit_of_Asset__c</field>
+        <operation>equals</operation>
+        <value>rig 16,Camp 4</value>
+    </filters>
+    <filters>
+        <field>Date_Created__c</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:730</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Job_Cards__c.Scheduled_Service</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Requested,Open,In Progress,Defer/Monitor</value>
+    </filters>
+    <label>R16 C04 | SV Mech | Incomplete</label>
+    <sharedTo>
+        <group>Camp_4</group>
+        <group>Managing_Director</group>
+        <group>Mechanics_Moomba</group>
+        <group>OPs_super</group>
+        <group>Rig_16</group>
+    </sharedTo>
+</ListView>

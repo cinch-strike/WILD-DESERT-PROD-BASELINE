@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Type__c</columns>
+    <columns>Name__c</columns>
+    <columns>Position__c</columns>
+    <columns>Status__c</columns>
+    <columns>Date_conducted__c</columns>
+    <columns>Expiry_Date__c</columns>
+    <columns>Medical_Expiry_3yrs__c</columns>
+    <columns>Notes_Comments__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Employee_Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Health_Medical_Records__c.Medical</value>
+    </filters>
+    <label>Medical</label>
+    <sharedTo>
+        <group>HR</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cost_Allocation_Unit__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>When ticked, this unit will be selectable in the Cost Allocation Unit for Purchase Units</inlineHelpText>
+    <label>Cost Allocation Unit</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

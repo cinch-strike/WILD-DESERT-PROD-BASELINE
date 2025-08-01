@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ops_Moomba_In_Transit</fullName>
+    <columns>NAME</columns>
+    <columns>Item_Name_Hyperlink__c</columns>
+    <columns>Work_Order__c</columns>
+    <columns>Asset__c</columns>
+    <columns>Quantity__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Manifest_No__c</columns>
+    <columns>Status__c</columns>
+    <columns>Date_Sent_for_In_Transit__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>moomba.ops1</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>In Transit</value>
+    </filters>
+    <label>Ops Moomba | In Transit</label>
+    <sharedTo>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Purchasing</group>
+    </sharedTo>
+</ListView>

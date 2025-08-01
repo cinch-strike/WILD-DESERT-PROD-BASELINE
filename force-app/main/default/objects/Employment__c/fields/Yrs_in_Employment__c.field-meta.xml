@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Yrs_in_Employment__c</fullName>
+    <description>From Employment Contract</description>
+    <externalId>false</externalId>
+    <formula>IF(
+RecordType.Name = &quot;Employment Contract&quot;,
+ROUND(
+(IF(
+ISBLANK(End_Date__c),
+TODAY(),
+End_Date__c
+) - StartDate__c) / 365.25,
+2
+),
+NULL)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>From Start Date on Employment Contract to Today</inlineHelpText>
+    <label>Yrs in Employment</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>4</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

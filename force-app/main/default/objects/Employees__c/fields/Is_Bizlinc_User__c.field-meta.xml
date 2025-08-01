@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Bizlinc_User__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Is this Employee a Bizlinc User</inlineHelpText>
+    <label>Is Bizlinc User</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

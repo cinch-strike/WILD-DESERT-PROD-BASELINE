@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>hire_item</fullName>
+    <active>true</active>
+    <label>Hire Items Only</label>
+    <picklistValues>
+        <picklist>Category__c</picklist>
+        <values>
+            <fullName>Crew Travel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inspection%2FPMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Operating</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Repair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig Move</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SBWC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SBWOC</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Configuration__c</picklist>
+        <values>
+            <fullName>Bed Truck 30T</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bed Truck 30T %2B 1 Trailer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bed Truck 30T %2B 2 Trailers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Double</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Escort Driver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Float</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Float %2B Dolly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fridge Van</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot Shot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loader</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prime Mover</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prime Mover %2B Dolly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Triple</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Truck Pusher</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Water Tanker %28Single%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>HMI_Focus__c</picklist>
+        <values>
+            <fullName>Hoisting%2FLifting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moving%2FRotating Parts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pressure%2FFluid Movement</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Invoicing_Information__c</picklist>
+        <values>
+            <fullName>Hrly Rates - SO%2FTD Required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Idle</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Km Rates - SO%2FTD Required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lump Sum %28Rig Inclusive%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quoted Price - SO Required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WD Internal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Item_Rate_Category__c</picklist>
+        <values>
+            <fullName>Day Rate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hourly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lump Sum</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pre_start_Required__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Safety_Talk__c</picklist>
+        <values>
+            <fullName>JHA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PTW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SOP Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TBM</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Idle</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Approval</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

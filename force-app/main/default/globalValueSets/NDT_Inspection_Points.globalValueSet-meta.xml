@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Inertia Point</fullName>
+        <default>false</default>
+        <label>Inertia Point</label>
+    </customValue>
+    <customValue>
+        <fullName>Sheave Mounts</fullName>
+        <default>false</default>
+        <label>Sheave Mounts</label>
+    </customValue>
+    <customValue>
+        <fullName>Pad Eyes</fullName>
+        <default>false</default>
+        <label>Pad Eyes</label>
+    </customValue>
+    <customValue>
+        <fullName>Main Beams</fullName>
+        <default>false</default>
+        <label>Main Beams</label>
+    </customValue>
+    <customValue>
+        <fullName>All Welds</fullName>
+        <default>false</default>
+        <label>All Welds</label>
+    </customValue>
+    <customValue>
+        <fullName>Sheaves</fullName>
+        <default>false</default>
+        <label>Sheaves</label>
+    </customValue>
+    <customValue>
+        <fullName>Sheave Pins</fullName>
+        <default>false</default>
+        <label>Sheave Pins</label>
+    </customValue>
+    <customValue>
+        <fullName>Locking Mounts</fullName>
+        <default>false</default>
+        <label>Locking Mounts</label>
+    </customValue>
+    <customValue>
+        <fullName>Scoping Mounts</fullName>
+        <default>false</default>
+        <label>Scoping Mounts</label>
+    </customValue>
+    <customValue>
+        <fullName>Tie back lugs</fullName>
+        <default>false</default>
+        <label>Tie back lugs</label>
+    </customValue>
+    <customValue>
+        <fullName>Pivot Mounts</fullName>
+        <default>false</default>
+        <label>Pivot Mounts</label>
+    </customValue>
+    <customValue>
+        <fullName>Pivot Pins</fullName>
+        <default>false</default>
+        <label>Pivot Pins</label>
+    </customValue>
+    <customValue>
+        <fullName>Rainsing Ram Mounts</fullName>
+        <default>false</default>
+        <label>Rainsing Ram Mounts</label>
+    </customValue>
+    <customValue>
+        <fullName>Adjustment Threads</fullName>
+        <default>false</default>
+        <label>Adjustment Threads</label>
+    </customValue>
+    <customValue>
+        <fullName>Derrick Wall Thickness</fullName>
+        <default>false</default>
+        <label>Derrick Wall Thickness</label>
+    </customValue>
+    <customValue>
+        <fullName>Locking Thread Mounts</fullName>
+        <default>false</default>
+        <label>Locking Thread Mounts</label>
+    </customValue>
+    <customValue>
+        <fullName>Locking Threads and Pins</fullName>
+        <default>false</default>
+        <label>Locking Threads and Pins</label>
+    </customValue>
+    <customValue>
+        <fullName>Raising Ram Mounts</fullName>
+        <default>false</default>
+        <label>Raising Ram Mounts</label>
+    </customValue>
+    <customValue>
+        <fullName>Half Moons</fullName>
+        <default>false</default>
+        <label>Half Moons</label>
+    </customValue>
+    <customValue>
+        <fullName>Torque Line Lugs</fullName>
+        <default>false</default>
+        <label>Torque Line Lugs</label>
+    </customValue>
+    <customValue>
+        <fullName>Bull Horns</fullName>
+        <default>false</default>
+        <label>Bull Horns</label>
+    </customValue>
+    <customValue>
+        <fullName>Torque Line Pins</fullName>
+        <default>false</default>
+        <label>Torque Line Pins</label>
+    </customValue>
+    <customValue>
+        <fullName>Welds to Carrier</fullName>
+        <default>false</default>
+        <label>Welds to Carrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Clamp</fullName>
+        <default>false</default>
+        <label>Clamp</label>
+    </customValue>
+    <customValue>
+        <fullName>Mounts and Stress Points</fullName>
+        <default>false</default>
+        <label>Mounts and Stress Points</label>
+    </customValue>
+    <customValue>
+        <fullName>Ram Pad Eyes</fullName>
+        <default>false</default>
+        <label>Ram Pad Eyes</label>
+    </customValue>
+    <customValue>
+        <fullName>Pins</fullName>
+        <default>false</default>
+        <label>Pins</label>
+    </customValue>
+    <customValue>
+        <fullName>Jack Threads</fullName>
+        <default>false</default>
+        <label>Jack Threads</label>
+    </customValue>
+    <customValue>
+        <fullName>Base Plates</fullName>
+        <default>false</default>
+        <label>Base Plates</label>
+    </customValue>
+    <customValue>
+        <fullName>Grillage Beam</fullName>
+        <default>false</default>
+        <label>Grillage Beam</label>
+    </customValue>
+    <customValue>
+        <fullName>Attachment Points</fullName>
+        <default>false</default>
+        <label>Attachment Points</label>
+    </customValue>
+    <customValue>
+        <fullName>Jack Leg Mount</fullName>
+        <default>false</default>
+        <label>Jack Leg Mount</label>
+    </customValue>
+    <customValue>
+        <fullName>Adjustment Thread</fullName>
+        <default>false</default>
+        <label>Adjustment Thread</label>
+    </customValue>
+    <customValue>
+        <fullName>Mounts to Carrier</fullName>
+        <default>false</default>
+        <label>Mounts to Carrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Work Floor Leg Mounts</fullName>
+        <default>false</default>
+        <label>Work Floor Leg Mounts</label>
+    </customValue>
+    <customValue>
+        <fullName>Hinges</fullName>
+        <default>false</default>
+        <label>Hinges</label>
+    </customValue>
+    <customValue>
+        <fullName>Mounts to Chassis</fullName>
+        <default>false</default>
+        <label>Mounts to Chassis</label>
+    </customValue>
+    <customValue>
+        <fullName>Equalizer Bar</fullName>
+        <default>false</default>
+        <label>Equalizer Bar</label>
+    </customValue>
+    <customValue>
+        <fullName>Dog Bones x 2</fullName>
+        <default>false</default>
+        <label>Dog Bones x 2</label>
+    </customValue>
+    <customValue>
+        <fullName>Turnbuckles x 2</fullName>
+        <default>false</default>
+        <label>Turnbuckles x 2</label>
+    </customValue>
+    <customValue>
+        <fullName>Brake Band Cranks x 2</fullName>
+        <default>false</default>
+        <label>Brake Band Cranks x 2</label>
+    </customValue>
+    <customValue>
+        <fullName>Brake Band Mounts x 2</fullName>
+        <default>false</default>
+        <label>Brake Band Mounts x 2</label>
+    </customValue>
+    <customValue>
+        <fullName>Brake Band Pin x 2</fullName>
+        <default>false</default>
+        <label>Brake Band Pin x 2</label>
+    </customValue>
+    <customValue>
+        <fullName>Dog Bone Pin x 4</fullName>
+        <default>false</default>
+        <label>Dog Bone Pin x 4</label>
+    </customValue>
+    <customValue>
+        <fullName>Turnbuckle Pin x 2</fullName>
+        <default>false</default>
+        <label>Turnbuckle Pin x 2</label>
+    </customValue>
+    <customValue>
+        <fullName>Equalizer Bar Pin x 2</fullName>
+        <default>false</default>
+        <label>Equalizer Bar Pin x 2</label>
+    </customValue>
+    <customValue>
+        <fullName>Disc Brake Mounts x 2</fullName>
+        <default>false</default>
+        <label>Disc Brake Mounts x 2</label>
+    </customValue>
+    <customValue>
+        <fullName>Disc Brake Pins x 8</fullName>
+        <default>false</default>
+        <label>Disc Brake Pins x 8</label>
+    </customValue>
+    <customValue>
+        <fullName>Disc Brake Assembly x2</fullName>
+        <default>false</default>
+        <label>Disc Brake Assembly x2</label>
+    </customValue>
+    <customValue>
+        <fullName>Brake Levers x 2</fullName>
+        <default>false</default>
+        <label>Brake Levers x 2</label>
+    </customValue>
+    <customValue>
+        <fullName>Brake Lever Threaded Rod x 2</fullName>
+        <default>false</default>
+        <label>Brake Lever Threaded Rod x 2</label>
+    </customValue>
+    <customValue>
+        <fullName>Bearing Pillar</fullName>
+        <default>false</default>
+        <label>Bearing Pillar</label>
+    </customValue>
+    <customValue>
+        <fullName>Dog Bone</fullName>
+        <default>false</default>
+        <label>Dog Bone</label>
+    </customValue>
+    <customValue>
+        <fullName>Turnbuckle</fullName>
+        <default>false</default>
+        <label>Turnbuckle</label>
+    </customValue>
+    <customValue>
+        <fullName>Brake Band Crank</fullName>
+        <default>false</default>
+        <label>Brake Band Crank</label>
+    </customValue>
+    <customValue>
+        <fullName>Brake Band Mounts</fullName>
+        <default>false</default>
+        <label>Brake Band Mounts</label>
+    </customValue>
+    <customValue>
+        <fullName>Brake Band Pin</fullName>
+        <default>false</default>
+        <label>Brake Band Pin</label>
+    </customValue>
+    <customValue>
+        <fullName>Dog Bone Pin</fullName>
+        <default>false</default>
+        <label>Dog Bone Pin</label>
+    </customValue>
+    <customValue>
+        <fullName>Turnbuckle Pin</fullName>
+        <default>false</default>
+        <label>Turnbuckle Pin</label>
+    </customValue>
+    <customValue>
+        <fullName>Equalizer Bar Pin</fullName>
+        <default>false</default>
+        <label>Equalizer Bar Pin</label>
+    </customValue>
+    <masterLabel>NDT Inspection Points</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

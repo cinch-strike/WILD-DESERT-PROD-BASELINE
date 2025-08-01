@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Drops_Area_Inspected__c</fullName>
+    <label>Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Derrick &amp; Crown</fullName>
+                <default>false</default>
+                <label>Derrick &amp; Crown</label>
+            </value>
+            <value>
+                <fullName>Monkey Board &amp; Rod Basket</fullName>
+                <default>false</default>
+                <label>Monkey Board &amp; Rod Basket</label>
+            </value>
+            <value>
+                <fullName>Work Floor &amp; Pipe Rack</fullName>
+                <default>false</default>
+                <label>Work Floor &amp; Pipe Rack</label>
+            </value>
+            <value>
+                <fullName>Work Benches, Mud Tank &amp; Mud Pump</fullName>
+                <default>false</default>
+                <label>Work Benches, Mud Tank &amp; Mud Pump</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Injury/Illness</fullName>
+                <default>false</default>
+                <label>Injury/Illness</label>
+            </value>
+            <value>
+                <fullName>Vehicle/Machinery</fullName>
+                <default>false</default>
+                <label>Vehicle/Machinery</label>
+            </value>
+            <value>
+                <fullName>Fire</fullName>
+                <default>false</default>
+                <label>Fire</label>
+            </value>
+            <value>
+                <fullName>Environmental Spill</fullName>
+                <default>false</default>
+                <label>Environmental Spill</label>
+            </value>
+            <value>
+                <fullName>Flood</fullName>
+                <default>false</default>
+                <label>Flood</label>
+            </value>
+            <value>
+                <fullName>Heights Rescue</fullName>
+                <default>false</default>
+                <label>Heights Rescue</label>
+            </value>
+            <value>
+                <fullName>Well Control Situation</fullName>
+                <default>false</default>
+                <label>Well Control Situation</label>
+            </value>
+            <value>
+                <fullName>Promotion of Em&apos;ee</fullName>
+                <default>false</default>
+                <label>Promotion of Em&apos;ee/New Em&apos;ee</label>
+            </value>
+            <value>
+                <fullName>Manager&apos;s Discretion</fullName>
+                <default>false</default>
+                <label>Management Discretion</label>
+            </value>
+            <value>
+                <fullName>equip_change</fullName>
+                <default>false</default>
+                <label>Modified Equipment</label>
+            </value>
+            <value>
+                <fullName>Routine Task not preformed by team within last 3 months</fullName>
+                <default>false</default>
+                <label>Routine Task not preformed by team within last 3 months</label>
+            </value>
+            <value>
+                <fullName>Change Out Equipment</fullName>
+                <default>false</default>
+                <label>Change Out Equipment</label>
+            </value>
+            <value>
+                <fullName>SOP Amendment been Implemented</fullName>
+                <default>false</default>
+                <label>SOP Amendment been Implemented</label>
+            </value>
+            <value>
+                <fullName>Employee</fullName>
+                <default>false</default>
+                <label>Employee</label>
+            </value>
+            <value>
+                <fullName>Visitor</fullName>
+                <default>false</default>
+                <label>Visitor</label>
+            </value>
+            <value>
+                <fullName>3rd Party</fullName>
+                <default>false</default>
+                <label>3rd Party</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

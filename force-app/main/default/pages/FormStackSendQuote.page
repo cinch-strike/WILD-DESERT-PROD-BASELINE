@@ -1,0 +1,3 @@
+<apex:page standardController="Quote__c" docType="html-5.0" title="Quote No: {!Quote__c.Name}">
+    <webm:WebmergeWizard record="{!Quote__c}" mappingId="a35On000000EiyrIAC"/>
+</apex:page>

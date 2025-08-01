@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hire_PRs</fullName>
+    <columns>NAME</columns>
+    <columns>Supplier__c</columns>
+    <columns>Item_Name_Hyperlink__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Details_for_Supplier__c</columns>
+    <columns>Quantity__c</columns>
+    <columns>Asset__c</columns>
+    <columns>Recharge__c</columns>
+    <columns>Status__c</columns>
+    <columns>Purchase_Order__c</columns>
+    <columns>PO_Date__c</columns>
+    <columns>PO_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Item_Category__c</field>
+        <operation>equals</operation>
+        <value>Hire</value>
+    </filters>
+    <label>Hire PRs</label>
+</ListView>

@@ -1,0 +1,28 @@
+<template>
+    <template if:true={isOdometerRecord}>
+        <lightning-card title="Odometer Reading" icon-name="standard:record">
+            <!--<label><b>Odometer Reading</b></label>-->
+            <br />
+            <table class='cssTable'>
+                <thead><tr>
+                    <th width="40%">Asset Name</th>
+                    <th width="25%">Current Odometer</th>
+                    <th width="25%">Odometer Today</th>   
+                    <th width="10%"></th>                  
+                </tr></thead>
+                <tbody>
+                    <template for:each={assetOdometerList} for:item="assetOdometer">
+                        <tr  key={assetOdometer.Id}>
+                            <td>{assetOdometer.WD_Asset__r.Name}</td>
+                            <td><lightning-input type="number" readonly value={assetOdometer.WD_Asset__r.Current_Odometer_Reading__c} variant="label-hidden" class='cssInput'></lightning-input></td> 
+                            <td><lightning-input type="number" pattern="[0-9]*" data-field="odometerReading" data-id={assetOdometer.Id} value={assetOdometer.Odometer_Reading__c} 
+                                max="99999999" variant="label-hidden" class='cssInput'></lightning-input></td>  
+                            <td><lightning-icon icon-name="action:new_note" alternative-text="Update Odometer" title="Update Odometer" data-adaid={assetOdometer.Id} 
+                                data-assetid={assetOdometer.WD_Asset__c} onclick={updateOdometerReading}  size="x-small"></lightning-icon></td>                                
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+         </lightning-card>
+    </template>  
+</template>

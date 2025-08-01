@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X029_Flushby_2_Senex</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>Contract_unit__c</columns>
+    <columns>Contract__c</columns>
+    <columns>NAME</columns>
+    <columns>Description__c</columns>
+    <columns>Rate__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Client__c</field>
+        <operation>equals</operation>
+        <value>Senex Energy ltd</value>
+    </filters>
+    <filters>
+        <field>Contract_unit__c</field>
+        <operation>equals</operation>
+        <value>029</value>
+    </filters>
+    <label>029-Flushby 2 Senex</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>OPs_super</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

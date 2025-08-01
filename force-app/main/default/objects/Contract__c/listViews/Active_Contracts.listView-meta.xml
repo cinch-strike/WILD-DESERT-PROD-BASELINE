@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Contracts</fullName>
+    <columns>NAME</columns>
+    <columns>Account_Name__c</columns>
+    <columns>Contract_Details__c</columns>
+    <columns>Units_Assigned__c</columns>
+    <columns>Contract_Type__c</columns>
+    <columns>Manager_Ops_Sup__c</columns>
+    <columns>Company_Manager__c</columns>
+    <columns>Contract_Start_Date__c</columns>
+    <columns>Contract_End_Date__c</columns>
+    <columns>Special_Terms__c</columns>
+    <columns>Contract_Term_months__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contract_Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Active Contracts</label>
+</ListView>

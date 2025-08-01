@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NDT_Hours_Life_of_Asset__c</fullName>
+    <description>Auto-populated by the Daily Job Item Trigger.  Does not reset after NDT inspection</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Auto-populated by the Daily Job Item Trigger. Does not reset after NDT inspection</inlineHelpText>
+    <label>NDT Hours - Life of Asset</label>
+    <precision>17</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

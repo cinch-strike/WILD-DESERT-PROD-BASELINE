@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Below_Minimum_Stocks__c</fullName>
+    <description>Less than minimum stocks without auto-purchase request.</description>
+    <formula>AND(
+ NOT( ISBLANK( Minimum_Quantity_for_Restocking__c ) ) ,
+ Stock_Available_formula__c &lt; Minimum_Quantity_for_Restocking__c ,
+ ISBLANK(  Active_Auto_Purchase_Request__c ) 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Below Minimum Stocks</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

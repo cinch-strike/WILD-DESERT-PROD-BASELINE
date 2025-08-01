@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billable_NotEditable</fullName>
+    <active>false</active>
+    <description>Billable checkbox is not editable for non-Admin user.</description>
+    <errorConditionFormula>AND(
+   NOT(ISCHANGED(Category__c)),
+   ISCHANGED(Billable__c),
+   $Profile.Name != &apos;System Administrator&apos;
+)</errorConditionFormula>
+    <errorDisplayField>Billable__c</errorDisplayField>
+    <errorMessage>Billable checkbox is not editable.</errorMessage>
+</ValidationRule>

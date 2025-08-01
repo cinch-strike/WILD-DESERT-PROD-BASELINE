@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PR_PO_Admin__c</fullName>
+    <description>CR To update names manually.</description>
+    <externalId>false</externalId>
+    <formula>CASE(Cost_Allocation_Unit__r.PR_PO_Admin__c ,
+&quot;a16GB000007ZNeh&quot;, &quot;Amy Webster&quot;,
+&quot;a16GB000007ZNbJ&quot;, &quot;Beau Cramer&quot;,
+&quot;a160o000002lPPj&quot;, &quot;Brooke Goodhew&quot;,
+&quot;a16GB000006h4xh&quot;, &quot;Jana Hockey&quot;,
+&quot;a160o000006is4u&quot;, &quot;Madeline Whiley&quot;,
+&quot;a16GB000007ZNeS&quot;, &quot;Priscilla Cicero&quot;,
+&quot;a1690000002iwkR&quot;, &quot;Stacey Lowry&quot;,
+&quot;a160o000007vtYc&quot;, &quot;Toni Herberts&quot;,
+&quot;a1690000000B1hu&quot;, &quot;Gina Tedford&quot;,
+&quot;a160o000007m2yb&quot;, &quot;Charlie Rose Wagstaff&quot;,
+&quot;a160o000007m0om&quot;, &quot;Natalie Smith&quot;,
+&quot;a1690000002YWzy&quot;, &quot;Katherine Zappala&quot;,
+&quot;a16On000000mxc5&quot;, &quot;Celine Duggan&quot;,
+
+
+&quot;Get SF Admin to Update&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>PR/PO Admin</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

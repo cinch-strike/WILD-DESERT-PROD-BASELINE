@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>To_Be_Invoiced__c</fullName>
+    <label>To Be Invoiced</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>End of Month</fullName>
+                <default>false</default>
+                <label>End of Month</label>
+            </value>
+            <value>
+                <fullName>Invoice with WD Unit</fullName>
+                <default>false</default>
+                <label>Invoice with WD Unit</label>
+            </value>
+            <value>
+                <fullName>No Charge</fullName>
+                <default>false</default>
+                <label>No Charge</label>
+            </value>
+            <value>
+                <fullName>On Job Completion</fullName>
+                <default>false</default>
+                <label>On Job Completion</label>
+            </value>
+            <value>
+                <fullName>Fortnightly</fullName>
+                <default>false</default>
+                <label>Fortnightly</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

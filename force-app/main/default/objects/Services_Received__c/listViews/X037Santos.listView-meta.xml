@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X037Santos</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>Contract__c</columns>
+    <columns>Contract_unit__c</columns>
+    <columns>WD_Unit__c</columns>
+    <columns>NAME</columns>
+    <columns>Description__c</columns>
+    <columns>Rate__c</columns>
+    <columns>Operations__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contract_unit__c</field>
+        <operation>equals</operation>
+        <value>037</value>
+    </filters>
+    <filters>
+        <field>Client__c</field>
+        <operation>equals</operation>
+        <value>Santos SA</value>
+    </filters>
+    <filters>
+        <field>WD_Unit__c</field>
+        <operation>equals</operation>
+        <value>Rig 16,Camp 4</value>
+    </filters>
+    <label>037-Santos SA - Rig #16/Camp #4</label>
+    <sharedTo>
+        <group>Camp_4</group>
+        <group>Finance</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Rig_16</group>
+    </sharedTo>
+</ListView>

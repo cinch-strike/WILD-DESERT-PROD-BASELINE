@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Medicals_Current</fullName>
+    <columns>NAME</columns>
+    <columns>Type__c</columns>
+    <columns>Name__c</columns>
+    <columns>Position__c</columns>
+    <columns>Assigned_To_Unit__c</columns>
+    <columns>Status__c</columns>
+    <columns>Date_conducted__c</columns>
+    <columns>Medical_Expiry_3yrs__c</columns>
+    <columns>Expiry_Date__c</columns>
+    <columns>Notes_Comments__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Employee_Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>Medical_Expiry_3yrs__c</field>
+        <operation>greaterThan</operation>
+        <value>TODAY</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Health_Medical_Records__c.Medical</value>
+    </filters>
+    <label>Medicals - Current</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>HR</group>
+        <group>Managing_Director</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

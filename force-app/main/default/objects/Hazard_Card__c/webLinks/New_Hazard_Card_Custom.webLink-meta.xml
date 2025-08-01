@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Hazard_Card_Custom</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Hazard Card (classic)</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/a19/e?CF00N0o00000Mpkmy={!Daily_Report__c.Name}&amp;CF00N0o00000Mpkmy_lkid={!Daily_Report__c.Id}&amp;retURL={!Daily_Report__c.Id}&amp;CF00N9000000AAHlp={!Daily_Report__c.Site__c}&amp;CF00N9000000A9kdF={!Daily_Report__c.Unit__c}</url>
+</WebLink>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>From_Order__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This will determine if the Purchase Request will go to Purchase Order process.</description>
+    <label>From Order</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

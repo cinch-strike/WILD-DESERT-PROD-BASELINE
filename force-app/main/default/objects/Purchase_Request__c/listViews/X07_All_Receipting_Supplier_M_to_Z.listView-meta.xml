@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X07_All_Receipting_Supplier_M_to_Z</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>PO_Number__c</columns>
+    <columns>Item_Name_Hyperlink__c</columns>
+    <columns>Quantity__c</columns>
+    <columns>Quantity_Received__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Destination_Store__c</columns>
+    <columns>Supplier__c</columns>
+    <columns>Asset__c</columns>
+    <columns>Work_Order__c</columns>
+    <columns>Cost_Allocation_Unit__c</columns>
+    <columns>PO_Status__c</columns>
+    <columns>Bin_Location_del__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>For Ordering</value>
+    </filters>
+    <filters>
+        <field>PO_Status__c</field>
+        <operation>equals</operation>
+        <value>Partially Fulfilled,Sent to Supplier</value>
+    </filters>
+    <filters>
+        <field>Supplier__c</field>
+        <operation>startsWith</operation>
+        <value>m,n,o,p,q,r,s,t,u,v,w,x,y,z</value>
+    </filters>
+    <label>07 All Receipting - Supplier M to Z</label>
+</ListView>

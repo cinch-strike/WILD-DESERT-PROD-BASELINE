@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>By_Employee</fullName>
+    <columns>NAME</columns>
+    <columns>Name__c</columns>
+    <columns>Position_Employee__c</columns>
+    <columns>Crew_Change_LOCO__c</columns>
+    <columns>Pick_Up_Point__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Travel_Details__c</columns>
+    <columns>Accomodation_Details__c</columns>
+    <columns>Travel_Accom_Charges_Apply__c</columns>
+    <columns>CCM__c</columns>
+    <columns>Type__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Team_Unit__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Name__c</field>
+        <operation>contains</operation>
+        <value>Logan Maxwell</value>
+    </filters>
+    <label>By Employee</label>
+</ListView>

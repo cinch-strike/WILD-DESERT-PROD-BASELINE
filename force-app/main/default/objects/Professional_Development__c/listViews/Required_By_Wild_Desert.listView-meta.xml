@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_By_Wild_Desert</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>Record_Type_Name__c</columns>
+    <columns>NAME</columns>
+    <columns>Requirement_Type__c</columns>
+    <columns>Required_By__c</columns>
+    <columns>Requires_Renewal__c</columns>
+    <columns>Required_By_Unit__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Required_By__c</field>
+        <operation>contains</operation>
+        <value>Wild Desert</value>
+    </filters>
+    <filters>
+        <field>Inactive__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Required By | Wild Desert</label>
+</ListView>

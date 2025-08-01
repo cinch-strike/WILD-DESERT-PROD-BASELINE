@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Emergency_Drill_Conducted__c</fullName>
+    <label>Type of Emergency Drill Conducted</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Injury/Illness</fullName>
+                <default>false</default>
+                <label>Injury/Illness</label>
+            </value>
+            <value>
+                <fullName>Vehicle/Machinery</fullName>
+                <default>false</default>
+                <label>Vehicle/Machinery</label>
+            </value>
+            <value>
+                <fullName>Fire</fullName>
+                <default>false</default>
+                <label>Fire</label>
+            </value>
+            <value>
+                <fullName>Environmental Spill</fullName>
+                <default>false</default>
+                <label>Environmental Spill</label>
+            </value>
+            <value>
+                <fullName>Flood</fullName>
+                <default>false</default>
+                <label>Flood</label>
+            </value>
+            <value>
+                <fullName>Heights Rescue</fullName>
+                <default>false</default>
+                <label>Heights Rescue</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Well Control Situation</fullName>
+                <default>false</default>
+                <label>Well Control Situation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X05_For_Ordering_Kody</fullName>
+    <columns>NAME</columns>
+    <columns>Quantity__c</columns>
+    <columns>Item_Name_Hyperlink__c</columns>
+    <columns>Work_Order__c</columns>
+    <columns>Cost_Allocation_Unit__c</columns>
+    <columns>Asset__c</columns>
+    <columns>Supplier__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Details_for_Supplier__c</columns>
+    <columns>Cost_Price_GST_exc__c</columns>
+    <columns>Destination_Store__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>For Ordering</value>
+    </filters>
+    <filters>
+        <field>PO_Status__c</field>
+        <operation>notContain</operation>
+        <value>Canceled,For Approval,PO Approved,Sent to Supplier,Partially Fulfilled,Completed,Draft</value>
+    </filters>
+    <filters>
+        <field>Supplier__c</field>
+        <operation>notContain</operation>
+        <value>Murray Coaches,Brescon Pty Ltd,Brenorrs,Evolution Safety</value>
+    </filters>
+    <filters>
+        <field>Cost_Allocation_Unit__c</field>
+        <operation>equals</operation>
+        <value>Rig 8,Rig 30</value>
+    </filters>
+    <filters>
+        <field>Destination_Store__c</field>
+        <operation>notEqual</operation>
+        <value>Training,Stores - Roma</value>
+    </filters>
+    <filters>
+        <field>Work_Order__c</field>
+        <operation>notContain</operation>
+        <value>WO</value>
+    </filters>
+    <label>05 For Ordering | Kody</label>
+</ListView>

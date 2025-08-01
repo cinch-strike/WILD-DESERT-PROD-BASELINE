@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supplier__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>PR Supplier - This Supplier is linked to the Item Master [Prefered Supplier (1st)] or Quote Supplier unless otherwise updated.</description>
+    <inlineHelpText>This Supplier is linked to the Item Master [Prefered Supplier (1st)] or Quote Supplier unless otherwise updated.</inlineHelpText>
+    <label>Supplier</label>
+    <lookupFilter>
+        <active>false</active>
+        <errorMessage>Only Supplier accounts are allowed. Please check the Supplier selected.</errorMessage>
+        <filterItems>
+            <field>Account.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Supplier</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Purchase Requests</relationshipLabel>
+    <relationshipName>Purchase_Requests</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

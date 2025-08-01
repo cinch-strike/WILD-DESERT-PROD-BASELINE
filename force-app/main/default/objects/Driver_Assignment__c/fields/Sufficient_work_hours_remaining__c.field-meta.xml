@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sufficient_work_hours_remaining__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>The driver has sufficient work hours remaining to comply with legal limits.</inlineHelpText>
+    <label>Sufficient work hours remaining</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

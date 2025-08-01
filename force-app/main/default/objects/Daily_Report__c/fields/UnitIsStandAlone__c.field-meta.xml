@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UnitIsStandAlone__c</fullName>
+    <description>8 May: changed definitions to also return true if only one unit is populated</description>
+    <formula>(Site__r.WD_Camp__c =  Site__r.WD_Rig__c)
+||
+ISBLANK(Site__r.WD_Rig__c)
+||
+ISBLANK(Site__r.WD_Camp__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>If the WD Camp and WD Rig in Site is the same</inlineHelpText>
+    <label>Unit is Stand Alone</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

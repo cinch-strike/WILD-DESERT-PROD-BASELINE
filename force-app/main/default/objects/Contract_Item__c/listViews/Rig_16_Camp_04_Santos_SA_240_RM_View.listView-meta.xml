@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_16_Camp_04_Santos_SA_240_RM_View</fullName>
+    <columns>Contract__c</columns>
+    <columns>NAME</columns>
+    <columns>Job_Item_Description__c</columns>
+    <columns>Special_Item_Details__c</columns>
+    <columns>Item_Frequency__c</columns>
+    <columns>Service_Type__c</columns>
+    <columns>Auto_Populate_in_Daily_Report__c</columns>
+    <columns>Active__c</columns>
+    <columns>Unit_Type__c</columns>
+    <columns>Add_to_NDT__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contract__c</field>
+        <operation>equals</operation>
+        <value>240</value>
+    </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Rig 16/Camp 4 - Santos SA (240) RM View</label>
+    <sharedTo>
+        <group>Camp_4</group>
+        <group>Camp_Supervisor</group>
+        <group>Finance</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Rig_16</group>
+    </sharedTo>
+</ListView>

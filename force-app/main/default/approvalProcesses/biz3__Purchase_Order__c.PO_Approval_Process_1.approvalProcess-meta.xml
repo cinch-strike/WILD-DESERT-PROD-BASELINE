@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>PO_Requested_By__c</field>
+        <field>biz3__Date__c</field>
+        <field>Date_Required__c</field>
+        <field>Name</field>
+        <field>biz3__Description__c</field>
+        <field>biz3__Account__c</field>
+        <field>Details_for_Supplier__c</field>
+        <field>Recharge_Items_Invoiced__c</field>
+        <field>biz3__Total_exc_Tax__c</field>
+        <field>biz3__Total_inc_Tax__c</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>josh.doig@wilddesert.com.au</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>This approval step will send approval request to Manager if Total Price is less than $500, or up to $2500 if Rechargeable.</description>
+        <entryCriteria>
+            <formula>AND( ISPICKVAL(biz3__Status__c, &quot;In Progress&quot; ), 
+ OR(
+  biz3__Total_inc_Tax__c &lt;= 500,
+  AND(
+   biz3__Total_inc_Tax__c &lt;= 2500,
+   ISPICKVAL(Recharge__c, &apos;Yes&apos;)
+  )
+ )
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Below 500 or 2500 if rechargable - Mgr</label>
+        <name>Below_500_or_2500_Mgr</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>josh.doig@wilddesert.com.au</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>This approval step will send approval request to COO if Total Price is more than $500, or more than$2500 if Rechargeable.</description>
+        <entryCriteria>
+            <formula>AND( ISPICKVAL(biz3__Status__c, &quot;In Progress&quot; ), 
+ OR(
+  biz3__Total_inc_Tax__c &gt; 500,
+  AND(
+   biz3__Total_inc_Tax__c &gt; 2500,
+   ISPICKVAL(Recharge__c, &apos;Yes&apos;)
+  )
+ )
+)</formula>
+        </entryCriteria>
+        <label>Above 500 or 2500 if rechargable - COO</label>
+        <name>Above_500_or_2500_COO</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>This approval process is created to handle PO price approvals - this does not cover Amendment Process, its in separate approval process.</description>
+    <emailTemplate>Purchase/Purchase_Order_Approvals_Request</emailTemplate>
+    <enableMobileDeviceAccess>true</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>/* Changed on 10/09/2013 
+AND(ISPICKVAL( biz3__Status__c,&quot;Not Started&quot;), 
+ biz3__Total_inc_Tax__c &gt; 0)
+*/
+AND( NOT( ISPICKVAL( biz3__Status__c,&quot;Approved&quot;)), 
+ biz3__Total_inc_Tax__c &gt; 0)</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Update_PO_Record_Type_to_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Update_PO_Status_to_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Purchase_Order_Not_Apporved</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_PO_Status_to_Not_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Change_status_to_started2</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>PO Approval Process_1</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>false</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Manager</userHierarchyField>
+    </nextAutomatedApprover>
+    <processOrder>1</processOrder>
+    <recallActions>
+        <action>
+            <name>Update_PO_Status_to_recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Operations_at_Time__c</fullName>
+    <label>Operations at Time</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>3rd Party Op&apos;s</fullName>
+                <default>false</default>
+                <label>3rd Party Op&apos;s</label>
+            </value>
+            <value>
+                <fullName>Air Op&apos;s</fullName>
+                <default>false</default>
+                <label>Air Op&apos;s</label>
+            </value>
+            <value>
+                <fullName>Camp Move</fullName>
+                <default>false</default>
+                <label>Camp Move</label>
+            </value>
+            <value>
+                <fullName>Fuel Delivery</fullName>
+                <default>false</default>
+                <label>Fuel Delivery</label>
+            </value>
+            <value>
+                <fullName>Operations - Camp</fullName>
+                <default>false</default>
+                <label>Operations - Camp</label>
+            </value>
+            <value>
+                <fullName>Operations - Rig</fullName>
+                <default>false</default>
+                <label>Operations - Rig</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Pumping Op&apos;s</fullName>
+                <default>false</default>
+                <label>Pumping Op&apos;s</label>
+            </value>
+            <value>
+                <fullName>Rig Move</fullName>
+                <default>false</default>
+                <label>Rig Move</label>
+            </value>
+            <value>
+                <fullName>Rig Up/Down - Camp</fullName>
+                <default>false</default>
+                <label>Rig Up/Down - Camp</label>
+            </value>
+            <value>
+                <fullName>Rig Up/Down - Rig</fullName>
+                <default>false</default>
+                <label>Rig Up/Down - Rig</label>
+            </value>
+            <value>
+                <fullName>Septic Removal</fullName>
+                <default>false</default>
+                <label>Septic Removal</label>
+            </value>
+            <value>
+                <fullName>Water Delivery/Removal</fullName>
+                <default>false</default>
+                <label>Water Delivery/Removal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_22_Shell_609</fullName>
+    <columns>Type__c</columns>
+    <columns>Unit__c</columns>
+    <columns>NAME</columns>
+    <columns>Site__c</columns>
+    <columns>Report_Date__c</columns>
+    <columns>Description__c</columns>
+    <columns>Status__c</columns>
+    <columns>Daily_Summary_Report__c</columns>
+    <columns>Invoice__c</columns>
+    <columns>Contract__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contract__c</field>
+        <operation>equals</operation>
+        <value>609</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Rig,Camp,Transport</value>
+    </filters>
+    <label>Rig 22/Camp 6 - Shell (609)</label>
+    <sharedTo>
+        <group>Camp_6</group>
+        <group>Camp_Supervisor</group>
+        <group>Finance</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Rig_22</group>
+    </sharedTo>
+</ListView>

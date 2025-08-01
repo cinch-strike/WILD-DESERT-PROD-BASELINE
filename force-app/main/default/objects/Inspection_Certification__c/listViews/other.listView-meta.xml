@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>other</fullName>
+    <columns>NAME</columns>
+    <columns>Serial_ID__c</columns>
+    <columns>Inspection_Type__c</columns>
+    <columns>Description__c</columns>
+    <columns>Date_In_Service__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>Asset_ID__c</columns>
+    <columns>Inspection_Requirement__c</columns>
+    <columns>Interval_days__c</columns>
+    <columns>Date_Last_Inspection__c</columns>
+    <columns>Days_to_Inspection__c</columns>
+    <columns>Date_of_Next_Inspection__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Inspection_Certification__c.Other_Inspections</value>
+    </filters>
+    <label>Other Inspections</label>
+    <sharedTo>
+        <group>OPs_super</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

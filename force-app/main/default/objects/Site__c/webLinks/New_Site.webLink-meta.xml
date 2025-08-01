@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Site</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Site from Contract</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/a17/e?{!$Label.Site_ContractNew}={!Contract__c.Name}&amp;{!$Label.Site_ContractNew}_lkid={!Contract__c.Id}&amp;{!$Label.Site_Account}={!Contract__c.Account_Name__c}&amp;{!$Label.Site_Account}_lkid={!Contract__c.AccountId__c}&amp;retURL={!Contract__c.Id}</url>
+</WebLink>

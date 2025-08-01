@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_By_Client_Match__c</fullName>
+    <description>This is checked if the PD Required By Matches the Employee&apos;s Assigned to Unit - Client.</description>
+    <formula>AND(
+    NOT(ISBLANK(Assigned_to_Unit_Client__c)),
+    OR(
+        LOWER(TRIM(Required_By__c)) = &quot;wild desert&quot;,
+        
+        OR(
+            AND(
+                LOWER(TRIM(Assigned_to_Unit_Client__c)) = &quot;santos sa&quot;,
+                LOWER(TRIM(Required_By__c)) = &quot;santos glng (qld)&quot;
+            ),
+            AND(
+                LOWER(TRIM(Assigned_to_Unit_Client__c)) = &quot;santos glng (qld)&quot;,
+                LOWER(TRIM(Required_By__c)) = &quot;santos sa&quot;
+            )
+        ),
+        
+        LOWER(TRIM(Assigned_to_Unit_Client__c)) = LOWER(TRIM(Required_By__c))
+    )
+)</formula>
+    <label>Required By &amp; Client Match</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

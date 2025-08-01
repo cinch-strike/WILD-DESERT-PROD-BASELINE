@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>keys</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>NAME</columns>
+    <columns>Location__c</columns>
+    <columns>Description__c</columns>
+    <columns>Key_Type__c</columns>
+    <columns>Currently_Assigned__c</columns>
+    <columns>Assigned_To__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Company_Property__c.Keys</value>
+    </filters>
+    <label>Key Register (all)</label>
+    <sharedTo>
+        <group>HR</group>
+        <group>OPs_super</group>
+    </sharedTo>
+</ListView>

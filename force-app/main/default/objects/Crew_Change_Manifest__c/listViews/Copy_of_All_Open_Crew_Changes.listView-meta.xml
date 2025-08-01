@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_All_Open_Crew_Changes</fullName>
+    <columns>NAME</columns>
+    <columns>Unit__c</columns>
+    <columns>Date_of_Crew_Change_In__c</columns>
+    <columns>Team__c</columns>
+    <columns>CCM_Details__c</columns>
+    <columns>Crew_Change_Type__c</columns>
+    <columns>Status__c</columns>
+    <columns>HR_Lead__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Unit__c</field>
+        <operation>contains</operation>
+        <value>Rig 24</value>
+    </filters>
+    <filters>
+        <field>Date_of_Crew_Change_In__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>3/26/2025</value>
+    </filters>
+    <label>Rig 24 | Crew Changes</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>HR</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Rig_24</group>
+    </sharedTo>
+</ListView>

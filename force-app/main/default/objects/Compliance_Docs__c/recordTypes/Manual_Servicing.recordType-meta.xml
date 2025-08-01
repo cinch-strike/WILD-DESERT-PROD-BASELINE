@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Manual_Servicing</fullName>
+    <active>true</active>
+    <label>Manual - Servicing</label>
+    <picklistValues>
+        <picklist>Document_Type__c</picklist>
+        <values>
+            <fullName>Certificate_COC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drawings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manual - Servicing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Store_Items_Below_Minimum_Stocks</fullName>
+    <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Store_Item_Code__c</columns>
+    <columns>Inventory_Item__c</columns>
+    <columns>Bin_Location__c</columns>
+    <columns>Stock_Available_formula__c</columns>
+    <columns>Minimum_Quantity_for_Restocking__c</columns>
+    <columns>Default_ReOder_Quantity__c</columns>
+    <columns>Send_Directly_To_Order__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>My_Store_Item__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Below_Minimum_Stocks__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>My Store Items – Below Minimum Stocks</label>
+</ListView>

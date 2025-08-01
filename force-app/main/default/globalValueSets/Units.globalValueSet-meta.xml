@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Rig 02</fullName>
+        <default>false</default>
+        <label>Rig 02</label>
+    </customValue>
+    <customValue>
+        <fullName>Rig 04</fullName>
+        <default>false</default>
+        <label>Rig 04</label>
+    </customValue>
+    <customValue>
+        <fullName>Rig 06</fullName>
+        <default>false</default>
+        <label>Rig 06</label>
+    </customValue>
+    <customValue>
+        <fullName>Rig 08</fullName>
+        <default>false</default>
+        <label>Rig 08</label>
+    </customValue>
+    <customValue>
+        <fullName>Rig 10</fullName>
+        <default>false</default>
+        <label>Rig 10</label>
+    </customValue>
+    <customValue>
+        <fullName>Rig 16</fullName>
+        <default>false</default>
+        <label>Rig 16</label>
+    </customValue>
+    <customValue>
+        <fullName>Rig 20</fullName>
+        <default>false</default>
+        <label>Rig 20</label>
+    </customValue>
+    <customValue>
+        <fullName>Rig 22</fullName>
+        <default>false</default>
+        <label>Rig 22</label>
+    </customValue>
+    <customValue>
+        <fullName>Rig 24</fullName>
+        <default>false</default>
+        <label>Rig 24</label>
+    </customValue>
+    <customValue>
+        <fullName>Rig 26</fullName>
+        <default>false</default>
+        <label>Rig 26</label>
+    </customValue>
+    <customValue>
+        <fullName>Rig 28</fullName>
+        <default>false</default>
+        <label>Rig 28</label>
+    </customValue>
+    <customValue>
+        <fullName>Rig 30</fullName>
+        <default>false</default>
+        <label>Rig 30</label>
+    </customValue>
+    <customValue>
+        <fullName>Rig 32</fullName>
+        <default>false</default>
+        <label>Rig 32</label>
+    </customValue>
+    <customValue>
+        <fullName>Rig 34</fullName>
+        <default>false</default>
+        <label>Rig 34</label>
+    </customValue>
+    <customValue>
+        <fullName>Camp 01</fullName>
+        <default>false</default>
+        <label>Camp 01</label>
+    </customValue>
+    <customValue>
+        <fullName>Camp 03</fullName>
+        <default>false</default>
+        <label>Camp 03</label>
+    </customValue>
+    <customValue>
+        <fullName>Camp 04</fullName>
+        <default>false</default>
+        <label>Camp 04</label>
+    </customValue>
+    <customValue>
+        <fullName>Camp 06</fullName>
+        <default>false</default>
+        <label>Camp 06</label>
+    </customValue>
+    <customValue>
+        <fullName>Camp 07</fullName>
+        <default>false</default>
+        <label>Camp 07</label>
+    </customValue>
+    <customValue>
+        <fullName>Camp 08</fullName>
+        <default>false</default>
+        <label>Camp 08</label>
+    </customValue>
+    <customValue>
+        <fullName>Camp 09</fullName>
+        <default>false</default>
+        <label>Camp 09</label>
+    </customValue>
+    <customValue>
+        <fullName>Camp 10</fullName>
+        <default>false</default>
+        <label>Camp 10</label>
+    </customValue>
+    <customValue>
+        <fullName>Camp 11</fullName>
+        <default>false</default>
+        <label>Camp 11</label>
+    </customValue>
+    <customValue>
+        <fullName>Camp 12</fullName>
+        <default>false</default>
+        <label>Camp 12</label>
+    </customValue>
+    <customValue>
+        <fullName>Camp Base Roma</fullName>
+        <default>false</default>
+        <label>Camp Base Roma</label>
+    </customValue>
+    <customValue>
+        <fullName>Camp Base Moomba</fullName>
+        <default>false</default>
+        <label>Camp Base Moomba</label>
+    </customValue>
+    <customValue>
+        <fullName>Transport Roma</fullName>
+        <default>false</default>
+        <label>Transport Roma</label>
+    </customValue>
+    <customValue>
+        <fullName>Transport Moomba</fullName>
+        <default>false</default>
+        <label>Transport Moomba</label>
+    </customValue>
+    <customValue>
+        <fullName>Depot Roma</fullName>
+        <default>false</default>
+        <label>Depot Roma</label>
+    </customValue>
+    <customValue>
+        <fullName>Depot Moomba</fullName>
+        <default>false</default>
+        <label>Depot Moomba</label>
+    </customValue>
+    <masterLabel>Units</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

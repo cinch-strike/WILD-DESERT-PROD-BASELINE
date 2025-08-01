@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Wire_Cable__c</fullName>
+    <label>Wire Cable Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Load Line #1</fullName>
+                <default>false</default>
+                <label>Load Line #1</label>
+            </value>
+            <value>
+                <fullName>Load Line #2</fullName>
+                <default>false</default>
+                <label>Load Line #2</label>
+            </value>
+            <value>
+                <fullName>Power Swivel Torque Line #1</fullName>
+                <default>false</default>
+                <label>Power Swivel Torque Line #1</label>
+            </value>
+            <value>
+                <fullName>Power Swivel Torque Line #2</fullName>
+                <default>false</default>
+                <label>Power Swivel Torque Line #2</label>
+            </value>
+            <value>
+                <fullName>Winch Line #1</fullName>
+                <default>false</default>
+                <label>Winch Line #1</label>
+            </value>
+            <value>
+                <fullName>Winch Line #2</fullName>
+                <default>false</default>
+                <label>Winch Line #2</label>
+            </value>
+            <value>
+                <fullName>Monkey Board - Outrigger #1</fullName>
+                <default>false</default>
+                <label>Monkey Board - Outrigger #1</label>
+            </value>
+            <value>
+                <fullName>Monkey Board - Outrigger #2</fullName>
+                <default>false</default>
+                <label>Monkey Board - Outrigger #2</label>
+            </value>
+            <value>
+                <fullName>Monkey Board - Raising Line DS</fullName>
+                <default>false</default>
+                <label>Monkey Board - Raising Line DS</label>
+            </value>
+            <value>
+                <fullName>Monkey Board Raising Line ODS</fullName>
+                <default>false</default>
+                <label>Monkey Board Raising Line ODS</label>
+            </value>
+            <value>
+                <fullName>Geronimo Line</fullName>
+                <default>false</default>
+                <label>Geronimo Line</label>
+            </value>
+            <value>
+                <fullName>Drill Line</fullName>
+                <default>false</default>
+                <label>Drill Line</label>
+            </value>
+            <value>
+                <fullName>Manrider Winch Line</fullName>
+                <default>false</default>
+                <label>Manrider Winch Line</label>
+            </value>
+            <value>
+                <fullName>Load Line #3</fullName>
+                <default>false</default>
+                <label>Load Line #3</label>
+            </value>
+            <value>
+                <fullName>Load Line #4</fullName>
+                <default>false</default>
+                <label>Load Line #4</label>
+            </value>
+            <value>
+                <fullName>Stabiliser Line #1</fullName>
+                <default>false</default>
+                <label>Stabiliser Line #1</label>
+            </value>
+            <value>
+                <fullName>Stabiliser Line #2</fullName>
+                <default>false</default>
+                <label>Stabiliser Line #2</label>
+            </value>
+            <value>
+                <fullName>Stabiliser Line #3</fullName>
+                <default>false</default>
+                <label>Stabiliser Line #3</label>
+            </value>
+            <value>
+                <fullName>Stabiliser Line #4</fullName>
+                <default>false</default>
+                <label>Stabiliser Line #4</label>
+            </value>
+            <value>
+                <fullName>Derrick Outrigger #1</fullName>
+                <default>false</default>
+                <label>Derrick Outrigger #1</label>
+            </value>
+            <value>
+                <fullName>Derrick Outrigger #2</fullName>
+                <default>false</default>
+                <label>Derrick Outrigger #2</label>
+            </value>
+            <value>
+                <fullName>Derrick Outrigger #3</fullName>
+                <default>false</default>
+                <label>Derrick Outrigger #3</label>
+            </value>
+            <value>
+                <fullName>Derrick Outrigger #4</fullName>
+                <default>false</default>
+                <label>Derrick Outrigger #4</label>
+            </value>
+            <value>
+                <fullName>Crown - Outrigger #1</fullName>
+                <default>false</default>
+                <label>Crown - Outrigger #1</label>
+            </value>
+            <value>
+                <fullName>Crown - Outrigger #2</fullName>
+                <default>false</default>
+                <label>Crown - Outrigger #2</label>
+            </value>
+            <value>
+                <fullName>Crown - Rod Board #1</fullName>
+                <default>false</default>
+                <label>Crown - Rod Board #1</label>
+            </value>
+            <value>
+                <fullName>Crown - Rod Board #2</fullName>
+                <default>false</default>
+                <label>Crown - Rod Board #2</label>
+            </value>
+            <value>
+                <fullName>Wire Winch Cable - Hand Winch</fullName>
+                <default>false</default>
+                <label>Wire Winch Cable - Hand Winch</label>
+            </value>
+            <value>
+                <fullName>Tong Back Up Wire Sling</fullName>
+                <default>false</default>
+                <label>Tong Back Up Wire Sling</label>
+            </value>
+            <value>
+                <fullName>High Pressure Line Restraint</fullName>
+                <default>false</default>
+                <label>High Pressure Line Restraint</label>
+            </value>
+            <value>
+                <fullName>Travelling Block Tie Off Line</fullName>
+                <default>false</default>
+                <label>Travelling Block Tie Off Line</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Catwalk Skate Cable</fullName>
+                <default>false</default>
+                <label>Catwalk Skate Cable</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

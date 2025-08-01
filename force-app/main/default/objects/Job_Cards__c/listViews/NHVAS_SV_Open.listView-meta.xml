@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NHVAS_SV_Open</fullName>
+    <columns>NAME</columns>
+    <columns>Unit_of_Asset__c</columns>
+    <columns>Status__c</columns>
+    <columns>Date_Created__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>Type_of_Maintenance__c</columns>
+    <columns>Service_Attached__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Job_Cards__c.Scheduled_Service</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Completed,Not Required</value>
+    </filters>
+    <filters>
+        <field>NHVAS_Asset__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>4/1/2025 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>lessOrEqual</operation>
+        <value>6/30/2025 12:00 AM</value>
+    </filters>
+    <label>NHVAS - SV | Open @ end of QTR</label>
+    <sharedTo>
+        <group>Safety</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

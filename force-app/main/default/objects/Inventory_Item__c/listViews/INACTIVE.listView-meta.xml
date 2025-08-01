@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>INACTIVE</fullName>
+    <columns>Store_Item_Code__c</columns>
+    <columns>NAME</columns>
+    <columns>Supplier_Part_Number__c</columns>
+    <columns>Cost_Price__c</columns>
+    <columns>Tax_Code__c</columns>
+    <columns>Active__c</columns>
+    <columns>Non_Searchable_Item__c</columns>
+    <columns>Preferred_Supplier_1st__c</columns>
+    <columns>Preferred_Supplier_2nd__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>All Inactive</label>
+    <sharedTo>
+        <group>Purchasing</group>
+    </sharedTo>
+</ListView>

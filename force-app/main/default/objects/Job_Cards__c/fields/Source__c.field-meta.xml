@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source__c</fullName>
+    <inlineHelpText>The source of the request for Change</inlineHelpText>
+    <label>Source</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>External Audit</fullName>
+                <default>false</default>
+                <label>External Audit</label>
+            </value>
+            <value>
+                <fullName>Internal Audit</fullName>
+                <default>false</default>
+                <label>Internal Audit</label>
+            </value>
+            <value>
+                <fullName>Hazard Observation</fullName>
+                <default>false</default>
+                <label>Hazard Observation</label>
+            </value>
+            <value>
+                <fullName>Incident, HIPO, Near Miss</fullName>
+                <default>false</default>
+                <label>Incident, HIPO, Near Miss</label>
+            </value>
+            <value>
+                <fullName>Suggestion for Improvement</fullName>
+                <default>false</default>
+                <label>Suggestion for Improvement</label>
+            </value>
+            <value>
+                <fullName>Safety Meeting</fullName>
+                <default>false</default>
+                <label>Safety Meeting</label>
+            </value>
+            <value>
+                <fullName>Safety Drill</fullName>
+                <default>false</default>
+                <label>Safety Drill</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

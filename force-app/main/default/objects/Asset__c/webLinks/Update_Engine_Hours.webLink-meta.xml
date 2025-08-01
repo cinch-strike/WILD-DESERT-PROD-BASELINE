@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Update_Engine_Hours</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>page</linkType>
+    <masterLabel>Update Engine Hours</masterLabel>
+    <openType>replace</openType>
+    <page>MassEdit_WD_Assets_RigMan_Hrs</page>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+</WebLink>

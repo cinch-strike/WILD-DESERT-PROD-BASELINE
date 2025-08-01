@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>In_Dispute__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Select if PO doesn&apos;t match INV and is in the dispute process, uncheck when resolved.</description>
+    <inlineHelpText>Select if PO doesn&apos;t match INV and is in the dispute process, uncheck when resolved.</inlineHelpText>
+    <label>In Dispute</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

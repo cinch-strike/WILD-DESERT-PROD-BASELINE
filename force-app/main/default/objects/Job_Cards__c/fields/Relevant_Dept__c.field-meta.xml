@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relevant_Dept__c</fullName>
+    <inlineHelpText>This will determine the Department who will receive the Work Order once you click SUBMIT.</inlineHelpText>
+    <label>Relevant Dept</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>HV - Auto Elec - Roma</fullName>
+                <default>false</default>
+                <label>Auto Elec (HV) - Roma</label>
+            </value>
+            <value>
+                <fullName>HV - Roma</fullName>
+                <default>false</default>
+                <label>Mech (HV) - Roma</label>
+            </value>
+            <value>
+                <fullName>Mechanical - Roma</fullName>
+                <default>false</default>
+                <label>Mechanical - Roma</label>
+            </value>
+            <value>
+                <fullName>Auto Electrician - Roma</fullName>
+                <default>false</default>
+                <label>Auto Elec - Roma</label>
+            </value>
+            <value>
+                <fullName>Electrical - Roma</fullName>
+                <default>false</default>
+                <label>Electrical - Roma</label>
+            </value>
+            <value>
+                <fullName>Fabrication - Roma</fullName>
+                <default>false</default>
+                <label>Fabrication - Roma</label>
+            </value>
+            <value>
+                <fullName>NDT - Roma</fullName>
+                <default>false</default>
+                <label>NDT - Roma</label>
+            </value>
+            <value>
+                <fullName>General - Roma</fullName>
+                <default>false</default>
+                <label>General - Roma</label>
+            </value>
+            <value>
+                <fullName>Mechanical - Moomba</fullName>
+                <default>false</default>
+                <label>Mechanical - Moomba</label>
+            </value>
+            <value>
+                <fullName>Auto Electrician - Moomba</fullName>
+                <default>false</default>
+                <label>Auto Elec - Moomba</label>
+            </value>
+            <value>
+                <fullName>Electrical - Moomba</fullName>
+                <default>false</default>
+                <label>Electrical - Moomba</label>
+            </value>
+            <value>
+                <fullName>Fabrication - Mooma</fullName>
+                <default>false</default>
+                <label>Fabrication - Moomba</label>
+            </value>
+            <value>
+                <fullName>NDT - Moomba</fullName>
+                <default>false</default>
+                <label>NDT - Moomba</label>
+            </value>
+            <value>
+                <fullName>General - Moomba</fullName>
+                <default>false</default>
+                <label>General - Moomba</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

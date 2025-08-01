@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Starlink_Installed</fullName>
+    <columns>Unit__c</columns>
+    <columns>NAME</columns>
+    <columns>Asset_ID_Number__c</columns>
+    <columns>Registration_Number__c</columns>
+    <columns>Starlink_Mounted__c</columns>
+    <columns>Starlink_Serial_No__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Asset__c.Light_Vehicles,Asset__c.Prime_Mover</value>
+    </filters>
+    <filters>
+        <field>Starlink_Mounted__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Starlink Installed</label>
+</ListView>

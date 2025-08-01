@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Maintenance_Category__c</fullName>
+    <label>Maintenance Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Heavy Vehicle Maintenance</fullName>
+                <default>false</default>
+                <label>Heavy Vehicle Maintenance</label>
+            </value>
+            <value>
+                <fullName>Non- Heavy Vehicle Maintenance</fullName>
+                <default>false</default>
+                <label>Non- Heavy Vehicle Maintenance</label>
+            </value>
+            <value>
+                <fullName>Assist at Camp</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Assist at Camp</label>
+            </value>
+            <value>
+                <fullName>Assist at Rig</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Assist at Rig</label>
+            </value>
+            <value>
+                <fullName>Assist in Stores</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Assist in Stores</label>
+            </value>
+            <value>
+                <fullName>Clean LV</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Clean LV</label>
+            </value>
+            <value>
+                <fullName>Clean Workshop</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Clean Workshop</label>
+            </value>
+            <value>
+                <fullName>Drive LV</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Drive LV</label>
+            </value>
+            <value>
+                <fullName>Empty Bins</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Empty Bins</label>
+            </value>
+            <value>
+                <fullName>HV Passenger</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>HV Passenger</label>
+            </value>
+            <value>
+                <fullName>LV Repairs</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>LV Repairs</label>
+            </value>
+            <value>
+                <fullName>Loader/Forklift Driving (unrelated to a HV)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Loader/Forklift Driving (unrelated to a HV)</label>
+            </value>
+            <value>
+                <fullName>Other Non-HV task</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other Non-HV task</label>
+            </value>
+            <value>
+                <fullName>Pickup/Delivery Duties (LV only)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pickup/Delivery Duties (LV only)</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Training</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

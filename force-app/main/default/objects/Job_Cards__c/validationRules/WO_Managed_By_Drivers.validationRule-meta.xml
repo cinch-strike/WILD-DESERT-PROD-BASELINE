@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WO_Managed_By_Drivers</fullName>
+    <active>true</active>
+    <description>Manged By should be Andrew Spinks</description>
+    <errorConditionFormula>AND(
+  NOT(ISPICKVAL( Status__c , &apos;Requested&apos;)),
+  NOT(ISPICKVAL( Status__c , &apos;Open&apos;)),
+  $Profile.Id = &apos;00e0o000002Ft7k&apos;,
+  NOT( Managed_By__r.CommunityNickname = &apos;andrew.spinks&apos;)
+)</errorConditionFormula>
+    <errorDisplayField>Managed_By__c</errorDisplayField>
+    <errorMessage>Managed By should be Andrew Spinks. Please update</errorMessage>
+</ValidationRule>

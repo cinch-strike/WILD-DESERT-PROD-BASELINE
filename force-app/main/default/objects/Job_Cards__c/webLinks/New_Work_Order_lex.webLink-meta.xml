@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Work_Order_lex</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Work Order</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/lightning/o/Job_Cards__c/new?count=4&amp;nooverride=1&amp;useRecordTypeCheck=1&amp;navigationLocation=RELATED_LIST&amp;uid=167711095460161946&amp;backgroundContext=%2Flightning%2Fr%2FDaily_Report__c%2F{!Daily_Report__c.Id}%2Fview&amp;defaultFieldValues=Site__c={!Daily_Report__c.Site_ID__c},Unit__c={!Daily_Report__c.Unit_ID__c},Daily_Site_Job__c={!Daily_Report__c.Id}</url>
+</WebLink>

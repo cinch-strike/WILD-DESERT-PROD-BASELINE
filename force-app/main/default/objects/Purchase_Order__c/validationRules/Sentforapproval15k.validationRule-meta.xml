@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sentforapproval15k</fullName>
+    <active>true</active>
+    <description>Temporary validation</description>
+    <errorConditionFormula>ISPICKVAL(Status__c, &apos;For Approval&apos;)
+&amp;&amp;
+ Total_Price__c &gt; 15000
+&amp;&amp;
+ PO_Approver__r.Username != &apos;david.whiley@wilddesert.com.au&apos;</errorConditionFormula>
+    <errorDisplayField>PO_Approver__c</errorDisplayField>
+    <errorMessage>Total price for this PO exceeds $15K. Approver should be Dave Whiley. Please change the approver to Dave Whiley before sending for approval.</errorMessage>
+</ValidationRule>

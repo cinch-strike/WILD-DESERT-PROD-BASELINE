@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Tester</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>450</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Conga Tester</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>https://www.appextremes.com/apps/Conga/PointMerge.aspx
+?sessionId={!API.Session_ID}
+&amp;serverUrl={!API.Partner_Server_URL_80}
+&amp;id={!WD_Report__c.Id}
+
+&amp;QueryId=[ServicesOperations]a0i900000091yio
+&amp;QueryId=[ServicesHire]a0i900000091yit
+&amp;QueryId=[TourDayShift]a0i900000091yiy
+&amp;QueryId=[TourNightShift]a0i900000091yj3
+
+&amp;BML=Generating+WD+Report
+&amp;TemplateId={!IF(WD_Report__c.RecordTypeId=&quot;01290000000iUDR&quot;,&quot;a0j9000000Ip9Ct&quot;,&quot;a0j9000000Ip2VF&quot;)}
+&amp;fp0=1
+&amp;OFN=WD+Report+{Today()}</url>
+    <width>600</width>
+</WebLink>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Name_of_Driller__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Name of Driller</label>
+    <referenceTo>Employees__c</referenceTo>
+    <relationshipLabel>HSEQ Forms (Name of Driller)</relationshipLabel>
+    <relationshipName>HSEQ_Forms6</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

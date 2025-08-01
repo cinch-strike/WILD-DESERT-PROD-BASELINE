@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Item_Frequency__c</fullName>
+    <label>Item Frequency</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Per Day</fullName>
+                <default>false</default>
+                <label>Per Day</label>
+            </value>
+            <value>
+                <fullName>Per Site</fullName>
+                <default>false</default>
+                <label>Per Site</label>
+            </value>
+            <value>
+                <fullName>Multi Per Day</fullName>
+                <default>false</default>
+                <label>Multi Per Day</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

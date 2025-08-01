@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_Store__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <inlineHelpText>If by pass ordering, specify the source store to pick list stocks.</inlineHelpText>
+    <label>Source Store</label>
+    <referenceTo>Unit__c</referenceTo>
+    <relationshipLabel>Unit (Source Store)</relationshipLabel>
+    <relationshipName>Unit1</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

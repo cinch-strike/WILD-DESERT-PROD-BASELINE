@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hazard_Card</fullName>
+    <active>true</active>
+    <label>Hazard Card</label>
+    <picklistValues>
+        <picklist>Associated_Hazard__c</picklist>
+        <values>
+            <fullName>BOP or wellhead pressure risks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Caught between rig tongs%2C pipe%2C or moving equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Caught between%2Fmoving equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cluttered work area</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Correct use of tools%2C controls%2C or PPE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Damaged cables%2C poor grounding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fuel or oil spills</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gas releases or lack of gas detection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Good catch%2C stop-work use</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>H2S exposure risk areas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Handling of mud%2C fuel%2C or solvents</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot work near flammables</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Improper isolation or pressure release</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Improper rigging or lifting gear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Improper waste handling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inadequate PPE use</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inadequate ventilation or monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incomplete ladder safety</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of fall protection or harness use</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of gas testing or entry permits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of spotters or poor communication</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leaking valves%2C hoses%2C or fittings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lifting heavy items without aids</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Light vehicle or forklift movement on site</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing handrails or guardrails</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing or inadequate use of required PPE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Muscle Sprain %2F Strain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not following SOPs or JSA deviations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poor storage%2C cluttered work zones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Power swivel or drawworks risks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pressurised fluid release direction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Smoking or spark sources in restricted zones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spills%2C mud%2C unsafe walking surface</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Struck-by hazards %28pipe%2C hoist%2C winch%2C tongs%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tanks%2C pits%2C cellars%2C or mud tanks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Teamwork and safety leadership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trip hazards or blocked emergency exits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unauthorized access to electrical panels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uncertified or overloaded equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unguarded belts%2C chains%2C or gears</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unplanned or unsafe teamwork lifts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unsafe hands-on handling near moving parts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unsecured tools or materials at height</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wet conditions near live equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Work done without a valid permit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Closed_Immediately__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Consequence__c</picklist>
+        <values>
+            <fullName>Catastrophic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Major</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Minor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Serious</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slight</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Follow_Up_Action__c</picklist>
+        <values>
+            <fullName>Material Request%2FPurchase Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Work Order - Fault Report</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Frequency__c</picklist>
+        <values>
+            <fullName>Almost Certain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Likely</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Possible</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unlikely</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hazard_Locations__c</picklist>
+        <values>
+            <fullName>3rd Party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Air Packs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Base%2FShed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blooie Line</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Catwalk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Combo Shack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lease</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mud Pump</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pipe Racks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig Carrier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trailers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Work Floor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hazard_Potential__c</picklist>
+        <values>
+            <fullName>Caught in rotating equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chemical Exposure to Person</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dropped Object</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Environmental Impact%2FSpill</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Equipment Damage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Equipment Failure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exposure to Electricity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exposure to Fatigue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exposure to Heat%2FCold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exposure to Stored Energy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fall from Heights</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fall on Same Level</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fire%2FExplosion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hearing Damage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hit by Moving Equipment%2FMachine%2FVehicle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loss of Well Control</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Muscle Strain %2F Sprain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slips%2C Trips %26 Falls</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unauthorized Access to Site%2FWork Area</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Accident</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vibration Exposure</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hazard_Type__c</picklist>
+        <values>
+            <fullName>Environmental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Housekeeping</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect Procedure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non Routine Task</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPE Related</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slip%2FTrip%2FFall</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tool Misuse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicles</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Operations_at_Time__c</picklist>
+        <values>
+            <fullName>3rd Party Op%27s</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Air Op%27s</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp Move</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fuel Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Operations - Camp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Operations - Rig</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pumping Op%27s</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig Move</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig Up%2FDown - Camp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig Up%2FDown - Rig</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Septic Removal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Water Delivery%2FRemoval</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Potential_Outcome__c</picklist>
+        <values>
+            <fullName>Damage</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Risk_Rating__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delayed - Unit Stacked</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Work_Order_Submitted__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

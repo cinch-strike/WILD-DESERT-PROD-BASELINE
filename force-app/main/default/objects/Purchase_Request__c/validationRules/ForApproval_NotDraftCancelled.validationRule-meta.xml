@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ForApproval_NotDraftCancelled</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISCHANGED(Status__c ) ,
+    ISPICKVAL( Status__c , &apos;For Approval&apos;) ,
+    NOT(ISPICKVAL( PRIORVALUE(Status__c), &apos;Draft&apos;)),
+    NOT(ISPICKVAL( PRIORVALUE(Status__c), &apos;Cancelled&apos;))
+)</errorConditionFormula>
+    <errorMessage>Purchase request cannot be sent for approval.</errorMessage>
+</ValidationRule>

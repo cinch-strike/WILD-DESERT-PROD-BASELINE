@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_Operating</fullName>
+    <columns>NAME</columns>
+    <columns>Item_Name__c</columns>
+    <columns>Job_Item_Description__c</columns>
+    <columns>Special_Item_Details__c</columns>
+    <columns>Contract__c</columns>
+    <columns>Account__c</columns>
+    <columns>Rate__c</columns>
+    <columns>UPDATEDBY_USER.ALIAS</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Item_Name__c</field>
+        <operation>equals</operation>
+        <value>Rig Operating</value>
+    </filters>
+    <label>Rig Operating</label>
+    <sharedTo>
+        <role>Administration</role>
+        <role>Business_Manager</role>
+    </sharedTo>
+</ListView>

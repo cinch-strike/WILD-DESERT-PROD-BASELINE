@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mobile_Devices_ipad</fullName>
+    <columns>Type__c</columns>
+    <columns>NAME</columns>
+    <columns>Mobile__c</columns>
+    <columns>Date_in_Service__c</columns>
+    <columns>Assigned_To__c</columns>
+    <columns>IMEI__c</columns>
+    <columns>Sim__c</columns>
+    <columns>Purchase_from__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Company_Property__c.Mobile_Devices</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Ipad,Ipad Pro</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Obsolete (Binned/Sold)</value>
+    </filters>
+    <label>Mobile Devices Register - Ipad</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>HR</group>
+        <group>Managing_Director</group>
+    </sharedTo>
+</ListView>

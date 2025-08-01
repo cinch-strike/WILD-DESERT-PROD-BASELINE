@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>R20_C01_FR_Mech_Incomplete</fullName>
+    <columns>NAME</columns>
+    <columns>Date_Created__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>Asset_ID__c</columns>
+    <columns>Details_of_Issue_Work_Requested__c</columns>
+    <columns>Comments__c</columns>
+    <columns>Relevant_Dept__c</columns>
+    <columns>Parts_Received_in_Stores__c</columns>
+    <columns>Action__c</columns>
+    <columns>Actionby__c</columns>
+    <columns>Assigned_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Unit_of_Asset__c</field>
+        <operation>equals</operation>
+        <value>rig 20</value>
+    </filters>
+    <filters>
+        <field>Date_Created__c</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:730</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Job_Cards__c.Fault_Report_Approved</value>
+    </filters>
+    <filters>
+        <field>Relevant_Dept__c</field>
+        <operation>equals</operation>
+        <value>HV - Auto Elec - Roma,HV - Roma,Mechanical - Roma,Auto Electrician - Roma</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Open,Defer/Monitor,In Progress</value>
+    </filters>
+    <label>R20 | FR Mech / AE | Incomplete</label>
+    <sharedTo>
+        <group>Mechanics_Roma</group>
+        <group>Rig_20</group>
+    </sharedTo>
+</ListView>

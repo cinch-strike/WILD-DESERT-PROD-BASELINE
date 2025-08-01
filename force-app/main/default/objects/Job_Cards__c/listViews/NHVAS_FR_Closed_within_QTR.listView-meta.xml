@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NHVAS_FR_Closed_within_QTR</fullName>
+    <columns>NAME</columns>
+    <columns>Date_Created__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>Details_of_Issue_Work_Requested__c</columns>
+    <columns>Managed_By__c</columns>
+    <columns>Relevant_Dept__c</columns>
+    <columns>Status__c</columns>
+    <columns>Date_Completed__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Work_Tasks_Completed__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Job_Cards__c.Fault_Report_Approved</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Completed</value>
+    </filters>
+    <filters>
+        <field>NHVAS_Asset__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Date_Completed__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>4/1/2025</value>
+    </filters>
+    <filters>
+        <field>Date_Completed__c</field>
+        <operation>lessOrEqual</operation>
+        <value>6/30/2025</value>
+    </filters>
+    <filters>
+        <field>Relevant_Dept__c</field>
+        <operation>equals</operation>
+        <value>Auto Electrician - Moomba,Auto Electrician - Roma,General - Moomba,General - Roma,Mechanical - Moomba,Mechanical - Roma</value>
+    </filters>
+    <label>NHVAS - FR | Completed within QTR</label>
+    <sharedTo>
+        <group>Safety</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

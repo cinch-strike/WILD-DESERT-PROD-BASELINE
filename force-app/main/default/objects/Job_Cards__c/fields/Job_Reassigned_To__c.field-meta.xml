@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Job_Reassigned_To__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <inlineHelpText>Trades supervisor is responsible to manage his team to ensure the job is completed</inlineHelpText>
+    <label>Assigned 1</label>
+    <referenceTo>Employees__c</referenceTo>
+    <relationshipLabel>Work Orders (Job Assigned To)</relationshipLabel>
+    <relationshipName>Job_Cards_Reassigned_To</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

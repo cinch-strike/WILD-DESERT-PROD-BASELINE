@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Part_Category__c</fullName>
+    <label>Part Category</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Filter - Oil</fullName>
+                <default>false</default>
+                <label>Filter - Oil</label>
+            </value>
+            <value>
+                <fullName>Filter - Fuel</fullName>
+                <default>false</default>
+                <label>Filter - Fuel</label>
+            </value>
+            <value>
+                <fullName>Filter - Air</fullName>
+                <default>false</default>
+                <label>Filter - Air</label>
+            </value>
+            <value>
+                <fullName>Filter - Hydraulic</fullName>
+                <default>false</default>
+                <label>Filter - Hydraulic</label>
+            </value>
+            <value>
+                <fullName>Filter - Water</fullName>
+                <default>false</default>
+                <label>Filter - Water</label>
+            </value>
+            <value>
+                <fullName>Filter - Kits</fullName>
+                <default>false</default>
+                <label>Filter - Kits</label>
+            </value>
+            <value>
+                <fullName>Filter - Other</fullName>
+                <default>false</default>
+                <label>Filter - Other</label>
+            </value>
+            <value>
+                <fullName>Filter – Separator</fullName>
+                <default>false</default>
+                <label>Filter – Separator</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

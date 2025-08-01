@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Operations_Rig</fullName>
+    <active>true</active>
+    <description>Hrly Rate specific to rig ops</description>
+    <label>Fixed Hrly/Qty</label>
+    <picklistValues>
+        <picklist>Hire_Item_Category__c</picklist>
+        <values>
+            <fullName>Charge - Request from Client</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>No Charge - Required by Contract</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Operating_Category__c</picklist>
+        <values>
+            <fullName>Operating Hrs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Repair Hrs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig Move Hrs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standby WC Hrs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standby WOC Hrs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel Hrs</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Operations__c</picklist>
+        <values>
+            <fullName>12hr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12hr%2F24hr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>24hr</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rate_Category__c</picklist>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hrly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Service_Type__c</picklist>
+        <values>
+            <fullName>Crew Travel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inspection%2FPMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Operating</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Repair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig Move</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SBWC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SBWOC</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Additional Item</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Amendment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Item</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Related Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stats Only</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

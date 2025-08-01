@@ -1,0 +1,13 @@
+<apex:page standardController="Daily_Report__c" extensions="DailySiteJobStandard_Controller" action="{!init}">
+    <apex:slds />
+    <div class="slds-scope">
+        <apex:form >
+            <apex:pageMessages ></apex:pageMessages>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1 slds-m-right_large">
+                    <!--<apex:commandLink styleClass="slds-button slds-button--brand slds-float_right" action="{!backMethod}" value="Back"/>-->
+                </div>
+            </div>
+        </apex:form>
+    </div>
+</apex:page>

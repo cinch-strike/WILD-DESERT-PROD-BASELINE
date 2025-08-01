@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>C1_Servicing_Schedule_hrs</fullName>
+    <columns>Asset_Family__c</columns>
+    <columns>NAME</columns>
+    <columns>Asset_ID_Number__c</columns>
+    <columns>Engine_Hours__c</columns>
+    <columns>Date_Of_Last_Service__c</columns>
+    <columns>Next_Service_Due_Hrs__c</columns>
+    <columns>Next_Job_Card_creation_reading__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Asset__c.Rigs,Asset__c.Cranes,Asset__c.Forklifts,Asset__c.Loaders,Asset__c.Non_Vehicle_Engine</value>
+    </filters>
+    <filters>
+        <field>Unit__c</field>
+        <operation>equals</operation>
+        <value>camp 1</value>
+    </filters>
+    <label>Camp 01 - Servicing Schedule (hrs)</label>
+    <sharedTo>
+        <group>Camp_1</group>
+        <group>Camp_Supervisor</group>
+        <group>OPs_super</group>
+        <group>Rig_6</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

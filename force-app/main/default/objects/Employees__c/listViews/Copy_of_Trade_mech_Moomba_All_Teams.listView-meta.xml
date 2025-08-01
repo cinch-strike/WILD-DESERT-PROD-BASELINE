@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_Trade_mech_Moomba_All_Teams</fullName>
+    <columns>Team_lookup__c</columns>
+    <columns>Crew__c</columns>
+    <columns>PositionLookup__c</columns>
+    <columns>Relevant_Department__c</columns>
+    <columns>NAME</columns>
+    <columns>On_Shift__c</columns>
+    <columns>Crew_Change_Location__c</columns>
+    <columns>City__c</columns>
+    <columns>Mobile__c</columns>
+    <columns>Personal_Email__c</columns>
+    <columns>Santos_Security_Number__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Assigned_to_Unit__c</field>
+        <operation>equals</operation>
+        <value>Depot - moomba</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Employees__c.Active_Employee</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>trade/mech</value>
+    </filters>
+    <label>Trade/Mech - Moomba | All Teams</label>
+    <sharedTo>
+        <group>BOO</group>
+        <group>HR</group>
+        <group>Managing_Director</group>
+        <group>Mechanics_Moomba</group>
+        <group>OPs_super</group>
+        <group>Projects_and_Maintenance</group>
+    </sharedTo>
+</ListView>

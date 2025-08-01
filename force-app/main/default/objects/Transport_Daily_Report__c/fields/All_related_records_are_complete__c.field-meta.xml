@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_related_records_are_complete__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Status of TJ, DA, DSJ, DSJS are in final state (e.g. approved, completed, cancelled)</description>
+    <label>All related records are complete</label>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

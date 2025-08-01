@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Site_for_Unit</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Site for Unit</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/a17/e?{!$Label.Site_Account}={!Unit__c.Client__c}
+&amp;{!$Label.Site_ContractNew}={!Unit__c.Contract_New__c}&amp;retURL={!Unit__c.Id}
+&amp;{!$Label.Site_WDRig + &apos;_lkid&apos;}={!IF(CONTAINS(TEXT( Unit__c.Unit_Type__c ),&apos;Rig&apos;), Unit__c.Id,&apos;&apos;)}
+&amp;{!$Label.Site_WDCamp + &apos;_lkid&apos;}={!IF(CONTAINS(TEXT( Unit__c.Unit_Type__c ),&apos;Camp&apos;),Unit__c.Id, &apos;&apos;)}
+&amp;{!$Label.Site_WDRig}={!IF(CONTAINS(TEXT( Unit__c.Unit_Type__c ),&apos;Rig&apos;), Unit__c.Name,&apos;&apos;)}
+&amp;{!$Label.Site_WDCamp}={!IF(CONTAINS(TEXT( Unit__c.Unit_Type__c ),&apos;Camp&apos;), Unit__c.Name,&apos;&apos;)}</url>
+</WebLink>

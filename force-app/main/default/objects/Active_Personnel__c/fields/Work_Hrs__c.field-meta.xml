@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Work_Hrs__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Total work hours for the shift, EG: 12hrs - 6am to 6pm</inlineHelpText>
+    <label>Work Hrs</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

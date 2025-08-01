@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Roster_Employees_office</fullName>
+    <columns>Status__c</columns>
+    <columns>Assigned_to_Unit__c</columns>
+    <columns>NAME</columns>
+    <columns>Mobile__c</columns>
+    <columns>PositionLookup__c</columns>
+    <columns>On_Shift__c</columns>
+    <columns>Work_Mobile__c</columns>
+    <columns>USI__c</columns>
+    <columns>Santos_Security_Number__c</columns>
+    <columns>Geotab__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Pre Employment,Active</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>office/field</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Employees__c.Active_Employee</value>
+    </filters>
+    <label>All Office/Field (On/Off)</label>
+    <sharedTo>
+        <group>HR</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

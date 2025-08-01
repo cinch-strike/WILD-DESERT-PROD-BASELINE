@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Workerscomp_Light_Duties</fullName>
+    <columns>NAME</columns>
+    <columns>Team_lookup__c</columns>
+    <columns>Crew__c</columns>
+    <columns>Assigned_to_Unit__c</columns>
+    <columns>PositionLookup__c</columns>
+    <columns>Mobile__c</columns>
+    <columns>On_Shift__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Assigned_to_Unit__c</field>
+        <operation>contains</operation>
+        <value>Workcover</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Employees__c.Active_Employee</value>
+    </filters>
+    <label>Workcover / Light Duties</label>
+    <sharedTo>
+        <group>HR</group>
+    </sharedTo>
+</ListView>

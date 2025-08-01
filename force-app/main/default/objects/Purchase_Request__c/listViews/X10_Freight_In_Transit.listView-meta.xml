@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X10_Freight_In_Transit</fullName>
+    <columns>Destination_Store__c</columns>
+    <columns>NAME</columns>
+    <columns>Item_Name_Hyperlink__c</columns>
+    <columns>Supplier__c</columns>
+    <columns>Purchase_Order__c</columns>
+    <columns>Freight_Location__c</columns>
+    <columns>Freight_Dimensions__c</columns>
+    <columns>Freight_Notes__c</columns>
+    <columns>Supplier_Shipping_Address__c</columns>
+    <columns>Freight_Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>For Ordering</value>
+    </filters>
+    <filters>
+        <field>Freight_Collection_Status__c</field>
+        <operation>equals</operation>
+        <value>In Transit</value>
+    </filters>
+    <label>10 Freight - In Transit</label>
+</ListView>

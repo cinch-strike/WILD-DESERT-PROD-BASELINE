@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Asset_Tags_to_be_Attached</fullName>
+    <columns>NAME</columns>
+    <columns>Managed_By__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>Asset_ID__c</columns>
+    <columns>Details_of_Issue_Work_Requested__c</columns>
+    <columns>Status__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Date_Created__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Details_of_Issue_Work_Requested__c</field>
+        <operation>contains</operation>
+        <value>asset tag,asset plate</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Completed</value>
+    </filters>
+    <label>Asset Tags to be Attached</label>
+</ListView>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Safety_Equipment_snub</fullName>
+    <columns>NAME</columns>
+    <columns>Safety_Equipment__c</columns>
+    <columns>Description__c</columns>
+    <columns>Last_Inspection_Date__c</columns>
+    <columns>Next_Inspection__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Inspection_Certification__c.Safety_Equipment</value>
+    </filters>
+    <label>Snub Unit - Safety Equipment</label>
+    <sharedTo>
+        <group>Electrician</group>
+        <group>OPs_super</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

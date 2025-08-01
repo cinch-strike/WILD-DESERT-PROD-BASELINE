@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X024_Senex_Rig_10_Camp_1</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>Contract__c</columns>
+    <columns>Contract_unit__c</columns>
+    <columns>WD_Unit__c</columns>
+    <columns>NAME</columns>
+    <columns>Service_Type__c</columns>
+    <columns>Description__c</columns>
+    <columns>Rate__c</columns>
+    <columns>Admin_Fee__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Client__c</field>
+        <operation>equals</operation>
+        <value>Senex Energy Ltd</value>
+    </filters>
+    <filters>
+        <field>WD_Unit__c</field>
+        <operation>equals</operation>
+        <value>rig 10,camp 1,transport</value>
+    </filters>
+    <filters>
+        <field>Contract_unit__c</field>
+        <operation>equals</operation>
+        <value>024</value>
+    </filters>
+    <label>024-Senex Rig #10/Camp #1</label>
+    <sharedTo>
+        <group>Camp_1</group>
+        <group>Finance</group>
+        <group>OPs_super</group>
+        <group>Rigs_10</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>wd_all_hazards_stacked</fullName>
+    <columns>Unit__c</columns>
+    <columns>NAME</columns>
+    <columns>Date__c</columns>
+    <columns>Hazard_Description__c</columns>
+    <columns>Imediate_Actions_Taken__c</columns>
+    <columns>Risk_Rating__c</columns>
+    <columns>Reported_By__c</columns>
+    <columns>Unit_Manager__c</columns>
+    <columns>Unit_Manager_Report__c</columns>
+    <columns>Ops_Manager_Report__c</columns>
+    <columns>Date_Closed__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Delayed - Unit Stacked</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Hazard_Card__c.Hazard_Card</value>
+    </filters>
+    <label>WD - Hazard Register (Unit Stacked)</label>
+    <sharedTo>
+        <group>OPs_super</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

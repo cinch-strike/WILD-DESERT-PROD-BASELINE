@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Wd_asset_del__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <inlineHelpText>A project can often have a parent asset and many child assets.  In this event the Parent asset is linked to the Project</inlineHelpText>
+    <label>WD Asset (Parent)</label>
+    <referenceTo>Asset__c</referenceTo>
+    <relationshipLabel>WD Projects</relationshipLabel>
+    <relationshipName>WD_Projects_del</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

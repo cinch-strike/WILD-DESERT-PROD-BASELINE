@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Add_Fuel</fullName>
+        <field>Fuel_On_Hand__c</field>
+        <formula>Fuel_On_Hand__c +  Fuel_Delivered__c</formula>
+        <name>Add Fuel</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Record_Type_12_Hour_Rig</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>X12_Hour_Rig</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Record Type : 12 Hour Rig</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Record_Type_12_Hour_Rig_Approved</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>X12_Hour_Rig_Approved</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Record Type : 12 Hour Rig (Approved)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Record_Type_Remote_Camp</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Remote_Camp</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Record Type : Remote Camp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Record_Type_Remote_Camp_Approved</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Remote_Camp_Approved</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Record Type : Remote Camp - Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Record_Type_Transport</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Transport</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Record Type : Transport</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Record_Type_Transport_Approved</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Transport_Approved</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Record Type : Transport (Approved)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rejected</fullName>
+        <description>If Approval is Rejected, change status to in progress</description>
+        <field>Status__c</field>
+        <literalValue>In Progress</literalValue>
+        <name>Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_Approved</fullName>
+        <field>Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Status - Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_In_Progress</fullName>
+        <field>Status__c</field>
+        <literalValue>In Progress</literalValue>
+        <name>Status - In Progress</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_Pending_Approval</fullName>
+        <description>Change status to pending approval</description>
+        <field>Status__c</field>
+        <literalValue>Pending Approval</literalValue>
+        <name>Status - Pending Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_to_pending</fullName>
+        <description>When Approval is Submitted, WD Report status is set to Pending Approval</description>
+        <field>Status__c</field>
+        <literalValue>Pending Approval</literalValue>
+        <name>Status to pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>WD_Report_Approved</fullName>
+        <description>Change status to Approved</description>
+        <field>Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>WD Report - Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>WD_Status_Change</fullName>
+        <field>Status__c</field>
+        <literalValue>Pending Approval</literalValue>
+        <name>WD Status Change</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>WDR Fuel Management</fullName>
+        <active>false</active>
+        <formula>NOT(ISNULL( Fuel_On_Hand__c ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

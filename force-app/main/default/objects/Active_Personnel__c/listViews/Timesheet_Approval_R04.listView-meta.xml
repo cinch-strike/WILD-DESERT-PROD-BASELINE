@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Timesheet_Approval_R04</fullName>
+    <columns>NAME</columns>
+    <columns>Daily_Report__c</columns>
+    <columns>DSJ_Report_Date__c</columns>
+    <columns>Employees__c</columns>
+    <columns>Position__c</columns>
+    <columns>Crew__c</columns>
+    <columns>Shift__c</columns>
+    <columns>Crew_Change__c</columns>
+    <columns>Timesheet_Approved__c</columns>
+    <columns>BOO_Notes__c</columns>
+    <columns>RM_Notes__c</columns>
+    <columns>Travel_Hrs__c</columns>
+    <columns>Work_Hrs__c</columns>
+    <columns>Total_Personnel_Hrs__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Employees__c</field>
+        <operation>contains</operation>
+    </filters>
+    <filters>
+        <field>DSJ_Unit__c</field>
+        <operation>equals</operation>
+        <value>Rig 4</value>
+    </filters>
+    <filters>
+        <field>DSJ_Report_Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>1/1/2025</value>
+    </filters>
+    <filters>
+        <field>Timesheet_Approved__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Timesheet Approval - R04</label>
+</ListView>

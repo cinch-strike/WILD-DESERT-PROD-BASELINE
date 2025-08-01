@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inspection__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <inlineHelpText>By completing this pre-start inspection, I the driver, certify that the vehicle is safe to the limits of the inspection prior to the vehicle being used on a road.</inlineHelpText>
+    <label>Inspection By</label>
+    <referenceTo>Employees__c</referenceTo>
+    <relationshipLabel>Daily Pre-Starts (Driver)</relationshipLabel>
+    <relationshipName>Vehicle_Pre_Starts</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

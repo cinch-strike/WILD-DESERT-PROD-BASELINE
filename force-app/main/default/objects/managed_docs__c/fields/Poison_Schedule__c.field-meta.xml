@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Poison_Schedule__c</fullName>
+    <label>Poison Schedule</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>S5</fullName>
+                <default>false</default>
+                <label>S5</label>
+            </value>
+            <value>
+                <fullName>S6</fullName>
+                <default>false</default>
+                <label>S6</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

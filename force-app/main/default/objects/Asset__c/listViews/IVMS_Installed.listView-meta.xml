@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IVMS_Installed</fullName>
+    <columns>Unit__c</columns>
+    <columns>NAME</columns>
+    <columns>Asset_ID_Number__c</columns>
+    <columns>Registration_Number__c</columns>
+    <columns>GeoTab__c</columns>
+    <columns>GeoTab_Serial_No__c</columns>
+    <columns>Guardian__c</columns>
+    <columns>Guardian_ID__c</columns>
+    <columns>Guardian_Serial_No__c</columns>
+    <columns>Guardian_Sim_No__c</columns>
+    <columns>ST_Compliant__c</columns>
+    <columns>Safer_Together_Compliance_No__c</columns>
+    <columns>Safer_Together_Date_of_Assessment__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Asset__c.Light_Vehicles</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Obsolete</value>
+    </filters>
+    <label>All LV | Geotab/Guardian Register</label>
+    <sharedTo>
+        <group>BOO</group>
+        <group>Finance</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Projects_and_Maintenance</group>
+        <group>Transport</group>
+        <role>Business_Manager</role>
+    </sharedTo>
+</ListView>

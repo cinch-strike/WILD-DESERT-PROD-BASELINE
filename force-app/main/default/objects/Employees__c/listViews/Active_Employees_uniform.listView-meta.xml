@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Employees_uniform</fullName>
+    <columns>NAME</columns>
+    <columns>Uniform_Pant_Size__c</columns>
+    <columns>Uniform_Shirt_Size__c</columns>
+    <columns>Uniforms__c</columns>
+    <columns>Jacket__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Employees__c.Active_Employee</value>
+    </filters>
+    <label>WD - Uniform Sizing</label>
+    <sharedTo>
+        <group>HR</group>
+    </sharedTo>
+</ListView>

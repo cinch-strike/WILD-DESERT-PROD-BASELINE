@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_Add_New_Daily_Report</fullName>
+    <active>true</active>
+    <description>Cant Add New Daily Report for Daily Summary Report if it has been Submitted or Invoiced</description>
+    <errorConditionFormula>IF(
+AND(ISNEW(),
+OR(ISPICKVAL( Daily_Summary_Report__r.Status__c , &quot;Submitted&quot;),ISPICKVAL( Daily_Summary_Report__r.Status__c , &quot;Approved&quot;))
+),
+true,
+false
+)</errorConditionFormula>
+    <errorMessage>Cannot add new Daily Site Jobs for Daily Summary Reports that have been Submitted or Approved</errorMessage>
+</ValidationRule>

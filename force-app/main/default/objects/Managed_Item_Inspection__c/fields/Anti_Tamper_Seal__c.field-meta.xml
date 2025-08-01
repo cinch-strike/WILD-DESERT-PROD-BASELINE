@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Anti_Tamper_Seal__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Anti-tamper device should be positioned so that it must be broken to activate the FE. If the device is either missing or broken it should only be replaced after the extinguisher has passed inspection and a note should be made in the maintenance log.</inlineHelpText>
+    <label>Anti-Tamper Seal</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

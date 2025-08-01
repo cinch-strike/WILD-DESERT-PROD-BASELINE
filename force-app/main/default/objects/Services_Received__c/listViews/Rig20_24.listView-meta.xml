@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig20_24</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>Contract__c</columns>
+    <columns>Contract_unit__c</columns>
+    <columns>WD_Unit__c</columns>
+    <columns>NAME</columns>
+    <columns>Description__c</columns>
+    <columns>Rate__c</columns>
+    <columns>Operations__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contract_unit__c</field>
+        <operation>equals</operation>
+        <value>032</value>
+    </filters>
+    <filters>
+        <field>Client__c</field>
+        <operation>equals</operation>
+        <value>origin energy</value>
+    </filters>
+    <filters>
+        <field>WD_Unit__c</field>
+        <operation>notEqual</operation>
+        <value>camp 1</value>
+    </filters>
+    <label>032-Origin Energy Rig#20</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Rig_20</group>
+        <role>Administration</role>
+    </sharedTo>
+</ListView>

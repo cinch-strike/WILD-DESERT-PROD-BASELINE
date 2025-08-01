@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Operations_Transport</fullName>
+    <active>true</active>
+    <description>Hrly Rates Specific to Transport</description>
+    <label>Operations - Transport</label>
+    <picklistValues>
+        <picklist>Hire_Item_Category__c</picklist>
+        <values>
+            <fullName>Charge - Request from Client</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>No Charge - Required by Contract</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Operating_Category__c</picklist>
+        <values>
+            <fullName>Operating Hrs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Repair Hrs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig Move Hrs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standby WC Hrs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standby WOC Hrs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel Hrs</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Operations__c</picklist>
+        <values>
+            <fullName>12hr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12hr%2F24hr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>24hr</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rate_Category__c</picklist>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Service_Type__c</picklist>
+        <values>
+            <fullName>Bed Truck %2830T%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bed Truck %2830T%29 %2B 2 Trailer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bed Truck %2830T%29 %2B Trailer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bed Truck %2830T%29 %2B Trailer%2FStandby</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bed Truck %2830T%29%2FStandby</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bed Truck %2850T%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Double</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Double%2FStandby</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Escort Driver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Float</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Float %2B Dolly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fridge Van</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot Shot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loader</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prime Mover %2B Dolly%2FStandby</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prime Mover%2FStandby</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Primemover</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Primemover %2B Dolly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single%2FStandby</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Triple</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Triple%2FStandby</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Water Tanker %28Single%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Water Tanker%2FStandby</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Additional Item</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Item</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stats Only</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

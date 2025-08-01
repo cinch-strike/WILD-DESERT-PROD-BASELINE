@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Extra_Day_formula__c</fullName>
+    <formula>IF( On_Shift__c, FALSE, TRUE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Automatically ticked if the &quot;On Shift&quot; checkbox is unticked.</inlineHelpText>
+    <label>Extra Day</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PR_Camp_07_Cancelled</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Item_Name_Hyperlink__c</columns>
+    <columns>Work_Order__c</columns>
+    <columns>Asset__c</columns>
+    <columns>Supplier__c</columns>
+    <columns>Quantity__c</columns>
+    <columns>Cost_Price_GST_exc__c</columns>
+    <columns>Total_Cost_Price_GST_exc__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Status__c</columns>
+    <columns>PO_Link__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Destination_Store__c</field>
+        <operation>equals</operation>
+        <value>camp 7</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Cancelled</value>
+    </filters>
+    <label>Camp 07 | Rejected (Cancelled)</label>
+    <sharedTo>
+        <group>Camp_7</group>
+        <group>Camp_Supervisor</group>
+        <group>Electrician</group>
+        <group>Fabrication</group>
+        <group>Managing_Director</group>
+        <group>Mechanics_Roma</group>
+        <group>Projects_and_Maintenance</group>
+        <group>Purchasing</group>
+    </sharedTo>
+</ListView>

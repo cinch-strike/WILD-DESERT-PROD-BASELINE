@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Contract_Asg_Camp__c</fullName>
+    <label>Active Contract Asg (Camp)</label>
+    <summaryFilterItems>
+        <field>Contract_Assignment__c.Active__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Contract_Assignment__c.UnitType__c</field>
+        <operation>contains</operation>
+        <value>Camp</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Contract_Assignment__c.Contract__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>depmo_Safety_Meeting</fullName>
+    <columns>Unit__c</columns>
+    <columns>NAME</columns>
+    <columns>Date__c</columns>
+    <columns>Inducted_By__c</columns>
+    <columns>Attendees__c</columns>
+    <columns>Description__c</columns>
+    <columns>Comments__c</columns>
+    <columns>Feedback_from_Operations_Manager__c</columns>
+    <columns>Response_from_HSE_Manager__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>HSEQ_Forms__c.Safety_Meeting</value>
+    </filters>
+    <filters>
+        <field>Unit__c</field>
+        <operation>equals</operation>
+        <value>Moomba Depot</value>
+    </filters>
+    <filters>
+        <field>Date__c</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:365</value>
+    </filters>
+    <label>Moomba Depot - Safety Meeting Register</label>
+    <sharedTo>
+        <group>Electrician</group>
+        <group>Fabrication</group>
+        <group>Mechanics_Roma</group>
+        <group>OPs_super</group>
+        <group>Safety</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

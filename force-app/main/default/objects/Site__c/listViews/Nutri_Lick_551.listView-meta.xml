@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nutri_Lick_551</fullName>
+    <columns>Account__c</columns>
+    <columns>NAME</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>Previous_Site__c</columns>
+    <columns>Site_Active__c</columns>
+    <columns>Site_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contract__c</field>
+        <operation>equals</operation>
+        <value>551</value>
+    </filters>
+    <label>Nutri-Lick (551)</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>Managing_Director</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Camp_10_Fluid_Levels_Arrow_553</fullName>
+    <columns>NAME</columns>
+    <columns>Report_Date__c</columns>
+    <columns>Site__c</columns>
+    <columns>Status__c</columns>
+    <columns>Rubbish_Levels__c</columns>
+    <columns>Septic_Levels__c</columns>
+    <columns>Water_Levels__c</columns>
+    <columns>Fuel_Levels__c</columns>
+    <columns>Fuel_Delivered__c</columns>
+    <columns>Line_Slipped__c</columns>
+    <columns>Line_on_Spool__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contract__c</field>
+        <operation>equals</operation>
+        <value>611</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Camp</value>
+    </filters>
+    <label>Camp 10 | Fluid Levels | Arrow (553)</label>
+    <sharedTo>
+        <group>Camp_10</group>
+        <group>Camp_Supervisor</group>
+        <group>Finance</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WD_Asset__c</fullName>
+    <label>WD Asset</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Asset__c.Inventory_Item__c</field>
+            <operation>notEqual</operation>
+            <value>Obselete</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Asset__c</referenceTo>
+    <relationshipLabel>Asset Driver Assignments</relationshipLabel>
+    <relationshipName>Asset_Driver_Assignments</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

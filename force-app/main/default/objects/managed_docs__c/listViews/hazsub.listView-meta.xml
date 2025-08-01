@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>hazsub</fullName>
+    <columns>NAME</columns>
+    <columns>Chemical_Name__c</columns>
+    <columns>UN__c</columns>
+    <columns>Hazardous_Substance__c</columns>
+    <columns>SDS_Expiry__c</columns>
+    <columns>WD_Unit__c</columns>
+    <columns>Issue_Date__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>managed_docs__c.SDS</value>
+    </filters>
+    <filters>
+        <field>Hazardous_Substance__c</field>
+        <operation>equals</operation>
+        <value>Yes,No</value>
+    </filters>
+    <filters>
+        <field>SDS_Expiry__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>WD - Hazardous Substances Register (SDS)</label>
+</ListView>

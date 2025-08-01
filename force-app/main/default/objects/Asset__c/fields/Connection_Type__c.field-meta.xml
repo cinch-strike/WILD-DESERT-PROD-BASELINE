@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Connection_Type__c</fullName>
+    <label>Connection Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Asset_Family__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>602 BUTT WELD</fullName>
+                <default>false</default>
+                <label>602 BUTT WELD</label>
+            </value>
+            <value>
+                <fullName>200 NPT SCREWED</fullName>
+                <default>false</default>
+                <label>200 NPT SCREWED</label>
+            </value>
+            <value>
+                <fullName>TABLE E, WELDED FLANGE</fullName>
+                <default>false</default>
+                <label>TABLE E, WELDED FLANGE</label>
+            </value>
+            <value>
+                <fullName>602 NPT SCREWED</fullName>
+                <default>false</default>
+                <label>602 NPT SCREWED</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

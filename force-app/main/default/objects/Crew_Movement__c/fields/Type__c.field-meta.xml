@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <label>Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CC In</fullName>
+                <default>false</default>
+                <label>CC In</label>
+            </value>
+            <value>
+                <fullName>CC Out</fullName>
+                <default>false</default>
+                <label>CC Out</label>
+            </value>
+            <value>
+                <fullName>Infield Transfer</fullName>
+                <default>false</default>
+                <label>Infield Transfer</label>
+            </value>
+            <value>
+                <fullName>Corporate Travel</fullName>
+                <default>false</default>
+                <label>Corporate Travel</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

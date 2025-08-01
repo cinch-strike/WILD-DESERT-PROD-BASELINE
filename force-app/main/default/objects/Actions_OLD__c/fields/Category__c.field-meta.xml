@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <inlineHelpText>Select the most relevant item that describes your Change</inlineHelpText>
+    <label>Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Document (Policy, Template)</fullName>
+                <default>false</default>
+                <label>Document (Policy, Template)</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+                <label>Equipment</label>
+            </value>
+            <value>
+                <fullName>Procedural</fullName>
+                <default>false</default>
+                <label>Procedural</label>
+            </value>
+            <value>
+                <fullName>Organisation Structure (Position, Location)</fullName>
+                <default>false</default>
+                <label>Organisation Structure (Position, Location)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

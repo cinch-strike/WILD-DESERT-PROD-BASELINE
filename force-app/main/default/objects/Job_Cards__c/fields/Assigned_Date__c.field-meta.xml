@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assigned_Date__c</fullName>
+    <inlineHelpText>The Review Date must be 21 days from Date created for Normal, 14 days for Urgent and 7 days for NOT Roadworthy (vehicle can not be moved until fixed)  If these target dates are reached/passed you must provide a reason why in comments/progress report field</inlineHelpText>
+    <label>Action Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

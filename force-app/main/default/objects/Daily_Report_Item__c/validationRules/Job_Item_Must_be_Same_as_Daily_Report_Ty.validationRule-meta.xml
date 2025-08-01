@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Job_Item_Must_be_Same_as_Daily_Report_Ty</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(
+AND(NOT(ISBLANK(Contract_Job_Item__c)),NOT( TEXT(Daily_Report__r.Type__c) = TEXT(Contract_Job_Item__r.Unit_Type__c))),
+true,
+false
+)</errorConditionFormula>
+    <errorMessage>The Contract Job Item&apos;s Unit Type must be same as that of Daily Site Job&apos;s Type.</errorMessage>
+</ValidationRule>

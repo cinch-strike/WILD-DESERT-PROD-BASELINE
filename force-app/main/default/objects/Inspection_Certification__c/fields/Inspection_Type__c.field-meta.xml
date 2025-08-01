@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inspection_Type__c</fullName>
+    <label>Inspection Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Breathing Apparatus</fullName>
+                <default>false</default>
+                <label>Breathing Apparatus</label>
+            </value>
+            <value>
+                <fullName>Certification</fullName>
+                <default>false</default>
+                <label>Certification</label>
+            </value>
+            <value>
+                <fullName>Fire Extinguisher</fullName>
+                <default>false</default>
+                <label>Fire Extinguisher</label>
+            </value>
+            <value>
+                <fullName>First Aid Kits</fullName>
+                <default>false</default>
+                <label>First Aid Kits</label>
+            </value>
+            <value>
+                <fullName>Food Licence</fullName>
+                <default>false</default>
+                <label>Food Licence</label>
+            </value>
+            <value>
+                <fullName>Gas Detector</fullName>
+                <default>false</default>
+                <label>Gas Detector</label>
+            </value>
+            <value>
+                <fullName>Gauge</fullName>
+                <default>false</default>
+                <label>Gauge</label>
+            </value>
+            <value>
+                <fullName>Inertia Line</fullName>
+                <default>false</default>
+                <label>Inertia Line</label>
+            </value>
+            <value>
+                <fullName>Monthly Water Tests</fullName>
+                <default>false</default>
+                <label>Monthly Water Tests</label>
+            </value>
+            <value>
+                <fullName>NDT Calibration</fullName>
+                <default>false</default>
+                <label>NDT Calibration</label>
+            </value>
+            <value>
+                <fullName>Quarterly Water Treatment (Bomb)</fullName>
+                <default>false</default>
+                <label>Quarterly Water Treatment (Bomb)</label>
+            </value>
+            <value>
+                <fullName>Safe Load Permit</fullName>
+                <default>false</default>
+                <label>Safe Load Permit</label>
+            </value>
+            <value>
+                <fullName>Tong Inspection</fullName>
+                <default>false</default>
+                <label>Tong Inspection</label>
+            </value>
+            <value>
+                <fullName>Hatch Integrity Test</fullName>
+                <default>false</default>
+                <label>Hatch Integrity Test</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

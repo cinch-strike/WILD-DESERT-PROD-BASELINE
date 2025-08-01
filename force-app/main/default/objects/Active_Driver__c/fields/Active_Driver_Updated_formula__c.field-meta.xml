@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Driver_Updated_formula__c</fullName>
+    <description>Active Driver updated within the day. This field will be used for FLOW automation.</description>
+    <formula>IF((( LastModifiedDate - CreatedDate )*24*60) &gt; 1, TRUE, FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Active Driver Updated</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

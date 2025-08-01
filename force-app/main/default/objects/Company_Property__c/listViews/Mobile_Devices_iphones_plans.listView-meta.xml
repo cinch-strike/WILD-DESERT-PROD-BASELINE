@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mobile_Devices_iphones_plans</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>Type__c</columns>
+    <columns>NAME</columns>
+    <columns>Mobile__c</columns>
+    <columns>Monthly_Payment__c</columns>
+    <columns>Start_Date_of_Plan__c</columns>
+    <columns>End_Date_of_Plan__c</columns>
+    <columns>Sim__c</columns>
+    <columns>Sim_Pin__c</columns>
+    <columns>Sim_Puk__c</columns>
+    <columns>Assigned_To__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>Unit__c</columns>
+    <columns>Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Company_Property__c.Mobile_Devices</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Obsolete (Binned/Sold)</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Company_Property__c.Mobile_Devices</value>
+    </filters>
+    <label>Mobile Devices - Iphones Plans</label>
+    <sharedTo>
+        <group>Finance</group>
+    </sharedTo>
+</ListView>

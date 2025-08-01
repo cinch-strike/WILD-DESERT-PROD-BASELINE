@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hazard_Type__c</fullName>
+    <label>Hazard Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Tool Misuse</fullName>
+                <default>false</default>
+                <label>Tool Misuse</label>
+            </value>
+            <value>
+                <fullName>Slip/Trip/Fall</fullName>
+                <default>false</default>
+                <label>Slip/Trip/Fall</label>
+            </value>
+            <value>
+                <fullName>Non Routine Task</fullName>
+                <default>false</default>
+                <label>Non Routine Task</label>
+            </value>
+            <value>
+                <fullName>Vehicles</fullName>
+                <default>false</default>
+                <label>Vehicles</label>
+            </value>
+            <value>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+                <label>Equipment</label>
+            </value>
+            <value>
+                <fullName>Housekeeping</fullName>
+                <default>false</default>
+                <label>Housekeeping</label>
+            </value>
+            <value>
+                <fullName>PPE Related</fullName>
+                <default>false</default>
+                <label>PPE Related</label>
+            </value>
+            <value>
+                <fullName>Incorrect Procedure</fullName>
+                <default>false</default>
+                <label>Incorrect Procedure</label>
+            </value>
+            <value>
+                <fullName>Environmental</fullName>
+                <default>false</default>
+                <label>Environmental</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

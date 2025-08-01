@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Camp_9_Servicing_Schedule_kms</fullName>
+    <columns>Asset_Family__c</columns>
+    <columns>NAME</columns>
+    <columns>Asset_ID_Number__c</columns>
+    <columns>Date_Of_Last_Service__c</columns>
+    <columns>Current_Odometer_Reading__c</columns>
+    <columns>Next_Service_Due_km__c</columns>
+    <columns>Next_Job_Card_creation_reading__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Asset__c.Light_Vehicles,Asset__c.Prime_Mover,Asset__c.Trailer,Asset__c.Dollies</value>
+    </filters>
+    <filters>
+        <field>Unit__c</field>
+        <operation>equals</operation>
+        <value>camp 9</value>
+    </filters>
+    <label>Camp 09 - Servicing Schedule (kms)</label>
+    <sharedTo>
+        <group>Camp_9</group>
+        <group>Electrician</group>
+        <group>Fabrication</group>
+        <group>Finance</group>
+        <group>Purchasing</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

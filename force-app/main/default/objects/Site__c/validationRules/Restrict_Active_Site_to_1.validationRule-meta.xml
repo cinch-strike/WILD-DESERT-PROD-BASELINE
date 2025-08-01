@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Active_Site_to_1</fullName>
+    <active>true</active>
+    <description>At a time only site must be active for a contract</description>
+    <errorConditionFormula>IF(
+NOT(ISBLANK( Contract__c )) &amp;&amp; 
+ISNEW() &amp;&amp; Site_Active__c = true &amp;&amp; Contract__r.Total_Active_Site__c = 1,
+true,
+IF(
+NOT(ISBLANK( Contract__c )) &amp;&amp; (PRIORVALUE(Site_Active__c) = false) &amp;&amp; Site_Active__c = true &amp;&amp; Contract__r.Total_Active_Site__c = 1,
+true,
+false
+)
+)</errorConditionFormula>
+    <errorMessage>For a Contract, at a time only one site can be active.</errorMessage>
+</ValidationRule>

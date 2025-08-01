@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Safer_Together_Trailers_Dollies</fullName>
+    <columns>Unit__c</columns>
+    <columns>NAME</columns>
+    <columns>Make__c</columns>
+    <columns>Registration_Number__c</columns>
+    <columns>year_of_manufacture__c</columns>
+    <columns>ABS_Status__c</columns>
+    <columns>Under_Run__c</columns>
+    <columns>ST_Compliant__c</columns>
+    <columns>Safer_Together_Compliance_No__c</columns>
+    <columns>Safer_Together_Date_of_Assessment__c</columns>
+    <columns>Inventory_Item__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Asset__c.Trailer</value>
+    </filters>
+    <filters>
+        <field>Unit__c</field>
+        <operation>notContain</operation>
+        <value>Obsolete</value>
+    </filters>
+    <filters>
+        <field>ST_Compliant__c</field>
+        <operation>equals</operation>
+        <value>Yes,Exempt</value>
+    </filters>
+    <label>Safer Together - Trailers</label>
+    <sharedTo>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Projects_and_Maintenance</group>
+        <group>Safety</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

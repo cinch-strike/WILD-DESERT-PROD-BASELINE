@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Camp_Daily_Site_Job_Approved</fullName>
+        <description>Camp Daily Site Job Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Site_Job_Approval_Email_Templates/Daily_Site_Job_Summary_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Daily_Site_Job_Approval_Request_to_Unit_Manager</fullName>
+        <description>Daily Site Job Approval Request to Unit Manager</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Site_Job_Approval_Email_Templates/DailySiteJobApproval</template>
+    </alerts>
+    <alerts>
+        <fullName>Daily_Site_Job_Approved_Email_Alert</fullName>
+        <description>Daily Site Job Approved Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Site_Job_Approval_Email_Templates/Daily_Site_Job_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Daily_Site_Job_Rejected_Email_Alert</fullName>
+        <description>Daily Site Job Rejected Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Site_Job_Approval_Email_Templates/Daily_Site_Job_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Reject_Daily_Site_Job_Alert</fullName>
+        <description>Reject Daily Site Job Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Submitter__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Site_Job_Approval_Email_Templates/Daily_Site_Job_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Reject_Daily_Site_Job_Alert_for_Unit_Manager</fullName>
+        <description>Reject Daily Site Job Alert for Unit Manager</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Submitter__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Site_Job_Approval_Email_Templates/Daily_Site_Job_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Rejected_Ops_Sup_to_Approved_Email_Alert</fullName>
+        <description>Rejected Ops Sup to Approved Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Ops_Sup__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Site_Job_Approval_Email_Templates/DailySiteJobApproval</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>DSJ_Ops_Approved</fullName>
+        <field>Status__c</field>
+        <literalValue>Ops - Approved</literalValue>
+        <name>DSJ Ops Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_DSJ_Status_to_Open</fullName>
+        <field>Status__c</field>
+        <literalValue>Open</literalValue>
+        <name>Update DSJ Status to Open</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Daily_Site_Job_Status_MgrApproved</fullName>
+        <field>Status__c</field>
+        <literalValue>Manager - Approved</literalValue>
+        <name>Update Daily Site Job Status MgrApproved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Daily_Site_Job_Status_Rejected</fullName>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Update Daily Site Job Status Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

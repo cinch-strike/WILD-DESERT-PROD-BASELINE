@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FB_Accessibilty__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>The equipment should be in the position nominated on the Emergency Evacuation Diagram. There should be no obstructions preventing easy access. A minimum clearance of 100mm from the ground to the bottom of the extinguisher and a maximum of 1200 to the top.</inlineHelpText>
+    <label>FB Accessibilty</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

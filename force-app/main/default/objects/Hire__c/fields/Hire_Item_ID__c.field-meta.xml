@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hire_Item_ID__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Hire Item ID #</label>
+    <referenceTo>Services_Received__c</referenceTo>
+    <relationshipName>Additional_Charges</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

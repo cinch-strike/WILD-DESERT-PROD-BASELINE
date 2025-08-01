@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Contract_Job_Item_Custom</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Contract Job Item</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/a2t/e?{!$Label.ContractJobItem_Contract}={!Contract__c.Name}&amp;{!$Label.ContractJobItem_Contract + &apos;_lkid&apos;}={!Contract__c.Id}&amp;Name=Do+not+change&amp;retURL={!Contract__c.Id}</url>
+</WebLink>

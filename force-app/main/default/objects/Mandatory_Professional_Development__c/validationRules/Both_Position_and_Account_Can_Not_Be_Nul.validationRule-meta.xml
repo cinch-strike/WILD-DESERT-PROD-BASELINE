@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Both_Position_and_Account_Can_Not_Be_Nul</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+         AND( ISBLANK( Account__c ) , ISBLANK( Position__c ) ) ,
+          AND(  NOT(ISBLANK(Account__c ) ), NOT( ISBLANK(Position__c ) ) )
+
+   )</errorConditionFormula>
+    <errorMessage>Either Position or Account should be filled.</errorMessage>
+</ValidationRule>

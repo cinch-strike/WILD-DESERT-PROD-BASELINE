@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Origin_Trades_Roma_all_Inductions_Shell</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 and 7</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Required_By__c</columns>
+    <columns>Professional_Development_Type__c</columns>
+    <columns>Employee__c</columns>
+    <columns>Position_wd__c</columns>
+    <columns>On_Shift__c</columns>
+    <columns>Date_of_Training__c</columns>
+    <columns>Progress_Details__c</columns>
+    <columns>Progress__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PD_Type__c</field>
+        <operation>equals</operation>
+        <value>inductions</value>
+    </filters>
+    <filters>
+        <field>Employee_Status__c</field>
+        <operation>equals</operation>
+        <value>active</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Incomplete,In Progress,Complete</value>
+    </filters>
+    <filters>
+        <field>Required_By__c</field>
+        <operation>contains</operation>
+        <value>Origin Energy</value>
+    </filters>
+    <filters>
+        <field>PD_Inactive__c</field>
+        <operation>notEqual</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Assigned_To_Unit__c</field>
+        <operation>equals</operation>
+        <value>depot - roma</value>
+    </filters>
+    <filters>
+        <field>Personnel_Type__c</field>
+        <operation>equals</operation>
+        <value>Trades/NDT</value>
+    </filters>
+    <label>Trades | Roma - Inductions (Origin)</label>
+    <sharedTo>
+        <group>Electrician</group>
+        <group>Fabrication</group>
+        <group>HR</group>
+        <group>Managing_Director</group>
+        <group>Mechanics_Roma</group>
+        <group>Projects_and_Maintenance</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X039_Beach_Rig_10</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>Contract__c</columns>
+    <columns>Contract_unit__c</columns>
+    <columns>WD_Unit__c</columns>
+    <columns>NAME</columns>
+    <columns>Description__c</columns>
+    <columns>Rate__c</columns>
+    <columns>Operations__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contract_unit__c</field>
+        <operation>equals</operation>
+        <value>039</value>
+    </filters>
+    <filters>
+        <field>Client__c</field>
+        <operation>equals</operation>
+        <value>Beach Energy Limited</value>
+    </filters>
+    <filters>
+        <field>WD_Unit__c</field>
+        <operation>equals</operation>
+        <value>Rig 10,camp 3</value>
+    </filters>
+    <label>039-Beach - Rig#10/Camp #3</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Rig_16</group>
+        <group>Rigs_10</group>
+    </sharedTo>
+</ListView>

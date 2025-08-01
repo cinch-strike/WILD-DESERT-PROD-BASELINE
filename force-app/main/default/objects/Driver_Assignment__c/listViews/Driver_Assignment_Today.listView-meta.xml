@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Driver_Assignment_Today</fullName>
+    <columns>NAME</columns>
+    <columns>Driver__c</columns>
+    <columns>Unit__c</columns>
+    <columns>Site__c</columns>
+    <columns>Configuration_pklist__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Load_Details__c</columns>
+    <columns>Start_Time__c</columns>
+    <columns>Driver_Status__c</columns>
+    <columns>Job_Type__c</columns>
+    <columns>Transport_Job__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Transport_Base__c</field>
+        <operation>equals</operation>
+        <value>moomba</value>
+    </filters>
+    <filters>
+        <field>Driver__c</field>
+        <operation>contains</operation>
+        <value>Troy</value>
+    </filters>
+    <label>Moomba - Open DA&apos;s</label>
+</ListView>

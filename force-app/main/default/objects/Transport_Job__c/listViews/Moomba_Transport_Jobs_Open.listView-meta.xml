@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Moomba_Transport_Jobs_Open</fullName>
+    <columns>Status__c</columns>
+    <columns>NAME</columns>
+    <columns>Job_Date__c</columns>
+    <columns>Description__c</columns>
+    <columns>Unit__c</columns>
+    <columns>Site__c</columns>
+    <columns>Billable__c</columns>
+    <columns>Daily_Site_Job__c</columns>
+    <columns>DSJS_Status__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Transport_Base__c</field>
+        <operation>equals</operation>
+        <value>Moomba</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>contains</operation>
+        <value>Draft,Assigned,In Progress,Completed</value>
+    </filters>
+    <label>Moomba - Open</label>
+</ListView>

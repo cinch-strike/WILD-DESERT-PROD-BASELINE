@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_Last_Inspection__c</fullName>
+    <description>If Managed Item is new (immediately from supplier) put the date in service into this field.  If it has been in stores for longer than 1 year an inspection must be conducted and documented.</description>
+    <label>Date Last Inspection</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

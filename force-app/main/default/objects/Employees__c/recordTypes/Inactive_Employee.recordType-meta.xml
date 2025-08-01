@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inactive_Employee</fullName>
+    <active>true</active>
+    <label>Inactive Employee</label>
+    <picklistValues>
+        <picklist>Business_Department__c</picklist>
+        <values>
+            <fullName>Remote Camps</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Well Servicing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Covid_Vaccinations__c</picklist>
+        <values>
+            <fullName>1st</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2nd_vac</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Crew_Change_Location__c</picklist>
+        <values>
+            <fullName>Adelaide</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brisbane</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Toowoomba</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Crew__c</picklist>
+        <values>
+            <fullName>Crew 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crew 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crew 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crew 4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Extra</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Driver_NHVR_Acredd__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Gender__c</picklist>
+        <values>
+            <fullName>Female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Male</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Issue_Payslip_Via__c</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Local_Gov_Area__c</picklist>
+        <values>
+            <fullName>Adelaide Plains</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Balonne</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Banana</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Berri Barmera</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Boonah</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brisbane</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bundaberg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Caboolture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cairns</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Central Highlands</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Charters Towers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clare and Gilbert Valleys</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fraser Coast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gladstone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gold Coast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Goondiwindi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gympie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ipswich</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Livingstone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lockyer Valley</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Logan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mackay Region</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maranoa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moreton Bay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Murweh</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Noosa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>North Burnett</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onkaparinga</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Port Adelaide Enfield</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Redlands</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rockhampton</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scenic Rim</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Somerset</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South Burnett</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Southern Downs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sunshine Coast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Toowoomba</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Townsville</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tweed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Western Downs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Whitsunday</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Whyalla Playford</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>MC_Experience__c</picklist>
+        <values>
+            <fullName>3 or more years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lessthan</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Marital_Status__c</picklist>
+        <values>
+            <fullName>Defacto</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Divorced</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Married</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Position__c</picklist>
+        <values>
+            <fullName>Accountant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accounts %26 Payroll Officer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Administration Officer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assistant Driller</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp Attendant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp Cook</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chief Operating Officer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Derrickman</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diesel Fitter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driller</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electrician</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fabrications Leading Hand</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Field Safety Officer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Field Supervisor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Floorhand</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HR Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Junior Administration Officer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Labourer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lead Floorhand</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leasehand</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maintenance Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managing Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mechanic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mechanical Supervisor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mechanical Trade Assistant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NDT Technician</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Office Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personnel Coordinator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchasing Officer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Receptionist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recruitment Officer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig Superintendent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Senior Operations Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Team Leader</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training %26 Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transport %26 Logistics Officer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transport Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Truck Driver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Welder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Welding Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workshop Assistant</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Probation__c</picklist>
+        <values>
+            <fullName>3 Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Relationship_EC1__c</picklist>
+        <values>
+            <fullName>Aunty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Daughter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Father</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Friend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grandparent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Husband</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mother</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Relative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Son</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uncle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wife</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Relationship_EC2__c</picklist>
+        <values>
+            <fullName>Aunty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Daughter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Father</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Friend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grandparent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Husband</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mother</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Relative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Son</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uncle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wife</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Relevant_Department__c</picklist>
+        <values>
+            <fullName>Auto Electrician - Moomba</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Electrician - Roma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electrical - Moomba</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electrical - Roma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fabrication - Moomba</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fabrication - Roma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General - Moomba</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General - Roma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HV - Auto Elec - Roma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HV - Roma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mechanical - Moomba</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mechanical - Roma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NDT - Moomba</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NDT - Roma</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Roster__c</picklist>
+        <values>
+            <fullName>Off Hitch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On Hitch</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Shift__c</picklist>
+        <values>
+            <fullName>Day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Night</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>State__c</picklist>
+        <values>
+            <fullName>NSW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QLD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TAS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VIC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre Employment</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Title__c</picklist>
+        <values>
+            <fullName>Dr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Miss</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mrs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sir</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Vaccine_Status__c</picklist>
+        <values>
+            <fullName>1st Vax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1st Vax %2B Cert</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2nd Vax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2nd Vax %2B Cert</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Booster</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

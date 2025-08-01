@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PRO_Mud_Pumps</fullName>
+    <columns>NAME</columns>
+    <columns>date__c</columns>
+    <columns>P_Name__c</columns>
+    <columns>Wd_asset_del__c</columns>
+    <columns>Manager__c</columns>
+    <columns>Monday_Board__c</columns>
+    <columns>Target_Date__c</columns>
+    <columns>Status__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>WD_Unit__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>P_Name__c</field>
+        <operation>contains</operation>
+        <value>Mud pump</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Not Started,In Progress,Delayed</value>
+    </filters>
+    <label>PRO - Mud Pumps</label>
+    <sharedTo>
+        <group>Projects_and_Maintenance</group>
+        <group>Purchasing</group>
+    </sharedTo>
+</ListView>

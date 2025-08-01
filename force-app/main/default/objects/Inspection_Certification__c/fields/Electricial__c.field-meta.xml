@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Electricial__c</fullName>
+    <label>Electricial</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>A/C Motors</fullName>
+                <default>false</default>
+                <label>A/C Motors</label>
+            </value>
+            <value>
+                <fullName>Electrical Commissioning</fullName>
+                <default>false</default>
+                <label>Electrical Commissioning</label>
+            </value>
+            <value>
+                <fullName>Main Switch Board</fullName>
+                <default>false</default>
+                <label>Main Switch Board</label>
+            </value>
+            <value>
+                <fullName>Smoke Detectors</fullName>
+                <default>false</default>
+                <label>Smoke Detectors</label>
+            </value>
+            <value>
+                <fullName>Test n Tag</fullName>
+                <default>true</default>
+                <label>Test n Tag</label>
+            </value>
+            <value>
+                <fullName>Emergency Lighting</fullName>
+                <default>false</default>
+                <label>Emergency Lighting</label>
+            </value>
+            <value>
+                <fullName>Clamp Meter</fullName>
+                <default>false</default>
+                <label>Clamp Meter</label>
+            </value>
+            <value>
+                <fullName>Multimeter</fullName>
+                <default>false</default>
+                <label>Multimeter</label>
+            </value>
+            <value>
+                <fullName>Insulation Tester</fullName>
+                <default>false</default>
+                <label>Insulation Tester</label>
+            </value>
+            <value>
+                <fullName>Hazardous Area</fullName>
+                <default>false</default>
+                <label>Hazardous Area</label>
+            </value>
+            <value>
+                <fullName>Sound Level Meter</fullName>
+                <default>false</default>
+                <label>Sound Level Meter</label>
+            </value>
+            <value>
+                <fullName>Equipotential Bonding Verification</fullName>
+                <default>false</default>
+                <label>Equipotential Bonding Verification</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

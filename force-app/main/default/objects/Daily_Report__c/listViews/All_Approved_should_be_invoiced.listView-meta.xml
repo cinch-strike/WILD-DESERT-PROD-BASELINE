@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Approved_should_be_invoiced</fullName>
+    <columns>Type__c</columns>
+    <columns>Unit__c</columns>
+    <columns>NAME</columns>
+    <columns>Site__c</columns>
+    <columns>Report_Date__c</columns>
+    <columns>Description__c</columns>
+    <columns>Status__c</columns>
+    <columns>Daily_Summary_Report__c</columns>
+    <columns>Invoice__c</columns>
+    <columns>Contract__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Approved</value>
+    </filters>
+    <filters>
+        <field>Invoice__c</field>
+        <operation>contains</operation>
+        <value>INV</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Daily_Report__c.Rig_Camp</value>
+    </filters>
+    <label>All - Approved (should be invoiced)</label>
+    <sharedTo>
+        <group>Finance</group>
+    </sharedTo>
+</ListView>

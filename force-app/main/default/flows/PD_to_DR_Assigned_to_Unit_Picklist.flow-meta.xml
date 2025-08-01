@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Email_Action_1</name>
+        <label>Send Email Action 1</label>
+        <locationX>440</locationX>
+        <locationY>431</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <stringValue>support@cinch-strike.io,carmen.roberts@wilddesert.com.au</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Error updated related development records</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <environments>Default</environments>
+    <interviewLabel>PD to DR Assigned to Unit Picklist {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>PD to DR Assigned to Unit Picklist</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Related_Development_Records_Required_By_Unit</name>
+        <label>Update Related Development Records Required By Unit</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <faultConnector>
+            <targetReference>Send_Email_Action_1</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Required_By_Unit__c</field>
+            <value>
+                <elementReference>$Record.Required_By_Unit__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Development_Record__r</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Related_Development_Records_Required_By_Unit</targetReference>
+        </connector>
+        <filterFormula>OR(
+ISNEW(),
+ISCHANGED({!$Record.Required_By_Unit__c}))</filterFormula>
+        <object>Professional_Development__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gauges_snub</fullName>
+    <columns>NAME</columns>
+    <columns>Gauges__c</columns>
+    <columns>Last_Inspection_Date__c</columns>
+    <columns>Next_Inspection__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Inspection_Certification__c.Gauges</value>
+    </filters>
+    <label>Snub Unit - Gauges</label>
+    <sharedTo>
+        <group>OPs_super</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

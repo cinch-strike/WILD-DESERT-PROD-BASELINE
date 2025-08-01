@@ -1,0 +1,18 @@
+<apex:page controller="posController" sidebar="false" showheader="false" action="{!autoDelete}">
+    <apex:form >
+    <apex:pageBlock rendered="{!showEmployees}">
+        <apex:pageBlockSection title="Following Employees Are Related To This Position">
+            <apex:pageBlockTable value="{!employeesUnderPosition}" var="emp" title="Employees">
+                <apex:column headerValue="Employee Name">
+                    <apex:outputText value="{!emp.name}"></apex:outputText>
+                </apex:column>
+               
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Are You Sure You Want To Delete Position?">
+            <apex:commandButton value="Delete" action="{!deletePosition}"/>
+             <apex:commandButton value="Cancel" action="{!cancelPosition}"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock> 
+    </apex:form>  
+</apex:page>

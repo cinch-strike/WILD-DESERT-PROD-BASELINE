@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>TJ Description update from long txt to short txt</description>
+        <name>TJ_Description</name>
+        <label>TJ Description</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.TJ_Description__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Description__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>TJ_Description_Update</targetReference>
+        </connector>
+    </assignments>
+    <description>Converting Transport Job Description from long text to short text</description>
+    <environments>Default</environments>
+    <interviewLabel>TJ Description {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>TJ Description</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>TJ_Description_Update</name>
+        <label>TJ Description Update</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>TJ_Description__c</field>
+            <value>
+                <elementReference>$Record.Description__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>TJ_Description</targetReference>
+        </connector>
+        <object>Transport_Job__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <label>Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Internet Stick - 4G (T-Aircard)</fullName>
+                <default>false</default>
+                <label>Internet Stick - 4G (T-Aircard)</label>
+            </value>
+            <value>
+                <fullName>Ipad</fullName>
+                <default>false</default>
+                <label>Ipad</label>
+            </value>
+            <value>
+                <fullName>Ipad Pro</fullName>
+                <default>false</default>
+                <label>Ipad Pro</label>
+            </value>
+            <value>
+                <fullName>Iphone 4</fullName>
+                <default>false</default>
+                <label>Iphone 4</label>
+            </value>
+            <value>
+                <fullName>Iphone 5</fullName>
+                <default>false</default>
+                <label>Iphone 5</label>
+            </value>
+            <value>
+                <fullName>Iphone 6</fullName>
+                <default>false</default>
+                <label>Iphone 6</label>
+            </value>
+            <value>
+                <fullName>Iphone 6+</fullName>
+                <default>false</default>
+                <label>Iphone 6+</label>
+            </value>
+            <value>
+                <fullName>Iphone 6S+</fullName>
+                <default>false</default>
+                <label>Iphone 6S+</label>
+            </value>
+            <value>
+                <fullName>Iphone 7</fullName>
+                <default>false</default>
+                <label>Iphone 7</label>
+            </value>
+            <value>
+                <fullName>Iphone SE</fullName>
+                <default>false</default>
+                <label>Iphone SE</label>
+            </value>
+            <value>
+                <fullName>Laptop</fullName>
+                <default>false</default>
+                <label>Laptop</label>
+            </value>
+            <value>
+                <fullName>Nokia</fullName>
+                <default>false</default>
+                <label>Nokia</label>
+            </value>
+            <value>
+                <fullName>PC</fullName>
+                <default>false</default>
+                <label>PC</label>
+            </value>
+            <value>
+                <fullName>Samsung</fullName>
+                <default>false</default>
+                <label>Samsung</label>
+            </value>
+            <value>
+                <fullName>Sat Phone</fullName>
+                <default>false</default>
+                <label>Sat Phone</label>
+            </value>
+            <value>
+                <fullName>Mini Mac</fullName>
+                <default>false</default>
+                <label>Mini Mac</label>
+            </value>
+            <value>
+                <fullName>Iphone 8</fullName>
+                <default>false</default>
+                <label>Iphone 8</label>
+            </value>
+            <value>
+                <fullName>Iphone 8+</fullName>
+                <default>false</default>
+                <label>Iphone 8+</label>
+            </value>
+            <value>
+                <fullName>Iphone XR</fullName>
+                <default>false</default>
+                <label>Iphone XR</label>
+            </value>
+            <value>
+                <fullName>Iphone XS Plus</fullName>
+                <default>false</default>
+                <label>Iphone XS Plus</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

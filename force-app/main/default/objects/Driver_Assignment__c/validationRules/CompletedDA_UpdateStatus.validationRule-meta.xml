@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CompletedDA_UpdateStatus</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISCHANGED(Driver_Status__c),
+  NOT( ISPICKVAL(Driver_Status__c , &apos;Cancelled&apos;)),
+  ISPICKVAL( PRIORVALUE(Driver_Status__c), &apos;Completed&apos;) 
+)</errorConditionFormula>
+    <errorDisplayField>Driver_Status__c</errorDisplayField>
+    <errorMessage>You are not allowed to change back the status of completed Driver Assignment</errorMessage>
+</ValidationRule>

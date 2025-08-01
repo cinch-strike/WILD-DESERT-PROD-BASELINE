@@ -1,0 +1,5 @@
+<apex:page id="myPage" action="{!siteJobItemSpecific}" applyBodyTag="false" applyHtmlTag="true" standardController="Daily_Report_Item__c"  extensions="SiteJobItemSpecific_Controller" standardStylesheets="false" docType="html-5.0" showHeader="false" sidebar="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en" >
+        
+    </html>
+</apex:page>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X07_Sent_to_Supplier_Celine</fullName>
+    <columns>NAME</columns>
+    <columns>Quantity__c</columns>
+    <columns>Item_Name_Hyperlink__c</columns>
+    <columns>Work_Order__c</columns>
+    <columns>Asset__c</columns>
+    <columns>Destination_Store__c</columns>
+    <columns>Supplier__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Freight_Location__c</columns>
+    <columns>ETA__c</columns>
+    <columns>Freight_Type__c</columns>
+    <columns>Freight_Collection_Status__c</columns>
+    <columns>Purchase_Order__c</columns>
+    <columns>PO_Status__c</columns>
+    <columns>PO_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>For Ordering</value>
+    </filters>
+    <filters>
+        <field>PR_PO_Admin__c</field>
+        <operation>equals</operation>
+        <value>Celine Duggan</value>
+    </filters>
+    <filters>
+        <field>PO_Link__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Freight_Collection_Status__c</field>
+        <operation>notContain</operation>
+        <value>Ready for Collection,Service (No Collection),In Transit</value>
+    </filters>
+    <filters>
+        <field>Supplier__c</field>
+        <operation>notContain</operation>
+        <value>Brenorrs</value>
+    </filters>
+    <filters>
+        <field>Work_Order__c</field>
+        <operation>notContain</operation>
+        <value>WO</value>
+    </filters>
+    <filters>
+        <field>PR_PO_Admin__c</field>
+        <operation>notEqual</operation>
+        <value>Training</value>
+    </filters>
+    <label>07 Sent to Supplier | Celine</label>
+</ListView>

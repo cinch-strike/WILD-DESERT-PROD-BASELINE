@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SA_Rigs_Base_FR_In_Progress</fullName>
+    <columns>NAME</columns>
+    <columns>Date_Created__c</columns>
+    <columns>Unit_of_Asset__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>Asset_ID__c</columns>
+    <columns>NHVAS_Asset__c</columns>
+    <columns>Details_of_Issue_Work_Requested__c</columns>
+    <columns>Relevant_Dept__c</columns>
+    <columns>Status__c</columns>
+    <columns>Parts_Received_in_Stores__c</columns>
+    <columns>Action__c</columns>
+    <columns>Actionby__c</columns>
+    <columns>Assigned_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Unit_of_Asset__c</field>
+        <operation>equals</operation>
+        <value>rig 4,rig 6,rig 10,rig 16,rig 2,Transport - Moomba,Depot - Moomba,Base camp - MOomba,camp 1,camp 3,camp 4,camp 7,camp 8,camp 9,camp 10</value>
+    </filters>
+    <filters>
+        <field>Date_Created__c</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:730</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Job_Cards__c.Fault_Report_Approved</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>In Progress</value>
+    </filters>
+    <filters>
+        <field>Relevant_Dept__c</field>
+        <operation>notEqual</operation>
+        <value>General,General - Moomba,General - Roma</value>
+    </filters>
+    <filters>
+        <field>NHVAS_Asset__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>SA Rigs/Base | FR | In Progress</label>
+    <sharedTo>
+        <group>Electrician</group>
+        <group>Fabrication</group>
+        <group>Managing_Director</group>
+        <group>Mechanics_Moomba</group>
+        <group>OPs_super</group>
+        <group>Projects_and_Maintenance</group>
+    </sharedTo>
+</ListView>

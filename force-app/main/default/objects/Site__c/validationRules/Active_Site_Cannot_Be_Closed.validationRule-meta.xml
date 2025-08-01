@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Site_Cannot_Be_Closed</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( NOT(ISBLANK( Contract__c )) &amp;&amp; TEXT(Site_Status__c)=&apos;Closed&apos; &amp;&amp; Site_Active__c , true, false)</errorConditionFormula>
+    <errorMessage>Cannot Close a Site if it is Active</errorMessage>
+</ValidationRule>

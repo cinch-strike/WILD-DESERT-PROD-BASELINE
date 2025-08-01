@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Template_to_use__c</fullName>
+    <description>This Formula tells the print button which document to print.</description>
+    <externalId>false</externalId>
+    <formula>IF(RecordTypeId = &quot;01290000000GjVk&quot;, &quot;a0j900000006Yni&quot;,
+IF(RecordTypeId = &quot;01290000000GlHo&quot;, &quot;a0j900000006Yni&quot;,
+IF(RecordTypeId = &quot;01290000000GkFa&quot;, &quot;a0j900000006Yni&quot;,
+IF(RecordTypeId = &quot;01290000000hfHc&quot;, &quot;a0j90000006vqIM&quot;,
+IF(RecordTypeId = &quot;01290000000hurS&quot;, &quot;a0j90000006vqIM&quot;,
+IF(RecordTypeId = &quot;01290000000hqdx&quot;, &quot;a0j90000006vqIM&quot;,
+IF(RecordTypeId = &quot;01290000000hudi&quot;, &quot;a0j90000006vqIM&quot;,
+IF(RecordTypeId = &quot;01290000000hqd9&quot;, &quot;a0j90000006vqIM&quot;,
+&quot;a0j900000006y5r&quot;))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Conga Template to use</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Description_of_notice_defect__c</fullName>
+    <description>Write details of the infringement notice and or defect</description>
+    <inlineHelpText>Write details of the infringement notice and or defect</inlineHelpText>
+    <label>Description of notice/defect</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

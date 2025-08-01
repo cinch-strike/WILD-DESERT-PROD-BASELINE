@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stores_Item__c</fullName>
+    <description>Inventory Item Available Check</description>
+    <formula>Destination_Store_Item__r.Stock_Available_formula__c   &lt;=  Quantity__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Inventory Item Available Check</inlineHelpText>
+    <label>Stores Item</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

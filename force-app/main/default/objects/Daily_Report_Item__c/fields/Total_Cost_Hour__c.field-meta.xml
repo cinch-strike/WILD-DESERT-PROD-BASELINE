@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Cost_Hour__c</fullName>
+    <formula>IF(
+( RecordType.DeveloperName = &apos;Per_Hour&apos;) &amp;&amp; NOT(ISBLANK(Daily_Report__r.Contract__r.Admin_Fee__c)) &amp;&amp; ( TEXT(Contract_Job_Item__r.Service_Type__c) = &apos;Flexi Price/Quantity&apos;),
+(Rate__c * Number_of_Hours__c) + (Daily_Report__r.Contract__r.Admin_Fee__c * (Rate__c * Number_of_Hours__c)),
+(Rate__c * Number_of_Hours__c)
+)</formula>
+    <label>Total Cost(Hour)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

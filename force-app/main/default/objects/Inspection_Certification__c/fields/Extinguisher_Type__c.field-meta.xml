@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Extinguisher_Type__c</fullName>
+    <inlineHelpText>Ensure you select the correct type</inlineHelpText>
+    <label>Extinguisher Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CO2 - 5kg</fullName>
+                <default>false</default>
+                <label>CO2 - 5kg</label>
+            </value>
+            <value>
+                <fullName>Dry Powder 1kg</fullName>
+                <default>false</default>
+                <label>Dry Powder 1kg</label>
+            </value>
+            <value>
+                <fullName>Dry Power - 1.5kg</fullName>
+                <default>false</default>
+                <label>Dry Power 1.5kg</label>
+            </value>
+            <value>
+                <fullName>Dry Powder  2kg</fullName>
+                <default>false</default>
+                <label>Dry Powder  2kg</label>
+            </value>
+            <value>
+                <fullName>Dry Powder 2.5kg</fullName>
+                <default>false</default>
+                <label>Dry Powder 2.5kg</label>
+            </value>
+            <value>
+                <fullName>Dry Powder 4.5kg</fullName>
+                <default>false</default>
+                <label>Dry Powder 4.5kg</label>
+            </value>
+            <value>
+                <fullName>Dry Powder 9kg</fullName>
+                <default>false</default>
+                <label>Dry Powder 9kg</label>
+            </value>
+            <value>
+                <fullName>Wet Chemical 2.5kg</fullName>
+                <default>false</default>
+                <label>Wet Chemical 2.5kg</label>
+            </value>
+            <value>
+                <fullName>Fire Blanket</fullName>
+                <default>false</default>
+                <label>Fire Blanket</label>
+            </value>
+            <value>
+                <fullName>CO2 - 6kg</fullName>
+                <default>false</default>
+                <label>CO2 - 6kg</label>
+            </value>
+            <value>
+                <fullName>Wet Chemical - 2kg</fullName>
+                <default>false</default>
+                <label>Wet Chemical - 2kg</label>
+            </value>
+            <value>
+                <fullName>Wet Chemical - 7kg</fullName>
+                <default>false</default>
+                <label>Wet Chemical - 7kg</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

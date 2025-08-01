@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Safer_Together_Dollies</fullName>
+    <columns>Unit__c</columns>
+    <columns>NAME</columns>
+    <columns>Registration_Number__c</columns>
+    <columns>ABS_TEBS__c</columns>
+    <columns>ST_Compliant__c</columns>
+    <columns>Safer_Together_Compliance_No__c</columns>
+    <columns>Safer_Together_Date_of_Assessment__c</columns>
+    <columns>Inventory_Item__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Asset__c.Dollies</value>
+    </filters>
+    <label>Safer Together - Dollies</label>
+    <sharedTo>
+        <group>Managing_Director</group>
+        <group>Projects_and_Maintenance</group>
+        <group>Safety</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

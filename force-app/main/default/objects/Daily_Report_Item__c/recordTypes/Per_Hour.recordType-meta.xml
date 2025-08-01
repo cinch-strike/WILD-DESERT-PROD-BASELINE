@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Per_Hour</fullName>
+    <active>true</active>
+    <description>For items where service type is fixed price per hour</description>
+    <label>Per Hour</label>
+    <picklistValues>
+        <picklist>Category__c</picklist>
+        <values>
+            <fullName>BD BHA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bleed %2F Kill Well</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Circulate %2F Flush Hole</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Directed Work</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drill Bridge Plug</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finger Print Well</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fishing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flow check well</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Install Surface Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Land Tubing Hanger</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Laydown %2F Breakout BHA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Layout Tubing Hanger</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MU BHA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Make Up%2FPick Up BHA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting %28Safety%2C Training%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting %2F Drills</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ND BOP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NU BOP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Activity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POOH Completion String</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POOH Rod String</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POOH Workstring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Planned Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre start %2F Toolbox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prep%2C Strap%2C Tally String</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pressure test %28not including BOP%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pressure test BOP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pressure test WD Well Servicing Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pressure test client equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>R%2FD Running Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>R%2FU Running Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RD Surface Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RD Work Floor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RIH Completion String</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RIH Rod String</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RIH Workstring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RU Suface Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RU Work Floor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig Down</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig Move</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig Up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sensor Cable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Space out Rotor with Polished rods</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standby</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stump test</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unplanned Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wait on Cement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weed and Seed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wet Weather</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wireline</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Phase__c</picklist>
+        <values>
+            <fullName>Nibble Down</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nipple Up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tripping</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

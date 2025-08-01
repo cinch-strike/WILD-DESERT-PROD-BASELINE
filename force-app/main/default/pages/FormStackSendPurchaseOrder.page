@@ -1,0 +1,3 @@
+<apex:page standardController="Purchase_Order__c" docType="html-5.0" title="PO Number: {!Purchase_Order__c.Name}">
+    <webm:WebmergeWizard record="{!Purchase_Order__c}" mappingId="a35On000000DuyrIAC"/>
+</apex:page>

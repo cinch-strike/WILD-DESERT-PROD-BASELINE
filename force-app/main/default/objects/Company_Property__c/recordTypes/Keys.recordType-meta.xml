@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Keys</fullName>
+    <active>true</active>
+    <label>Keys</label>
+    <picklistValues>
+        <picklist>Fuel_Company__c</picklist>
+        <values>
+            <fullName>BP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Caltex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IOR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shell</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Issue__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Key_Type__c</picklist>
+        <values>
+            <fullName>0-Master%2FRed %289%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1-Office%2FYellow %2810%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2-Supervisors%2FGreen %284%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3-Accounts%2FBlue %281%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4-Truck Drivers%2FOrange %2812%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5-Camp%2FBlack %286%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6-Rig%2FOrange %286%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7-Workshop%2FBlue%286%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Location__c</picklist>
+        <values>
+            <fullName>Brisbane</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp %28Roma Yard%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jackson</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roma</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Currently Assigned %28In Use%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive %28Not in Use%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Obsolete %28Binned%2FSold%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Ipad</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Iphone 5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Water_Key_Type__c</picklist>
+        <values>
+            <fullName>Roma Potable Water</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roma Truck Wash</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Western Downs %28Standpipe%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

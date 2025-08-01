@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Timesheet_Check_Moomba_Jacob</fullName>
+    <columns>NAME</columns>
+    <columns>Unit__c</columns>
+    <columns>Date__c</columns>
+    <columns>Employee__c</columns>
+    <columns>Position__c</columns>
+    <columns>On_Shift_formula__c</columns>
+    <columns>Timesheet_Approved__c</columns>
+    <columns>Crew_Change__c</columns>
+    <columns>Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Unit__c</field>
+        <operation>equals</operation>
+        <value>Depot - Moomba</value>
+    </filters>
+    <filters>
+        <field>Employee__c</field>
+        <operation>equals</operation>
+        <value>Jacob Edwards</value>
+    </filters>
+    <label>Timesheet Check | Moomba - Jacob</label>
+    <sharedTo>
+        <group>HR</group>
+    </sharedTo>
+</ListView>

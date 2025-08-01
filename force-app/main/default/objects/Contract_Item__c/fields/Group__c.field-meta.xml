@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Group__c</fullName>
+    <inlineHelpText>If not selected then auto-populated from Item</inlineHelpText>
+    <label>Group</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Service_Type__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Operating</fullName>
+                <default>false</default>
+                <label>Operating</label>
+            </value>
+            <value>
+                <fullName>Rig Move</fullName>
+                <default>false</default>
+                <label>Rig Move</label>
+            </value>
+            <value>
+                <fullName>SBWC(Stand By with Crew)</fullName>
+                <default>false</default>
+                <label>SBWC(Stand By with Crew)</label>
+            </value>
+            <value>
+                <fullName>SBWOC (Stand By Without Crew)</fullName>
+                <default>false</default>
+                <label>SBWOC (Stand By Without Crew)</label>
+            </value>
+            <value>
+                <fullName>Repair</fullName>
+                <default>false</default>
+                <label>Repair</label>
+            </value>
+            <value>
+                <fullName>Crew Travel</fullName>
+                <default>false</default>
+                <label>Crew Travel</label>
+            </value>
+            <value>
+                <fullName>Maintenance and Inspections</fullName>
+                <default>false</default>
+                <label>Maintenance and Inspections</label>
+            </value>
+            <value>
+                <fullName>Hire Equipment</fullName>
+                <default>false</default>
+                <label>Hire Equipment</label>
+            </value>
+            <value>
+                <fullName>Extra Personnel</fullName>
+                <default>false</default>
+                <label>Extra Personnel</label>
+            </value>
+            <value>
+                <fullName>Services</fullName>
+                <default>false</default>
+                <label>Services</label>
+            </value>
+            <value>
+                <fullName>Lump Sum Mobe</fullName>
+                <default>false</default>
+                <label>Lump Sum Mobe</label>
+            </value>
+            <value>
+                <fullName>Parts &amp; Consumables</fullName>
+                <default>false</default>
+                <label>Parts &amp; Consumables</label>
+            </value>
+            <value>
+                <fullName>Crew Travel &amp; Accomodation</fullName>
+                <default>false</default>
+                <label>Crew Travel &amp; Accomodation</label>
+            </value>
+            <value>
+                <fullName>Camp Operations</fullName>
+                <default>false</default>
+                <label>Camp Operations</label>
+            </value>
+            <value>
+                <fullName>Fuel</fullName>
+                <default>false</default>
+                <label>Fuel</label>
+            </value>
+            <value>
+                <fullName>Single</fullName>
+                <default>false</default>
+                <label>Single</label>
+            </value>
+            <value>
+                <fullName>Double</fullName>
+                <default>false</default>
+                <label>Double</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Fixed Price/Hour</controllingFieldValue>
+            <valueName>Operating</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fixed Price/Hour</controllingFieldValue>
+            <valueName>Rig Move</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fixed Price/Hour</controllingFieldValue>
+            <valueName>SBWC(Stand By with Crew)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fixed Price/Hour</controllingFieldValue>
+            <valueName>SBWOC (Stand By Without Crew)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fixed Price/Hour</controllingFieldValue>
+            <valueName>Repair</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fixed Price/Hour</controllingFieldValue>
+            <valueName>Crew Travel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fixed Price/Hour</controllingFieldValue>
+            <valueName>Maintenance and Inspections</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fixed Price/Hour</controllingFieldValue>
+            <valueName>Single</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fixed Price/Hour</controllingFieldValue>
+            <valueName>Double</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fixed Price/Quantity</controllingFieldValue>
+            <controllingFieldValue>Flexi Price/Quantity</controllingFieldValue>
+            <valueName>Hire Equipment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fixed Price/Quantity</controllingFieldValue>
+            <controllingFieldValue>Flexi Price/Quantity</controllingFieldValue>
+            <valueName>Extra Personnel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fixed Price/Quantity</controllingFieldValue>
+            <controllingFieldValue>Flexi Price/Quantity</controllingFieldValue>
+            <valueName>Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fixed Price/Quantity</controllingFieldValue>
+            <controllingFieldValue>Flexi Price/Quantity</controllingFieldValue>
+            <valueName>Lump Sum Mobe</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fixed Price/Quantity</controllingFieldValue>
+            <controllingFieldValue>Flexi Price/Quantity</controllingFieldValue>
+            <valueName>Parts &amp; Consumables</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fixed Price/Quantity</controllingFieldValue>
+            <controllingFieldValue>Flexi Price/Quantity</controllingFieldValue>
+            <valueName>Crew Travel &amp; Accomodation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fixed Price/Quantity</controllingFieldValue>
+            <controllingFieldValue>Flexi Price/Quantity</controllingFieldValue>
+            <valueName>Camp Operations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fixed Price/Quantity</controllingFieldValue>
+            <controllingFieldValue>Flexi Price/Quantity</controllingFieldValue>
+            <valueName>Fuel</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

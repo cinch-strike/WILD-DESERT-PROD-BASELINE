@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>By_Date</fullName>
+    <columns>NAME</columns>
+    <columns>Transport_Daily_Report__c</columns>
+    <columns>Unit__c</columns>
+    <columns>TDR_Date__c</columns>
+    <columns>Employees__c</columns>
+    <columns>Driver_Assignment_Assigned__c</columns>
+    <columns>Day_Confirmed__c</columns>
+    <columns>Timesheet_Approved__c</columns>
+    <columns>Crew_Change__c</columns>
+    <columns>Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Transport_Daily_Report__c</field>
+        <operation>equals</operation>
+        <value>TDR-541</value>
+    </filters>
+    <label>By TDR</label>
+</ListView>

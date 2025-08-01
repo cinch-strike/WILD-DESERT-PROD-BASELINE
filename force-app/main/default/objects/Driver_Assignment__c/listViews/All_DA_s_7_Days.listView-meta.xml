@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_DA_s_7_Days</fullName>
+    <columns>Transport_Base__c</columns>
+    <columns>Transport_Job__c</columns>
+    <columns>NAME</columns>
+    <columns>Driver_Assignment_Date__c</columns>
+    <columns>Driver__c</columns>
+    <columns>Configuration_pklist__c</columns>
+    <columns>Configuration__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Unit__c</columns>
+    <columns>Site__c</columns>
+    <columns>Start_Date_Time__c</columns>
+    <columns>End_Date_Time__c</columns>
+    <columns>Driver_Status__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>TJ_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Approved</value>
+    </filters>
+    <filters>
+        <field>Driver_Assignment_Date__c</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:7</value>
+    </filters>
+    <label>All DA&apos;s - 7 Days</label>
+</ListView>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Gas</fullName>
+    <columns>NAME</columns>
+    <columns>Description__c</columns>
+    <columns>Hose__c</columns>
+    <columns>Certificate_Number__c</columns>
+    <columns>Date_In_Service__c</columns>
+    <columns>WD_Unit__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>Inspection_Requirement__c</columns>
+    <columns>Date_of_Next_Inspection__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Inspection_Certification__c.Safety_Equipment</value>
+    </filters>
+    <filters>
+        <field>Safety_Equipment__c</field>
+        <operation>equals</operation>
+        <value>Gas Detector</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Obselete</value>
+    </filters>
+    <label>All Gas Detectors</label>
+    <sharedTo>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

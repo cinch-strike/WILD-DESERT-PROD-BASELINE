@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>By_Position</fullName>
+    <columns>Team_lookup__c</columns>
+    <columns>Assigned_to_Unit__c</columns>
+    <columns>PositionLookup__c</columns>
+    <columns>NAME</columns>
+    <columns>Personal_Email__c</columns>
+    <columns>Shift__c</columns>
+    <columns>On_Shift__c</columns>
+    <columns>Crew_Change_Location__c</columns>
+    <columns>City__c</columns>
+    <columns>Local_Gov_Area__c</columns>
+    <columns>Mobile__c</columns>
+    <columns>Santos_Security_Number__c</columns>
+    <columns>Status__c</columns>
+    <columns>Birthday__c</columns>
+    <columns>Start_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Employees__c.Active_Employee</value>
+    </filters>
+    <filters>
+        <field>PositionLookup__c</field>
+        <operation>equals</operation>
+        <value>6.0. Leasehand,6.1. Leasehand*,5.0. Floorhand,5.1. Floorhand*</value>
+    </filters>
+    <label>By Position</label>
+</ListView>

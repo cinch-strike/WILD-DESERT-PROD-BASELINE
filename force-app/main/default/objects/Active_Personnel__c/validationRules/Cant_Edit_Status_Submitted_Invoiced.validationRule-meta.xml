@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_Edit_Status_Submitted_Invoiced</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF( 
+OR(TEXT( Daily_Report__r.Status__c ) = &apos;Submitted&apos;,TEXT( Daily_Report__r.Status__c) = &apos;Invoiced&apos;) , 
+TRUE, 
+FALSE 
+)</errorConditionFormula>
+    <errorMessage>One Cannot Create Or Edit a Active Personnel for a Status Submitted Or Invoiced</errorMessage>
+</ValidationRule>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_10_Servicing_Schedule_km</fullName>
+    <columns>Unit__c</columns>
+    <columns>Asset_Family__c</columns>
+    <columns>NAME</columns>
+    <columns>Asset_ID_Number__c</columns>
+    <columns>Date_Of_Last_Service__c</columns>
+    <columns>Current_Odometer_Reading__c</columns>
+    <columns>Next_Service_Due_km__c</columns>
+    <columns>Next_Job_Card_creation_reading__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Asset__c.Light_Vehicles,Asset__c.Prime_Mover,Asset__c.Trailer,Asset__c.Dollies</value>
+    </filters>
+    <filters>
+        <field>Unit__c</field>
+        <operation>equals</operation>
+        <value>rig 10,Tr/r10</value>
+    </filters>
+    <label>Rig #10 - Servicing Schedule (kms)</label>
+    <sharedTo>
+        <group>Camp_Supervisor</group>
+        <group>Electrician</group>
+        <group>Fabrication</group>
+        <group>Managing_Director</group>
+        <group>Mechanics_Roma</group>
+        <group>OPs_super</group>
+        <group>Purchasing</group>
+        <group>Rigs_10</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

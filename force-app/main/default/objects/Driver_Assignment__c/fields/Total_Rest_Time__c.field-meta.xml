@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Rest_Time__c</fullName>
+    <description>Total Rest</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter the total hrs spent at rest for this job</inlineHelpText>
+    <label>Total Rest Time</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WD_Unit__c</fullName>
+    <description>Links to the Related Assets Assigned Unit</description>
+    <externalId>false</externalId>
+    <formula>WD_Asset__r.Unit__r.Name</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Links to the Related Assets Assigned Unit</inlineHelpText>
+    <label>WD Unit</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

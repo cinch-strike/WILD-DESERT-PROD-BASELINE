@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Latch_lock_hook_catch_parallel_with_body__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>Latch lock hook catch parallel with body</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

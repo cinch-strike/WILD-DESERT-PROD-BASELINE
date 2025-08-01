@@ -1,0 +1,431 @@
+<!--
+- Created by Captain America on 20-Dec-17.
+-->
+
+<apex:page id="GenerateInvoice_Pdf" StandardController="Invoice__c" extensions="GenerateInvoice_Controller"
+           docType="html-5.0" applyBodyTag="false" applyHtmlTag="false" showHeader="false" renderAs="PDF">
+
+    <head>
+        <style type="text/css" media="print">
+            body{
+            <!--font-family:-->
+            font-size: 15px;
+            }
+            
+            @page {
+            
+            @top-center {
+            content: element(header);
+            }
+            
+            @bottom-left {
+            content: element(footer);
+            }
+            }
+            
+            div.header {
+            padding: 10px;
+            position: running(header);
+            }
+            
+            div.footer {
+            display: block;
+            padding: 5px;
+            position: running(footer);
+            font-size: 12px;
+            }
+            
+            .pagenumber:before {
+            content: counter(page);
+            }
+            
+            .pagecount:before {
+            content: counter(pages);
+            }
+            
+            #wrap {
+            width:100%;
+            margin:0 auto;
+            }
+            #left_col {
+            float:left;
+            width:50%;
+            }
+            #right_col {
+            float:right;
+            width:50%;
+            }
+
+
+
+            
+
+        </style>
+    </head>
+
+    <body style="font-family: sans-serif; font-size:11pt">
+
+    <div class="header">
+
+    </div>
+    <div class="footer">
+        <div>{!invoice.Name}/{!invoice.Contract__r.Account__r.Name}/{!invoice.Site__r.Name}/Page <span
+                class="pagenumber"/> of <span class="pagecount"/></div>
+    </div>
+
+    <div class="content">
+
+        <div width="100%;">
+                
+                <span style="float:left;">
+                    <!--<img src="https://company-profile-images.s3.amazonaws.com/images/980952/1170497/logo/wild-desert-logo.jpg"/>-->
+                    <apex:image url="{!$Resource.WDLogoTransparent}" style="height:75px;width:300px;"/>
+                </span>
+
+            <div style="text-align:right;margin-top:25px;line-height:21px;">
+                <apex:outputText style="" title="CompanyName">Wild Desert Pty Ltd</apex:outputText>
+                <br/>
+                <apex:outputText style="" title="CompanyAddressLine1">239 Raglan Street, Po Box 955</apex:outputText>
+                <br/>
+                <apex:outputText style="" title="CompanyAddressLine2">Roma, QLD 4455</apex:outputText>
+                <br/>
+                <apex:outputText style="" title="CompanyPhone">PH: +61 (0)7 4622 6004</apex:outputText>
+                <br/>
+                <!--<apex:outputText style="" title="CompanyFax">FAX: +61 (0)7 4622 6003</apex:outputText>
+                <br/>-->
+                <apex:outputText style="" title="CompanyABN">ABN: 79 661 476 463</apex:outputText>
+                <br/>
+                <apex:outputText style="" title="CompanyWebsite">www.wilddesert.com.au</apex:outputText>
+            </div>
+        </div>
+
+        <br/>
+        <div width="100%;" style="font-weight:bold;">
+            <div style="line-height:20px;">
+                <apex:outputPanel rendered="{!AND(NOT(ISBLANK(invoice.Contract__r.Account__r.Name)))}">
+                    <apex:outputText title="ClientAccountName">{!invoice.Contract__r.Account__r.Name}</apex:outputText>
+                    <br/>
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!AND(NOT(ISBLANK(invoice.Contract__r.Account__r.BillingStreet)))}">
+                    <apex:outputText style=""
+                                     title="BillingStreet">{!invoice.Contract__r.Account__r.BillingStreet}</apex:outputText>
+                    <br/>
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!AND(NOT(ISBLANK(invoice.Contract__r.Account__r.BillingCity)))}">
+                    <apex:outputText style=""
+                                     title="BillingCity">{!invoice.Contract__r.Account__r.BillingCity}</apex:outputText>
+                    <br/>
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!AND(NOT(ISBLANK(invoice.Contract__r.Account__r.BillingState)))}">
+                    <apex:outputText style=""
+                                     title="BillingState">{!invoice.Contract__r.Account__r.BillingState}</apex:outputText>
+                    <br/>
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!AND(NOT(ISBLANK(invoice.Contract__r.Account__r.BillingPostalCode)))}">
+                    <apex:outputText style=""
+                                     title="BillingPostalCode">{!invoice.Contract__r.Account__r.BillingPostalCode}</apex:outputText>
+                    <br/>
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!AND(NOT(ISBLANK(invoice.Contract__r.Account__r.BillingCountry)))}">
+                    <apex:outputText style=""
+                                     title="BillingCountry">{!invoice.Contract__r.Account__r.BillingCountry}</apex:outputText>
+                    <br/>
+                </apex:outputPanel>
+            </div>
+        </div>
+
+        <br/>
+
+        <div id="wrap" width="100%;" style="clear:both;line-height:20px;">
+            <div id="left_col">
+                <apex:outputText title="InvoiceNumber"><span style="font-weight:bold;">Invoice #: </span>{!invoice.Name}
+                </apex:outputText>
+                <br/>
+                <apex:outputText title="InvoiceDate" value="{0,date,dd-MMM-YY}"><span style="font-weight:bold;">Invoice Date: </span>
+                    <apex:param value="{!Today()}"/>
+                </apex:outputText>
+                <br/>
+                <apex:outputText title="InvoiceTerms"><span
+                        style="font-weight:bold;">Invoice Terms: </span>{!invoice.Contract__r.Account__r.Terms__c}
+                </apex:outputText>
+                <br/>
+                <apex:outputText title="PurchaseOrder"><span style="font-weight:bold;">Purchase Order #: </span>{!invoice.Purchase_Order__c}
+                </apex:outputText>
+                <br/>
+            </div>
+            <div id="right_col">
+
+                <apex:outputText title="SiteName"><span style="font-weight:bold;">Site: </span>{!invoice.Site__r.Name}
+                </apex:outputText>
+                <br/>
+                <apex:outputText title="StartDateEndDate" value="{0,date,dd-MMM-YY}"><span style="font-weight:bold;">Start Date / End Date: </span>
+                    <apex:param value="{!invoice.Site__r.Start_Date__c}"/>
+                </apex:outputText>
+                /&nbsp;
+                <apex:outputText value="{0,date,dd-MMM-yy}">
+                    <apex:param value="{!invoice.Site__r.End_Date__c}"/>
+                </apex:outputText>
+                <br/>
+                <apex:outputText title="ContractUnitAssignment"><span
+                        style="font-weight:bold;">Units: </span>{!unitsAssigned}</apex:outputText>
+                <br/>
+                <apex:outputText title="SiteJobDescription"><span style="font-weight:bold;">Job
+                        Description: </span>{!invoice.Description__c}</apex:outputText>
+                <br/>
+            </div>
+        </div>
+
+        <br/>
+        <div style="line-height:35px;clear:both;">
+            <apex:outputText title="TotalCharge" value="{0, number, Currency}"><span style="font-weight:bold;">Invoice Total(Inc): </span>
+                <!--<apex:param value="{!totalCost}"/>-->
+                <apex:param value="{!totalWithGst}"/>
+            </apex:outputText>
+            <!--<apex:outputText title="ItemSummary"><span style="font-weight:bold;">Item Summary</span></apex:outputText>
+            <br/>
+            <br/>-->
+        </div>
+        <div>
+            <table border="0"
+                   style="width:100%;page-break-inside:auto;line-height:23px;">
+                <thead>
+                <tr>
+                    <th scope="col" style="width:15%;border-bottom-style:solid;">
+                        <apex:outputText value="Qty"/>
+                    </th>
+
+                    <th scope="col" style="width:55%;border-bottom-style:solid;">
+                        <apex:outputText value="Item"/>
+                    </th>
+
+                    <!--<th scope="col" style="width:15%;border-bottom-style:solid;">
+                    <apex:outputText value="UOM"/>
+                    </th>-->
+
+                    <th scope="col" style="width:15%;border-bottom-style:solid;">
+                        <apex:outputText value="Rate"/>
+                    </th>
+
+                    <th scope="col" style="width:%;border-bottom-style:solid;">
+                        <apex:outputText value="Totals"/>
+                    </th>
+
+                </tr>
+                </thead>
+                <apex:variable var="reportType" value=""/>
+                <apex:repeat value="{!jobItemSummaryWrapperList}" var="item">
+                    <tbody>
+                    <tr style="{!IF(NOT(ISBLANK(item.totalCostGroup)),'','display:none;')}">
+                        <td style="width:%;">
+                            <apex:outputText value="{0, number}" >
+                                <apex:param value="{!item.totalQuantity}"/>
+                            </apex:outputText>
+                        </td>
+
+                        <td style="width:%;">
+                            <apex:outputText value="{!item.itemName}"/>
+                        </td>
+
+                        <td style="width:%;">
+                            <apex:outputText value="{0,number, currency}">
+                                <apex:param value="{!item.totalCostGroup}"/>
+                            </apex:outputText>
+                        </td>
+
+                        <td style="width:%;">
+                            <apex:outputText value="{0,number, currency}">
+                                <apex:param value="{!item.itemTotal}"/>
+                            </apex:outputText>
+                        </td>
+                    </tr>
+                    </tbody>
+                </apex:repeat>
+
+                <tbody>
+                <tr>
+                    <td style="width:%;border-top-style:solid;"/>
+                    <td style="width:%;border-top-style:solid;"/>
+                    <td style="width:%;border-top-style:solid;"/>
+                    <td style="width:%;border-top-style:solid;"/>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+        <br/>
+        <div style="line-height:21px;padding:7px;">
+            <div style="float:right;width:44%;clear:both;">
+                <span style="width:67%;">Sub-Total Exc GST</span>
+                <span style="float:right;margin-right:9%;">
+                        <apex:outputText value="{0, number, Currency}">
+                            <apex:param value="{!totalCost}"/>
+                        </apex:outputText>
+                    </span>
+            </div>
+            <br/>
+            <div style="float:right;width:44%;">
+                <span style="width:67%;">Plus GST</span>
+                <span style="float:right;margin-right:9%;">
+                        <apex:outputText value="{0, number, Currency}">
+                            <apex:param value="{!calculatedGst}"/>
+                        </apex:outputText>
+                    </span>
+            </div>
+            <br/>
+            <div style="float:right;width:44%;">
+                <span style="width:67%;">Total Inc GST</span>
+                <span style="float:right;margin-right:9%;">
+                        <apex:outputText value="{0, number, Currency}">
+                            <apex:param value="{!totalWithGst}"/>
+                        </apex:outputText>
+                    </span>
+            </div>
+            <br/>
+
+            <div style="float:right;width:44%;font-weight:bold;border-top:2px solid black;border-bottom:2px;border-bottom:2px solid black;">
+                <span style="width:67%;">Balance Due</span>
+                <span style="float:right;margin-right:9%;">
+                        <apex:outputText value="{0, number, Currency}">
+                            <apex:param value="{!balanceDue}"/>
+                        </apex:outputText>
+                    </span>
+            </div>
+        </div>
+
+
+        <div style="clear:both;line-height:21px;page-break-inside:avoid;padding:12px">
+            <apex:outputText title="SendRemittance">Please send remittances to ar@wilddesert.com.au</apex:outputText>
+            <br/><br/>
+            <apex:outputText title="PaymentDetail1"><span style="font-weight:bold;">Payments can be made to</span>:
+            </apex:outputText>
+            <br/>
+            <apex:outputText title="PaymentDetail2">WILD DESERT PTY LTD</apex:outputText>
+            <br/>
+            <apex:outputText title="PaymentDetail3">BSB: 034 211 AC: 156 852</apex:outputText>
+            <br/>
+        </div>
+
+
+        <div style="page-break-before:auto;margin-top:15px">
+            <div style="text-align:center;">
+                <apex:outputText title="DailySiteJobs">Job Item Summary</apex:outputText>
+            </div>
+            <hr style="border-style:solid;"/>
+
+            <apex:repeat value="{!jobItemSummaryWrapperList}" var="item">
+                <br/>
+                <div style="display:{!IF(item.displayJobItemSummary,'','none')};page-break-inside:avoid;page-break-before:auto;">
+                    <div style="page-break-inside: inherit;{!IF(NOT(ISBLANK(item.totalCostGroup)),'','display:none;')};border-bottom-style:solid;padding-bottom:10px;">
+                        <apex:outputText style="padding:7px;text-align:left;"><b>{!item.itemName} &nbsp;| &nbsp;Rate:&nbsp;<apex:outputText value="{0, number, Currency}">
+                            <apex:param value="{!item.totalCostGroup}"></apex:param>
+                        </apex:outputText> &nbsp;| &nbsp;Item Total:&nbsp;<apex:outputText value="{0, number, Currency}">
+                            <apex:param value="{!item.itemTotal}"></apex:param>
+                        </apex:outputText>
+                        </b></apex:outputText>
+                    </div>
+                    <table border="0" style="page-break-inside:avoid;line-height:23px;width:80%;{!IF(NOT(ISBLANK(item.totalCostGroup)),'','display:none;')}">
+
+
+                        <!--<tr style="page-break-inside: inherit;{!IF(item.totalCostGroup != 0,'','display:none;')}">
+                        <td colspan="3" class="" style="padding:7px;text-align:left;border-bottom-style:solid;"><b>{!item.itemName} &nbsp;| &nbsp;Rate:&nbsp;<apex:outputText value="{0, number, Currency}"><apex:param value="{!item.totalCostGroup}"></apex:param></apex:outputText> &nbsp;| &nbsp;Item Total:&nbsp;<apex:outputText value="{0, number, Currency}"><apex:param value="{!item.totalCostGroup * item.totalQuantity}"></apex:param></apex:outputText></b></td>
+                        </tr> -->
+
+                        <tr style="{!IF(NOT(ISBLANK(item.totalCostGroup)),'','display:none;')};width:70%;">
+                            <th style="width:30%;">Report Date</th>
+                            <th style="width:30%;">Report #</th>
+                            <th style="width:30%;">Quantity</th>
+                        </tr>
+
+                        <!--To be uncommented-->
+                        <apex:repeat value="{!itemNameItemDetailMap[item.itemName]}" var="jobItem" rendered="{!item.displayJobItemSummary}">
+                            <tr style="page-break-inside: inherit;{!IF(NOT(ISBLANK(item.totalCostGroup)),'','display:none;')};width:70%;">
+                                <td>
+                                    <apex:outputText value="{0,date,dd-MMM-YY}">
+                                        <apex:param value="{!jobItem.Daily_Report__r.Report_Date__c}"/>
+                                    </apex:outputText>
+                                </td>
+                                <td>{!jobItem.Daily_Report__r.Name}</td>
+                                <td>{!IF(jobItem.Number_of_Hours__c != null,jobItem.Number_of_Hours__c,IF(jobItem.Quantity__c != null,jobItem.Quantity__c,0))}</td>
+                            </tr>
+                        </apex:repeat>
+
+                    </table>
+                </div>
+
+            </apex:repeat>
+
+        </div>
+        <br/>
+
+        <!--Daily Site Job Summary Approval History-->
+        <div style="page-break-before:always;">
+            <div style="text-align:center;">
+                <apex:outputText title="DailySiteJobs">Site Job Summary Approval History</apex:outputText>
+            </div>
+            <hr style="border-style:solid;"/>
+            <br/>
+            <table border="" style="width:100%; border-collapse:collapse;">
+                <thead>
+                <tr style="page-break-inside:avoid;">
+                    <th scope="col" style="padding:7px;text-align:center;border-bottom-style:solid;">
+                        <apex:outputText value="Site Job No."/>
+                    </th>
+                    <th scope="col" style="padding:7px;text-align:center;border-bottom-style:solid;">
+                        <apex:outputText value="Report Date"/>
+                    </th>
+                    <!--<th scope="col" style="padding:7px;text-align:center;border-bottom-style:solid;">
+                        <apex:outputText value="Rig Manager"/>
+                    </th>-->
+                    <th scope="col" style="padding:7px;text-align:center;border-bottom-style:solid;">
+                        <apex:outputText value="Operations Manager"/>
+                    </th>
+                    <th scope="col" style="padding:7px;text-align:center;border-bottom-style:solid;">
+                        <apex:outputText value="OCR"/>
+                    </th>
+                    <th scope="col" style="padding:7px;text-align:center;border-bottom-style:solid;">
+                        <apex:outputText value="Email"/>
+                    </th>
+                    <th scope="col" style="padding:7px;text-align:center;border-bottom-style:solid;">
+                        <apex:outputText value="Approved"/>
+                    </th>
+                </tr>
+                </thead>
+
+                <apex:repeat value="{!dailySummaryReportList}" var="dailySummaryReport">
+                    <tbody style="page-break-inside:avoid;">
+
+                    <td scope="col" style="padding:7px;text-align:center;">
+                        <apex:outputText value="{!dailySummaryReport.Name}"/>
+                    </td>
+                    <td scope="col" style="padding:7px;text-align:center;">
+                        <apex:outputText value="{0,date,dd-MMM-YY}">
+                            <apex:param value="{!dailySummaryReport.Summary_Report_Date__c}"/>
+                        </apex:outputText>
+                    </td>
+                    <!--<td scope="col" style="padding:7px;text-align:center;">
+                                <apex:outputText value="{!dailySummaryReport.Rig_Manager_Status_Approved_By__r.Name}"/>
+                            </td>-->
+                    <td scope="col" style="padding:7px;text-align:center;">
+                        <apex:outputText value="{!dailySummaryReport.Contract__r.Company_Manager__r.Name}" />
+                    </td>
+                    <td scope="col" style="padding:7px;text-align:center;">
+                        <apex:outputText value="{!dailySummaryReport.Company_Manager_Name__c}"/>
+                    </td>
+                        <td scope="col" style="padding:7px;text-align:center;">
+                        <apex:outputText value="{!dailySummaryReport.Contract__r.Manager_Ops_Sup__r.Email}"/>
+                    </td>
+                    <td scope="col" style="padding:7px;text-align:center;">
+                        <apex:outputText value="{0,date,dd-MMM-YY}">
+                            <apex:param value="{!dailySummaryReport.Date_Approved__c}"/>
+                        </apex:outputText>
+                    </td>
+                    </tbody>
+                </apex:repeat>
+
+            </table>
+        </div>
+    </div>
+    </body>
+
+
+</apex:page>

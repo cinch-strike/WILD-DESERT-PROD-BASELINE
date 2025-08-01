@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Electrical</fullName>
+    <active>true</active>
+    <label>Electrical</label>
+    <picklistValues>
+        <picklist>Any_nicks_gouges_cracks_or_corrosion__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Category__c</picklist>
+        <values>
+            <fullName>Hydraulic</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Circulating_Iron__c</picklist>
+        <values>
+            <fullName>Chicksans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chicksans Half Swing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Double Female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Double Male</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Harlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NPT to Thread 1502</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NPT to Wing 1502</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standpipe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standpipe Dropper</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Distorted_bent__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Electricial__c</picklist>
+        <values>
+            <fullName>A%2FC Motors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clamp Meter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electrical Commissioning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emergency Lighting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Equipotential Bonding Verification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hazardous Area</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insulation Tester</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Main Switch Board</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multimeter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Smoke Detectors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sound Level Meter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Test n Tag</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Extinguisher_Type__c</picklist>
+        <values>
+            <fullName>Dry Powder  2kg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dry Powder 1kg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dry Powder 2%2E5kg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dry Powder 4%2E5kg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dry Powder 9kg</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Gauges__c</picklist>
+        <values>
+            <fullName>Accumulator Pressure Gauge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annular Pressure Gauge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital Crystal Gauge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kane Instruments Weight Indicator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manifold Pressure Gauge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pressure Gauge</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hose__c</picklist>
+        <values>
+            <fullName>BOP Hose</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kelly Hose</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Power Swivel Hose</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Power Tong Hose</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Inspection_Record__c</picklist>
+        <values>
+            <fullName>Electrical Inspection</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Inspection_Requirement__c</picklist>
+        <values>
+            <fullName>12 month 3rd party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12 month Unit Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 year 3rd party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 year Unit Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 year 3rd party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 year 3rd Party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%2E5 year 3rd Party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 year 3rd Party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 month 3rd party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 month Unit Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Inspection_Type__c</picklist>
+        <values>
+            <fullName>Monthly Water Tests</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarterly Water Treatment %28Bomb%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Lifting_Equipment__c</picklist>
+        <values>
+            <fullName>2 Leg Lifting Chain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D Shackle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Leg Chain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stinger Hold Back Chain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Winch Line Chain</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pre_Charge_Bottles__c</picklist>
+        <values>
+            <fullName>Accumulator Unit %231</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accumulator Unit %232</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accumulator Unit %233</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accumulator Unit %234</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pulsation Dampener Nitrogen Accumulator</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pressure_Relief_Valve__c</picklist>
+        <values>
+            <fullName>Mud Pump Air Start Receiver Tank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mud Pump Relief Valve</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig Air Start Receiver Tank</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pressure_Vessels__c</picklist>
+        <values>
+            <fullName>Air Receiver Vessels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pressure Water Tank</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Safety_Equipment__c</picklist>
+        <values>
+            <fullName>Confined Space Rescue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Working At Heights</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Working At Heights Rescue Kit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Current</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Expired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Obselete</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Thread_damaged__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Thread_rusty_or_tight__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Unduly_worn__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Whip_Check__c</picklist>
+        <values>
+            <fullName>Hose Restraint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Whip Check</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Wire_Cable__c</picklist>
+        <values>
+            <fullName>Drill Line</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geronimo Line</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Load Line %231</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Load Line %232</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monkey Board - Outrigger %231</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monkey Board - Outrigger %232</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monkey Board - Raising Line DS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monkey Board Raising Line ODS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Power Swivel Torque Line %231</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Power Swivel Torque Line %232</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Winch Line %231</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Winch Line %232</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

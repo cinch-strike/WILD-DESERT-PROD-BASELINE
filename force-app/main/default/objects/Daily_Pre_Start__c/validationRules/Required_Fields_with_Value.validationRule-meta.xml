@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_Fields_with_Value</fullName>
+    <active>true</active>
+    <description>If all the required fields has value and status is not started.</description>
+    <errorConditionFormula>AND(
+NOT(ISBLANK( Date__c )),
+NOT(ISBLANK( PM_Vehicle__c )),
+NOT(ISBLANK( Inspection__c )),
+NOT(ISPICKVAL( Wheels_Tyres__c , &quot;&quot;)),
+NOT(ISPICKVAL( Lights_and_reflectors__c , &quot;&quot;)),
+NOT(ISPICKVAL( Windscreen_Mirrors_Wipers__c , &quot;&quot;)),
+NOT(ISPICKVAL( Structure_Body_Fluid_Systems__c , &quot;&quot;)),
+NOT(ISPICKVAL( Brakes__c , &quot;&quot;)),
+NOT(ISPICKVAL( Load_Restraint__c , &quot;&quot;)),
+NOT(ISPICKVAL( Trailer_Checks_Done__c , &quot;&quot;)),
+NOT(ISPICKVAL( Dollies_Check_Done__c , &quot;&quot;)),
+NOT(ISPICKVAL( Hauling_Trailing_Equipment_Roadworthy__c , &quot;&quot;)),
+NOT(ISPICKVAL( Status__c , &quot;Completed&quot;)),
+$Profile.Name = &quot;Driver Communities Profile&quot;
+)</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>Please change the status to Completed.</errorMessage>
+</ValidationRule>

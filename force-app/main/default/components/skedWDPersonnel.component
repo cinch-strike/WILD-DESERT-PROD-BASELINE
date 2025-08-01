@@ -1,0 +1,149 @@
+<apex:component controller="skedWDPersonnel">
+<apex:attribute name="componentKey"
+    type="String"
+    assignTo="{!Key}"
+    description="The key given to this component so the page can easily get access to it" />
+
+    <apex:attribute name="WDPpageController"
+      type="skedPageControllerBase"
+      assignTo="{!pageController}"
+      required="true"
+      description="The controller for the page." />
+      
+     <apex:attribute name="PersonnelList"
+      type="WD_Personnel__c[]"
+      assignTo="{!WDPList}"      
+      description="Existing Personnels." />
+      
+ <apex:outputPanel id="tstpopup">
+ 
+ <apex:outputPanel id="panelWithVar">
+    <apex:variable value="{!0}" var="rowNumber" />
+</apex:outputPanel>
+      
+<apex:pageBlock title="WD Personnel" >  
+
+<apex:pageBlockSection columns="1" collapsible="false">
+
+
+<!-- A list of WD Personnel -->
+<apex:pageBlockTable value="{!WDPList}" var="item" id="newWDP">
+
+    <apex:column width="5%">
+        <apex:commandButton action="{!editNewObject}" value=" Edit " reRender="tstpopup">
+            <apex:param name="p1" value="{!rowNumber}" assignTo="{!numberOfRowToEdit}"/>
+        </apex:commandButton>
+    </apex:column>
+
+     <apex:column width="5%">
+        <apex:commandButton action="{!removeNewObject}" value=" Remove " reRender="tstpopup" rendered="{!If (item.Id  == null, true, false)}">
+            <apex:param name="p1" value="{!rowNumber}" assignTo="{!numberOfRowToRemove}"/>
+        </apex:commandButton>
+        <apex:commandButton action="{!deleteNewObject}" value=" Delete " reRender="tstpopup" rendered="{!If (item.Id  == null, false, true)}">
+            <apex:param name="p1" value="{!rowNumber}" assignTo="{!numberOfRowToRemove}"/>
+        </apex:commandButton>
+    </apex:column>    
+    
+    
+    <apex:column headerValue="Employee Name">
+        <apex:outputField value="{!item.Name__c}"/>
+        <apex:facet name="footer">
+                <apex:commandButton value="Create" action="{!showPopup}" rerender="tstpopup"/>
+        </apex:facet>
+    </apex:column>
+    <apex:column headerValue="Date Created">
+        <apex:outputField value="{!item.Date_Created__c}"/>
+    </apex:column> 
+    <apex:column headerValue="Position">
+        <apex:outputField value="{!item.Position__c}">
+        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"
+                        hideOnEdit="editButton" event="ondblclick"
+                        changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                </apex:outputField>
+
+    </apex:column>     
+     <apex:column headerValue="Total Hours">
+        <apex:outputField value="{!item.Total_Hours__c}"/>
+         <apex:variable var="rowNumber" value="{!rowNumber+1}"/>
+    </apex:column>   
+</apex:pageBlockTable>
+
+</apex:pageblockSection>
+
+</apex:pageBlock>
+
+
+        <apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!displayPopUp}"/>
+            <apex:outputPanel styleClass="custPopup" layout="block" rendered="{!displayPopUp}">         
+                 <apex:pageBlock >
+                    <apex:pageBlockSection title="New WD Personnel" collapsible="false" columns="1">
+                    <apex:outputText value="Please complete all required fields." rendered="{!showError}" style="color:red"/>
+                    <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Employee Name:"/>
+                            <apex:outputPanel styleClass="requiredInput" layout="block" >
+                            <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                            <apex:inputField value="{!NewPersonnel.Name__c}"  />
+                            </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Date Created:"/>
+                            <apex:outputPanel styleClass="requiredInput" layout="block" >
+                            <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                            <apex:inputField value="{!NewPersonnel.Date_Created__c}"/>
+                            </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                       <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Total Hours:"/>
+                            <apex:outputPanel styleClass="requiredInput" layout="block" >
+                            <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                            <apex:inputField value="{!NewPersonnel.Total_Hours__c}"  />
+                            </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Crew Change Day"/>
+                            <apex:inputField value="{!NewPersonnel.Crew_Change_Day__c}"  />                           
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Night Shift?"/>
+                            <apex:inputField value="{!NewPersonnel.Night_Shift__c}"  />                           
+                    </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+                <apex:commandButton value="Done"   action="{!AddWDP}" rerender="tstpopup"/>
+                <apex:commandButton value="Cancel" immediate="true"  action="{!closePopup}" rerender="tstpopup" rendered="{!IF (NewPersonnel.Id == null, true, false)}" />
+            </apex:outputPanel>
+</apex:outputPanel>
+
+
+<style type="text/css">
+        .custPopup{
+            background-color: white;
+            border-width: 2px;
+            border-style: solid;
+            z-index: 9999;
+            left: 50%;
+            padding:10px;
+            position: absolute;
+            /* These are the 3 css properties you will need to change so the popup 
+            displays in the center of the screen. First set the width. Then set 
+            margin-left to negative half of what the width is. You can add 
+            the height property for a fixed size pop up if you want.*/
+            width: 500px;
+            margin-left: -250px;
+            top:50%;
+        }
+        .popupBackground{
+            background-color:black;
+            opacity: 0.20;
+            filter: alpha(opacity = 20);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9998;
+        }
+
+    </style>
+
+</apex:component>

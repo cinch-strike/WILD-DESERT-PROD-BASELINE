@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>NDT_Hours_3800_Email_Alert</fullName>
+        <description>NDT Hours 3800 Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>david.whiley@wilddesert.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>gina.tedford@wilddesert.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ndt.tech@wilddesert.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>randall.hockey@wilddesert.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>robert.schmidt@wilddesert.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tynan.farndon@wilddesert.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Unit_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>servicing@wilddesert.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/NDT_Hours_3800_Email_Template</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Update_Date_Last_NDT_WFU</fullName>
+        <field>Date_Last_ndt__c</field>
+        <formula>TODAY()</formula>
+        <name>Update Date Last NDT WFU</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_LTI_Reset_Date_WFU</fullName>
+        <field>LTI_Reset_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Update LTI Reset Date WFU</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Last_NDT_Inspection_Date_WFU</fullName>
+        <field>Last_NDT_Inspection__c</field>
+        <formula>TODAY()</formula>
+        <name>Update Last NDT Inspection Date WFU</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Send NDT Hours Notification 360 WFR</fullName>
+        <active>false</active>
+        <formula>AND(   NOT(ISBLANK(Number_of_Hours_to_Next_NDT__c )),   Number_of_Hours_to_Next_NDT__c  &lt;= 360 )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send NDT Hours Notification 720 WFR</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Unit__c.Number_of_Hours_to_Next_NDT__c</field>
+            <operation>lessOrEqual</operation>
+            <value>720</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Unit__c.Number_of_Hours_to_Next_NDT__c</field>
+            <operation>greaterThan</operation>
+            <value>360</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Date Last NDT when NDT Hours Zero</fullName>
+        <actions>
+            <name>Update_Date_Last_NDT_WFU</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>4 Feb 2020: No longer needed; they will manually change the field name</description>
+        <formula>ISCHANGED(NDT_Hours__c) &amp;&amp; OR( ISBLANK(NDT_Hours__c), NDT_Hours__c = 0 )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update LTI Reset Date</fullName>
+        <actions>
+            <name>Update_LTI_Reset_Date_WFU</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Unit__c.LTI__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Unit__c.LTI__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Last NDT Inspection Date</fullName>
+        <actions>
+            <name>Update_Last_NDT_Inspection_Date_WFU</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Unit__c.NDT_Hours__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Unit__c.NDT_Hours__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </criteriaItems>
+        <description>DB: No need for this one as we don&apos;t need to reset</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

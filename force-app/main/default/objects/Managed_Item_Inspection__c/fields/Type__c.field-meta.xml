@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <label>Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Lifting Chain</fullName>
+                <default>false</default>
+                <label>Lifting Chain</label>
+            </value>
+            <value>
+                <fullName>Soft Sling</fullName>
+                <default>false</default>
+                <label>Soft Sling</label>
+            </value>
+            <value>
+                <fullName>D Shackle</fullName>
+                <default>false</default>
+                <label>D Shackle</label>
+            </value>
+            <value>
+                <fullName>Anchor Line</fullName>
+                <default>false</default>
+                <label>Anchor Line</label>
+            </value>
+            <value>
+                <fullName>Winch Line</fullName>
+                <default>false</default>
+                <label>Winch Line</label>
+            </value>
+            <value>
+                <fullName>Drill Line</fullName>
+                <default>false</default>
+                <label>Drill Line</label>
+            </value>
+            <value>
+                <fullName>Term. Points</fullName>
+                <default>false</default>
+                <label>Term. Points</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

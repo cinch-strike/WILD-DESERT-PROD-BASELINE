@@ -1,0 +1,5 @@
+<apex:page standardController="Purchase_Request__c" recordSetVar="prs" extensions="PurchaseRequestListController" lightningStylesheets="True">
+   <flow:interview name="CreatePurchaseOrders" finishLocation="{!finishURL}">
+        <apex:param name="selectedPurchaseRequests" value="{!lstSelectedPRs}"/>
+   </flow:interview>
+</apex:page>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_24_Santos_GLNG_581_RM_View</fullName>
+    <columns>Contract__c</columns>
+    <columns>NAME</columns>
+    <columns>Job_Item_Description__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>Item_Frequency__c</columns>
+    <columns>Service_Type__c</columns>
+    <columns>Auto_Populate_in_Daily_Report__c</columns>
+    <columns>Active__c</columns>
+    <columns>Unit_Type__c</columns>
+    <columns>Add_to_NDT__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contract__c</field>
+        <operation>equals</operation>
+        <value>581</value>
+    </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Open</value>
+    </filters>
+    <label>Rig 24 - Santos GLNG (581) RM View</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Rig_24</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QTYReceived_GreaterThanQTY</fullName>
+    <active>true</active>
+    <description>Quantity received is greater than the quantity.</description>
+    <errorConditionFormula>AND(
+   ISCHANGED( Quantity_Received__c ),
+   Quantity_Received__c &gt; Quantity__c
+)</errorConditionFormula>
+    <errorDisplayField>Quantity_Received__c</errorDisplayField>
+    <errorMessage>Quantity received is greater than the quantity.</errorMessage>
+</ValidationRule>

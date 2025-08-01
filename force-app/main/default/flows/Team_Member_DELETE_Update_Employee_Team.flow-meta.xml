@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <environments>Default</environments>
+    <interviewLabel>Team Member - DELETE - Update Employee Team {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Team Member - DELETE - Update Employee Team</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Employee_Team</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Current_Personnel__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Team_Member__c</object>
+        <recordTriggerType>Delete</recordTriggerType>
+        <triggerType>RecordBeforeDelete</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <description>clear the Team field</description>
+        <name>Update_Employee_Team</name>
+        <label>Update Employee - Team</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <flowName>Employee_Update_Team_field</flowName>
+        <inputAssignments>
+            <name>inputEmployeeID</name>
+            <value>
+                <elementReference>$Record.Current_Personnel__c</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

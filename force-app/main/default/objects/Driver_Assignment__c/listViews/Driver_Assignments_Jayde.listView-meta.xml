@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Driver_Assignments_Jayde</fullName>
+    <columns>NAME</columns>
+    <columns>Driver__c</columns>
+    <columns>Start_Date_Time__c</columns>
+    <columns>End_Date_Time__c</columns>
+    <columns>Duration__c</columns>
+    <columns>Driver_Status__c</columns>
+    <columns>Transport_Job__c</columns>
+    <columns>Work_Diary_Number__c</columns>
+    <columns>Work_Diary_Received__c</columns>
+    <columns>Daily_Pre_start_Required__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Start_Date_Time__c</field>
+        <operation>equals</operation>
+        <value>7/6/2025 12:00 AM</value>
+    </filters>
+    <label>Work Diary</label>
+    <sharedTo>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

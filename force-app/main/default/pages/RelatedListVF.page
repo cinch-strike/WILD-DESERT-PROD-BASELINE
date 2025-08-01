@@ -1,0 +1,30 @@
+<apex:page >
+    
+    <apex:slds />
+    <div class="slds-scope">
+        <div class="slds-small-size--12-of-12 slds-medium-size--12-of-12 slds-large-size--12-of-12">
+            <apex:form >
+                
+                <div class="slds-p-around_xxx-small">
+                    <c:RelatedListComponent_VFC Id="hazardCardId" SObjectAPI="Hazard_Card__c" RelatedToField="Daily_Site_Job__c" RelatedToId="a2M0k000000BcSe" FieldSetName="HazardsRelatedListFieldSet" 
+                                                RelatedListName="Hazards" NumberOfRecordPerPage="5"></c:RelatedListComponent_VFC>
+                </div>
+                
+                <hr/>
+                
+                <div class="slds-p-around_xxx-small">
+                    <c:RelatedListComponent_VFC Id="hseqId" SObjectAPI="HSEQ_Forms__c" RelatedToField="Daily_Site_Job__c" RelatedToId="a2M0k000000BcSe" FieldSetName="HseqRelatedListFieldSet" 
+                                                RelatedListName="HSEQ Forms" NumberOfRecordPerPage="5"></c:RelatedListComponent_VFC>
+                </div>
+                
+                <hr/>
+                
+                <div class="slds-p-around_xxx-small">
+                    <c:RelatedListComponent_VFC Id="workIrderId" SObjectAPI="Job_Cards__c" RelatedToField="Daily_Site_Job__c" RelatedToId="a2M0k000000BcSe" FieldSetName="WorkOrderRelatedListFieldSet" 
+                                                RelatedListName="Work Order" NumberOfRecordPerPage="5"></c:RelatedListComponent_VFC>
+                </div>
+            </apex:form>
+        </div>
+    </div>
+    
+</apex:page>

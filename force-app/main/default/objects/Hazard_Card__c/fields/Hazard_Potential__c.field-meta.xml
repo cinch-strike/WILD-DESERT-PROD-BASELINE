@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hazard_Potential__c</fullName>
+    <label>Hazard Potential</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Caught in rotating equipment</fullName>
+                <default>false</default>
+                <label>Caught in rotating equipment</label>
+            </value>
+            <value>
+                <fullName>Chemical Exposure to Person</fullName>
+                <default>false</default>
+                <label>Chemical Exposure to Person</label>
+            </value>
+            <value>
+                <fullName>Dropped Object</fullName>
+                <default>false</default>
+                <label>Dropped Object</label>
+            </value>
+            <value>
+                <fullName>Environmental Impact/Spill</fullName>
+                <default>false</default>
+                <label>Environmental Impact/Spill</label>
+            </value>
+            <value>
+                <fullName>Equipment Damage</fullName>
+                <default>false</default>
+                <label>Equipment Damage</label>
+            </value>
+            <value>
+                <fullName>Equipment Failure</fullName>
+                <default>false</default>
+                <label>Equipment Failure</label>
+            </value>
+            <value>
+                <fullName>Exposure to Electricity</fullName>
+                <default>false</default>
+                <label>Exposure to Electricity</label>
+            </value>
+            <value>
+                <fullName>Exposure to Fatigue</fullName>
+                <default>false</default>
+                <label>Exposure to Fatigue</label>
+            </value>
+            <value>
+                <fullName>Exposure to Heat/Cold</fullName>
+                <default>false</default>
+                <label>Exposure to Heat/Cold</label>
+            </value>
+            <value>
+                <fullName>Exposure to Stored Energy</fullName>
+                <default>false</default>
+                <label>Exposure to Stored Energy</label>
+            </value>
+            <value>
+                <fullName>Fall from Heights</fullName>
+                <default>false</default>
+                <label>Fall from Heights</label>
+            </value>
+            <value>
+                <fullName>Fall on Same Level</fullName>
+                <default>false</default>
+                <label>Fall on Same Level</label>
+            </value>
+            <value>
+                <fullName>Fire/Explosion</fullName>
+                <default>false</default>
+                <label>Fire/Explosion</label>
+            </value>
+            <value>
+                <fullName>Hearing Damage</fullName>
+                <default>false</default>
+                <label>Hearing Damage</label>
+            </value>
+            <value>
+                <fullName>Hit by Moving Equipment/Machine/Vehicle</fullName>
+                <default>false</default>
+                <label>Hit by Moving Equipment/Machine/Vehicle</label>
+            </value>
+            <value>
+                <fullName>Loss of Well Control</fullName>
+                <default>false</default>
+                <label>Loss of Well Control</label>
+            </value>
+            <value>
+                <fullName>Muscle Strain / Sprain</fullName>
+                <default>false</default>
+                <label>Muscle Strain / Sprain</label>
+            </value>
+            <value>
+                <fullName>Unauthorized Access to Site/Work Area</fullName>
+                <default>false</default>
+                <label>Unauthorized Access to Site/Work Area</label>
+            </value>
+            <value>
+                <fullName>Vehicle Accident</fullName>
+                <default>false</default>
+                <label>Vehicle Accident</label>
+            </value>
+            <value>
+                <fullName>Vibration Exposure</fullName>
+                <default>false</default>
+                <label>Vibration Exposure</label>
+            </value>
+            <value>
+                <fullName>Slips, Trips &amp; Falls</fullName>
+                <default>false</default>
+                <label>Slips, Trips &amp; Falls</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>6</visibleLines>
+</CustomField>

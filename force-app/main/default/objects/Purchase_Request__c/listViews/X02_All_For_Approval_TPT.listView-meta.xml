@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X02_All_For_Approval_TPT</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Quantity__c</columns>
+    <columns>Item_Name_Hyperlink__c</columns>
+    <columns>Work_Order__c</columns>
+    <columns>Asset__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Supplier__c</columns>
+    <columns>Cost_Price_GST_exc__c</columns>
+    <columns>Total_Cost_Price_GST_exc__c</columns>
+    <columns>Destination_Store__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Status__c</columns>
+    <columns>Purchase_Request_Approver__c</columns>
+    <columns>Cost_Allocation_Unit__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>For Approval,For Pricing Approval</value>
+    </filters>
+    <filters>
+        <field>Destination_Store__c</field>
+        <operation>contains</operation>
+        <value>TPT,Transport</value>
+    </filters>
+    <label>02 All For Approval / TPT Manager</label>
+</ListView>

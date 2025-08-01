@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>wd_all_hazards</fullName>
+    <columns>NAME</columns>
+    <columns>Unit__c</columns>
+    <columns>Status__c</columns>
+    <columns>Date__c</columns>
+    <columns>Date_Closed__c</columns>
+    <columns>Hazard_Type__c</columns>
+    <columns>Hazard_Description__c</columns>
+    <columns>Hazard_Potential__c</columns>
+    <columns>Imediate_Actions_Taken__c</columns>
+    <columns>Operations_at_Time__c</columns>
+    <columns>Follow_Up_Action__c</columns>
+    <columns>Risk_Rating__c</columns>
+    <columns>Reported_By__c</columns>
+    <columns>Unit_Manager__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Open</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Hazard_Card__c.Hazard_Card</value>
+    </filters>
+    <label>WD - Hazard Register (Open)</label>
+    <sharedTo>
+        <group>OPs_super</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

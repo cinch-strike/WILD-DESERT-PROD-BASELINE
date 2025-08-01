@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Letterhead xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <backgroundColor>#CCCCCC</backgroundColor>
+    <bodyColor>#FFFFFF</bodyColor>
+    <bottomLine>
+        <color>#000000</color>
+        <height>5</height>
+    </bottomLine>
+    <description>Wild Desert Letterhead</description>
+    <footer>
+        <backgroundColor>#FFFFFF</backgroundColor>
+        <height>0</height>
+        <horizontalAlignment>Left</horizontalAlignment>
+        <verticalAlignment>Top</verticalAlignment>
+    </footer>
+    <header>
+        <backgroundColor>#FFFFFF</backgroundColor>
+        <height>0</height>
+        <horizontalAlignment>Left</horizontalAlignment>
+        <logo>biz3__Biz/WD_Letterhead_logo.png</logo>
+        <verticalAlignment>Top</verticalAlignment>
+    </header>
+    <middleLine>
+        <color>#FFFFFF</color>
+        <height>0</height>
+    </middleLine>
+    <name>Wild Desert</name>
+    <topLine>
+        <color>#FFFFFF</color>
+        <height>0</height>
+    </topLine>
+</Letterhead>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NHVAS_SV_Closed_within_QTR</fullName>
+    <columns>NAME</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Date_Created__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>Type_of_Maintenance__c</columns>
+    <columns>Unit_of_Asset__c</columns>
+    <columns>Status__c</columns>
+    <columns>Date_Completed__c</columns>
+    <columns>Service_Attached__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Job_Cards__c.Scheduled_Service</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Completed</value>
+    </filters>
+    <filters>
+        <field>NHVAS_Asset__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Date_Completed__c</field>
+        <operation>lessOrEqual</operation>
+        <value>3/31/2025</value>
+    </filters>
+    <filters>
+        <field>Date_Completed__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>1/1/2025</value>
+    </filters>
+    <label>NHVAS - SV | Completed within QTR</label>
+    <sharedTo>
+        <group>Safety</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

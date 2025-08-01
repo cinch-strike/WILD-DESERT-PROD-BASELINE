@@ -1,0 +1,24 @@
+<apex:page standardcontroller="Job_Cards__c">
+<chatter:feed entityId="{!Job_Cards__c.id}"></chatter:feed>
+ <apex:form >
+ <apex:pageBlock title="Job Card Re-Assignment">
+     <apex:pageBlockButtons >
+         <apex:commandButton action="{!save}" value="Re-assign"/>
+         <apex:commandButton action="{!cancel}" value="Cancel"/>
+     </apex:pageBlockButtons>
+     <apex:pageBlockSection title="Job Card Details">
+         <apex:outputField value="{!Job_Cards__c.Name}"/>
+         <apex:outputField value="{!Job_Cards__c.Status__c}"/>
+         <apex:pageBlockSectionItem >
+              <apex:outputLabel >Current Employee Assigned:</apex:outputLabel>
+              <apex:outputField value="{!Job_Cards__c.Managed_By_DONT__c}"/>
+         </apex:pageBlockSectionItem>
+         <apex:outputField value="{!Job_Cards__c.Date_Completed__c}"/>
+         <apex:pageBlockSectionItem >
+              <apex:outputLabel >Re-Assign to:</apex:outputLabel>
+              <apex:inputField value="{!Job_Cards__c.Managed_By_DONT__c}"/>
+         </apex:pageBlockSectionItem>
+     </apex:pageBlockSection>
+ </apex:pageBlock>
+ </apex:form>
+</apex:page>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Classification__c</fullName>
+    <label>Classification</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Project - Build Phase</fullName>
+                <default>false</default>
+                <label>Project - Build Phase</label>
+            </value>
+            <value>
+                <fullName>Project - Paint</fullName>
+                <default>false</default>
+                <label>Project - Paint</label>
+            </value>
+            <value>
+                <fullName>Project - Fit Out</fullName>
+                <default>false</default>
+                <label>Project - Fit Out</label>
+            </value>
+            <value>
+                <fullName>Maintenance</fullName>
+                <default>true</default>
+                <label>Maintenance</label>
+            </value>
+            <value>
+                <fullName>Breakdown - Urgent</fullName>
+                <default>false</default>
+                <label>Breakdown - Urgent</label>
+            </value>
+            <value>
+                <fullName>Damages - Incident</fullName>
+                <default>false</default>
+                <label>Damages - Incident</label>
+            </value>
+            <value>
+                <fullName>New Asset - Build</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>New Asset - Build</label>
+            </value>
+            <value>
+                <fullName>Refurb</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Refurb</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

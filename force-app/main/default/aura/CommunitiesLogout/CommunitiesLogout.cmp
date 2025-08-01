@@ -1,0 +1,4 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" 
+ access="global">
+    <ui:button label="Logout" press="{!c.logout}"/>
+</aura:component>

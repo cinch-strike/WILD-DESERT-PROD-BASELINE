@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Decimal_in_15min_intervals_Rest</fullName>
+    <active>false</active>
+    <description>Rule to ensure that time is in15 min intervals.</description>
+    <errorConditionFormula>IF(
+  NOT(ISBLANK(End_Date_Time__c)),
+  NOT(
+    OR(
+      (Total_Rest_Time__c - FLOOR(Total_Rest_Time__c)) = 0.00,
+      (Total_Rest_Time__c - FLOOR(Total_Rest_Time__c)) = 0.25,
+      (Total_Rest_Time__c - FLOOR(Total_Rest_Time__c)) = 0.5,
+      (Total_Rest_Time__c - FLOOR(Total_Rest_Time__c)) = 0.75
+    )
+  ),
+  FALSE
+)</errorConditionFormula>
+    <errorDisplayField>Total_Rest_Time__c</errorDisplayField>
+    <errorMessage>Please make sure your time is in 15min intervals. For example 4hrs and 15min = 4.25</errorMessage>
+</ValidationRule>

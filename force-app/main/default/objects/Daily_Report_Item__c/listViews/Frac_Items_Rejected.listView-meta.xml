@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Frac_Items_Rejected</fullName>
+    <columns>DSJ_Site__c</columns>
+    <columns>Contract_Job_Item__c</columns>
+    <columns>Daily_Site_Job_Summary__c</columns>
+    <columns>NAME</columns>
+    <columns>ReportDate__c</columns>
+    <columns>Description__c</columns>
+    <columns>Quantity_Hour__c</columns>
+    <columns>Total_Cost__c</columns>
+    <columns>DSJS_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contract_Job_Item__c</field>
+        <operation>contains</operation>
+        <value>Standby -</value>
+    </filters>
+    <filters>
+        <field>DSJS_Status__c</field>
+        <operation>equals</operation>
+        <value>Invoiced - Disputed</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Daily_Report_Item__c.Per_Quantity</value>
+    </filters>
+    <filters>
+        <field>Contract_Job_Item__c</field>
+        <operation>notContain</operation>
+        <value>No Charge</value>
+    </filters>
+    <label>Frac Items - Disputed</label>
+</ListView>

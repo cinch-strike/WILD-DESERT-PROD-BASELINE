@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Group_Type__c</fullName>
+    <label>Group Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Engine_Model</fullName>
+                <default>false</default>
+                <label>Engine Model</label>
+            </value>
+            <value>
+                <fullName>Suspension</fullName>
+                <default>false</default>
+                <label>Suspension</label>
+            </value>
+            <value>
+                <fullName>Gear Box</fullName>
+                <default>false</default>
+                <label>Gear Box</label>
+            </value>
+            <value>
+                <fullName>Front Axle</fullName>
+                <default>false</default>
+                <label>Front Axle</label>
+            </value>
+            <value>
+                <fullName>Cab Suspension</fullName>
+                <default>false</default>
+                <label>Cab Suspension</label>
+            </value>
+            <value>
+                <fullName>Diffs</fullName>
+                <default>false</default>
+                <label>Diffs</label>
+            </value>
+            <value>
+                <fullName>Drive Tyres</fullName>
+                <default>false</default>
+                <label>Drive Tyres</label>
+            </value>
+            <value>
+                <fullName>Steer Tyres</fullName>
+                <default>false</default>
+                <label>Steer Tyres</label>
+            </value>
+            <value>
+                <fullName>Trailer/Dolly Tyres</fullName>
+                <default>false</default>
+                <label>Trailer/Dolly Tyres</label>
+            </value>
+            <value>
+                <fullName>Rims</fullName>
+                <default>false</default>
+                <label>Rims</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

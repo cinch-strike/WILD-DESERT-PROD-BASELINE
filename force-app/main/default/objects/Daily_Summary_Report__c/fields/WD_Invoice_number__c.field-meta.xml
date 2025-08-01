@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WD_Invoice_number__c</fullName>
+    <description>Invoice number in external corresponding external accounting system</description>
+    <externalId>false</externalId>
+    <label>WD Invoice #</label>
+    <length>30</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

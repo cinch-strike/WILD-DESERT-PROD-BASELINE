@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Annual_Roadworthy_NHVAS_Assets</fullName>
+        <description>Annual Roadworthy - NHVAS Assets</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>rose.steers@wilddesert.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>transport.manager@wilddesert.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>servicing@wilddesert.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Assets/Annual_Roadworthy_Reminder</template>
+    </alerts>
+    <alerts>
+        <fullName>Rego_Has_Expired</fullName>
+        <description>Rego Has Expired</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>finance@wilddesert.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>pauline.mc@wilddesert.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rose.steers@wilddesert.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>servicing@wilddesert.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Assets/Rego_Has_Expired</template>
+    </alerts>
+    <alerts>
+        <fullName>Rego_Is_Due_To_Expire</fullName>
+        <description>Rego Is Due To Expire.</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ashleigh.walker@wilddesert.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>servicing@wilddesert.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Assets/Rego_Reminder_30_Days</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Next_Job_Creation_Reading_Update</fullName>
+        <field>Next_Job_Card_creation_reading__c</field>
+        <formula>IF( $RecordType.DeveloperName  = &apos;Light_Vehicles&apos;, 9000, 
+ IF( OR( $RecordType.DeveloperName =&apos;Cranes&apos;,$RecordType.DeveloperName =&apos;Non_Vehicle_Engine&apos;, $RecordType.DeveloperName =&apos;Rigs&apos;,$RecordType.DeveloperName  = &apos;Forklifts&apos;,$RecordType.DeveloperName  = &apos;Loaders&apos;) , 150, 
+  IF( OR( $RecordType.DeveloperName  = &apos;Dollies&apos; , $RecordType.DeveloperName  = &apos;Prime_Mover&apos;, $RecordType.DeveloperName  = &apos;Trailer&apos;) , 18500, 0)
+ ) 
+)</formula>
+        <name>Next Job Creation Reading Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Next_Service_Due_Hrs_Default_value</fullName>
+        <field>Next_Service_Due_Hrs__c</field>
+        <formula>IF( OR( 
+ $RecordType.DeveloperName =&apos;Cranes&apos;,
+ $RecordType.DeveloperName =&apos;Non_Vehicle_Engine&apos;, 
+ $RecordType.DeveloperName =&apos;Rigs&apos;,
+ $RecordType.DeveloperName = &apos;Forklifts&apos;,
+ $RecordType.DeveloperName = &apos;Loaders&apos;), 250, null
+)</formula>
+        <name>Next Service Due - Hrs Default value</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Next_Service_Due_km_field_update</fullName>
+        <field>Next_Service_Due_km__c</field>
+        <formula>IF( $RecordType.DeveloperName = &apos;Light_Vehicles&apos;, 10000,
+ IF( OR( 
+          $RecordType.DeveloperName = &apos;Dollies&apos; , 
+          $RecordType.DeveloperName = &apos;Prime_Mover&apos;, 
+          $RecordType.DeveloperName = &apos;Trailer&apos;) , 20000, null
+ )
+)</formula>
+        <name>Next Service Due km field update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update</fullName>
+        <field>Next_Service_Due_Hrs__c</field>
+        <formula>IF (
+(Next_Job_Card_creation_reading__c &gt;  Engine_Hours__c ), (Next_Job_Card_creation_reading__c + 100), 
+(Next_Job_Card_creation_reading__c + 350)
+)</formula>
+        <name>Update next service - hours</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_next_service_light_vehicle</fullName>
+        <field>Next_Service_Due_km__c</field>
+        <formula>IF (
+(Next_Job_Card_creation_reading__c &gt; Current_Odometer_Reading__c), (Next_Job_Card_creation_reading__c + 1000), 
+(Next_Job_Card_creation_reading__c + 11000)
+)</formula>
+        <name>Update next service - light vehicle</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_next_service_prime_movers</fullName>
+        <field>Next_Service_Due_km__c</field>
+        <formula>IF (
+(Next_Job_Card_creation_reading__c &gt; Current_Odometer_Reading__c), (Next_Job_Card_creation_reading__c + 1500), 
+(Next_Job_Card_creation_reading__c + 21500)
+)</formula>
+        <name>Update next service - prime movers</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>30 Days To Rego Expiry</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Asset__c.Days_to_rego_expiry__c</field>
+            <operation>equals</operation>
+            <value>30</value>
+        </criteriaItems>
+        <description>30 Days To Rego Expiry</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Annual Roadworthy - Reminder</fullName>
+        <actions>
+            <name>Annual_Roadworthy_NHVAS_Assets</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Asset__c.Days_To_Roadworthy_Expiry__c</field>
+            <operation>equals</operation>
+            <value>30</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Next Job Creation Reading Default Value</fullName>
+        <actions>
+            <name>Next_Job_Creation_Reading_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Asset__c.Name</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Next Service Due km%2FNext Service Due - Hrs Default Value</fullName>
+        <actions>
+            <name>Next_Service_Due_Hrs_Default_value</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Next_Service_Due_km_field_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Asset__c.Name</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rego Has Expired</fullName>
+        <actions>
+            <name>Rego_Has_Expired</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Asset__c.Days_to_rego_expiry__c</field>
+            <operation>lessOrEqual</operation>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Asset__c.Rego_Expiry_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Rego Has Expired</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Next Service due - Cranes</fullName>
+        <actions>
+            <name>Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Asset__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Cranes,Forklifts,Loaders,Non-Vehicle Engine,Rigs</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Next Service due - Light Vehicle</fullName>
+        <actions>
+            <name>Update_next_service_light_vehicle</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Asset__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Light Vehicles</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Next Service due - Prime Movers</fullName>
+        <actions>
+            <name>Update_next_service_prime_movers</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Asset__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Dollies,Prime Mover,Trailer</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Owner of Asset to Match Unit</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Asset__c.Unit_Owner__c</field>
+            <operation>greaterThan</operation>
+            <value>*</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update child asset details</fullName>
+        <active>false</active>
+        <formula>ISBLANK( Parent_Asset__c )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

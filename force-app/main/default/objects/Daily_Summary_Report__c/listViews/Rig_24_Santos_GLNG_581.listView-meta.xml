@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_24_Santos_GLNG_581</fullName>
+    <columns>NAME</columns>
+    <columns>Summary_Report_Date__c</columns>
+    <columns>Site__c</columns>
+    <columns>WD_Notes__c</columns>
+    <columns>WD_Invoice_number__c</columns>
+    <columns>Status__c</columns>
+    <columns>Days_Aging__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contract__c</field>
+        <operation>equals</operation>
+        <value>581</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notContain</operation>
+        <value>Invoiced - Paid</value>
+    </filters>
+    <label>Rig 24 - Santos GLNG (581)</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>HR</group>
+        <group>OPs_super</group>
+        <group>Rig_24</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Well_Site</fullName>
+    <active>true</active>
+    <label>Well Site</label>
+    <picklistValues>
+        <picklist>Site_Status__c</picklist>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inv - Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inv - Disputed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inv - Draft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inv - Sent for Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Open - Inactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready to Invoice</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>State__c</picklist>
+        <values>
+            <fullName>ACT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NSW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QLD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TAS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VIC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Active Site</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Inactive Site</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Work_Scope__c</picklist>
+        <values>
+            <fullName>Camp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flush</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Initial Completion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plug and Abandon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surface Repair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suspension</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Work Over</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Item_Name_Hyperlink__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISBLANK( New_Item_Name__c )) &amp;&amp; ISBLANK( Item__c ) ,
+New_Item_Name__c,HYPERLINK(&apos;/lightning/r/Inventory_Item__c/&apos;&amp; Item__r.Id &amp;&apos;/view&apos;, Item__r.Name))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Item Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

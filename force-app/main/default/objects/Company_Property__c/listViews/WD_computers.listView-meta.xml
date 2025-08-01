@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WD_computers</fullName>
+    <columns>Type__c</columns>
+    <columns>NAME</columns>
+    <columns>Email_Address__c</columns>
+    <columns>Description__c</columns>
+    <columns>Serial__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Assigned_To__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>Unit__c</columns>
+    <columns>Date_in_Service__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Company_Property__c.Computers</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Laptop,PC,Mini Mac</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Currently Assigned (In Use)</value>
+    </filters>
+    <label>WD Computer Register - Assigned</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>HR</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Minimum_7hrs_of_continuous_rest__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>The driver has had the minimum 7hrs of continuous rest.</inlineHelpText>
+    <label>Minimum 7hrs of continuous rest</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

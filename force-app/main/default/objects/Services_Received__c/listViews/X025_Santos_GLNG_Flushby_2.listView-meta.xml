@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X025_Santos_GLNG_Flushby_2</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>Contract__c</columns>
+    <columns>Contract_unit__c</columns>
+    <columns>NAME</columns>
+    <columns>Description__c</columns>
+    <columns>Rate__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contract_unit__c</field>
+        <operation>equals</operation>
+        <value>025</value>
+    </filters>
+    <filters>
+        <field>Client__c</field>
+        <operation>equals</operation>
+        <value>Santos GLNG (QLD)</value>
+    </filters>
+    <label>025-Santos GLNG Flushby #2</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

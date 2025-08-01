@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>td39</fullName>
+    <columns>NAME</columns>
+    <columns>Date__c</columns>
+    <columns>TD__c</columns>
+    <columns>TD_Received__c</columns>
+    <columns>Invoice__c</columns>
+    <columns>SO__c</columns>
+    <columns>WD_Unit__c</columns>
+    <columns>Description_of_Operations__c</columns>
+    <columns>Asset__c</columns>
+    <columns>Employee__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>TD__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>14801</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>ServicesReceived__c.Transport_services</value>
+    </filters>
+    <filters>
+        <field>TD__c</field>
+        <operation>lessOrEqual</operation>
+        <value>14850</value>
+    </filters>
+    <label>TD 14801-14850</label>
+    <sharedTo>
+        <group>Finance</group>
+    </sharedTo>
+</ListView>

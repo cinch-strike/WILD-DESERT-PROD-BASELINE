@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hose_Rig_snub</fullName>
+    <columns>NAME</columns>
+    <columns>Description__c</columns>
+    <columns>Hose__c</columns>
+    <columns>Certificate_Number__c</columns>
+    <columns>Date_In_Service__c</columns>
+    <columns>Inspection_Requirement__c</columns>
+    <columns>Next_Inspection__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Inspection_Certification__c.Hose</value>
+    </filters>
+    <label>Snub Unit - Hoses</label>
+    <sharedTo>
+        <group>OPs_super</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

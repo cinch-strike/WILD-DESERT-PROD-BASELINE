@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_26_Pre_Charge_Bottles</fullName>
+    <columns>NAME</columns>
+    <columns>Pre_Charge_Bottles__c</columns>
+    <columns>Description__c</columns>
+    <columns>Serial_ID__c</columns>
+    <columns>Certificate_Number__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>Asset_ID__c</columns>
+    <columns>Inspection_Requirement__c</columns>
+    <columns>Interval_days__c</columns>
+    <columns>Date_Last_Inspection__c</columns>
+    <columns>Days_to_Inspection__c</columns>
+    <columns>Date_of_Next_Inspection__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Inspection_Certification__c.Pre_Charge_Bottles</value>
+    </filters>
+    <filters>
+        <field>WD_Unit__c</field>
+        <operation>contains</operation>
+        <value>Rig 26</value>
+    </filters>
+    <label>Rig #26 - Pre-Charge Bottles</label>
+    <sharedTo>
+        <group>Fabrication</group>
+        <group>OPs_super</group>
+        <group>Purchasing</group>
+        <group>Rig_26</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

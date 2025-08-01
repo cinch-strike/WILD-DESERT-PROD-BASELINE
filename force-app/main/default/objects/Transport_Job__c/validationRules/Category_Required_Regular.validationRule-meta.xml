@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category_Required_Regular</fullName>
+    <active>false</active>
+    <description>The Category field is required for regular transport job.</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL( Types__c , &apos;Regular&apos;),
+    ISBLANK( TEXT(Category__c) )
+)</errorConditionFormula>
+    <errorDisplayField>Category__c</errorDisplayField>
+    <errorMessage>The Category field is required for Regular transport job.</errorMessage>
+</ValidationRule>

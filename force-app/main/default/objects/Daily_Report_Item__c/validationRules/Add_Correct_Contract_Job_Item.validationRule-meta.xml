@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Add_Correct_Contract_Job_Item</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(
+AND(NOT(ISBLANK(Contract_Job_Item__c)),NOT(Daily_Report__r.Contract__c =  Contract_Job_Item__r.Contract__c)),
+true,
+false
+)</errorConditionFormula>
+    <errorMessage>Add Contract Job Item that is associated with the Contract of the Daily Site Job.</errorMessage>
+</ValidationRule>

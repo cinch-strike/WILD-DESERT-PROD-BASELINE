@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>covid_r8</fullName>
+    <columns>NAME</columns>
+    <columns>Name__c</columns>
+    <columns>Date_1st_vaccine__c</columns>
+    <columns>Date_2nd_Vaccine__c</columns>
+    <columns>Vaccine_Type__c</columns>
+    <columns>Vaccine_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Health_Medical_Records__c.Covid_Vax</value>
+    </filters>
+    <filters>
+        <field>Employee_Status__c</field>
+        <operation>equals</operation>
+        <value>active</value>
+    </filters>
+    <filters>
+        <field>Assigned_To_Unit__c</field>
+        <operation>equals</operation>
+        <value>rig 8</value>
+    </filters>
+    <label>C19 Vax|Rig #08</label>
+    <sharedTo>
+        <group>HR</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

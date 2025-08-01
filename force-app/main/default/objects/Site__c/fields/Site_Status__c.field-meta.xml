@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Site_Status__c</fullName>
+    <inlineHelpText>Open: Active;
+Open - Inactive: Inactive,Winding up;
+Closed: Inactive, Work Complete;</inlineHelpText>
+    <label>Site Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Open</fullName>
+                <default>true</default>
+                <label>Open</label>
+            </value>
+            <value>
+                <fullName>Open - Inactive</fullName>
+                <default>false</default>
+                <label>Open - Inactive</label>
+            </value>
+            <value>
+                <fullName>Closed</fullName>
+                <default>false</default>
+                <label>Closed</label>
+            </value>
+            <value>
+                <fullName>Ready to Invoice</fullName>
+                <default>false</default>
+                <label>Ready to Invoice</label>
+            </value>
+            <value>
+                <fullName>Inv - Draft</fullName>
+                <default>false</default>
+                <label>Inv - Draft</label>
+            </value>
+            <value>
+                <fullName>Inv - Sent for Approval</fullName>
+                <default>false</default>
+                <label>Inv - Sent for Approval</label>
+            </value>
+            <value>
+                <fullName>Inv - Approved</fullName>
+                <default>false</default>
+                <label>Inv - Approved</label>
+            </value>
+            <value>
+                <fullName>Inv - Disputed</fullName>
+                <default>false</default>
+                <label>Inv - Disputed</label>
+            </value>
+            <value>
+                <fullName>Paid</fullName>
+                <default>false</default>
+                <label>Inv - Paid</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

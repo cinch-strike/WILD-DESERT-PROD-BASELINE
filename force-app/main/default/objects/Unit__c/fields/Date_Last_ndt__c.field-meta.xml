@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_Last_ndt__c</fullName>
+    <inlineHelpText>When specified, NDT hours are computed from this date onwards. If blank, it counts all NDT hours for this Unit</inlineHelpText>
+    <label>NDT Start Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

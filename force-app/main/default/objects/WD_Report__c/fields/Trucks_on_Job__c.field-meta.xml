@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trucks_on_Job__c</fullName>
+    <label>Trucks on Job</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Unit 01</fullName>
+                <default>false</default>
+                <label>Unit 01</label>
+            </value>
+            <value>
+                <fullName>Unit 02</fullName>
+                <default>false</default>
+                <label>Unit 02</label>
+            </value>
+            <value>
+                <fullName>Unit 03</fullName>
+                <default>false</default>
+                <label>Unit 03</label>
+            </value>
+            <value>
+                <fullName>Unit 04</fullName>
+                <default>false</default>
+                <label>Unit 04</label>
+            </value>
+            <value>
+                <fullName>Unit 05</fullName>
+                <default>false</default>
+                <label>Unit 05</label>
+            </value>
+            <value>
+                <fullName>Unit 06</fullName>
+                <default>false</default>
+                <label>Unit 06</label>
+            </value>
+            <value>
+                <fullName>Unit 07</fullName>
+                <default>false</default>
+                <label>Unit 07</label>
+            </value>
+            <value>
+                <fullName>Unit 08</fullName>
+                <default>false</default>
+                <label>Unit 08</label>
+            </value>
+            <value>
+                <fullName>Unit 09</fullName>
+                <default>false</default>
+                <label>Unit 09</label>
+            </value>
+            <value>
+                <fullName>Unit 10</fullName>
+                <default>false</default>
+                <label>Unit 10</label>
+            </value>
+            <value>
+                <fullName>Unit 11</fullName>
+                <default>false</default>
+                <label>Unit 11</label>
+            </value>
+            <value>
+                <fullName>Unit 12</fullName>
+                <default>false</default>
+                <label>Unit 12</label>
+            </value>
+            <value>
+                <fullName>Unit 13</fullName>
+                <default>false</default>
+                <label>Unit 13</label>
+            </value>
+            <value>
+                <fullName>Unit 14</fullName>
+                <default>false</default>
+                <label>Unit 14</label>
+            </value>
+            <value>
+                <fullName>Unit 15</fullName>
+                <default>false</default>
+                <label>Unit 15</label>
+            </value>
+            <value>
+                <fullName>Unit 16</fullName>
+                <default>false</default>
+                <label>Unit 16</label>
+            </value>
+            <value>
+                <fullName>Unit 17</fullName>
+                <default>false</default>
+                <label>Unit 17</label>
+            </value>
+            <value>
+                <fullName>Unit 18</fullName>
+                <default>false</default>
+                <label>Unit 18</label>
+            </value>
+            <value>
+                <fullName>Unit 19</fullName>
+                <default>false</default>
+                <label>Unit 19</label>
+            </value>
+            <value>
+                <fullName>Ute (Transport Pusher)</fullName>
+                <default>false</default>
+                <label>Ute (Transport Pusher)</label>
+            </value>
+            <value>
+                <fullName>Subcontractor</fullName>
+                <default>false</default>
+                <label>Subcontractor</label>
+            </value>
+            <value>
+                <fullName>Escort Vehicle</fullName>
+                <default>false</default>
+                <label>Escort Vehicle</label>
+            </value>
+            <value>
+                <fullName>Loader</fullName>
+                <default>false</default>
+                <label>Loader</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

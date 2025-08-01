@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Special_Item_Request</fullName>
+    <active>false</active>
+    <description>Mark Special Item Required</description>
+    <errorConditionFormula>CONTAINS(Item_Name__r.Name , &apos;Special Item Request&apos;)  &amp;&amp;  ISBLANK( Special_Item_Details__c )</errorConditionFormula>
+    <errorDisplayField>Special_Item_Details__c</errorDisplayField>
+    <errorMessage>Please enter special item details.</errorMessage>
+</ValidationRule>

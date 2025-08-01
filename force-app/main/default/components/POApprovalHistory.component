@@ -1,0 +1,10 @@
+<apex:component controller="POApprovalHistoryCtrl" access="global">
+    <apex:attribute name="POId" assignTo="{!POId}" type="Id" description="Id of the PO" /> 
+    <apex:dataTable value="{!approvalSteps}" var="step">
+        <apex:column value="{!step.SystemModstamp}" headerValue="Date"/>
+        <apex:column value="{!step.StepStatus}" headerValue="Status"/>
+        <apex:column value="{!step.OriginalActorId}" headerValue="Assigned To"/>
+        <apex:column value="{!step.ActorID}" headerValue="Actual Approver"/>
+        <apex:column value="{!step.Comments}" headerValue="Comments"/>
+    </apex:dataTable>
+</apex:component>

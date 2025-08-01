@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Document_Type__c</fullName>
+    <label>Document Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Certificate_COC</fullName>
+                <default>false</default>
+                <label>Certificate (COC)</label>
+            </value>
+            <value>
+                <fullName>Drawings</fullName>
+                <default>false</default>
+                <label>Drawings</label>
+            </value>
+            <value>
+                <fullName>Manual - Servicing</fullName>
+                <default>false</default>
+                <label>Manual - Servicing</label>
+            </value>
+            <value>
+                <fullName>Document</fullName>
+                <default>false</default>
+                <label>Document</label>
+            </value>
+            <value>
+                <fullName>Certificate of Service</fullName>
+                <default>false</default>
+                <label>Certificate of Service</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

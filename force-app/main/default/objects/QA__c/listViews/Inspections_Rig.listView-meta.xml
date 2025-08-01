@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inspections_Rig</fullName>
+    <columns>NAME</columns>
+    <columns>Due_Date__c</columns>
+    <columns>Date_Conducted__c</columns>
+    <columns>WD_Unit__c</columns>
+    <columns>Type__c</columns>
+    <columns>Details__c</columns>
+    <columns>Conducted_by__c</columns>
+    <columns>Closure_Target_Date__c</columns>
+    <columns>Status__c</columns>
+    <columns>Document_Attached__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>QA__c.Inspections</value>
+    </filters>
+    <label>WD Inspections</label>
+    <sharedTo>
+        <group>HR</group>
+        <group>OPs_super</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

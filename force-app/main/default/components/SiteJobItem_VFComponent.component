@@ -1,0 +1,608 @@
+<apex:component allowDML="true" controller="SiteJobItemVFC_Controller" id="SiteJobItem" layout="block" selfClosing="false" >
+    
+    <apex:attribute name="DailyReportRecordId" assignTo="{!dailyReportId}" Type="Id" Description="Used to pass Daily Site Job Id">
+    </apex:attribute>
+    
+    <apex:attribute name="ShowSaveNextButtons" assignTo="{!showSaveNext}" Type="Boolean" Description="To handle buttons for Daily Site Job VF" default="FALSE">
+    </apex:attribute>
+    
+    <apex:attribute name="isRecordLocked" Type="Boolean" Description="" />
+    
+    <apex:stylesheet value="{!URLFOR($Resource.SLDS232, 'assets/styles/salesforce-lightning-design-system.min.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.SLDS232, 'assets/styles/salesforce-lightning-design-system.css')}"/>
+    <apex:stylesheet value="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css"/>
+    
+    <apex:includeScript value="https://code.jquery.com/jquery-1.11.1.min.js"/>
+    <apex:includeScript value="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"/>
+    <apex:stylesheet value="https://cdn.datatables.net/1.10.7/css/jquery.dataTables.css"/>
+    <apex:includeScript value="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"/>
+    <apex:includeScript value="{!URLFOR($Resource.Typeahead, '/typeahead.bundle.min.js')}"/>
+    
+    <style>
+        .lookupHoverDetail , #InlineEditDialogX, #InlineEditDialog_buttons, #InlineEditDialog{
+        display:none !important;
+        }
+        
+        a.slds-inputdisplaynone{
+        display:none;
+        }
+        
+        .dateFormat{
+        display:none;
+        }
+        
+        .slds-input-custom{
+        width: 40px;
+        }
+        input.slds-lookup{
+        width: 105px !important;
+        }
+        .slds-lookup{
+        width: 80% !important;
+        }
+        a.slds-lookup{
+        background-size: 20px 20px;
+        border: 0px;
+        background: transparent;
+        padding: 0 0rem 0 0rem !important;
+        width:30px !important;
+        }
+        img.lookupIcon{
+        background: url("/resource/SLDS232/assets/icons/utility/search_60.png") no-repeat 6px center;
+        background-size: 20px 20px;
+        //margin-left: -13px;
+        width: 100% !important;
+        }
+        .lookupadjust{
+        margin-left: -5px !important;
+        }
+        img.lookupIconOn{
+        background: url("/resource/SLDS232/assets/icons/utility/search_60.png") no-repeat 6px center;
+        background-size: 20px 20px;
+        //margin-left: -13px;
+        width: 100% !important;
+        }
+        .headerWidth{
+        width:1px;
+        }
+        
+        .slds-spinner:before, .slds-spinner:after, .slds-spinner__dot-a:before, .slds-spinner__dot-b:before, .slds-spinner__dot-a:after, .slds-spinner__dot-b:after {
+        background: #0070d2;
+        }
+        
+        .tt-search-box, .tt-query, .tt-hint {
+        width: 170% !important;
+        }
+        .tt-dropdown-menu{
+        width: max-content !important;
+        }
+        
+        
+    </style>
+    
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_12-of-12">
+            
+            <!--<apex:form id="frm" >-->
+            
+            <apex:actionFunction name="changeTabNow" action="{!saveSiteJobItem}" reRender="dTab,MainPanel" status="counterStatus" onComplete="disableFields(); return false;" >
+                <!--<apex:param name="acton" assignTo="{!source}" value=""/>-->
+            </apex:actionFunction>
+            
+            <!--<apex:actionstatus id="counterStatus">
+            <apex:facet name="start">
+            <div class="waitingSearchDiv" id="el_loading" style="background-color:#fbfbfb; height:100%;opacity:50;width:100%;postion:relative;">
+            <div class="waitingHolder" style="top: 100px; width: 100px;">
+            <div class="slds-spinner_container">
+            <div class="slds-spinner slds-spinner&#45;&#45;medium" aria-hidden="false" role="alert">
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </apex:facet>
+            </apex:actionstatus>-->
+
+
+            <apex:actionstatus id="counterStatus">
+                <apex:facet name="start">
+                    <div class="slds-spinner_container" style="position:fixed !important;">
+                        <div class="slds-spinner--brand slds-spinner slds-spinner--large" role="alert">
+                            <span class="slds-assistive-text">Loading</span>
+                            <div class="slds-spinner__dot-a"></div>
+                            <div class="slds-spinner__dot-b"></div>
+                        </div>
+                    </div>
+                </apex:facet>
+            </apex:actionstatus>
+
+            <apex:outputPanel id="mainPanel">
+                <apex:pagemessages id="pageMsg1"/>
+                <apex:actionFunction name="reRenderAf" id="reRenderAfId" reRender="dTab, mainPanel" status="counterStatus"  />
+                <div class="slds-size_2-of-2 slds-medium-size_2-of-2 slds-large-size_2-of-2">
+                    <div class="slds-size_1-of-2 slds-medium-size_1-of-1 slds-large-size_1-of-2">
+                        <!--<div class="slds-float_left slds-p-right_x-medium slds-p-top_x-small slds-p-bottom_xx-small" >
+                        <span class="slds-icon_container slds-icon_container--circle slds-icon-text-default">
+                        <apex:image url="/resource/SLDS232/assets/icons/utility/custom_apps_120.png" style="height:30px; width:auto;" />
+                        </span>
+                        <apex:outputText styleClass="slds-text-heading_small" value="Site Job Items"></apex:outputText>
+                        </div>-->
+                    </div>
+                    <div class="slds-size_1-of-2 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-float_right slds-m-bottom_x-small">
+                        <div class="slds-float_right slds-p-top_x-small slds-p-bottom_xx-small">
+                            <apex:commandButton status="counterStatus" styleClass="slds-button slds-button--brand editButtonClass" value="Edit Items" action="{!editInVf}" oncomplete="reRenderAf(); return false;" reRender="dTab, mainPanel" rendered="{!AND(IF(hasRecordLocked = false,true,false),NOT(displayInputFields))}"/>
+                            <apex:commandButton status="counterStatus" styleClass="slds-button slds-button--brand" action="{!resetItemList}" reRender="dTab,mainPanel" value="Cancel" rendered="{!displaySaveCancel}"/>
+                            <apex:commandButton status="counterStatus" styleClass="slds-button slds-button--brand" value="Save & Add"  reRender="dTab,mainPanel" action="{!saveAndAdd}" onComplete="disableFields(); return false;" rendered="{!AND(IF(hasRecordLocked = false,true,false),displayInputFields,NOT(singleItemView))}"  />
+                            <apex:commandButton status="counterStatus" styleClass="slds-button slds-button--brand" value="Save" reRender="dTab,mainPanel" action="{!saveSiteJobItem}" onComplete="disableFields(); return false;" rendered="{!AND(NOT(ShowSaveNextButtons),IF(hasRecordLocked = false,true,false),displayInputFields)}"  />
+                        </div>
+                    </div>
+                </div>
+                <apex:variable var="counter" value="{!0}"/>
+                
+                <div class="slds-size_12-of-12 {!IF(driList.size = 0 , 'slds-m-top_large' , '')}">
+                    <apex:outputPanel rendered="{!IF(driList.size>0,true,false)}">
+                        <apex:actionFunction name="clearValAf" id="cvId" status="counterStatus" reRender="mainPanel, dTab" action="{!clearValues}" />
+                        <apex:dataTable id="dTab" value="{!driList}" var="item" style="width:100%;" styleclass="slds-table slds-table--bordered slds-table_striped slds-table_bordered slds-no-row-hover siteJobItemTable">
+                            <apex:pageMessages id="pageMsg2" />
+                            
+                            <div class="slds-size_12-of-12">
+                                
+                                <div class="slds-size_1-of-12">
+                                    <apex:column headerValue="Contract Job Item" id="headerValue1" headerClass="headerWidth" style="width:auto;" styleClass="slds-cell-wrap">
+                                        
+                                        <apex:outputField value="{!item.Contract_Job_Item__c}"  title="Contract Job Item" rendered="{!NOT(ISBLANK(item.Contract_Job_Item__c))}"/>
+                                        <apex:inputField styleClass="slds-input slds-inputdisplaynone lookup{!counter} clearInput{!counter} dinlookup{!counter}" id="displayItmName" rendered="{!ISBLANK(item.Contract_Job_Item__c)}" value="{!item.Contract_Job_Item__c}" style="width:85px;display:none;" />
+                                        <div class="displayContractItemDiv clearVal{!counter}" style="display:none;" id="displayContractItemDivId">
+                                            
+                                            <apex:outputText style="display:block;" value="" styleClass="displayContractItem clearOutput{!counter}" rendered="{!ISBLANK(item.Contract_Job_Item__c)}">
+                                                <apex:commandLink reRender="displayContractItemDivId">
+                                                    <apex:image alt="Clear" url="/resource/SLDS232/assets/icons/utility/clear_60.png" style="width:16px;float:right;" onClick="clearValAf(); return false; "/>
+                                                </apex:commandLink>
+                                            </apex:outputText>
+                                        </div>
+                                        
+                                        <div class="slds-size_2-of-2 typAhdComponent typAhdComponent2{!counter}">
+                                            <div class="slds-size_1-of-2">
+                                                <div class="slds-float_left">
+                                                    <c:Typeahead object="Contract_Item__c" destinationForSelectedId="displayItmName" destinationForSelectedValue="displayItmName" searchBoxId="lookup{!counter}" lookupCounter="lookup{!counter}"
+                                                                 searchScope="Name" filterClause="Active__c = true AND Contract__c = \'{!dr.Contract__c}\' AND Unit_Type__c = \'{!dr.Type__c}\' AND Id NOT IN {!contractJobItemIdStringToRemove} " rendered="{!ISBLANK(item.Contract_Job_Item__c)}" styleClass="slds-input displayItmName2 lookup{!counter} clearComponent{!counter}"/>
+                                                </div>
+                                            </div>
+                                            <div class="slds-size_1-of-2 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-float_right">
+                                                <div class="slds-float_left slds-p-right_medium slds-p-top_x-small slds-p-bottom_xx-small">
+                                                    <apex:commandLink reRender="ShowModal" rendered="{!ISBLANK(item.Contract_Job_Item__c)}" action="{!fetchContractJobItems}" status="counterStatus">
+                                                        <apex:param assignTo="{!currentLookup}" name="currentlookup" value="lookup{!counter}"/>
+                                                        <apex:image url="/resource/SLDS232/assets/icons/utility/search_60.png" style="height: auto; width: 50%; margin-left: 40px;"/>
+                                                    </apex:commandLink>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <apex:variable var="counter" value="{!counter+1}"/>
+                                    </apex:column>
+                                </div>
+                                
+                                <!--<div class="slds-size_1-of-9">
+                                <apex:column headerValue="WD Asset" id="headerValue2" style="width:auto;" styleClass="slds-cell-wrap">
+                                <div class="wdAssetOpFieldDiv{!counter} wdAssetOpFieldDiv2">
+                                <apex:outputField id="cont2" styleClass="wdAssetOutputField" value="{!item.WD_Asset__c}" />
+                                </div>
+                                <apex:inputText id="tableinput22Blank" styleClass="slds-input" rendered="{!AND(ISBLANK(item.WD_Asset__c),NOT(ISBLANK(item.Id)))}" disabled="true" style="x`width:110px;"/>
+                                <div class="wdAssetDiv clearAsset{!counter}" style="" id="wdAssetDivId">
+                                <apex:inputText value="{!item.WD_Asset__c}" styleClass="wdAssetInput{!counter}" style="display:none;"/>
+                                </div>
+                                </apex:column>
+                                </div>-->
+                                
+                                <div class="slds-size_1-of-9">
+                                    <apex:column headerValue="Description" id="headerValue7" style="width:auto;" styleClass="slds-cell-wrap">
+                                        <div style="white-space: normal !important; width:30em;">
+                                            <apex:outputField id="cont7"  title="Description" rendered="{!AND(NOT(ISBLANK(item.Id)),NOT(displayInputFields))}"  value="{!item.Description__c}"/>
+                                        </div>
+                                        <apex:inputField id="tableinput7" styleClass="slds-input" style="width:100%;line-height: 1.50rem;" rendered="{!ISBLANK(item.Id)}" value="{!item.Description__c}"/>
+                                        <apex:inputField id="tableinput77" styleClass="slds-input" style="width:100%;line-height: 1.50rem;" rendered="{!AND(displayInputFields,NOT(ISBLANK(item.Id)))}" value="{!item.Description__c}"/>
+                                    </apex:column>
+                                </div>
+
+                                <!-- New field 16 Sept -->
+                                <div class="slds-size_1-of-9">
+                                    <apex:column headerValue="Category" id="category" style="width:auto;" styleClass="slds-cell-wrap">
+                                        <div style="white-space: normal !important; width:30em;">
+                                            <apex:outputField id="categ"  title="Category" rendered="{!AND(NOT(ISBLANK(item.Id)),NOT(displayInputFields))}"  value="{!item.Category__c}"/>
+                                        </div>
+                                        <apex:inputField id="categ1" styleClass="slds-input" style="width:100%;line-height: 1.50rem;" rendered="{!ISBLANK(item.Id)}" value="{!item.Category__c}"/>
+                                        <apex:inputField id="categ2" styleClass="slds-input" style="width:100%;line-height: 1.50rem;" rendered="{!AND(displayInputFields,NOT(ISBLANK(item.Id)))}" value="{!item.Category__c}"/>
+                                    </apex:column>
+                                </div>
+                                <!-- -->
+                                
+                                <div class="slds-size_1-of-9">
+                                    <apex:column headerValue="Start Time" id="headerValue3" styleClass="slds-cell-wrap" style="width:auto;">
+                                        <apex:outputText styleClass="startdate" id="cont10" value="{!item.StartTime__c}"  title="Start Date"   rendered="{!IF(dr.Type__c='Transport',True,False)}"/>
+                                        <apex:outputField styleClass="startdate" id="cont3" title="Start Date" value="{!item.StartTime__c}" rendered="{!AND(NOT(ISBLANK(item.Id)),NOT(displayInputFields)) && !IF(dr.Type__c='Transport',True,False)}"/>
+                                        <!--apex:outputField styleClass="startdate" id="cont11" title="Start Date" value="{!item.StartTime__c}" rendered="{!dr.Type__c!='Transport'}"/-->
+                                        <!--
+											If else statement to check "{!dailyReport.Type__c}" , If it is Transport , we need to use "{!dailyReport.Report_Date__c}" and "{!item.StartTime__c}" 
+											to create date time out put text with following format dd/mm/yyyy hh:mm AM/PM
+											HINT : Use  <apex:outputText value="{0, date, MMMM d','yyyy}"> tag to set the date time format.value="{0,date,M/d/yyy h:mm a}"  rendered="{!NOT(dr.Type__c=='Transport')}"
+										!-->
+                                        <!--apex:outputField styleClass="startdate" id="cont3" title="Start Date" value="{!item.StartTime__c}" rendered="{!AND(NOT(ISBLANK(item.Id)),NOT(displayInputFields))}"/-->
+                                        <apex:outputPanel rendered="{!!userTypeGuest}">
+                                        <apex:inputfield id="tableinput3" styleClass="slds-input startdate" rendered="{!ISBLANK(item.Id)}" value="{!item.StartTime__c}"  style="width: 170px;"/>
+                                        <apex:inputfield id="tableinput33" styleClass="slds-input startdate" rendered="{!AND(CONTAINS(item.Contract_Job_Item__r.Service_Type__c,'Hour'),displayInputFields,NOT(ISBLANK(item.Id)))}" value="{!item.StartTime__c}" style="width: 175px;padding-left: 4em;"/>
+                                        <apex:inputText id="tableinput33Blank" styleClass="slds-input startdate" rendered="{!AND(ISBLANK(item.Start_Time__c),NOT(ISBLANK(item.Id)),!CONTAINS(item.Contract_Job_Item__r.Service_Type__c,'Hour'))}" disabled="true" style="width: 175px;padding-left: 4em;"/>
+                                        <apex:inputField id="hiddenStartDate" style="display:none" value="{!item.Start_Time__c}" />
+                                        </apex:outputPanel>
+                                        <script>
+                                        $('input.startdate').timepicker({
+                                            timeFormat: 'h:mm p',
+                                            interval: 15,
+                                            dynamic: false,
+                                            dropdown: true,
+                                            scrollbar: true,
+                                            change: function(time) {
+                                                var formattedDate = new Date('{!dr.Report_Date__c}');
+                                                var d = formattedDate.getDate();
+                                                var m =  formattedDate.getMonth();
+                                                m += 1;  // JavaScript months are 0-11
+                                                var y = formattedDate.getFullYear();
+                                                var datestring = d + "/" + m + "/" + y;
+                                                var formattedDateTime = datestring+' '+$(this).timepicker().format(time);
+                                                $(this)[0].value =$(this).timepicker().format(time);
+                                                $(this).next('.dateInput').find('input')[0].value = formattedDateTime;
+                                                //hideDate();
+                                                /*var finaldate = datestring+' '+$(this).timepicker().format(time);
+                                                    $('.dateInput').find('#hiddenStartDate').val(finaldate);
+                                                    console.log('final: '+ $('#hiddenStartDate').val(finaldate));*/
+                                            }
+                                        });
+                                        </script>
+                                    </apex:column>
+                                </div>
+                                
+                                <div class="slds-size_1-of-9">
+                                    <apex:column headerValue="End Time" id="headerValue4" styleClass="slds-cell-wrap" style="width:auto;">
+                                        <apex:outputText styleClass="enddate" id="cont22" value="{!item.EndTime__c}"  title="End Time"   rendered="{!IF(dr.Type__c='Transport',True,False)}"/>
+                                        <apex:outputField styleClass="enddate" id="cont23" title="End Time" value="{!item.EndTime__c}" rendered="{!AND(NOT(ISBLANK(item.Id)),NOT(displayInputFields)) && !IF(dr.Type__c='Transport',True,False)}"/>
+                                        <!--apex:outputField id="cont4" styleClass="enddate"  title="End Time" value="{!item.EndTime__c}" rendered="{!AND(NOT(ISBLANK(item.Id)),NOT(displayInputFields))}"/-->
+                                        <apex:outputPanel rendered="{!!userTypeGuest}">
+                                        <apex:inputField id="tableinput4" styleClass="slds-input enddate" rendered="{!ISBLANK(item.Id)}" value="{!item.EndTime__c}" style="width: 170px;"/>
+                                        <apex:inputField id="tableinput44" styleClass="slds-input enddate" rendered="{!AND(CONTAINS(item.Contract_Job_Item__r.Service_Type__c,'Hour'),displayInputFields,NOT(ISBLANK(item.Id)))}" value="{!item.EndTime__c}" style="width: 175px;padding-left: 4em;"/>
+                                        <apex:inputText id="tableinput44Blank" styleClass="slds-input enddate" rendered="{!AND(ISBLANK(item.End_Time__c),NOT(ISBLANK(item.Id)),!CONTAINS(item.Contract_Job_Item__r.Service_Type__c,'Hour'))}" disabled="true" style="width: 175px;padding-left: 4em;"/>
+                                        <apex:inputField id="hiddenEndDate" style="display:none" value="{!item.End_Time__c}" />
+                                        </apex:outputPanel>
+                                        <script>
+                                        $('input.enddate').timepicker({
+                                            timeFormat: 'h:mm p',
+                                            interval: 15,
+                                            dynamic: false,
+                                            dropdown: true,
+                                            scrollbar: true,
+                                            change: function(time) {
+                                                var formattedDate = new Date('{!dr.Report_Date__c}');
+                                                var formattedTime = $(this).timepicker().format(time);
+                                                
+                                                if(formattedTime == '12:00 AM'){
+                                                    //d = d + 1;
+                                                    //Change End Date to Report Date + 1
+                                                	formattedDate.setDate(formattedDate.getDate() + 1);
+                                                }
+                                                
+                                                var d = formattedDate.getDate();
+                                                var m =  formattedDate.getMonth();
+                                                m += 1;  // JavaScript months are 0-11
+                                                var y = formattedDate.getFullYear();
+                                                var datestring = d + "/" + m + "/" + y;
+                                                var formattedDateTime = datestring+' '+$(this).timepicker().format(time);
+                                                $(this)[0].value = $(this).timepicker().format(time);
+                                                $(this).next('.dateInput').find('input')[0].value = formattedDateTime;
+                                            }
+                                        });
+                                        </script>
+                                    </apex:column>
+                                </div>
+                                
+                                <div class="slds-size_1-of-9">
+                                    <apex:column headerValue="Hours" id="headerValue5" headerClass="headerWidth" styleClass="slds-cell-wrap" style="width:auto;">
+                                        <apex:outputField id="cont5" title="End Time" value="{!item.Number_of_Hours__c}"/>
+                                    </apex:column>
+                                </div>
+                                
+                                <div class="slds-size_1-of-9">
+                                    <apex:column headerValue="Quantity" styleClass="slds-cell-wrap" style="width:auto;">
+                                        <apex:outputField id="cont6" title="Quantity" styleClass="qty" value="{!item.Quantity__c}" rendered="{!AND(NOT(ISBLANK(item.Id)),NOT(displayInputFields))}"/>
+                                        <apex:inputField id="tableinput6" styleClass="slds-input qty" rendered="{!ISBLANK(item.Id)}" value="{!item.Quantity__c}" style="width:70px;" onkeypress="return inputLimiter(event,'Numbers');"  />
+                                        <apex:inputField id="tableinput66" styleClass="slds-input qty" rendered="{!AND(CONTAINS(item.Contract_Job_Item__r.Service_Type__c,'Quantity'),displayInputFields,NOT(ISBLANK(item.Id)))}" value="{!item.Quantity__c}" style="width:70px;" onkeypress="return inputLimiter(event,'Numbers');" />
+                                        <apex:inputText id="tableinput66Blank" styleClass="slds-input qty" rendered="{!AND(ISBLANK(item.Quantity__c),NOT(ISBLANK(item.Id)),!CONTAINS(item.Contract_Job_Item__r.Service_Type__c,'Quantity'))}" disabled="true" style="width:70px;"/>
+                                    </apex:column>
+                                </div>
+                                
+                                <div class="slds-size_1-of-9">
+                                    <apex:column rendered="{!AND( IF(hasRecordLocked = false,true,false), displayInputFields )}" styleClass="slds-cell-wrap" style="width:auto;">
+                                        <apex:facet name="header">Action</apex:facet>
+                                        <apex:commandButton styleClass="slds-button slds-button--brand" rendered="{! !ISBLANK(item.id)}" action="{!deleteJobItem}"  status="counterStatus"  reRender="dTab,mainPanel" id="deleteButton" onComplete="rowbuttons();disableFields();return false;" alt="Delete" value="Delete" onkeydown="if(event.keyCode==13){this.blur();}">
+                                            <apex:param name="itm" value="{!item.id}"/>
+                                        </apex:commandButton>
+                                        
+                                        <apex:outputPanel rendered="{!ISBLANK(item.id)}" >
+                                            <apex:commandButton styleClass="slds-button slds-button--brand" rendered="{!ISBLANK(item.id)}" status="counterStatus" immediate="true" action="{!resetItemList}" oncomplete="rowbuttons()" reRender="dTab,mainPanel" value="Cancel" id="cancelButton1" onkeydown="if(event.keyCode==13){this.blur();}"/>
+                                        </apex:outputPanel>
+                                    </apex:column>
+                                </div>
+                            </div>
+                        </apex:dataTable>
+                    </apex:outputPanel>
+                    <apex:outputPanel id="driLisrEmpty" rendered="{!driList.size = 0}" styleClass="slds-p-around_small">
+                        No records to display.
+                    </apex:outputPanel>
+                </div>
+                
+                <div class="slds-size_4-of-4 hideButtons">
+                    <div class="slds-float_right slds-p-right_xx-small  slds-p-top_small slds-p-bottom_xx-small" style="display:{!IF(AND(NOT(ShowSaveNextButtons),IF(hasRecordLocked = false,true,false),displayInputFields),'block;','none;')}">
+                        <apex:commandButton status="counterStatus" styleClass="slds-button slds-button--brand" value="Save" reRender="dTab,mainPanel" action="{!saveSiteJobItem}" onComplete="disableFields(); return false;"  rendered="{!AND(NOT(ShowSaveNextButtons),IF(hasRecordLocked = false,true,false),displayInputFields)}"/>
+                    </div>
+                    
+                    <div class="slds-float_right slds-p-right_xx-small  slds-p-top_small slds-p-bottom_xx-small" style="display:{!IF(AND(NOT(ShowSaveNextButtons),IF(hasRecordLocked = false,true,false),displayInputFields),'block;','none;')}">
+                        <apex:commandButton status="counterStatus" styleClass="slds-button slds-button--brand" value="Save & Add"  reRender="dTab,mainPanel" action="{!saveAndAdd}" onComplete="disableFields(); return false;" rendered="{!AND(IF(hasRecordLocked = false,true,false),displayInputFields,NOT(singleItemView))}"  />
+                    </div>
+                    
+                    <div class="slds-float_right slds-p-right_xx-small  slds-p-top_small slds-p-bottom_xx-small" style="display:{!IF(AND(NOT(ShowSaveNextButtons)),'block;','none;')}">
+                        <apex:commandButton styleClass="slds-button slds-button--brand" value="Return to Daily Report" action="{!showCancelModal}" rendered="{!AND(NOT(ShowSaveNextButtons))}" immediate="true" />
+                    </div>
+                    <!--The below buttons are only visible for Daily Site Job VF Page-->
+                    
+                    <div class="slds-size_1-of-1 slds-medium-size_12-of-12 slds-large-size_12-of-12 slds-p-top_x-large">
+                        <div class="slds-p-horizontal_xx-small slds-size_1-of-1 slds-medium-size_1-of-12 slds-large-size_1-of-12 slds-float_right" style="width:auto">
+                            <apex:outputPanel >
+                                <apex:commandLink reRender="dTab,mainPanel" styleClass="slds-button slds-button--brand" status="counterStatus" rendered="{!AND(ShowSaveNextButtons)}" action="{!saveSiteJobItem}" onComplete="disableFields(); return false;" >
+                                    {!IF(IF(hasRecordLocked = false,true,false),'Save & Next','Next')}
+                                    <apex:param name="acton1" assignTo="{!source}" value="saveAndNext"/>
+                                </apex:commandLink>
+                            </apex:outputPanel>
+                        </div>
+                        
+                        <div class="slds-p-horizontal_xx-small slds-size_1-of-1 slds-medium-size_1-of-12 slds-large-size_1-of-12 slds-float_right" style="width:auto;display:{!IF(ShowSaveNextButtons,'block;','none;')}">
+                            <apex:outputPanel rendered="{!AND(IF(hasRecordLocked = false,true,false),displayInputFields)}">
+                                <apex:commandButton status="counterStatus" styleClass="slds-button slds-button--brand" value="Save & Add"  reRender="dTab,mainPanel" action="{!saveAndAdd}" onComplete="disableFields(); return false;" rendered="{!AND(IF(hasRecordLocked = false,true,false),displayInputFields,NOT(singleItemView))}"  />
+                            </apex:outputPanel>
+                        </div>
+                        
+                        <div class="slds-p-horizontal_xx-small slds-size_1-of-1 slds-medium-size_1-of-12 slds-large-size_1-of-12 slds-float_right" style="width:auto">
+                            <apex:outputPanel rendered="{!IF(hasRecordLocked = false,true,false)}">
+                                <apex:commandLink styleClass="slds-button slds-button--brand" reRender="dTab,mainPanel" status="counterStatus" rendered="{!AND(ShowSaveNextButtons)}" action="{!saveSiteJobItem}" onComplete="disableFields(); return false;" >
+                                    <apex:param name="acton2" assignTo="{!source}" value="save"/>
+                                    Save</apex:commandLink>
+                            </apex:outputPanel>
+                        </div>
+                        
+                        <div class="slds-p-horizontal_xx-small slds-size_1-of-1 slds-medium-size_1-of-12 slds-large-size_1-of-12 slds-float_right" style="width:auto">
+                            <apex:commandLink reRender="closePopup" styleClass="slds-button slds-button--brand" status="counterStatus" action="{!showCancelModal}" rendered="{!AND(ShowSaveNextButtons)}" value="Close"></apex:commandLink>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <script>
+                function disableFields(){
+                    if({!disableQuantity} === true){
+                        $('.qty').last()[0].disabled = true;
+                    }
+                    
+                    else if({!disableHour} === true){
+                        $('.startdate').last()[0].disabled = true;
+                        $('.enddate').last()[0].disabled = true;
+                    }
+                    
+                }
+                </script>
+            </apex:outputPanel>
+            
+            <div class="slds-size_12-of-12">
+                <apex:outputPanel id="ShowModal">
+                    <apex:outputPanel rendered="{!displayJobItemLookup}">
+                        <div class="OpenModal">
+                            <div role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                                <div class="slds-modal__container">
+                                    <div class="slds-modal__header">
+                                        <apex:commandButton immediate="true" styleClass="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" value="X" action="{!hideContractJobItemsModal}" rerender="ShowModal" status="counterStatus" style="font-size:large;"/>
+                                        <h3 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Contract Job Items</h3>
+                                    </div>
+                                    
+                                    <div class="slds-modal__content slds-p-around--medium slds-is-relative">
+                                        <apex:dataTable id="cjiTable" value="{!contractItemsList}" var="cji" styleclass="slds-table slds-table--bordered slds-table_striped slds-table_bordered slds-no-row-hover cji" >
+                                            <apex:column headerValue="Item Name">
+                                                <apex:commandLink onclick="passJobItemId('{!cji.Id}','{!cji.Name}', '{!currentLookup}', '{!cji.Item_Name__r.Name}','{!cji.Service_Type__c}','{!cji.WD_Asset__c}','{!cji.WD_Asset_Name__c}');return false;" immediate="true">{!cji.Name}</apex:commandLink>
+                                            </apex:column>
+                                        </apex:dataTable>
+                                        <script>
+                                        $('.cji').DataTable({
+                                            "bPaginate": false,
+                                            "bFilter": true,
+                                            "bLengthChange" : false,
+                                            "bInfo" : true
+                                        });
+                                        </script>
+                                    </div>
+                                    <div class="slds-modal__footer">
+                                        <apex:commandButton immediate="true" styleClass="slds-button slds-button_neutral" value="Cancel" action="{!hideContractJobItemsModal}" rerender="ShowModal" status="counterStatus" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-backdrop slds-backdrop--open"></div>
+                    </apex:outputPanel>
+                    <apex:actionFunction name="closeModal" action="{!hideContractJobItemsModal}" rerender="ShowModal" status="counterStatus" />
+                </apex:outputPanel>
+            </div>
+            
+            <div class="slds-size_12-of-12">
+                <apex:outputPanel id="closePopup">
+                    <apex:outputPanel rendered="{!showCancelPopup}">
+                        <div role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-describedby="modal-content-id-1"
+                             class="slds-modal slds-fade-in-open closeDialog">
+                            <div class="slds-modal__container">
+                                <div class="slds-modal__header">
+                                    <button class="slds-button slds-button--icon-inverse slds-modal__close"
+                                            onclick="closeCancelDialog();return false;">
+                                        <span style="font-size: x-large;">X</span>
+                                        <span class="slds-assistive-text">Close</span>
+                                    </button>
+                                    <h2 id="header43" class="slds-text-heading--medium"></h2>
+                                </div>
+                                <div id="DealModalBoxContent"
+                                     class="slds-modal__content slds-p-around--medium slds-text-align--center">
+                                    <apex:pageMessages id="pageMsg3" />
+                                    <div id="" class="slds-text-heading--small">Do You Want To Save Before Closing ?</div>
+                                </div>
+                                <div class="slds-modal__footer">
+                                    <apex:commandLink reRender="closePopup" styleClass="slds-button slds-button--brand" status="counterStatus" action="{!saveSiteJobItem}" onComplete="disableFields(); return false;" value="Yes">
+                                        <apex:param name="acton3" assignTo="{!source}" value="saveAndClose"/>
+                                    </apex:commandLink>
+                                    <apex:commandLink reRender="closePopup" styleClass="slds-button slds-button--brand" status="counterStatus" action="{!closeSiteJob}" immediate="true"  value="No"></apex:commandLink>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="createnewbackdrop" class="slds-backdrop slds-backdrop--open"></div>
+                    </apex:outputPanel>
+                </apex:outputPanel>
+            </div>
+            
+            <script>
+            $(document).ready(function() {rowbuttons();});
+            
+            function rowbuttons(){
+                $('[id*="cont"]').dblclick(function(e){
+                    
+                    var rowid = $(this).parent().attr('id');
+                    var parentId = rowid.split(':').slice(0, 4);
+                    var savebtnId = parentId.join(':')+':saveButton';
+                    var cancelbtnId = parentId.join(':')+':cancelButton';
+                    var deletebtnId = parentId.join(':')+':deleteButton';
+                    var inlineLookupId = parentId.join(':')+':inlineLookup';
+                    var startIconId = parentId.join(':')+':startIcon';
+                    var endIconId = parentId.join(':')+':endIcon';
+                    var quantityIconId = parentId.join(':')+':quantityIcon';
+                    if($('.inlineEditDiv').find('input').attr('onfocus')!=undefined && $('.inlineEditDiv').find('input').attr('onfocus').indexOf("DatePicker")>=0){
+                        $('.inlineEditDiv').find('input[onfocus]').timepicker({
+                            timeFormat: 'h:mm p',
+                            interval: 15,
+                            dynamic: false,
+                            dropdown: true,
+                            scrollbar: true,
+                            change: function(time) {
+                                var formattedDate = new Date('{!dr.Report_Date__c}');
+                                var d = formattedDate.getDate();
+                                var m =  formattedDate.getMonth();
+                                m += 1;  // JavaScript months are 0-11
+                                var y = formattedDate.getFullYear();
+                                var datestring = d + "/" + m + "/" + y;
+                                $(this)[0].value = datestring+ ' '+$(this).timepicker().format(time);
+                            }
+                        });
+                    }
+                    
+                    document.getElementById(savebtnId) != null ? document.getElementById(savebtnId).style.display = "inline" : "";
+                    document.getElementById(cancelbtnId) != null ? document.getElementById(cancelbtnId).style.display = "inline" : "";
+                    document.getElementById(deletebtnId) != null ? document.getElementById(deletebtnId).style.display = "none" : "";
+                    document.getElementById(inlineLookupId) != null ? document.getElementById(inlineLookupId).style.display = "inline" : "";
+                    
+                });
+            }
+            
+            
+            
+            
+            
+            
+            function passJobItemId(cjiId,cjiname,lookupClass,itmName,serviceType,wdAsst,wdAsstName){
+                
+                var jobItemName = document.getElementById(document.getElementsByClassName(lookupClass)[0].id);
+                var jobItemId = document.getElementById(document.getElementsByClassName(lookupClass)[0].id+'_lkid');
+                var jobItemId2 = document.getElementById(document.getElementsByClassName(lookupClass)[0].id+'_lkold');
+                
+                //jobItemId2.value = cjiname;
+                jobItemId2.value = cjiname;
+                jobItemName.value = cjiname;
+                jobItemId.value = cjiId;
+                
+                document.getElementById(lookupClass).value = cjiname;
+                
+                $(jobItemName).closest('td').next('td').find('label').html(itmName)
+                if(serviceType === 'Fixed Price/Hour'){
+                    $(jobItemName).closest('tr').find('input.qty')[0].disabled = true;
+                    $(jobItemName).closest('tr').find('input.startdate')[0].disabled = false;
+                    $(jobItemName).closest('tr').find('input.enddate')[0].disabled = false;
+                }
+                else if(serviceType === 'Fixed Price/Quantity' || serviceType === 'Flexi Price/Quantity'){
+                    $(jobItemName).closest('tr').find('input.startdate')[0].disabled = true;
+                    $(jobItemName).closest('tr').find('input.enddate')[0].disabled = true;
+                    $(jobItemName).closest('tr').find('input.qty')[0].disabled = false;
+                }
+                
+                $(jobItemName).closest('tr').closest('tr').find('span.displayContractItem')[0].innerText = cjiname;
+                $(jobItemName).closest('tr').find('div.typAhdComponent').hide();
+                $(jobItemName).closest('tr').find('div.displayContractItemDiv').show();
+                
+                /*if(typeof(wdAsst) !== 'undefined'){
+                    $(jobItemName).closest('tr').find('[id*="cont2"]')[0].innerText = wdAsstName;
+                    $(jobItemName).closest('tr').closest('tr').find('.wdAssetDiv input')[0].value = wdAsst;
+                }*/
+                
+                closeModal();
+            }
+            
+            $(document).ready(function() {
+                $('.cji1').DataTable({
+                    "bPaginate": false,
+                    "bFilter": true,
+                    "bLengthChange" : false,
+                    "bInfo" : true
+                });
+            });
+            
+            function focusAndupdateContact() {
+                document.getElementById('focusMeupdateItem').click();
+            }
+            
+            function applyLookup(){
+                $('#tableinput2').children('lookupInput').find('input').addClass('slds-input');
+            }
+            
+            function changeTab2(actn){
+                var acton = actn;
+                changeTabNow(acton);
+            }
+            
+            function closeCancelDialog(){
+                $('.closeDialog').removeClass( "slds-fade-in-open" ).addClass( "slds-fade-in-hide" );
+                $('#createnewbackdrop').removeClass( "slds-backdrop--open" ).addClass( "slds-backdrop--hide" );
+            }
+            
+            function inputLimiter(e,allow) {
+                var AllowableCharacters = '';
+                if (allow == 'Letters'){AllowableCharacters=' ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';}
+                if (allow == 'Numbers'){AllowableCharacters='1234567890.';}
+                if (allow == 'NameCharacters'){AllowableCharacters=' ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-.\'';}
+                if (allow == 'NameCharactersAndNumbers'){AllowableCharacters='1234567890 ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-\'';}
+                if (allow == 'Currency'){AllowableCharacters='1234567890.';}
+                if (allow == 'Number'){AllowableCharacters = '1234567890';}
+                var k = document.all?parseInt(e.keyCode): parseInt(e.which);
+                if (k!=13 && k!=8 && k!=0){
+                    if ((e.ctrlKey==false) && (e.altKey==false)) {
+                        return (AllowableCharacters.indexOf(String.fromCharCode(k))!=-1);
+                    } else {
+                        return true;
+                    }
+                } else {
+                    return true;
+                }
+            }
+            
+            
+            </script>
+            <!-- </apex:form>-->
+            
+        </div>
+    </div>
+    
+</apex:component>

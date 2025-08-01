@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>General</fullName>
+    <active>true</active>
+    <label>General</label>
+    <picklistValues>
+        <picklist>Job_Status__c</picklist>
+        <values>
+            <fullName>Approval Required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invoiced</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Job Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>WD Internal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Job_Type__c</picklist>
+        <values>
+            <fullName>At WD Unit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stand Alone Item</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>To_Be_Invoiced__c</picklist>
+        <values>
+            <fullName>End of Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invoice with WD Unit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Charge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On Job Completion</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Trucks_on_Job__c</picklist>
+        <values>
+            <fullName>Subcontractor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unit 01</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unit 02</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unit 03</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unit 04</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unit 05</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unit 06</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unit 07</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unit 08</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unit 09</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unit 10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unit 11</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unit 12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unit 14</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unit 15</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ute</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>WD_Department__c</picklist>
+        <values>
+            <fullName>Camp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workshop</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

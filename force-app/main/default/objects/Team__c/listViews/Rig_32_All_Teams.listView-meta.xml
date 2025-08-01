@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_32_All_Teams</fullName>
+    <columns>Unit__c</columns>
+    <columns>NAME</columns>
+    <columns>No_of_Team_Members__c</columns>
+    <columns>No_of_Vacant_Positions__c</columns>
+    <columns>Team_Manager__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Unit__c</field>
+        <operation>equals</operation>
+        <value>rig 32</value>
+    </filters>
+    <label>Rig 32 | All Teams</label>
+    <sharedTo>
+        <group>BOO</group>
+        <group>HR</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Rig_32</group>
+    </sharedTo>
+</ListView>

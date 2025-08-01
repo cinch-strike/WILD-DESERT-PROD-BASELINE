@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Warning_Type__c</fullName>
+    <label>Warning Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Verbal</fullName>
+                <default>false</default>
+                <label>Verbal</label>
+            </value>
+            <value>
+                <fullName>Written</fullName>
+                <default>false</default>
+                <label>Written</label>
+            </value>
+            <value>
+                <fullName>First &amp; Final</fullName>
+                <default>false</default>
+                <label>Written - First &amp; Final</label>
+            </value>
+            <value>
+                <fullName>Written - IVMS Breach</fullName>
+                <default>false</default>
+                <label>Written - IVMS Breach</label>
+            </value>
+            <value>
+                <fullName>Performance Discussion</fullName>
+                <default>false</default>
+                <label>Performance Discussion</label>
+            </value>
+            <value>
+                <fullName>Drug/Alcohol Test - Non-negative</fullName>
+                <default>false</default>
+                <label>Drug/Alcohol Test - Non-negative</label>
+            </value>
+            <value>
+                <fullName>First</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Written - First</label>
+            </value>
+            <value>
+                <fullName>Second</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Written - Second</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>This flow will update the Required by Unit field to copy from the Professional Development&apos;s Required by Unit</description>
+    <environments>Default</environments>
+    <interviewLabel>Development Records Before - Update the Required by Unit from PD {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Development Records Before - Update the Required by Unit from PD</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_the_Required_By_Unit</name>
+        <label>Update the Required By Unit</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <inputAssignments>
+            <field>Required_By_Unit__c</field>
+            <value>
+                <elementReference>$Record.Professional_Development_Type__r.Required_By_Unit__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_the_Required_By_Unit</targetReference>
+        </connector>
+        <filterFormula>OR(
+ISNEW(),
+ISCHANGED({!$Record.Required_By_Unit__c}))</filterFormula>
+        <object>Development_Records__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

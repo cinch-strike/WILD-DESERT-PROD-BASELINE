@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_change_unit_once_assigned</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISNEW()),
+ISCHANGED( Unit__c )
+)</errorConditionFormula>
+    <errorDisplayField>Unit__c</errorDisplayField>
+    <errorMessage>Cannot change unit on existing Contract Assignment. If required, deactivate the current one and create a new one.</errorMessage>
+</ValidationRule>

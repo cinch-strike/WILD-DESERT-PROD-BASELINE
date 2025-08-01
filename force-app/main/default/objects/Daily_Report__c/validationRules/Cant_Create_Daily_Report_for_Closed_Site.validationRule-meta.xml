@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_Create_Daily_Report_for_Closed_Site</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+        ISNEW(),
+	NOT(ISPICKVAL(Type__c, &apos;Transport&apos;)),
+        OR(ISPICKVAL(Site__r.Site_Status__c, &apos;Closed&apos;),
+             NOT(Site__r.Site_Active__c)
+)
+    )</errorConditionFormula>
+    <errorMessage>Cannot Create a Daily Site Job for a Inactive or Closed Site</errorMessage>
+</ValidationRule>

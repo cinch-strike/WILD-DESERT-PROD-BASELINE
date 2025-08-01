@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Windows_Version__c</fullName>
+    <label>Windows Version</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Windows 7 Pro</fullName>
+                <default>false</default>
+                <label>Windows 7 Pro</label>
+            </value>
+            <value>
+                <fullName>Windows XP</fullName>
+                <default>false</default>
+                <label>Windows XP</label>
+            </value>
+            <value>
+                <fullName>Windows Vista</fullName>
+                <default>false</default>
+                <label>Windows Vista</label>
+            </value>
+            <value>
+                <fullName>Windows 8</fullName>
+                <default>false</default>
+                <label>Windows 8</label>
+            </value>
+            <value>
+                <fullName>Windows Server SBS 2011</fullName>
+                <default>false</default>
+                <label>Windows Server SBS 2011</label>
+            </value>
+            <value>
+                <fullName>Windows Server 2012</fullName>
+                <default>false</default>
+                <label>Windows Server 2012</label>
+            </value>
+            <value>
+                <fullName>Windows Server 2008 R2</fullName>
+                <default>false</default>
+                <label>Windows Server 2008 R2</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

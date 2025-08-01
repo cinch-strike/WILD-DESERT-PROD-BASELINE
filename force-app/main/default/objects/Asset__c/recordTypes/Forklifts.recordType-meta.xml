@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Forklifts</fullName>
+    <active>true</active>
+    <label>Forklifts</label>
+    <picklistValues>
+        <picklist>ABS_Status__c</picklist>
+        <values>
+            <fullName>ABS Compliant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Required - Incomplete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TEBS Connector Compliant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TEBS Kit Compliant</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Asset_Family__c</picklist>
+        <values>
+            <fullName>Forklift</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Asset_Owner__c</picklist>
+        <values>
+            <fullName>3rd Party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wild Desert</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Brake_System_Type__c</picklist>
+        <values>
+            <fullName>ABS with ESC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T-EBS with ABS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Colour__c</picklist>
+        <values>
+            <fullName>Black</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Silver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yellow</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Connection_Type__c</picklist>
+        <values>
+            <fullName>200 NPT SCREWED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>602 BUTT WELD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>602 NPT SCREWED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TABLE E%2C WELDED FLANGE</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Engine_Type__c</picklist>
+        <values>
+            <fullName>CAT 16</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cummins</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Interval__c</picklist>
+        <values>
+            <fullName>12mths</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>24mths</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6mths</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Inventory_Item__c</picklist>
+        <values>
+            <fullName>3rd Party Equip %28Billable%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3rd Party Equip %28Non-Billable%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Additional_%28QA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EquipListContract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Obsolete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rural</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stacked</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Last_Service_Type__c</picklist>
+        <values>
+            <fullName>A Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C Service</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>MS_Office_Version__c</picklist>
+        <values>
+            <fullName>Office 2003</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Office 2007</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Office 2010</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Office 2013</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>NDT_Interval__c</picklist>
+        <values>
+            <fullName>12 mthly CIV%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 mthly %28CIII%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Next_Service_Type__c</picklist>
+        <values>
+            <fullName>B Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C Service</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pipe_Type__c</picklist>
+        <values>
+            <fullName>2 7%2F8 EUE J55</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SCH160</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XXH</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ST_Compliant__c</picklist>
+        <values>
+            <fullName>90 Day Exemption</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exempt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>State_of_Registration__c</picklist>
+        <values>
+            <fullName>QLD</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Build%2FOn-board</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Draft %28Order%2FPR%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Obsolete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Off-board</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PaymenInsurance Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready to Collect</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Camp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Depot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transport</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Under_Run__c</picklist>
+        <values>
+            <fullName>Fitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Required - Incomplete</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Windows_Version__c</picklist>
+        <values>
+            <fullName>Windows 7 Pro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Windows 8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Windows Server 2008 R2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Windows Server 2012</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Windows Server SBS 2011</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Windows Vista</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Windows XP</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

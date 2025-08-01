@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SOP</fullName>
+    <active>true</active>
+    <label>SOP</label>
+    <picklistValues>
+        <picklist>Hazardous_Substance__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Packaging_Group__c</picklist>
+        <values>
+            <fullName>l</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ll</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>lll</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Poison_Schedule__c</picklist>
+        <values>
+            <fullName>S5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>S6</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Camp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transport</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>WD_Unit__c</picklist>
+        <values>
+            <fullName>Brisbane Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp %231</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp %232</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp %233</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp %234</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp %236</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp %237</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp %238</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp %239</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp 10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flushby 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig %2310</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig %2312</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig %2314</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig %2316</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig %2318</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig %2320</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig %2322</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig %2324</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig %2326</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig %2328</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig %2330</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig %2332</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig %234</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig %236</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig %238</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roma Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stores</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workshop</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

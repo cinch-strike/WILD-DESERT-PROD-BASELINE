@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unit__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <label>Unit</label>
+    <lookupFilter>
+        <active>true</active>
+        <booleanFilter>(1 AND 2 AND 3) OR (4 AND 5)</booleanFilter>
+        <errorMessage>The Unit Details assigned to this DSJ is invalid. Check Contract, Unit type, Job type. Make sure that the Contract in the DSJ matches the contract in Unit Contract # and the Rig/Camp Daily Site Job Type matches the type of the Unit)</errorMessage>
+        <filterItems>
+            <field>$Source.Contract__c</field>
+            <operation>equals</operation>
+            <valueField>Unit__c.Contract_New__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>Unit__c.UnitType__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.Type__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>$Source.Type__c</field>
+            <operation>equals</operation>
+            <value>Rig, Camp</value>
+        </filterItems>
+        <filterItems>
+            <field>$Source.Type__c</field>
+            <operation>equals</operation>
+            <value>Transport</value>
+        </filterItems>
+        <filterItems>
+            <field>Unit__c.UnitType__c</field>
+            <operation>equals</operation>
+            <value>Transport</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Unit__c</referenceTo>
+    <relationshipLabel>Daily Site Jobs</relationshipLabel>
+    <relationshipName>Daily_Reports</relationshipName>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

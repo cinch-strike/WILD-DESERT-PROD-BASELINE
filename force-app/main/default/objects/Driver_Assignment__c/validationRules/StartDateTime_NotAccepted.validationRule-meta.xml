@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>StartDateTime_NotAccepted</fullName>
+    <active>true</active>
+    <description>Prevent Start DateTime if not accepted</description>
+    <errorConditionFormula>AND(
+ Is_Driver_Assignment_Accepted__c = FALSE,
+ NOT( ISNULL(Start_Date_Time__c ))
+)</errorConditionFormula>
+    <errorMessage>Accept first the Driver Assignment before starting the time.</errorMessage>
+</ValidationRule>

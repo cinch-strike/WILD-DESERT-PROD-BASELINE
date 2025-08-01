@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>test</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>NAME</columns>
+    <columns>Date__c</columns>
+    <columns>Site__c</columns>
+    <columns>Inducted_By__c</columns>
+    <columns>Attendees__c</columns>
+    <columns>Attendee1__c</columns>
+    <columns>Details__c</columns>
+    <columns>Description__c</columns>
+    <columns>Daily_Site_Job__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>Gina Tedford,Maddy Whiley</value>
+    </filters>
+    <filters>
+        <field>Date__c</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:365</value>
+    </filters>
+    <label>gina</label>
+</ListView>

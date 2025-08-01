@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Deferral__c</fullName>
+    <description>Write the reason why a work order is being deferred or monitored instead of completed.</description>
+    <inlineHelpText>Write the reason why a work order is being deferred or monitored instead of completed.</inlineHelpText>
+    <label>Reason for Deferral</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

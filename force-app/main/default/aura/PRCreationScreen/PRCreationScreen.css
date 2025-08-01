@@ -1,0 +1,14 @@
+.THIS .createPRButton {
+    width:100% !important
+}
+
+.THIS .withLink{
+    color:yellow !important;
+}
+/*ADDED BY JOAL - UPDATED TO INCLUDE THE ITEM NAME NEW LOGIC*/
+.THIS .withoutLink a{
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  color: black;
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FB_Servicing_Schedule_hrs</fullName>
+    <columns>Unit__c</columns>
+    <columns>Asset_Family__c</columns>
+    <columns>NAME</columns>
+    <columns>Asset_ID_Number__c</columns>
+    <columns>Engine_Hours__c</columns>
+    <columns>Date_Of_Last_Service__c</columns>
+    <columns>Next_Service_Due_Hrs__c</columns>
+    <columns>Next_Job_Card_creation_reading__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Asset__c.Forklifts,Asset__c.Loaders,Asset__c.Non_Vehicle_Engine,Asset__c.Rigs</value>
+    </filters>
+    <filters>
+        <field>Unit__c</field>
+        <operation>contains</operation>
+        <value>Flushby 2</value>
+    </filters>
+    <label>Rig #02 - Servicing Schedule (hrs)</label>
+    <sharedTo>
+        <group>OPs_super</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

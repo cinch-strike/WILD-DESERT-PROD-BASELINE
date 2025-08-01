@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pre_Charge_Bottles_snub</fullName>
+    <columns>NAME</columns>
+    <columns>Pre_Charge_Bottles__c</columns>
+    <columns>Description__c</columns>
+    <columns>Certificate_Number__c</columns>
+    <columns>Date_Pre_Charged__c</columns>
+    <columns>Inspection_Requirement__c</columns>
+    <columns>Next_Inspection__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Inspection_Certification__c.Pre_Charge_Bottles</value>
+    </filters>
+    <filters>
+        <field>WD_Unit__c</field>
+        <operation>contains</operation>
+        <value>Snub</value>
+    </filters>
+    <label>Snub Unit - Pre-Charge Bottles</label>
+    <sharedTo>
+        <group>OPs_super</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fault_Report_Book__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>All trucks must have a Fault Report Book for drivers to report any faults discovered</inlineHelpText>
+    <label>Fault Report Book #</label>
+    <length>30</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

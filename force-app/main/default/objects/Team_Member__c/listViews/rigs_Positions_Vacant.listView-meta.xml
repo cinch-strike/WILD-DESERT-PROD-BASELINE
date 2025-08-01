@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>rigs_Positions_Vacant</fullName>
+    <columns>Unit__c</columns>
+    <columns>Team__c</columns>
+    <columns>NAME</columns>
+    <columns>Position__c</columns>
+    <columns>Crew__c</columns>
+    <columns>Roster__c</columns>
+    <columns>Recruitment_Status__c</columns>
+    <columns>Current_Personnel__c</columns>
+    <columns>Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Recruitment_Status__c</field>
+        <operation>equals</operation>
+        <value>Position Vacant</value>
+    </filters>
+    <filters>
+        <field>Unit__c</field>
+        <operation>contains</operation>
+        <value>Rig</value>
+    </filters>
+    <label>Positions Vacant | Rigs</label>
+    <sharedTo>
+        <group>BOO</group>
+        <group>HR</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+    </sharedTo>
+</ListView>

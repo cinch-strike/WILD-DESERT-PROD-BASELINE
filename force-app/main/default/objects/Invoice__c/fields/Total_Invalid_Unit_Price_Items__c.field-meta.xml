@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Invalid_Unit_Price_Items__c</fullName>
+    <label>Total Invalid Unit Price Items</label>
+    <summaryFilterItems>
+        <field>Invoice_Line_Item__c.Unit_Price_Invalid__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Invoice_Line_Item__c.Invoice__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

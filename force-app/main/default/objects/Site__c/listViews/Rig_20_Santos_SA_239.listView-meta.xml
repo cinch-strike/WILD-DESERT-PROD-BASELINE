@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_20_Santos_SA_239</fullName>
+    <columns>Start_Date__c</columns>
+    <columns>NAME</columns>
+    <columns>Previous_Site__c</columns>
+    <columns>No_of_KM_s_from_Previous_Site__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>WD_Inv__c</columns>
+    <columns>Site_Status__c</columns>
+    <columns>Site_Active__c</columns>
+    <columns>Days__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contract__c</field>
+        <operation>equals</operation>
+        <value>558</value>
+    </filters>
+    <filters>
+        <field>Start_Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>11/1/2019</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Site__c.Well_Site</value>
+    </filters>
+    <filters>
+        <field>Site_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Paid</value>
+    </filters>
+    <label>Rig 20 - Santos GLNG (558)</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Rig_20</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

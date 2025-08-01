@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Measure_Diameter_2__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Take at least 2 measurements of diameter approx 1 m apart and record the average (average sum of all totals divided by the number of measurements taken)</inlineHelpText>
+    <label>Average Diameter (mm)</label>
+    <length>5</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

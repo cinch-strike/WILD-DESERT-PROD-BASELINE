@@ -1,0 +1,370 @@
+<template>
+    <!--NEW DRIVER ASSIGNMENT-->
+    <template if:true={isdisplaynew}>
+        <lightning-card title="New Driver Assignment" icon-name="standard:record">
+            <div class="slds-m-around_medium">
+                <label>Driver Name</label>
+                <c-driver-name-list> </c-driver-name-list><br />
+
+                <!--04 OCT 2023: C+S - Added Driver Assignment Date field-->
+                <lightning-input type="date" label="Driver Assignment Date" data-field="DriverAssignmentDateCreate" value={tjdate}></lightning-input><br />
+                
+                <c-custom-lookup field-label="Estimated Total Job Time (including Breaks/Rest hours)" child-object-api-name='Driver_Assignment__c'
+                target-field-api-name='Estimated_total_job_time__c' onvalueselected={handleEstimatedTotalJobTimeSelected}></c-custom-lookup><br />
+                <c-custom-lookup field-label="Instructions" child-object-api-name='Driver_Assignment__c'
+                target-field-api-name='Notes__c' onvalueselected={handleNotesValueSelected}></c-custom-lookup><br />
+
+                <!--20 JUN 2023: C+S - Added new Configuration-->
+                <c-custom-lookup field-label="Configuration" child-object-api-name='Driver_Assignment__c'
+                target-field-api-name='Configuration_pklist__c' onvalueselected={handleConfigurationSelected}></c-custom-lookup><br />
+
+                <!--18 SEPT 2023: C+S - Added Truck-->
+                <label>Truck</label>
+                <c-truck-default-list  
+                        get-id-from-parent={recordId}
+                    > </c-truck-default-list>
+                <br />
+                
+                <!--Transport Job Type = Regular-->
+                <!-- 02 OCT 2023: C+S - Removed logic related to Type
+                <template if:true={tjtyperegular}> -->
+                    <!--23 JUNE 2023 [C+S] Contract Job Item will only display if Billable = TRUE -->
+                    <template if:true={isBillable}>
+                        <label>Contract Job Item</label>
+                        <c-configuration-default-list  
+                                get-id-from-parent={recordId}
+                            > </c-configuration-default-list>
+                        <br />
+                    </template>
+
+                    <label>Is Daily Pre-start Required?</label>
+                    <lightning-input type="toggle"
+                            message-toggle-active="Yes, create Daily Pre-start"
+                            message-toggle-inactive ="No, Daily Pre-start is not required"
+                            data-field="isPrestartRequired"
+                            checked = "true">
+                    </lightning-input>
+                <!--</template>-->
+
+                <!--Transport Job Type = Maintenance
+                <template if:false={tjtyperegular}>
+                    <c-custom-lookup field-label="Maintenance Category" child-object-api-name='Driver_Assignment__c'
+                    target-field-api-name='Maintenance_Category__c' onvalueselected={handleMaintenanceCategorySelected}></c-custom-lookup><br />
+                </template>-->
+
+                <br /><br />
+                <label><b>Please confirm the following:</b></label>
+                <br /><br />
+                <label>The driver has had the minimum 7hrs of continuous rest.</label>
+                <lightning-input type="toggle"
+                    message-toggle-active="Yes"
+                    message-toggle-inactive ="No"
+                    data-field="isEstimatedTotalJobTime">
+                </lightning-input>
+
+                <br /><br />
+                <label>The driver has sufficient work hours remaining to comply with legal limits.</label>
+                <lightning-input type="toggle"
+                    message-toggle-active="Yes"
+                    message-toggle-inactive ="No"
+                    data-field="isSufficientWorkHours">
+                </lightning-input>
+
+                <br /><br />
+                <label>The plan provides opportunities for the minimum required rest breaks.</label>
+                <lightning-input type="toggle"
+                    message-toggle-active="Yes"
+                    message-toggle-inactive ="No"
+                    data-field="isPlanProvidesOppty">
+                </lightning-input>
+
+                <br /><br />
+                <lightning-button label="Add Driver" variant="brand" onclick={createDriverAssign}></lightning-button>
+            </div>
+         </lightning-card>
+    </template>
+    <!--DISPLAY DRIVER ASSIGNMENT-->
+    <template if:true={isdisplayview}>
+        <lightning-card title = {driverfullname}>
+            <!--DRIVER AND ASSET VIEW INFORMATION-->
+            <template if:true={isDriverAssignmentView}>
+                <!--Driver Assignment is not Cancelled-->
+                <template if:false={isDACancelled}>
+                    <!--Transport Job is not approved-->
+                    <template if:false={tjstatusapproved}>
+                        <template if:true={isDriverAssignmentAccepted}>   
+                            <lightning-button label="Notify Updates" slot="actions" onclick={openNotificationModal}></lightning-button>
+                        </template>
+                        <lightning-button label="Mark as Cancelled" slot="actions" onclick={openCancelDAModal}></lightning-button>
+                        <lightning-button label="Edit Driver Details" slot="actions" onclick={editDriverAssignment}></lightning-button>
+                    </template>
+                    <!--Transport Job is approved but DSJS = Open, Pending or Rejected-->
+                    <template if:true={isTJApprovedButEditable}>
+                        <lightning-button label="Edit Driver Details" slot="actions" onclick={editDriverAssignment}></lightning-button>
+                    </template>
+                </template>
+                <lightning-input type="date" label="Driver Assignment Date" value={dadate} disabled="disabled"></lightning-input><br />
+                <lightning-textarea type="text" label="Estimated Total Job Time (including Breaks/Rest hours)" value={estimatedtotaljobtime} disabled="disabled"></lightning-textarea><br /> 
+                <lightning-textarea type="text" label="Instructions" value={drivernotes} disabled="disabled"></lightning-textarea><br /> 
+                                
+                <!--20 JUNE 2023: C+S - Added new Configuration field-->
+                <lightning-input type="text" label="Configuration" value={configurationnew} disabled="disabled"></lightning-input> <br /> <br />  
+                <!--10 Sept 2023: C+S - Added new Truck field-->
+                <lightning-input type="text" label="Truck" value={drivertruck} disabled="disabled"></lightning-input> <br /> <br /> 
+
+                <!--Transport Job Type = Regular-->
+                <!-- 02 OCT 2023: C+S - Removed logic related to Type
+                <template if:true={tjtyperegular}> -->
+                    <!--23 JUNE 2023 [C+S] Contract Job Item will only display if Billable = TRUE -->
+                    <template if:true={isBillable}>
+                        <lightning-input type="text" label="Contract Job Item" value={driverconfiguration} disabled="disabled"></lightning-input> <br /> <br />                
+                    </template>
+                    <lightning-input type="toggle"
+                            label="Is Daily Pre-start Required?"
+                            message-toggle-active="Yes, create Daily Pre-start"
+                            message-toggle-inactive ="No, Daily Pre-start is not required"
+                            data-field="isPrestartRequired"
+                            disabled="disabled"
+                            checked = "{isPrestartRequired}">
+                    </lightning-input><br />
+                <!--</template> -->
+                <!--Transport Job Type = Maintenance
+                <template if:false={tjtyperegular}>
+                    <lightning-input type="text" label="Maintenance Category" value={maintenancecategory} disabled="disabled"></lightning-input> <br /> <br />                
+                </template>   -->         
+
+                
+                <!--DRIVER PROVIDED INFORMATION-->
+                <br /><br />
+                <template if:false={driverstatus}>
+                    <lightning-card title="Driver Provided Information">
+                        <lightning-record-form
+                            record-id={strdriverassignmentid} 
+                            object-api-name={objectDriverAssignment}
+                            fields={DAfieldsreadonly}
+                            mode="readonly">
+                        </lightning-record-form>
+                    </lightning-card>
+                </template>
+
+                <!--ASSET INFORMATION-->
+                <br />
+                <lightning-card  title="Asset Assignment">
+                <!--Driver Assignment is not Cancelled-->
+                <template if:false={isDACancelled}>
+                    <template if:false={tjstatusapproved}>
+                    <table style="width:50%">
+                        <tr>
+                            <td valign = "top">
+                                <b>Show Assets assigned to </b>
+                                <lightning-helptext content={strHelpText}></lightning-helptext>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <c-unit-list 
+                                get-owner-unit-id={strUnitId}
+                                get-owner-unit-name={strUnitName}> 
+                                </c-unit-list>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>&nbsp;</b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign = "top">
+                                <b>Asset Name </b>
+                                <lightning-helptext content="Press ESC to close the dropdown list." ></lightning-helptext>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <c-asset-assignment-list get-id-from-parent={selectedUnitID}> </c-asset-assignment-list>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>&nbsp;</b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td  style="text-align:right"><lightning-button label="Add Asset" variant="brand" onclick={createAssetDriver}></lightning-button> </td>                    
+                        </tr>
+                    </table>
+                    </template>
+                </template>
+
+                    <br /><br />
+                        <template if:true={isassetAssign}>
+                             <table>
+                                <thead><tr>
+                                    <th>Asset Name</th>
+                                    <th>Asset Family</th>
+                                    <th>Asset ID Number</th>
+                                    <th>Registration Number</th>
+                                    <th>Serial Number</th>
+                                    <th>Asset Category</th> 
+                                    <th></th>                          
+                                </tr></thead>
+                                <tbody>
+                                    <template for:each={assetAssignList} for:item="asset">
+                                        <tr  key={asset.Id}>
+                                            <td>{asset.WD_Asset__r.Name}</td>
+                                            <td>{asset.WD_Asset__r.Asset_Family__c}</td>
+                                            <td>{asset.WD_Asset__r.Asset_ID_Number__c}</td>
+                                            <td>{asset.WD_Asset__r.Registration_Number__c}</td>
+                                            <td>{asset.WD_Asset__r.Serial_Number__c}</td>
+                                            <td>{asset.WD_Asset__r.Inventory_Item__c}</td>
+                                            <td> <template if:false={isDACancelled}><template if:false={tjstatusapproved}>
+                                                <lightning-button-icon icon-name="utility:delete" alternative-text="Delete" class="slds-m-left_xx-small" title="Delete"
+                                                data-div={asset.Id} onclick={deleteAsset}  size="x-small"></lightning-button-icon></template></template></td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </template>
+                        <template if:false={isassetAssign}>
+                            <b>Please assign an asset.</b>
+                        </template>
+                </lightning-card>
+            </template>
+
+            <!--DRIVER UPDATE INFORMATION-->
+            <template if:true={isDriverAssignmentUpdate}>
+
+                <!--02 OCT 2023: C+S - Added Driver Assignment Date field-->
+                <lightning-input type="date" label="Driver Assignment Date" data-field="DriverAssignmentDate" value={dadate}></lightning-input><br />
+
+                <lightning-textarea type="text" label="Estimated Total Job Time (including Breaks/Rest hours)" data-field="EstimatedTotalJobTime" value={estimatedtotaljobtime}></lightning-textarea><br />
+                <lightning-textarea type="text" label="Instructions" data-field="DriverNotes" value={drivernotes}></lightning-textarea><br />
+
+                <!--21 JUNE 2023: C+S - Added new Configuration field-->
+                <c-custom-lookup field-label="Configuration" child-object-api-name='Driver_Assignment__c'
+                target-field-api-name='Configuration_pklist__c' onvalueselected={handleConfigurationSelected} data-field="ConfigurationNew" value = "{configurationnew}"></c-custom-lookup><br />
+                <br />
+
+                <!--20 SEPT 2023: C+S - Added Truck field-->
+                <label>Truck</label>
+                <c-truck-default-list  
+                    get-id-from-parent={recordId}
+                    get-truck-id={strDATruckID}
+                    get-truck-name={strDATruckName}
+                > </c-truck-default-list><br /><br /> 
+
+                <!--Transport Job Type = Regular-->
+                <!-- 02 OCT 2023: C+S - Removed logic related to Type 
+                <template if:true={tjtyperegular}> -->
+                    <!--23 JUNE 2023 [C+S] Contract Job Item will only display if Billable = TRUE -->
+                    <template if:true={isBillable}>
+                        <label>Contract Job Item</label>
+                        <c-configuration-default-list  
+                                get-id-from-parent={recordId}
+                                get-configuration-id={strConfigurationID}
+                                get-configuration-name={strConfigurationName}
+                            > </c-configuration-default-list><br /><br />  
+                    </template>
+                    <lightning-input type="toggle"
+                            label="Is Daily Pre-start Required?"
+                            message-toggle-active="Yes, create Daily Pre-start"
+                            message-toggle-inactive ="No, Daily Pre-start is not required"
+                            data-field="isPrestartRequired"
+                            enabled ="true"
+                            checked = "{isPrestartRequired}">
+                    </lightning-input><br />
+                <!--</template> -->
+                <!--Transport Job Type = Maintenance
+                <template if:false={tjtyperegular}>
+                    <c-custom-lookup field-label="Maintenance Category" child-object-api-name='Driver_Assignment__c'
+                    target-field-api-name='Maintenance_Category__c' onvalueselected={handleMaintenanceCategorySelected} data-field="MaintenanceCategory" value = "{maintenancecategory}"></c-custom-lookup><br />
+                    <br /><br />  
+                </template> -->
+
+                <template if:false={driverstatus}>        
+                    <lightning-input type="datetime" label="Start Date" data-field="StartDate" value={startdate}></lightning-input><br />            
+                    <lightning-input type="datetime" label="End Date" data-field="EndDate" value={enddate}></lightning-input><br />   
+                    <lightning-textarea type="text" label="Travel Details" data-field="TravelDetails" value={traveldetails}></lightning-textarea><br />
+                    <lightning-textarea type="text" label="Load Details" data-field="LoadDetails" value={loaddetails}></lightning-textarea><br />
+                    <template if:true={within100km}>  
+                        <lightning-input type="text" label="Work Diary Number" data-field="WorkDiaryNumber" value={workdiary} class="slds-hidden"></lightning-input><br />
+                    </template>
+                    <template if:false={within100km}>  
+                        <lightning-input type="text" label="Work Diary Number" data-field="WorkDiaryNumber" value={workdiary} required></lightning-input><br />
+                    </template>
+                </template>
+
+                <template if:true={driverstatus}>  
+                    <lightning-input type="datetime" label="Start Date" data-field="StartDate" value={startdate} class="slds-hidden"></lightning-input><br />            
+                    <lightning-input type="datetime" label="End Date" data-field="EndDate" value={enddate} class="slds-hidden"></lightning-input><br />  
+                    <lightning-input type="text" label="Work Diary Number" data-field="WorkDiaryNumber" value={workdiary} class="slds-hidden"></lightning-input><br />
+                </template>
+
+                <lightning-button label="Cancel" slot="actions" onclick={cancelDriverAssignment}></lightning-button>
+                <lightning-button label="Save" slot="actions" onclick={saveDriverAssignment}></lightning-button>
+            </template>
+        </lightning-card>
+
+        <!--Use template if:true to display/hide popup based on isModalCancelDAOpen value--> 
+        <template if:true={isModalCancelDAOpen}>
+            <!-- Modal/Popup Box LWC starts here -->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box LWC header here -->
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeCancelDAModal}>
+                            <lightning-icon icon-name="utility:close"
+                                alternative-text="close"
+                                variant="inverse"
+                                size="small" ></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Cancel Driver Assignment</h2>
+                    </header>
+                    <!-- Modal/Popup Box LWC body starts here -->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <p><b>Are you sure you want to set the status of this Driver Assignment to Cancelled?</b></p>
+                    </div>
+                    <!-- Modal/Popup Box LWC footer starts here -->
+                    <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_neutral" onclick={closeCancelDAModal} title="No">No</button>
+                        <button class="slds-button slds-button_brand" onclick={driverAssignmentToCancelled} title="Yes">Yes</button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+
+        <!--Use template if:true to display/hide popup based on isModalNotificationOpen value--> 
+        <template if:true={isModalNotificationOpen}>
+            <!-- Modal/Popup Box LWC starts here -->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-02" aria-modal="true" aria-describedby="modal-content-id-2" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box LWC header here -->
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeNotificationModal}>
+                            <lightning-icon icon-name="utility:close"
+                                alternative-text="close"
+                                variant="inverse"
+                                size="small" ></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate">Driver Assignment - Send Notification</h2>
+                    </header>
+                    <!-- Modal/Popup Box LWC body starts here -->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+                        <p><b>Are you sure you want to send notification about Driver Assignment updates?</b></p>
+                    </div>
+                    <!-- Modal/Popup Box LWC footer starts here -->
+                    <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_neutral" onclick={closeNotificationModal} title="Cancel">Cancel</button>
+                        <button class="slds-button slds-button_brand" onclick={driverAssignmentNotification} title="Send">Send</button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+       
+    </template>
+</template>

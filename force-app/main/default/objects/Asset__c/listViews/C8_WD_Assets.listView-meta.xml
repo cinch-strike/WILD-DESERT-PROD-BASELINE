@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>C8_WD_Assets</fullName>
+    <columns>Asset_Family__c</columns>
+    <columns>NAME</columns>
+    <columns>Asset_ID_Number__c</columns>
+    <columns>Servicing_Required__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Unit__c</field>
+        <operation>equals</operation>
+        <value>Camp 8</value>
+    </filters>
+    <label>Camp 08 - All WD Assets</label>
+    <sharedTo>
+        <group>Camp_8</group>
+        <group>Camp_Supervisor</group>
+        <group>Electrician</group>
+        <group>Fabrication</group>
+        <group>Finance</group>
+        <group>Safety</group>
+        <role>Administration</role>
+    </sharedTo>
+</ListView>

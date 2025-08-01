@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Needs_My_Approval__c</fullName>
+    <formula>IF( (Purchase_Request_Approver__c =  $User.Id &amp;&amp;  (ISPICKVAL(Status__c , &quot;For Approval&quot;) || ISPICKVAL(Status__c , &quot;For Pricing Approval&quot;))) || ( $Profile.Name = &quot;Purchasing Officer 2.0&quot; &amp;&amp;  ISPICKVAL(Status__c , &quot;For Item Approval&quot;)) , TRUE, FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Needs My Approval</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

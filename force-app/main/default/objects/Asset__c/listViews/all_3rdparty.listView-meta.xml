@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>all_3rdparty</fullName>
+    <columns>Type__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Asset_Family__c</columns>
+    <columns>NAME</columns>
+    <columns>Asset_ID_Number__c</columns>
+    <columns>Inventory_Item__c</columns>
+    <columns>Unit__c</columns>
+    <columns>Current_Site__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Unit__c</field>
+        <operation>contains</operation>
+        <value>3rd Party Repair/Inspection</value>
+    </filters>
+    <label>WD Assets - 3rd Party Repair/Inspection</label>
+    <sharedTo>
+        <group>Purchasing</group>
+    </sharedTo>
+</ListView>

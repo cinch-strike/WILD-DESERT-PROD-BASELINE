@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Camp_10_Lifting_Equipment_Register</fullName>
+    <columns>NAME</columns>
+    <columns>Description__c</columns>
+    <columns>Date_In_Service__c</columns>
+    <columns>Certificate_Number__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>Asset_ID__c</columns>
+    <columns>Inspection_Requirement__c</columns>
+    <columns>Interval_days__c</columns>
+    <columns>Date_Last_Inspection__c</columns>
+    <columns>Date_of_Next_Inspection__c</columns>
+    <columns>Days_to_Inspection__c</columns>
+    <columns>Disposal_Date__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Inspection_Certification__c.Lifting_Equipment</value>
+    </filters>
+    <filters>
+        <field>WD_Unit__c</field>
+        <operation>equals</operation>
+        <value>Camp 10</value>
+    </filters>
+    <label>Camp #10 - Lifting Equipment Register</label>
+    <sharedTo>
+        <group>Camp_10</group>
+        <group>Camp_Supervisor</group>
+        <group>Fabrication</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Purchasing</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Checked_for_Discolouration__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>If Discolouration is evident then the wire cable must be discarded</inlineHelpText>
+    <label>Checked for Discolouration</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

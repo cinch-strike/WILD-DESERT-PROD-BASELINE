@@ -1,0 +1,41 @@
+<apex:page standardController="WD_Report__c" extensions="skedRelatedSRExtension">
+
+<apex:form >
+<apex:pageBlock >
+
+ <apex:variable var="count" value="{!0}" />
+ <apex:repeat value="{!WD_Report__c.Services_Received__r}" var="row">
+        <apex:variable var="count" value="{!count+1}" />
+ </apex:repeat>
+ 
+<apex:variable var="v" value="'{!WD_Report__c.Services_Received__r}'"/>
+<apex:variable var="v2" value="'[]'"/>
+
+<apex:outputPanel rendered="{!v == v2}">
+ No records to display
+</apex:outputPanel>
+
+<apex:pageBlockTable value="{!SRList}" var="item" rendered="{! NOT(v == v2)}">
+
+<apex:column value="{!item.Date__c}"/>
+<apex:column value="{!item.RecordTypeId}"/>
+
+<apex:column headerValue="Service Received Item">
+<apex:outputLink value="/{!item.Item__c}" target="_top">{!item.Item__r.Name}</apex:outputLink>                         
+</apex:column>
+
+
+<apex:column value="{!item.Description_of_Operations__c }"/>
+<apex:column value="{!item.Start_time__c}"/>
+<apex:column value="{!item.Finish_Time__c}"/>
+<apex:column value="{!item.Item_total__c}"/>
+<apex:column value="{!item.Item_Rate__c}"/>
+<apex:column value="{!item.Total_Cost__c}"/>
+
+
+</apex:pageBlockTable>
+
+</apex:pageBlock>
+
+</apex:form>
+</apex:page>

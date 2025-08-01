@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Banana</fullName>
+        <default>false</default>
+        <label>Banana</label>
+    </customValue>
+    <customValue>
+        <fullName>Boonah</fullName>
+        <default>false</default>
+        <label>Boonah</label>
+    </customValue>
+    <customValue>
+        <fullName>Brisbane</fullName>
+        <default>false</default>
+        <label>Brisbane</label>
+    </customValue>
+    <customValue>
+        <fullName>Bundaberg</fullName>
+        <default>false</default>
+        <label>Bundaberg</label>
+    </customValue>
+    <customValue>
+        <fullName>Caboolture</fullName>
+        <default>false</default>
+        <label>Caboolture</label>
+    </customValue>
+    <customValue>
+        <fullName>Cairns</fullName>
+        <default>false</default>
+        <label>Cairns</label>
+    </customValue>
+    <customValue>
+        <fullName>Fraser Coast</fullName>
+        <default>false</default>
+        <label>Fraser Coast</label>
+    </customValue>
+    <customValue>
+        <fullName>Gladstone</fullName>
+        <default>false</default>
+        <label>Gladstone</label>
+    </customValue>
+    <customValue>
+        <fullName>Gold Coast</fullName>
+        <default>false</default>
+        <label>Gold Coast</label>
+    </customValue>
+    <customValue>
+        <fullName>Goondiwindi</fullName>
+        <default>false</default>
+        <label>Goondiwindi</label>
+    </customValue>
+    <customValue>
+        <fullName>Gympie</fullName>
+        <default>false</default>
+        <label>Gympie</label>
+    </customValue>
+    <customValue>
+        <fullName>Ipswich</fullName>
+        <default>false</default>
+        <label>Ipswich</label>
+    </customValue>
+    <customValue>
+        <fullName>Livingstone</fullName>
+        <default>false</default>
+        <label>Livingstone</label>
+    </customValue>
+    <customValue>
+        <fullName>Lockyer Valley</fullName>
+        <default>false</default>
+        <label>Lockyer Valley</label>
+    </customValue>
+    <customValue>
+        <fullName>Logan</fullName>
+        <default>false</default>
+        <label>Logan</label>
+    </customValue>
+    <customValue>
+        <fullName>Maranoa</fullName>
+        <default>false</default>
+        <label>Maranoa</label>
+    </customValue>
+    <customValue>
+        <fullName>Moreton Bay</fullName>
+        <default>false</default>
+        <label>Moreton Bay</label>
+    </customValue>
+    <customValue>
+        <fullName>Murweh</fullName>
+        <default>false</default>
+        <label>Murweh</label>
+    </customValue>
+    <customValue>
+        <fullName>Noosa</fullName>
+        <default>false</default>
+        <label>Noosa</label>
+    </customValue>
+    <customValue>
+        <fullName>Redlands</fullName>
+        <default>false</default>
+        <label>Redlands</label>
+    </customValue>
+    <customValue>
+        <fullName>Scenic Rim</fullName>
+        <default>false</default>
+        <label>Scenic Rim</label>
+    </customValue>
+    <customValue>
+        <fullName>Somerset</fullName>
+        <default>false</default>
+        <label>Somerset</label>
+    </customValue>
+    <customValue>
+        <fullName>South Burnett</fullName>
+        <default>false</default>
+        <label>South Burnett</label>
+    </customValue>
+    <customValue>
+        <fullName>Southern Downs</fullName>
+        <default>false</default>
+        <label>Southern Downs</label>
+    </customValue>
+    <customValue>
+        <fullName>Sunshine Coast</fullName>
+        <default>false</default>
+        <label>Sunshine Coast</label>
+    </customValue>
+    <customValue>
+        <fullName>Toowoomba</fullName>
+        <default>false</default>
+        <label>Toowoomba</label>
+    </customValue>
+    <customValue>
+        <fullName>Western Downs</fullName>
+        <default>false</default>
+        <label>Western Downs</label>
+    </customValue>
+    <customValue>
+        <fullName>Rockhampton</fullName>
+        <default>false</default>
+        <label>Rockhampton</label>
+    </customValue>
+    <customValue>
+        <fullName>Charters Towers</fullName>
+        <default>false</default>
+        <label>Charters Towers</label>
+    </customValue>
+    <customValue>
+        <fullName>Townsville</fullName>
+        <default>false</default>
+        <label>Townsville</label>
+    </customValue>
+    <customValue>
+        <fullName>North Burnett</fullName>
+        <default>false</default>
+        <label>North Burnett</label>
+    </customValue>
+    <customValue>
+        <fullName>Mackay Region</fullName>
+        <default>false</default>
+        <label>Mackay Region</label>
+    </customValue>
+    <customValue>
+        <fullName>Light</fullName>
+        <default>false</default>
+        <label>Light</label>
+    </customValue>
+    <customValue>
+        <fullName>Whyalla Playford</fullName>
+        <default>false</default>
+        <label>Whyalla Playford</label>
+    </customValue>
+    <customValue>
+        <fullName>Tweed</fullName>
+        <default>false</default>
+        <label>Tweed</label>
+    </customValue>
+    <customValue>
+        <fullName>Tamworth</fullName>
+        <default>false</default>
+        <label>Tamworth</label>
+    </customValue>
+    <customValue>
+        <fullName>Mount Gambier</fullName>
+        <default>false</default>
+        <label>Mount Gambier</label>
+    </customValue>
+    <customValue>
+        <fullName>Central Highlands</fullName>
+        <default>false</default>
+        <label>Central Highlands</label>
+    </customValue>
+    <customValue>
+        <fullName>Berri Barmera</fullName>
+        <default>false</default>
+        <label>Berri Barmera</label>
+    </customValue>
+    <customValue>
+        <fullName>Onkaparinga</fullName>
+        <default>false</default>
+        <label>Onkaparinga</label>
+    </customValue>
+    <customValue>
+        <fullName>Clare and Gilbert Valleys</fullName>
+        <default>false</default>
+        <label>Clare and Gilbert Valleys</label>
+    </customValue>
+    <customValue>
+        <fullName>Adelaide Plains</fullName>
+        <default>false</default>
+        <label>Adelaide Plains</label>
+    </customValue>
+    <customValue>
+        <fullName>Port Adelaide Enfield</fullName>
+        <default>false</default>
+        <label>Port Adelaide Enfield</label>
+    </customValue>
+    <customValue>
+        <fullName>Balonne</fullName>
+        <default>false</default>
+        <label>Balonne</label>
+    </customValue>
+    <customValue>
+        <fullName>Whitsunday</fullName>
+        <default>false</default>
+        <label>Whitsunday</label>
+    </customValue>
+    <masterLabel>Local Government Area</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

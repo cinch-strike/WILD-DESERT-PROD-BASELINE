@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_By_Unit__c</fullName>
+    <description>Conditional on Required by Unit at Professional Development.</description>
+    <inlineHelpText>Conditional on Required by Unit at Professional Development.</inlineHelpText>
+    <label>Required By Unit</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Units</valueSetName>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

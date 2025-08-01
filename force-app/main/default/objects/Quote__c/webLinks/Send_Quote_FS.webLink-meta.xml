@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Quote_FS</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>page</linkType>
+    <masterLabel>Send Quote (FS)</masterLabel>
+    <openType>replace</openType>
+    <page>FormStackSendQuote</page>
+    <protected>false</protected>
+</WebLink>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <label>Category</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>HR</fullName>
+                <default>false</default>
+                <label>HR</label>
+            </value>
+            <value>
+                <fullName>Induction - Client</fullName>
+                <default>false</default>
+                <label>Induction - Client</label>
+            </value>
+            <value>
+                <fullName>Licencing</fullName>
+                <default>false</default>
+                <label>Licencing</label>
+            </value>
+            <value>
+                <fullName>Qualification</fullName>
+                <default>false</default>
+                <label>Qualification</label>
+            </value>
+            <value>
+                <fullName>Recruit</fullName>
+                <default>false</default>
+                <label>Recruit</label>
+            </value>
+            <value>
+                <fullName>Training - WD</fullName>
+                <default>false</default>
+                <label>Training - WD</label>
+            </value>
+            <value>
+                <fullName>Training - RTO</fullName>
+                <default>false</default>
+                <label>Training - RTO</label>
+            </value>
+            <value>
+                <fullName>Training - WD Online</fullName>
+                <default>false</default>
+                <label>Training - WD Online</label>
+            </value>
+            <value>
+                <fullName>Induction - WD</fullName>
+                <default>false</default>
+                <label>Induction - WD</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

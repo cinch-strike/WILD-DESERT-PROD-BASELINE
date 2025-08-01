@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NHVAS_Trail</fullName>
+    <columns>Unit__c</columns>
+    <columns>NAME</columns>
+    <columns>Registered_Owner__c</columns>
+    <columns>State_of_Registration__c</columns>
+    <columns>Make__c</columns>
+    <columns>Model__c</columns>
+    <columns>Vin_Number__c</columns>
+    <columns>Registration_Number__c</columns>
+    <columns>Asset_Family__c</columns>
+    <columns>year_of_manufacture__c</columns>
+    <columns>Tare__c</columns>
+    <columns>GVM__c</columns>
+    <columns>GCM__c</columns>
+    <columns>NHVAS_ID_No__c</columns>
+    <columns>Entry_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NHVAS_Accredited__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Asset__c.Trailer</value>
+    </filters>
+    <label>NHVAS - Trailers</label>
+    <sharedTo>
+        <group>Managing_Director</group>
+        <group>Safety</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

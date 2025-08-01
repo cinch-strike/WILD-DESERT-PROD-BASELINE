@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credit_Card_Register</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>NAME</columns>
+    <columns>Assigned_To__c</columns>
+    <columns>Expiry_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Company_Property__c.Credit_Card</value>
+    </filters>
+    <label>Credit Card Register</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>HR</group>
+        <group>Managing_Director</group>
+    </sharedTo>
+</ListView>

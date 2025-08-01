@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ResetReceipt_QuantityReceived</fullName>
+    <active>true</active>
+    <description>Set the Quantity Received to blank and status For Ordering if want to reset the receipt items.</description>
+    <errorConditionFormula>AND(
+   ISCHANGED( Reset_Receipt__c ),
+   Reset_Receipt__c = TRUE, 
+   OR(
+      NOT(ISBLANK( Quantity_Received__c )),
+      NOT( ISPICKVAL( Status__c , &apos;For Ordering&apos;))
+   )
+)</errorConditionFormula>
+    <errorDisplayField>Reset_Receipt__c</errorDisplayField>
+    <errorMessage>You can not reset receipt if the Quantity Received has value or the status is not For Ordering.</errorMessage>
+</ValidationRule>

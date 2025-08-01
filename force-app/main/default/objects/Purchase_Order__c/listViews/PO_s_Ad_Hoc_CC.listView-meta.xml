@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PO_s_Ad_Hoc_CC</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>Supplier__c</columns>
+    <columns>Total_Price__c</columns>
+    <columns>For_Approval_Notes__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Payment_Type__c</field>
+        <operation>equals</operation>
+        <value>Adhoc,Credit Card</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>For Approval,PO Approved,Sent to Supplier,Partially Fulfilled</value>
+    </filters>
+    <label>PO&apos;s - Ad Hoc / CC</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>Purchasing</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Business Operations Officer</label>
+    <permissionSets>Active_Personnel_Full_Access</permissionSets>
+    <permissionSets>Active_Trades</permissionSets>
+    <permissionSets>Asset_Edit_and_Create</permissionSets>
+    <permissionSets>Compliance_Docs</permissionSets>
+    <permissionSets>Conga_Permission_Set</permissionSets>
+    <permissionSets>DSJS_Approver</permissionSets>
+    <permissionSets>Employee_HR_Edit</permissionSets>
+    <permissionSets>Formstack_User</permissionSets>
+    <permissionSets>Lightning_Experience_User</permissionSets>
+    <permissionSets>Purchase_Order_Send</permissionSets>
+    <permissionSets>Purchase_Request_Standard_User_Permission_Set</permissionSets>
+    <permissionSets>Team_Manager_Edit</permissionSets>
+    <permissionSets>Training_and_Development</permissionSets>
+    <permissionSets>Transport_Driver_Full_Access</permissionSets>
+    <permissionSets>Work_Orders_Tasks_Managers</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>prestarts_052</fullName>
+    <columns>Date__c</columns>
+    <columns>Asset__c</columns>
+    <columns>NAME</columns>
+    <columns>WD_Unit__c</columns>
+    <columns>Invoicing_Information__c</columns>
+    <columns>Pre_start_Required__c</columns>
+    <columns>Prestart__c</columns>
+    <columns>Pre_Start_Received__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>4/1/2020</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>ServicesReceived__c.Transport_services</value>
+    </filters>
+    <filters>
+        <field>Asset__c</field>
+        <operation>equals</operation>
+        <value>Crew Vehicle - 052XXU</value>
+    </filters>
+    <filters>
+        <field>Date__c</field>
+        <operation>lessOrEqual</operation>
+        <value>6/30/2020</value>
+    </filters>
+    <label>Prestarts - 052xxu (last quarter)</label>
+    <sharedTo>
+        <group>OPs_super</group>
+        <group>Purchasing</group>
+        <group>Safety</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

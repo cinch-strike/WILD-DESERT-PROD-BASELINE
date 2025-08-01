@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NotExceedsLimit_SendForApproval</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+   ISCHANGED( Status__c ) ,
+   OR(ISPICKVAL(Status__c , &apos;For Approval&apos;),
+      ISPICKVAL(Status__c , &apos;PO Approved&apos;)),
+   Exceeds_Maximum_Limit__c = FALSE
+)</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>There is no need to send for approval if total price is less than maximum limit of $10K.</errorMessage>
+</ValidationRule>

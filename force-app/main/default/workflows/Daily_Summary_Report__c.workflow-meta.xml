@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Company_Manager_Approval_Email_Alert</fullName>
+        <description>Company Manager Approval Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Company_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Site_Job_Approval_Email_Templates/Company_Manager_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Daily_Site_Job_Summary_Approved_by_Ops_Mgr</fullName>
+        <description>Daily Site Job Summary Approved by Ops Mgr</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Rig_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Site_Job_Approval_Email_Templates/Daily_Site_Job_Summary_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Daily_Site_Job_Summary_Rejected_Email_Alert</fullName>
+        <description>Daily Site Job Summary Rejected Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>gina.tedford@wilddesert.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Rig_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Site_Job_Approval_Email_Templates/Daily_Site_Job_Summary_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Ops_Supervisor_Approval_Alert</fullName>
+        <description>Ops Supervisor Approval Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Ops_Supervisor__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Site_Job_Approval_Email_Templates/Daily_Site_Job_Summary_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Ops_Supervisor_Reject_Alert</fullName>
+        <description>Ops Supervisor Reject Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Ops_Supervisor__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Site_Job_Approval_Email_Templates/Daily_Site_Job_Summary_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>RE_submission_Ops_Sup_Email_for_Approval_Alert</fullName>
+        <description>RE submission Ops Sup Email for Approval Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Ops_Supervisor__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Site_Job_Approval_Email_Templates/Ops_Sup_RE_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Ops_Sup_Email_for_Approval_Alert</fullName>
+        <description>Send Ops Sup Email for Approval Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Ops_Supervisor__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Site_Job_Approval_Email_Templates/Ops_Sup_Approval</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Set_Daily_Summary_Report_Status_Submited</fullName>
+        <field>Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Set Daily Summary Report Status Submited</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Summary_Report_Rig_Mgr_Approved</fullName>
+        <field>Status__c</field>
+        <literalValue>Rig Mgr - Approved</literalValue>
+        <name>Update Summary Report Rig Mgr Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Summary_Report_Status_Rejected</fullName>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Update Summary Report Status Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>true</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Draft</fullName>
+                <default>true</default>
+                <label>Draft</label>
+            </value>
+            <value>
+                <fullName>For Approval</fullName>
+                <default>false</default>
+                <label>For Approval</label>
+            </value>
+            <value>
+                <fullName>For Quoting</fullName>
+                <default>false</default>
+                <label>For Quoting</label>
+            </value>
+            <value>
+                <fullName>For Pricing Approval</fullName>
+                <default>false</default>
+                <label>For Pricing Approval</label>
+            </value>
+            <value>
+                <fullName>For Item Approval</fullName>
+                <default>false</default>
+                <label>For Item Approval</label>
+            </value>
+            <value>
+                <fullName>For Ordering</fullName>
+                <default>false</default>
+                <label>For Ordering</label>
+            </value>
+            <value>
+                <fullName>Sent to Supplier</fullName>
+                <default>false</default>
+                <label>Sent to Supplier</label>
+            </value>
+            <value>
+                <fullName>Ready for Collection</fullName>
+                <default>false</default>
+                <label>Ready for Collection</label>
+            </value>
+            <value>
+                <fullName>Pick List</fullName>
+                <default>false</default>
+                <label>Pick List</label>
+            </value>
+            <value>
+                <fullName>Packing List</fullName>
+                <default>false</default>
+                <label>Packing List</label>
+            </value>
+            <value>
+                <fullName>In Transit</fullName>
+                <default>false</default>
+                <label>In Transit</label>
+            </value>
+            <value>
+                <fullName>Completed</fullName>
+                <default>false</default>
+                <label>Completed</label>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <label>Cancelled</label>
+            </value>
+            <value>
+                <fullName>Dispute</fullName>
+                <default>false</default>
+                <label>Dispute</label>
+            </value>
+            <value>
+                <fullName>Defective</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Defective</label>
+            </value>
+            <value>
+                <fullName>Missing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Missing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

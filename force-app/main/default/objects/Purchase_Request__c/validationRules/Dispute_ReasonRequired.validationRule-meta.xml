@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dispute_ReasonRequired</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+   ISCHANGED( Completion_Status__c ),
+   ISBLANK( Dispute_Reason__c ),
+   OR( ISPICKVAL(Completion_Status__c , &apos;Missing&apos;),
+       ISPICKVAL(Completion_Status__c , &apos;Defective&apos;) )
+    
+)</errorConditionFormula>
+    <errorDisplayField>Dispute_Reason__c</errorDisplayField>
+    <errorMessage>Dispute reason is required if completion status is Missing or Defective.</errorMessage>
+</ValidationRule>

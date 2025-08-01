@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_Create_Site_Job_without_Unit_Mgr</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+ISBLANK(  Unit__r.Manager__c ) 
+)</errorConditionFormula>
+    <errorMessage>Can&apos;t create a Daily Site Job without a Manager. Manager must be populated on Unit before creating a Daily Site Job.</errorMessage>
+</ValidationRule>

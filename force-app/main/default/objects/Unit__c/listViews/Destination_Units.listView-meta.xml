@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Destination_Units</fullName>
+    <columns>Unit_Type__c</columns>
+    <columns>NAME</columns>
+    <columns>Purchase_Request_Approver__c</columns>
+    <columns>Unit_Manager__c</columns>
+    <columns>Manager__c</columns>
+    <columns>Destination_Unit__c</columns>
+    <columns>Cost_Allocation_Unit__c</columns>
+    <columns>By_pass_Ordering__c</columns>
+    <columns>Source_Store__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Unit__c.Location</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <label>Purchasing Unit Details</label>
+</ListView>

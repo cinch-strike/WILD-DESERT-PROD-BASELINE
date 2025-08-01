@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FB_External_Damage__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>All external components should be checked for damage that may affect the safe use of the equipment.</inlineHelpText>
+    <label>FB External Damage</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

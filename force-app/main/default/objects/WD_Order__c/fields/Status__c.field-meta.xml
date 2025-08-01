@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Open</fullName>
+                <default>true</default>
+                <label>Open</label>
+            </value>
+            <value>
+                <fullName>Job Complete</fullName>
+                <default>false</default>
+                <label>Job Complete</label>
+            </value>
+            <value>
+                <fullName>SO Complete</fullName>
+                <default>false</default>
+                <label>SO Complete</label>
+            </value>
+            <value>
+                <fullName>Invoiced</fullName>
+                <default>false</default>
+                <label>Invoiced</label>
+            </value>
+            <value>
+                <fullName>WD Internal</fullName>
+                <default>false</default>
+                <label>WD Internal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delete_Warning</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Delete</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/apex.js&quot;)} 
+
+var result = sforce.apex.execute(&quot;DisplayWarningMessage&quot;,&quot;getEmployees&quot;,{positionId:&apos;{!Position__c.Id}&apos;}); 
+ if(result.length&gt;0){
+   var r=confirm(&quot;There Are Employees &quot;+result+&quot; Related to Position.\nDo You Wan To Delete?&quot;);
+    if(r== true){
+      sforce.apex.execute(&quot;DisplayWarningMessage&quot;,&quot;deletePosition&quot;, {positionId:&apos;{!Position__c.Id}&apos;}); 
+       window.location.href=&apos;https://cs5.salesforce.com&apos;;     
+      }
+
+  }</url>
+</WebLink>

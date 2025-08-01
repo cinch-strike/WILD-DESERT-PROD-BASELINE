@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inspection_Record__c</fullName>
+    <label>Inspection Record Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Lifting Equipment Inspection</fullName>
+                <default>false</default>
+                <label>Lifting Equipment Inspection</label>
+            </value>
+            <value>
+                <fullName>Soft Sling Inspection</fullName>
+                <default>false</default>
+                <label>Soft Sling Inspection</label>
+            </value>
+            <value>
+                <fullName>Wire Cable Inspection</fullName>
+                <default>false</default>
+                <label>Wire Cable Inspection</label>
+            </value>
+            <value>
+                <fullName>Hose Inspection</fullName>
+                <default>false</default>
+                <label>Hose Inspection</label>
+            </value>
+            <value>
+                <fullName>Electrical Inspection</fullName>
+                <default>false</default>
+                <label>Electrical Inspection</label>
+            </value>
+            <value>
+                <fullName>Webbing Equipment Inspection</fullName>
+                <default>false</default>
+                <label>Webbing Equipment Inspection</label>
+            </value>
+            <value>
+                <fullName>3rd Party Inspection</fullName>
+                <default>false</default>
+                <label>3rd Party Inspection</label>
+            </value>
+            <value>
+                <fullName>Other Inspection + WD Form</fullName>
+                <default>false</default>
+                <label>Other Inspection + WD Form</label>
+            </value>
+            <value>
+                <fullName>Turnbuckle/Shackle Inspection</fullName>
+                <default>false</default>
+                <label>Turnbuckle/Shackle Inspection</label>
+            </value>
+            <value>
+                <fullName>Fire Extinguisher Inspection</fullName>
+                <default>false</default>
+                <label>Fire Extinguisher Inspection</label>
+            </value>
+            <value>
+                <fullName>Gauge Calibration Report</fullName>
+                <default>false</default>
+                <label>Gauge Calibration Report</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

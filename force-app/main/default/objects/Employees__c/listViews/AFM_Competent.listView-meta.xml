@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AFM_Competent</fullName>
+    <columns>Status__c</columns>
+    <columns>Assigned_to_Unit__c</columns>
+    <columns>NAME</columns>
+    <columns>Mobile__c</columns>
+    <columns>PositionLookup__c</columns>
+    <columns>On_Shift__c</columns>
+    <columns>Driver_Username_Email__c</columns>
+    <columns>Driver_NHVR_Acredd__c</columns>
+    <columns>MC_Experience__c</columns>
+    <columns>Details_of_Driver_Experience_MC_only__c</columns>
+    <columns>Geotab__c</columns>
+    <columns>Santos_Security_Number__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Pre Employment,Active</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Employees__c.Active_Employee</value>
+    </filters>
+    <filters>
+        <field>Driver_NHVR_Acredd__c</field>
+        <operation>equals</operation>
+        <value>Yes</value>
+    </filters>
+    <label>AFM - Competent</label>
+    <sharedTo>
+        <group>HR</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

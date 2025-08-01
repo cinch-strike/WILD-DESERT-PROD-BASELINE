@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NotCompleted_CantApprove</fullName>
+    <active>true</active>
+    <description>Can not approve Transport Job if the current status is not Completed.</description>
+    <errorConditionFormula>AND(
+   ISCHANGED( Status__c ),
+   ISPICKVAL(Status__c, &apos;Approved&apos;),
+   OR(
+      NOT(ISPICKVAL( PRIORVALUE(Status__c) , &apos;Completed&apos;)),
+      Open_Driver_Assignment__c 
+   )
+)</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>Transport Job can only be approved once the status is marked as &quot;Completed&quot;.</errorMessage>
+</ValidationRule>

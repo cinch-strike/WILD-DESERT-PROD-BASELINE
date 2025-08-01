@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>New_Scheduled_Service</fullName>
+        <description>New Scheduled Service</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>mechanical.supervisor@wilddesert.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>servicing@wilddesert.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Work_Orders/New_Scheduled_Service_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>Work_Order_Status_Change</fullName>
+        <description>Work Order Status Change</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>servicing@wilddesert.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Work_Orders/Work_Order_Approved</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approval_Requested</fullName>
+        <field>Status__c</field>
+        <literalValue>Requested</literalValue>
+        <name>Approval Requested</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Record_Type_Approval</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Fault_Report_Approved</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Record Type - Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Record_Type_Approval_Pending</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Fault_Report_Approval_Pending</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Record Type - Approval Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Record_Type_Not_Approval</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Fault_Report_Not_Approved</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Record Type -  Not Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_Not_Approved</fullName>
+        <field>Status__c</field>
+        <literalValue>Not Approved</literalValue>
+        <name>Status - Not Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_Open</fullName>
+        <field>Status__c</field>
+        <literalValue>Open</literalValue>
+        <name>Status - Open</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_Requested</fullName>
+        <field>Status__c</field>
+        <literalValue>Requested</literalValue>
+        <name>Status - Requested</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_Update_to_Requested</fullName>
+        <field>Status__c</field>
+        <literalValue>Requested</literalValue>
+        <name>Status Update to Requested</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Email Alert - Scheduled Service</fullName>
+        <actions>
+            <name>New_Scheduled_Service</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Job_Cards__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Scheduled Service</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>New Job Card Raised - IT</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Job_Cards__c.CreatedDate</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Job_Cards__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>IT</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Responsible Person Notification</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Job_Cards__c.Unit_User__c</field>
+            <operation>lessOrEqual</operation>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Job_Cards__c.LastModifiedById</field>
+            <operation>lessOrEqual</operation>
+            <value>1</value>
+        </criteriaItems>
+        <description>Notify when someonehas been made &quot;Responsible Person&quot; on a work order and edits are made</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

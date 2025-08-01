@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Driver__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <inlineHelpText>Driver who is responsible for carrying out the job</inlineHelpText>
+    <label>Driver</label>
+    <referenceTo>Employees__c</referenceTo>
+    <relationshipLabel>Schedular</relationshipLabel>
+    <relationshipName>Truck_Data</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

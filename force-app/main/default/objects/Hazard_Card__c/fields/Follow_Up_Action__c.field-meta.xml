@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Follow_Up_Action__c</fullName>
+    <inlineHelpText>One/more of the following forms may need to be completed and sent to Manager</inlineHelpText>
+    <label>Follow Up Action</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Material Request/Purchase Order</fullName>
+                <default>false</default>
+                <label>Material Request/Purchase Order</label>
+            </value>
+            <value>
+                <fullName>Work Order - Fault Report</fullName>
+                <default>false</default>
+                <label>Work Order - Fault Report</label>
+            </value>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

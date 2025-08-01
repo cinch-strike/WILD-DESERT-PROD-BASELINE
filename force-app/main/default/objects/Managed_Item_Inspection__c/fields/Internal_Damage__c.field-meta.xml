@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Internal_Damage__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Remove the Blanket from the container and check (1) for any damage to the blanket (2) for an insecure or damaged hand holding device (3) the blanket is folded correctly to allow easy removal &amp; (4) the size of the blanket is a min. of 1.2m x 1.8m. Repack.</inlineHelpText>
+    <label>Internal Assessment</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

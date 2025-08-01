@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>Daily_Report__c</baseObject>
+    <category>employee</category>
+    <deployed>true</deployed>
+    <description>Active Personnel with DSJ and UNIT</description>
+    <join>
+        <outerJoin>false</outerJoin>
+        <relationship>Active_Personnels__r</relationship>
+    </join>
+    <label>Active Personnel with DSJ and UNIT</label>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Daily Site Job ID</displayNameOverride>
+            <field>Id</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Owner</displayNameOverride>
+            <field>Owner</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Daily Site Job Name</displayNameOverride>
+            <field>Name</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Record Type</displayNameOverride>
+            <field>RecordType</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created Date</displayNameOverride>
+            <field>CreatedDate</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created By</displayNameOverride>
+            <field>CreatedBy</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified Date</displayNameOverride>
+            <field>LastModifiedDate</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified By</displayNameOverride>
+            <field>LastModifiedBy</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Activity Date</displayNameOverride>
+            <field>LastActivityDate</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Auto Create Daily Report Items</displayNameOverride>
+            <field>Auto_Create_Daily_Report_Items__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contract</displayNameOverride>
+            <field>Contract__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Daily Site Job Summary</displayNameOverride>
+            <field>Daily_Summary_Report__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Description</displayNameOverride>
+            <field>Description__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Fuel Levels (L)</displayNameOverride>
+            <field>Fuel_Levels__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>LTI Incident Notes</displayNameOverride>
+            <field>Incident_Notes__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>LTI Incident Occurred?</displayNameOverride>
+            <field>Incident_Occurred__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Invoice</displayNameOverride>
+            <field>Invoice__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Job Assignment</displayNameOverride>
+            <field>Job_Assignment__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Line Slipped</displayNameOverride>
+            <field>Line_Slipped__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Line on Spool</displayNameOverride>
+            <field>Line_on_Spool__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Manager</displayNameOverride>
+            <field>Manager__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>#No of KM&apos;s from Previous Site</displayNameOverride>
+            <field>No_of_KM_s_from_Previous_Site__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ops Sup</displayNameOverride>
+            <field>Ops_Sup__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Previous Site</displayNameOverride>
+            <field>Previous_Site__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Report Date</displayNameOverride>
+            <field>Report_Date__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Rubbish Levels (%)</displayNameOverride>
+            <field>Rubbish_Levels__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Septic Levels (L)</displayNameOverride>
+            <field>Septic_Levels__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Site</displayNameOverride>
+            <field>Site__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Status</displayNameOverride>
+            <field>Status__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Type</displayNameOverride>
+            <field>Type__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Unit</displayNameOverride>
+            <field>Unit__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Water Levels (L)</displayNameOverride>
+            <field>Water_Levels__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Weather</displayNameOverride>
+            <field>Weather__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Total Fuel Used</displayNameOverride>
+            <field>Total_Fuel_Used__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Fuel Delivered</displayNameOverride>
+            <field>Fuel_Delivered__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ops Supervisor Approval Notes</displayNameOverride>
+            <field>OpsSupervisorApprovalNotes__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>OpsSupervisorRejected</displayNameOverride>
+            <field>OpsSupervisorRejected__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Submitter</displayNameOverride>
+            <field>Submitter__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Unit is Stand Alone</displayNameOverride>
+            <field>UnitIsStandAlone__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Unit Manager Approval Notes</displayNameOverride>
+            <field>Unit_Manager_Approval_Notes__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>isLockedForUnitManager</displayNameOverride>
+            <field>isLockedForUnitManager__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>isLockedForUnitStaff</displayNameOverride>
+            <field>isLockedForUnitStaff__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>DSJ For My Approval</displayNameOverride>
+            <field>DSJ_For_My_Approval__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Transport Job</displayNameOverride>
+            <field>Transport_Job__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>DSJS Status</displayNameOverride>
+            <field>DSJS_Status__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Site ID</displayNameOverride>
+            <field>Site_ID__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Unit ID</displayNameOverride>
+            <field>Unit_ID__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>TJ Description</displayNameOverride>
+            <field>TJ_Description__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Transport Base</displayNameOverride>
+            <field>Transport_Base_formula__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Transport Daily Report</displayNameOverride>
+            <field>Transport_Daily_Report__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <masterLabel>Daily Site Jobs</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Active Personnel ID</displayNameOverride>
+            <field>Id</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Active Personnel Name</displayNameOverride>
+            <field>Name</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created Date</displayNameOverride>
+            <field>CreatedDate</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created By</displayNameOverride>
+            <field>CreatedBy</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified Date</displayNameOverride>
+            <field>LastModifiedDate</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified By</displayNameOverride>
+            <field>LastModifiedBy</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Activity Date</displayNameOverride>
+            <field>LastActivityDate</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Crew Change</displayNameOverride>
+            <field>Crew_Change__c</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Employee</displayNameOverride>
+            <field>Employees__c</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Locale</displayNameOverride>
+            <field>Locale__c</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Personnel Name</displayNameOverride>
+            <field>Personnel_Name__c</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Position</displayNameOverride>
+            <field>Position__c</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Shift</displayNameOverride>
+            <field>Shift__c</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Transport Daily Report</displayNameOverride>
+            <field>Transport_Daily_Report__c</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Timesheet Approved</displayNameOverride>
+            <field>Timesheet_Approved__c</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>DSJ - Report Date</displayNameOverride>
+            <field>DSJ_Report_Date__c</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Assigned to Unit</displayNameOverride>
+            <field>Assigned_to_Unit__c</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Crew</displayNameOverride>
+            <field>Crew__c</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Driver</displayNameOverride>
+            <field>Driver__c</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Notes</displayNameOverride>
+            <field>BOO_Notes__c</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>DSJ Unit</displayNameOverride>
+            <field>DSJ_Unit__c</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Position_Employee__c</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RM_Notes__c</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Work_Hrs__c</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Travel_Hrs__c</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Total_Personnel_Hrs__c</field>
+            <table>Daily_Report__c.Active_Personnels__r</table>
+        </columns>
+        <masterLabel>Active Personnels</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Unit__c.Business_Operations_Officer__c</field>
+            <table>Daily_Report__c</table>
+        </columns>
+        <masterLabel>Unit</masterLabel>
+    </sections>
+</ReportType>

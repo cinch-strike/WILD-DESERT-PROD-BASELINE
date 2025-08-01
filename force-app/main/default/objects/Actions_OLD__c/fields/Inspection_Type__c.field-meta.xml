@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inspection_Type__c</fullName>
+    <inlineHelpText>The type of inspection that will be reoccurring</inlineHelpText>
+    <label>Inspection Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Test and Tag</fullName>
+                <default>false</default>
+                <label>Test and Tag</label>
+            </value>
+            <value>
+                <fullName>Wire Cable</fullName>
+                <default>false</default>
+                <label>Wire Cable</label>
+            </value>
+            <value>
+                <fullName>NDT</fullName>
+                <default>false</default>
+                <label>NDT</label>
+            </value>
+            <value>
+                <fullName>PRV</fullName>
+                <default>false</default>
+                <label>PRV</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

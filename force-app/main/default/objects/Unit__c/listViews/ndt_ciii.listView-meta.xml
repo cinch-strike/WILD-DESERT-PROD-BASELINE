@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ndt_ciii</fullName>
+    <columns>NAME</columns>
+    <columns>NDT_Hours__c</columns>
+    <columns>NDT_Hours_Total__c</columns>
+    <columns>Next_CIII_Required_Op_Hrs__c</columns>
+    <columns>Date_Last_ndt__c</columns>
+    <columns>Last_NDT_Type__c</columns>
+    <columns>Next_NDT_Type__c</columns>
+    <columns>NDT_Hours_Life_of_Asset__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Unit_Type__c</field>
+        <operation>contains</operation>
+        <value>Qld - Rig,SA - Rig,Field - Rig</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <label>WD NDT Register - CIII/CIV (Active Rigs)</label>
+    <sharedTo>
+        <group>Fabrication</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Projects_and_Maintenance</group>
+        <group>Rig_16</group>
+        <group>Rig_2</group>
+        <group>Rig_20</group>
+        <group>Rig_22</group>
+        <group>Rig_24</group>
+        <group>Rig_28</group>
+        <group>Rig_30</group>
+        <group>Rig_32</group>
+        <group>Rig_4</group>
+        <group>Rig_6</group>
+        <group>Rig_8</group>
+        <group>Rigs_10</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

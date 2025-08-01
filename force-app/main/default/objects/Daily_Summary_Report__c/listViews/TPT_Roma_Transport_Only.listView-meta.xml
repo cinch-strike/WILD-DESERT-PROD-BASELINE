@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TPT_Roma_Transport_Only</fullName>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Submitter__c</columns>
+    <columns>Ops_Supervisor__c</columns>
+    <columns>NAME</columns>
+    <columns>Summary_Report_Date__c</columns>
+    <columns>Site__c</columns>
+    <columns>Status__c</columns>
+    <columns>WD_Notes__c</columns>
+    <columns>WD_Invoice_number__c</columns>
+    <columns>Date_Approved__c</columns>
+    <columns>Units_Assigned__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Transport_Only__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Invoiced - Paid</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>contains</operation>
+        <value>BOO roma</value>
+    </filters>
+    <label>TPT Roma - Transport Only</label>
+    <sharedTo>
+        <group>BOO</group>
+        <group>Finance</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

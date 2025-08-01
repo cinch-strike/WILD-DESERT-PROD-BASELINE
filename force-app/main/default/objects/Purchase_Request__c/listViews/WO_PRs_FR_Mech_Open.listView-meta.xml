@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WO_PRs_FR_Mech_Open</fullName>
+    <columns>Work_Order__c</columns>
+    <columns>Work_Order_Status__c</columns>
+    <columns>Asset__c</columns>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Item_Name_Hyperlink__c</columns>
+    <columns>Quantity__c</columns>
+    <columns>Supplier__c</columns>
+    <columns>Purchase_Order__c</columns>
+    <columns>PO_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>3/1/2024 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>Work_Order_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Completed</value>
+    </filters>
+    <label>WO/PRs | FR Mech | Open</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>Managing_Director</group>
+        <group>Mechanics_Roma</group>
+    </sharedTo>
+</ListView>

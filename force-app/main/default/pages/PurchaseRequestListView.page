@@ -1,0 +1,8 @@
+<apex:page standardController="Purchase_Request__c" recordSetVar="Cs" extensions="PurchaseRequestListController" lightningStylesheets="True">
+    
+   <!--This is how we call the Flow with a input paramater. Here RecsPurchaseRequests is the input variable of the Flow-->
+   <flow:interview name="CreateMultipleQuotes">
+        <apex:param name="RecsPurchaseRequests" value="{!lstSelectedPRs}" />
+   </flow:interview>
+    
+</apex:page>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pressure_Relief_Valve__c</fullName>
+    <label>Pressure Relief Valve</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Mud Pump Relief Valve</fullName>
+                <default>false</default>
+                <label>Mud Pump Relief Valve</label>
+            </value>
+            <value>
+                <fullName>Rig Air Start Receiver Tank</fullName>
+                <default>false</default>
+                <label>Rig Air Start Receiver Tank</label>
+            </value>
+            <value>
+                <fullName>Mud Pump Air Start Receiver Tank</fullName>
+                <default>false</default>
+                <label>Mud Pump Air Start Receiver Tank</label>
+            </value>
+            <value>
+                <fullName>Rig Air Pressure Relief</fullName>
+                <default>false</default>
+                <label>Rig Air Pressure Relief</label>
+            </value>
+            <value>
+                <fullName>Mud Pump Pressure Relief</fullName>
+                <default>false</default>
+                <label>Mud Pump Pressure Relief</label>
+            </value>
+            <value>
+                <fullName>Air Compressor Relief</fullName>
+                <default>false</default>
+                <label>Air Compressor Relief</label>
+            </value>
+            <value>
+                <fullName>Koomie Relief Valve</fullName>
+                <default>false</default>
+                <label>Koomie Relief Valve</label>
+            </value>
+            <value>
+                <fullName>Pressure Testing Unit</fullName>
+                <default>false</default>
+                <label>Pressure Testing Unit</label>
+            </value>
+            <value>
+                <fullName>Mud Tank Relief Valve</fullName>
+                <default>false</default>
+                <label>Mud Tank Relief Valve</label>
+            </value>
+            <value>
+                <fullName>Air Pack Trailer Air Manifold Tank</fullName>
+                <default>false</default>
+                <label>Air Pack Trailer Air Manifold Tank</label>
+            </value>
+            <value>
+                <fullName>Pop Off Valve</fullName>
+                <default>false</default>
+                <label>Pop Off Valve</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unit__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Unit</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Unit__c.Unit_Type__c</field>
+            <operation>equals</operation>
+            <value>Transport</value>
+        </filterItems>
+        <filterItems>
+            <field>Unit__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </filterItems>
+        <filterItems>
+            <field>Unit__c.Cost_Allocation_Unit__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Unit__c</referenceTo>
+    <relationshipLabel>Transport Daily Reports</relationshipLabel>
+    <relationshipName>Transport_Daily_Reports</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

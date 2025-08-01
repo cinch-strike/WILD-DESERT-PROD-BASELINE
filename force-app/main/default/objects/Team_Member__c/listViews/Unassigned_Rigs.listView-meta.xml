@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unassigned_Rigs</fullName>
+    <columns>NAME</columns>
+    <columns>Current_Personnel__c</columns>
+    <columns>Position__c</columns>
+    <columns>Recruitment_Status__c</columns>
+    <columns>Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Team__c</field>
+        <operation>equals</operation>
+        <value>Unassigned</value>
+    </filters>
+    <filters>
+        <field>Position__c</field>
+        <operation>equals</operation>
+        <value>1.0. Rig Manager,2.0. Driller,2.1. Driller*,2.2. Assistant Driller,2.3. Assistant Driller*,3.0. Derrickman,3.1. Derrickman*,4.0 Lead Floorhand,4.1. Lead Floorhand*,5.0. Floorhand,5.1. Floorhand*,6.0. Leasehand,6.1. Leasehand*</value>
+    </filters>
+    <label>Unassigned | Rigs</label>
+</ListView>

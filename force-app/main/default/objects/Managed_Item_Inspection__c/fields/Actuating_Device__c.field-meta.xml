@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actuating_Device__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Determine, where possible and without discharging any contents that the actuating device is free from damage and corrosion and moves freely.</inlineHelpText>
+    <label>Actuating Device</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

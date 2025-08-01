@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <inlineHelpText>Scheduled Start - has contract to start
+Active - Currently working in field
+Project Incomplete - Still in build phase
+Inactive - Not currently contracted (Stacked Roma Base)</inlineHelpText>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Scheduled Start</fullName>
+                <default>false</default>
+                <label>Scheduled Start</label>
+            </value>
+            <value>
+                <fullName>Active</fullName>
+                <default>false</default>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Project Incomplete</fullName>
+                <default>false</default>
+                <label>Project Incomplete</label>
+            </value>
+            <value>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+                <label>Inactive</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Moomba_Billable</fullName>
+    <booleanFilter>1 AND 2 AND 3</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Job_Date__c</columns>
+    <columns>Description__c</columns>
+    <columns>Unit__c</columns>
+    <columns>Site__c</columns>
+    <columns>Billable__c</columns>
+    <columns>Status__c</columns>
+    <columns>Types__c</columns>
+    <columns>Daily_Site_Job__c</columns>
+    <columns>DSJS_Status__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Transport_Base__c</field>
+        <operation>equals</operation>
+        <value>moomba</value>
+    </filters>
+    <filters>
+        <field>Billable__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>DSJS_Status__c</field>
+        <operation>notEqual</operation>
+        <value>invoiced</value>
+    </filters>
+    <label>Moomba - Billable</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

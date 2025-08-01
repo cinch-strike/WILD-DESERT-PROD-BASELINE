@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>R08_FR_Fab_1_Incomplete</fullName>
+    <columns>NAME</columns>
+    <columns>Date_Created__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>Asset_ID__c</columns>
+    <columns>Details_of_Issue_Work_Requested__c</columns>
+    <columns>Comments__c</columns>
+    <columns>Relevant_Dept__c</columns>
+    <columns>Parts_Received_in_Stores__c</columns>
+    <columns>Action__c</columns>
+    <columns>Actionby__c</columns>
+    <columns>Assigned_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Unit_of_Asset__c</field>
+        <operation>equals</operation>
+        <value>rig 8</value>
+    </filters>
+    <filters>
+        <field>Date_Created__c</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:730</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Job_Cards__c.Fault_Report_Pre_Approval,Job_Cards__c.Fault_Report_Approved</value>
+    </filters>
+    <filters>
+        <field>Relevant_Dept__c</field>
+        <operation>equals</operation>
+        <value>Fabrication - Roma,NDT - Roma</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Requested,Open,In Progress,Defer/Monitor</value>
+    </filters>
+    <label>R08 | FR Fab/NDT | Incomplete</label>
+    <sharedTo>
+        <group>Camp_Supervisor</group>
+        <group>Fabrication</group>
+        <group>OPs_super</group>
+        <group>Rig_8</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

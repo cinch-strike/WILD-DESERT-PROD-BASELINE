@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Under_Run__c</fullName>
+    <label>Under Run</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Fitted</fullName>
+                <default>false</default>
+                <label>Fitted/Compliant</label>
+            </value>
+            <value>
+                <fullName>Required - Incomplete</fullName>
+                <default>false</default>
+                <label>Required - Incomplete</label>
+            </value>
+            <value>
+                <fullName>Not Required</fullName>
+                <default>false</default>
+                <label>Not Required</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

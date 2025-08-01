@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ONGOING_HIRE_PR_S</fullName>
+    <columns>NAME</columns>
+    <columns>Quantity__c</columns>
+    <columns>Item_Name_Hyperlink__c</columns>
+    <columns>Supplier__c</columns>
+    <columns>Notes__c</columns>
+    <columns>PO_Number__c</columns>
+    <columns>PO_Status__c</columns>
+    <columns>Destination_Store__c</columns>
+    <columns>Status__c</columns>
+    <columns>Date_Sent_for_In_Transit__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>For Item Approval,For Ordering</value>
+    </filters>
+    <filters>
+        <field>Item_Name_Hyperlink__c</field>
+        <operation>contains</operation>
+        <value>EQUIP HIRE,HIRE EQUIP</value>
+    </filters>
+    <filters>
+        <field>PO_Status__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>05 Ordering | Ongoing Hire</label>
+</ListView>

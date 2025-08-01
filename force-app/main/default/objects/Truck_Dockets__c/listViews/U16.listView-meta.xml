@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>U16</fullName>
+    <columns>Asset__c</columns>
+    <columns>Date__c</columns>
+    <columns>Driver__c</columns>
+    <columns>Job_description__c</columns>
+    <columns>Prestart_Required__c</columns>
+    <columns>Prestart__c</columns>
+    <columns>Prestart_Received__c</columns>
+    <columns>Trucking_Dockets_Received__c</columns>
+    <columns>Inv__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Date__c</field>
+        <operation>greaterThan</operation>
+        <value>5/3/2016</value>
+    </filters>
+    <filters>
+        <field>Asset__c</field>
+        <operation>equals</operation>
+        <value>U16 Mack Superliner</value>
+    </filters>
+    <label>U16</label>
+    <sharedTo>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

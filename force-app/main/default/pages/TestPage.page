@@ -1,0 +1,5 @@
+<apex:page controller="DevRecordReminder">
+    <apex:form >
+        <apex:commandButton action="{!testSendMail}" value="Test Send" />
+    </apex:form>/
+</apex:page>

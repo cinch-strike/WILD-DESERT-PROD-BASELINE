@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X031_Santos_GLNG_Rig_10</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>Contract__c</columns>
+    <columns>Contract_unit__c</columns>
+    <columns>NAME</columns>
+    <columns>Description__c</columns>
+    <columns>Rate__c</columns>
+    <columns>Operations__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contract_unit__c</field>
+        <operation>equals</operation>
+        <value>031</value>
+    </filters>
+    <filters>
+        <field>Client__c</field>
+        <operation>equals</operation>
+        <value>Santos GLNG (QLD)</value>
+    </filters>
+    <filters>
+        <field>Operations__c</field>
+        <operation>equals</operation>
+        <value>24hr,12hr/24hr</value>
+    </filters>
+    <label>031-Santos GLNG Rig#10 24hr</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Rigs_10</group>
+    </sharedTo>
+</ListView>

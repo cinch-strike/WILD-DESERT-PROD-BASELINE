@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Guardian_Sim_No__c</fullName>
+    <description>Sim number for device sim card</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Sim number for device sim card</inlineHelpText>
+    <label>Guardian - Sim No</label>
+    <length>30</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

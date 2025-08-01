@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Key_Type__c</fullName>
+    <inlineHelpText>only applies to Roma office and workshop keys issued by Maranoa locksmiths...  starts with TT3</inlineHelpText>
+    <label>Key Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>0-Master/Red (9)</fullName>
+                <default>false</default>
+                <label>0-Master/Red (9)</label>
+            </value>
+            <value>
+                <fullName>1-Office/Yellow (10)</fullName>
+                <default>false</default>
+                <label>1-Office/Yellow (10)</label>
+            </value>
+            <value>
+                <fullName>2-Supervisors/Green (4)</fullName>
+                <default>false</default>
+                <label>2-Supervisors/Green (4)</label>
+            </value>
+            <value>
+                <fullName>3-Accounts/Blue (1)</fullName>
+                <default>false</default>
+                <label>3-Accounts/Blue (1)</label>
+            </value>
+            <value>
+                <fullName>4-Truck Drivers/Orange (12)</fullName>
+                <default>false</default>
+                <label>4-Truck Drivers/Orange (12)</label>
+            </value>
+            <value>
+                <fullName>5-Camp/Black (6)</fullName>
+                <default>false</default>
+                <label>5-Camp/Black (6)</label>
+            </value>
+            <value>
+                <fullName>6-Rig/Orange (6)</fullName>
+                <default>false</default>
+                <label>6-Rig/Orange (6)</label>
+            </value>
+            <value>
+                <fullName>7-Workshop/Blue(6)</fullName>
+                <default>false</default>
+                <label>7-Workshop/Blue(6)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

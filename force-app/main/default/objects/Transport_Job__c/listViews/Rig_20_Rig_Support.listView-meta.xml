@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_20_Rig_Support</fullName>
+    <columns>Contract__c</columns>
+    <columns>NAME</columns>
+    <columns>Job_Date__c</columns>
+    <columns>Unit__c</columns>
+    <columns>Description__c</columns>
+    <columns>Site__c</columns>
+    <columns>Status__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>TJ_Description__c</field>
+        <operation>contains</operation>
+        <value>Rig Support</value>
+    </filters>
+    <filters>
+        <field>Unit__c</field>
+        <operation>equals</operation>
+        <value>Rig 26</value>
+    </filters>
+    <filters>
+        <field>Billable__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Draft,Assigned,In Progress,Completed,Approved</value>
+    </filters>
+    <label>Rig Support - Rig 26</label>
+    <sharedTo>
+        <group>BOO</group>
+        <group>Finance</group>
+        <group>Managing_Director</group>
+        <group>Rig_26</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

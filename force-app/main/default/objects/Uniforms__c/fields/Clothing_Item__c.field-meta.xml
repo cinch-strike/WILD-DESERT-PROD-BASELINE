@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clothing_Item__c</fullName>
+    <label>Clothing Item</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Shirt</fullName>
+                <default>false</default>
+                <label>Shirt</label>
+            </value>
+            <value>
+                <fullName>Pants</fullName>
+                <default>false</default>
+                <label>Pants</label>
+            </value>
+            <value>
+                <fullName>Coveralls</fullName>
+                <default>false</default>
+                <label>Coveralls</label>
+            </value>
+            <value>
+                <fullName>Jackets</fullName>
+                <default>false</default>
+                <label>Jackets</label>
+            </value>
+            <value>
+                <fullName>Polo Shirt</fullName>
+                <default>false</default>
+                <label>Polo Shirt</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

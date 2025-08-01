@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Daily_Site_Job</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Daily Site Job</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/a2X/e?CF00N0k000000cIuw={!Unit__c.Site__c}&amp;CF00N0k000000cMU9_lkid={!Unit__c.Id}&amp;CF00N0k000000cMU9={!Unit__c.Name}&amp;00N0k000000cIv1={!Unit__c.UnitType__c}&amp;CF00N0k000000cIsW={!Unit__c.Contract_New__c}&amp;retURL=%2F{!Unit__c.Id}</url>
+</WebLink>

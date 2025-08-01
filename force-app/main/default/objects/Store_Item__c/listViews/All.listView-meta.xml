@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Store_Unit__c</columns>
+    <columns>S_Number__c</columns>
+    <columns>Inventory_Item__c</columns>
+    <columns>Bin_Location__c</columns>
+    <columns>Stock_Available_formula__c</columns>
+    <columns>Minimum_Quantity_for_Restocking__c</columns>
+    <columns>Default_ReOder_Quantity__c</columns>
+    <columns>Base_Store__c</columns>
+    <columns>Send_Directly_To_Order__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Base_Store__c</field>
+        <operation>equals</operation>
+        <value>Stores - Roma</value>
+    </filters>
+    <label>Inventory | Roma</label>
+    <sharedTo>
+        <group>Camp_Supervisor</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Projects_and_Maintenance</group>
+        <group>Purchasing</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

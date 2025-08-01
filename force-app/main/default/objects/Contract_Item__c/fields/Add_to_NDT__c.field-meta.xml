@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Add_to_NDT__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>If checked, item&apos;s hours will be calculated for NDT Hours on Unit</inlineHelpText>
+    <label>Add to NDT</label>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

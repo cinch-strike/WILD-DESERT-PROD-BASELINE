@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WD_Assets_CAT</fullName>
+    <booleanFilter>1 or 2 or 3 or 4</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Make__c</columns>
+    <columns>Description__c</columns>
+    <columns>Engine_Type__c</columns>
+    <columns>Engine_Number__c</columns>
+    <columns>Engine_Hours__c</columns>
+    <columns>Current_Odometer_Reading__c</columns>
+    <columns>Serial_Number__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Asset_Family__c</columns>
+    <columns>Asset_ID_Number__c</columns>
+    <columns>Inventory_Item__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Make__c</field>
+        <operation>equals</operation>
+        <value>Caterpillar</value>
+    </filters>
+    <filters>
+        <field>Engine_Type__c</field>
+        <operation>equals</operation>
+        <value>CAT 11,CAT 13,CAT 15,CAT 15 ACERT,CAT 16,CAT 18,CAT 2.2,CAT 3306,CAT 3406C,CAT 4.4,CAT 4.4 ACERT,CAT 6.6,CAT 7.1,CAT 9,CAT Perkins 1104A-44TG2,CAT Perkins 1106C-E66TAG2,CAT Perkins 404C-22G2</value>
+    </filters>
+    <filters>
+        <field>Serial_Number__c</field>
+        <operation>contains</operation>
+        <value>CAT</value>
+    </filters>
+    <filters>
+        <field>Engine_Number__c</field>
+        <operation>startsWith</operation>
+        <value>C</value>
+    </filters>
+    <label>WD Assets - CAT Engines</label>
+    <sharedTo>
+        <role>Mechanical_Supervisor</role>
+        <role>Project_and_Asset_Maintenance_Manager</role>
+    </sharedTo>
+</ListView>

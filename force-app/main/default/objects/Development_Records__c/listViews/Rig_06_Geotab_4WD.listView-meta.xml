@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_06_Geotab_4WD</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 and 5</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Professional_Development_Type__c</columns>
+    <columns>Employee__c</columns>
+    <columns>Position_wd__c</columns>
+    <columns>Assigned_To_Unit__c</columns>
+    <columns>On_Shift__c</columns>
+    <columns>Geotab__c</columns>
+    <columns>Status__c</columns>
+    <columns>Progress_Details__c</columns>
+    <columns>Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Employee_Status__c</field>
+        <operation>equals</operation>
+        <value>active</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Development_Records__c.Standard</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Incomplete,In Progress,Complete</value>
+    </filters>
+    <filters>
+        <field>Professional_Development_Type__c</field>
+        <operation>equals</operation>
+        <value>Geotab,4WD Training</value>
+    </filters>
+    <filters>
+        <field>Assigned_To_Unit__c</field>
+        <operation>equals</operation>
+        <value>rig 6</value>
+    </filters>
+    <label>Rig #06 | Geotab &amp; 4WD</label>
+    <sharedTo>
+        <group>HR</group>
+        <group>OPs_super</group>
+        <group>Rig_6</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

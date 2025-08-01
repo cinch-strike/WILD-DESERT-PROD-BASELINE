@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Asset_Family__c</fullName>
+    <label>Asset Family</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Air Booster</fullName>
+                <default>false</default>
+                <label>Air Booster</label>
+            </value>
+            <value>
+                <fullName>Air Compressor</fullName>
+                <default>false</default>
+                <label>Air Compressor</label>
+            </value>
+            <value>
+                <fullName>BHA Equipment</fullName>
+                <default>false</default>
+                <label>BHA Equipment</label>
+            </value>
+            <value>
+                <fullName>Blooie Line</fullName>
+                <default>false</default>
+                <label>Blooie Line</label>
+            </value>
+            <value>
+                <fullName>Blooie Tank</fullName>
+                <default>false</default>
+                <label>Blooie Tank</label>
+            </value>
+            <value>
+                <fullName>BOP Equipment</fullName>
+                <default>false</default>
+                <label>BOP Equipment</label>
+            </value>
+            <value>
+                <fullName>Box Trailers</fullName>
+                <default>false</default>
+                <label>Box Trailers</label>
+            </value>
+            <value>
+                <fullName>Bucket</fullName>
+                <default>false</default>
+                <label>Bucket</label>
+            </value>
+            <value>
+                <fullName>Building/Infrastructure</fullName>
+                <default>false</default>
+                <label>Building/Infrastructure</label>
+            </value>
+            <value>
+                <fullName>Catwalk Skid</fullName>
+                <default>false</default>
+                <label>Catwalk Skid</label>
+            </value>
+            <value>
+                <fullName>Catwalk Trailer</fullName>
+                <default>false</default>
+                <label>Catwalk Trailer</label>
+            </value>
+            <value>
+                <fullName>Cement Blocks</fullName>
+                <default>false</default>
+                <label>Cement Blocks</label>
+            </value>
+            <value>
+                <fullName>Choke Manifold</fullName>
+                <default>false</default>
+                <label>Choke Manifold</label>
+            </value>
+            <value>
+                <fullName>Circulating Skid</fullName>
+                <default>false</default>
+                <label>Circulating Skid</label>
+            </value>
+            <value>
+                <fullName>Combo Shack</fullName>
+                <default>false</default>
+                <label>Combo Shack</label>
+            </value>
+            <value>
+                <fullName>Communication Skid</fullName>
+                <default>false</default>
+                <label>Communication Skid</label>
+            </value>
+            <value>
+                <fullName>Container</fullName>
+                <default>false</default>
+                <label>Container</label>
+            </value>
+            <value>
+                <fullName>Cranes</fullName>
+                <default>false</default>
+                <label>Cranes</label>
+            </value>
+            <value>
+                <fullName>Desilting Unit</fullName>
+                <default>false</default>
+                <label>Desilting Unit</label>
+            </value>
+            <value>
+                <fullName>Dollies</fullName>
+                <default>false</default>
+                <label>Dollies</label>
+            </value>
+            <value>
+                <fullName>Drilling Rig</fullName>
+                <default>false</default>
+                <label>Drilling Rig</label>
+            </value>
+            <value>
+                <fullName>Drill Pipe</fullName>
+                <default>false</default>
+                <label>Drill Pipe</label>
+            </value>
+            <value>
+                <fullName>Dropdeck</fullName>
+                <default>false</default>
+                <label>Dropdeck</label>
+            </value>
+            <value>
+                <fullName>Evaporative Fans</fullName>
+                <default>false</default>
+                <label>Evaporative Fans</label>
+            </value>
+            <value>
+                <fullName>Farming Equipment</fullName>
+                <default>false</default>
+                <label>Farming Equipment</label>
+            </value>
+            <value>
+                <fullName>Filter Unit</fullName>
+                <default>false</default>
+                <label>Filter Unit</label>
+            </value>
+            <value>
+                <fullName>Flare Tank</fullName>
+                <default>false</default>
+                <label>Flare Tank</label>
+            </value>
+            <value>
+                <fullName>Flat Top</fullName>
+                <default>false</default>
+                <label>Flat Top</label>
+            </value>
+            <value>
+                <fullName>Flexi-Drive (Transfer Pump)</fullName>
+                <default>false</default>
+                <label>Flexi-Drive (Transfer Pump)</label>
+            </value>
+            <value>
+                <fullName>Flushby RIg</fullName>
+                <default>false</default>
+                <label>Flushby RIg</label>
+            </value>
+            <value>
+                <fullName>Forkifts</fullName>
+                <default>false</default>
+                <label>Forkifts</label>
+            </value>
+            <value>
+                <fullName>Forklift</fullName>
+                <default>false</default>
+                <label>Forklift</label>
+            </value>
+            <value>
+                <fullName>Fork Tynes</fullName>
+                <default>false</default>
+                <label>Fork Tynes</label>
+            </value>
+            <value>
+                <fullName>Frac Tank</fullName>
+                <default>false</default>
+                <label>Frac Tank</label>
+            </value>
+            <value>
+                <fullName>Freezer Unit</fullName>
+                <default>false</default>
+                <label>Freezer Unit</label>
+            </value>
+            <value>
+                <fullName>Fridge Van</fullName>
+                <default>false</default>
+                <label>Fridge Van</label>
+            </value>
+            <value>
+                <fullName>Fuel Tanks</fullName>
+                <default>false</default>
+                <label>Fuel Tanks</label>
+            </value>
+            <value>
+                <fullName>Gas Detector</fullName>
+                <default>false</default>
+                <label>Gas Detector</label>
+            </value>
+            <value>
+                <fullName>Generator</fullName>
+                <default>false</default>
+                <label>Generator</label>
+            </value>
+            <value>
+                <fullName>Generator/Tank Skid</fullName>
+                <default>false</default>
+                <label>Generator/Tank Skid</label>
+            </value>
+            <value>
+                <fullName>Gerni</fullName>
+                <default>false</default>
+                <label>Gernie</label>
+            </value>
+            <value>
+                <fullName>Gernie Skid</fullName>
+                <default>false</default>
+                <label>Gernie Skid</label>
+            </value>
+            <value>
+                <fullName>Grapple</fullName>
+                <default>false</default>
+                <label>Grapple</label>
+            </value>
+            <value>
+                <fullName>Grey Water Tanks</fullName>
+                <default>false</default>
+                <label>Grey Water Tanks</label>
+            </value>
+            <value>
+                <fullName>Grey Water Tank Skid</fullName>
+                <default>false</default>
+                <label>Grey Water Tank Skid</label>
+            </value>
+            <value>
+                <fullName>Gym</fullName>
+                <default>false</default>
+                <label>Gym</label>
+            </value>
+            <value>
+                <fullName>Gymnasium Skid</fullName>
+                <default>false</default>
+                <label>Gymnasium Skid</label>
+            </value>
+            <value>
+                <fullName>Hardline Basket</fullName>
+                <default>false</default>
+                <label>Hardline Basket</label>
+            </value>
+            <value>
+                <fullName>Hose Basket</fullName>
+                <default>false</default>
+                <label>Hose Basket</label>
+            </value>
+            <value>
+                <fullName>HPU - Hydraulic Power Unit</fullName>
+                <default>false</default>
+                <label>HPU - Hydraulic Power Unit</label>
+            </value>
+            <value>
+                <fullName>Inspection Equipment</fullName>
+                <default>false</default>
+                <label>Inspection Equipment</label>
+            </value>
+            <value>
+                <fullName>IT Equipment</fullName>
+                <default>false</default>
+                <label>IT Equipment</label>
+            </value>
+            <value>
+                <fullName>Kitchen/Dining</fullName>
+                <default>false</default>
+                <label>Kitchen/Dining</label>
+            </value>
+            <value>
+                <fullName>Koomey Skid</fullName>
+                <default>false</default>
+                <label>Koomey Skid</label>
+            </value>
+            <value>
+                <fullName>Koomey Units</fullName>
+                <default>false</default>
+                <label>Koomey Units</label>
+            </value>
+            <value>
+                <fullName>Koomie Unit Container</fullName>
+                <default>false</default>
+                <label>Koomie Unit Container</label>
+            </value>
+            <value>
+                <fullName>Laundry</fullName>
+                <default>false</default>
+                <label>Laundry</label>
+            </value>
+            <value>
+                <fullName>Laundry/Freezer Unit</fullName>
+                <default>false</default>
+                <label>Laundry/Freezer Unit</label>
+            </value>
+            <value>
+                <fullName>Lifting Equipment</fullName>
+                <default>false</default>
+                <label>Lifting Equipment</label>
+            </value>
+            <value>
+                <fullName>Lighting Tower</fullName>
+                <default>false</default>
+                <label>Lighting Tower</label>
+            </value>
+            <value>
+                <fullName>Light Vehicles</fullName>
+                <default>false</default>
+                <label>Light Vehicles</label>
+            </value>
+            <value>
+                <fullName>Loaders</fullName>
+                <default>false</default>
+                <label>Loaders</label>
+            </value>
+            <value>
+                <fullName>Low Loader</fullName>
+                <default>false</default>
+                <label>Low Loader</label>
+            </value>
+            <value>
+                <fullName>Manual Tong</fullName>
+                <default>false</default>
+                <label>Manual Tong</label>
+            </value>
+            <value>
+                <fullName>Mud Pump</fullName>
+                <default>false</default>
+                <label>Mud Pump</label>
+            </value>
+            <value>
+                <fullName>Mud Tank</fullName>
+                <default>false</default>
+                <label>Mud Tank</label>
+            </value>
+            <value>
+                <fullName>Non-Vehicle Engine</fullName>
+                <default>false</default>
+                <label>Non-Vehicle Engine</label>
+            </value>
+            <value>
+                <fullName>NON WD</fullName>
+                <default>false</default>
+                <label>NON WD</label>
+            </value>
+            <value>
+                <fullName>Office</fullName>
+                <default>false</default>
+                <label>Office</label>
+            </value>
+            <value>
+                <fullName>Oil Storage Tank</fullName>
+                <default>false</default>
+                <label>Oil Storage Tank</label>
+            </value>
+            <value>
+                <fullName>Outdoor Area</fullName>
+                <default>false</default>
+                <label>Outdoor Area</label>
+            </value>
+            <value>
+                <fullName>Pipe Bins</fullName>
+                <default>false</default>
+                <label>Pipe Bins</label>
+            </value>
+            <value>
+                <fullName>Pipe Rack</fullName>
+                <default>false</default>
+                <label>Pipe Rack</label>
+            </value>
+            <value>
+                <fullName>Pony Base Skid</fullName>
+                <default>false</default>
+                <label>Pony Base</label>
+            </value>
+            <value>
+                <fullName>Power Pack</fullName>
+                <default>false</default>
+                <label>Power Pack</label>
+            </value>
+            <value>
+                <fullName>Power Swivel</fullName>
+                <default>false</default>
+                <label>Power Swivel</label>
+            </value>
+            <value>
+                <fullName>Power Tong</fullName>
+                <default>false</default>
+                <label>Power Tong</label>
+            </value>
+            <value>
+                <fullName>Pressure Equipment</fullName>
+                <default>false</default>
+                <label>Pressure Equipment</label>
+            </value>
+            <value>
+                <fullName>Primemover</fullName>
+                <default>false</default>
+                <label>Primemover</label>
+            </value>
+            <value>
+                <fullName>Prime Movers</fullName>
+                <default>false</default>
+                <label>Prime Movers</label>
+            </value>
+            <value>
+                <fullName>Pushers Shack</fullName>
+                <default>false</default>
+                <label>Pushers Shack</label>
+            </value>
+            <value>
+                <fullName>Rec Room</fullName>
+                <default>false</default>
+                <label>Rec Room</label>
+            </value>
+            <value>
+                <fullName>Rig</fullName>
+                <default>false</default>
+                <label>Rig</label>
+            </value>
+            <value>
+                <fullName>Rig Equipment</fullName>
+                <default>false</default>
+                <label>Rig Equipment</label>
+            </value>
+            <value>
+                <fullName>Rigid</fullName>
+                <default>false</default>
+                <label>Rigid</label>
+            </value>
+            <value>
+                <fullName>Rig Trailer</fullName>
+                <default>false</default>
+                <label>Rig Trailer</label>
+            </value>
+            <value>
+                <fullName>Rod Basket</fullName>
+                <default>false</default>
+                <label>Rod Basket</label>
+            </value>
+            <value>
+                <fullName>Rod Rack</fullName>
+                <default>false</default>
+                <label>Rod Rack</label>
+            </value>
+            <value>
+                <fullName>Rod Trough</fullName>
+                <default>false</default>
+                <label>Rod Trough</label>
+            </value>
+            <value>
+                <fullName>Septic Tank</fullName>
+                <default>false</default>
+                <label>Septic Tank</label>
+            </value>
+            <value>
+                <fullName>Septic Tanks</fullName>
+                <default>false</default>
+                <label>Septic Tanks</label>
+            </value>
+            <value>
+                <fullName>Service Rig</fullName>
+                <default>false</default>
+                <label>Service Rig</label>
+            </value>
+            <value>
+                <fullName>Service Vehicles</fullName>
+                <default>false</default>
+                <label>Service Vehicles</label>
+            </value>
+            <value>
+                <fullName>Sign Skid</fullName>
+                <default>false</default>
+                <label>Sign Skid</label>
+            </value>
+            <value>
+                <fullName>Sleeper</fullName>
+                <default>false</default>
+                <label>Sleeper</label>
+            </value>
+            <value>
+                <fullName>Snubbing Rig</fullName>
+                <default>false</default>
+                <label>Snubbing Rig</label>
+            </value>
+            <value>
+                <fullName>Spooling Unit</fullName>
+                <default>false</default>
+                <label>Spooling Unit</label>
+            </value>
+            <value>
+                <fullName>Stinger</fullName>
+                <default>false</default>
+                <label>Stinger</label>
+            </value>
+            <value>
+                <fullName>Sub</fullName>
+                <default>false</default>
+                <label>Sub</label>
+            </value>
+            <value>
+                <fullName>Swabbing Basket</fullName>
+                <default>false</default>
+                <label>Swabbing Basket</label>
+            </value>
+            <value>
+                <fullName>Tanker (Dirty)</fullName>
+                <default>false</default>
+                <label>Tanker (Dirty)</label>
+            </value>
+            <value>
+                <fullName>Tanker (Fuel)</fullName>
+                <default>false</default>
+                <label>Tanker (Fuel)</label>
+            </value>
+            <value>
+                <fullName>Tanker (Potable)</fullName>
+                <default>false</default>
+                <label>Tanker (Potable)</label>
+            </value>
+            <value>
+                <fullName>Tong Basket</fullName>
+                <default>false</default>
+                <label>Tong Basket</label>
+            </value>
+            <value>
+                <fullName>Toolhouse</fullName>
+                <default>false</default>
+                <label>Toolhouse</label>
+            </value>
+            <value>
+                <fullName>Tubing Skid</fullName>
+                <default>false</default>
+                <label>Tubing Skid</label>
+            </value>
+            <value>
+                <fullName>Vacuum Tanker</fullName>
+                <default>false</default>
+                <label>Vacuum Tanker</label>
+            </value>
+            <value>
+                <fullName>Walkway</fullName>
+                <default>false</default>
+                <label>Walkway</label>
+            </value>
+            <value>
+                <fullName>Waste Oil Tank</fullName>
+                <default>false</default>
+                <label>Waste Oil Tank</label>
+            </value>
+            <value>
+                <fullName>Water Tank</fullName>
+                <default>false</default>
+                <label>Water Tank</label>
+            </value>
+            <value>
+                <fullName>Water Tanks</fullName>
+                <default>false</default>
+                <label>Water Tanks</label>
+            </value>
+            <value>
+                <fullName>Water Tank Skid</fullName>
+                <default>false</default>
+                <label>Water Tank Skid</label>
+            </value>
+            <value>
+                <fullName>Welders</fullName>
+                <default>false</default>
+                <label>Welders</label>
+            </value>
+            <value>
+                <fullName>Well Control</fullName>
+                <default>false</default>
+                <label>Well Control</label>
+            </value>
+            <value>
+                <fullName>Workfloor</fullName>
+                <default>false</default>
+                <label>Workfloor</label>
+            </value>
+            <value>
+                <fullName>Blooie Line Stand</fullName>
+                <default>false</default>
+                <label>Blooie Line Stand</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

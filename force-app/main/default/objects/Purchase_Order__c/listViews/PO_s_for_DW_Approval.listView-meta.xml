@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PO_s_for_DW_Approval</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>Supplier__c</columns>
+    <columns>Total_Price__c</columns>
+    <columns>For_Approval_Notes__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PO_Approver__c</field>
+        <operation>equals</operation>
+        <value>David Whiley</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Draft,For Approval</value>
+    </filters>
+    <label>PO&apos;s for DW Approval</label>
+</ListView>

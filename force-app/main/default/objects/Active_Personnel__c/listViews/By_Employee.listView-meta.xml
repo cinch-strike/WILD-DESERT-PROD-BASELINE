@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>By_Employee</fullName>
+    <columns>NAME</columns>
+    <columns>Daily_Report__c</columns>
+    <columns>DSJ_Report_Date__c</columns>
+    <columns>DSJ_Unit__c</columns>
+    <columns>Employees__c</columns>
+    <columns>Position__c</columns>
+    <columns>Crew__c</columns>
+    <columns>Shift__c</columns>
+    <columns>Crew_Change__c</columns>
+    <columns>Timesheet_Approved__c</columns>
+    <columns>BOO_Notes__c</columns>
+    <columns>RM_Notes__c</columns>
+    <columns>Work_Hrs__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Employees__c</field>
+        <operation>contains</operation>
+        <value>brady horsburgh</value>
+    </filters>
+    <label>By Employee</label>
+</ListView>

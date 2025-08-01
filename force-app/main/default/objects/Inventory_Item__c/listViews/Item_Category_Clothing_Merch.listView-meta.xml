@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Item_Category_Clothing_Merch</fullName>
+    <columns>Store_Item_Code__c</columns>
+    <columns>NAME</columns>
+    <columns>Supplier_Part_Number__c</columns>
+    <columns>Cost_Price__c</columns>
+    <columns>Tax_Code__c</columns>
+    <columns>Preferred_Supplier_1st__c</columns>
+    <columns>Item_Notes__c</columns>
+    <columns>Active__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Non_Searchable_Item__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Item_Category__c</field>
+        <operation>equals</operation>
+        <value>Clothing_Merch</value>
+    </filters>
+    <label>Item Category &gt; Clothing/Merch</label>
+</ListView>

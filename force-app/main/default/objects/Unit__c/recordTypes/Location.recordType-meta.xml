@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Location</fullName>
+    <active>true</active>
+    <label>Location</label>
+    <picklistValues>
+        <picklist>Last_NDT_Type__c</picklist>
+        <values>
+            <fullName>CIII</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CIV</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Next_NDT_Type__c</picklist>
+        <values>
+            <fullName>CIII</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CIV</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Project Incomplete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scheduled Start</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Unit_Type__c</picklist>
+        <values>
+            <fullName>Camp - Qld</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp - SA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Department</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Depot - Roma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Field - Camp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Field - Rig</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qld Depot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig - Qld</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig - SA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transport</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

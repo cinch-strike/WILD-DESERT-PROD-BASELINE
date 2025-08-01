@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ForAssigned_ConfigurationRequired</fullName>
+    <active>true</active>
+    <description>The Configuration field is required before moving to Assigned.</description>
+    <errorConditionFormula>AND(
+    ISCHANGED( Driver_Status__c ),
+    ISPICKVAL(Driver_Status__c, &apos;Assigned&apos;),
+    ISBLANK(TEXT(  Configuration_pklist__c  ))
+)</errorConditionFormula>
+    <errorMessage>The Configuration field is required before moving to Assigned.</errorMessage>
+</ValidationRule>

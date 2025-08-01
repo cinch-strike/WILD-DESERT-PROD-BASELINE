@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Engine_Type__c</fullName>
+    <label>Engine Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>3406E</fullName>
+                <default>false</default>
+                <label>3406E</label>
+            </value>
+            <value>
+                <fullName>Big Cam 3</fullName>
+                <default>false</default>
+                <label>Big Cam 3</label>
+            </value>
+            <value>
+                <fullName>Big Cam 4</fullName>
+                <default>false</default>
+                <label>Big Cam 4</label>
+            </value>
+            <value>
+                <fullName>CAT 11</fullName>
+                <default>false</default>
+                <label>CAT 11</label>
+            </value>
+            <value>
+                <fullName>CAT 13</fullName>
+                <default>false</default>
+                <label>CAT 13</label>
+            </value>
+            <value>
+                <fullName>CAT 15</fullName>
+                <default>false</default>
+                <label>CAT 15</label>
+            </value>
+            <value>
+                <fullName>CAT 15 ACERT</fullName>
+                <default>false</default>
+                <label>CAT 15 ACERT</label>
+            </value>
+            <value>
+                <fullName>CAT 16</fullName>
+                <default>false</default>
+                <label>CAT 16</label>
+            </value>
+            <value>
+                <fullName>CAT 18</fullName>
+                <default>false</default>
+                <label>CAT 18</label>
+            </value>
+            <value>
+                <fullName>CAT 2.2</fullName>
+                <default>false</default>
+                <label>CAT 2.2</label>
+            </value>
+            <value>
+                <fullName>CAT 3306</fullName>
+                <default>false</default>
+                <label>CAT 3306</label>
+            </value>
+            <value>
+                <fullName>CAT 3406C</fullName>
+                <default>false</default>
+                <label>CAT 3406C</label>
+            </value>
+            <value>
+                <fullName>CAT 4.4</fullName>
+                <default>false</default>
+                <label>CAT 4.4</label>
+            </value>
+            <value>
+                <fullName>CAT 4.4 ACERT</fullName>
+                <default>false</default>
+                <label>CAT 4.4 ACERT</label>
+            </value>
+            <value>
+                <fullName>CAT 6.6</fullName>
+                <default>false</default>
+                <label>CAT 6.6</label>
+            </value>
+            <value>
+                <fullName>CAT 7.1</fullName>
+                <default>false</default>
+                <label>CAT 7.1</label>
+            </value>
+            <value>
+                <fullName>CAT 9</fullName>
+                <default>false</default>
+                <label>CAT 9</label>
+            </value>
+            <value>
+                <fullName>CAT Perkins 1104A-44TG2</fullName>
+                <default>false</default>
+                <label>CAT Perkins 1104A-44TG2</label>
+            </value>
+            <value>
+                <fullName>CAT Perkins 1106C-E66TAG2</fullName>
+                <default>false</default>
+                <label>CAT Perkins 1106C-E66TAG2</label>
+            </value>
+            <value>
+                <fullName>CAT Perkins 404C-22G2</fullName>
+                <default>false</default>
+                <label>CAT Perkins 404C-22G2</label>
+            </value>
+            <value>
+                <fullName>Cummins</fullName>
+                <default>false</default>
+                <label>Cummins</label>
+            </value>
+            <value>
+                <fullName>Cummins 4B3.9-G2</fullName>
+                <default>false</default>
+                <label>Cummins 4B3.9-G2</label>
+            </value>
+            <value>
+                <fullName>Cummins 6CTA8.3-G2</fullName>
+                <default>false</default>
+                <label>Cummins 6CTA8.3-G2</label>
+            </value>
+            <value>
+                <fullName>E7</fullName>
+                <default>false</default>
+                <label>E7</label>
+            </value>
+            <value>
+                <fullName>E9</fullName>
+                <default>false</default>
+                <label>E9</label>
+            </value>
+            <value>
+                <fullName>ISX EGR</fullName>
+                <default>false</default>
+                <label>ISX EGR</label>
+            </value>
+            <value>
+                <fullName>MP10</fullName>
+                <default>false</default>
+                <label>MP10</label>
+            </value>
+            <value>
+                <fullName>N14</fullName>
+                <default>false</default>
+                <label>N14</label>
+            </value>
+            <value>
+                <fullName>SERIES 60</fullName>
+                <default>false</default>
+                <label>SERIES 60</label>
+            </value>
+            <value>
+                <fullName>X15</fullName>
+                <default>false</default>
+                <label>X15</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

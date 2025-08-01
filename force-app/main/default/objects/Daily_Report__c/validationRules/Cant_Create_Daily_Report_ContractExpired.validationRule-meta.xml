@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_Create_Daily_Report_ContractExpired</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(
+AND(
+ISNEW(),
+NOT(ISBLANK(Contract__c)),
+NOT(Contract__r.Contract_Active__c)
+),
+TRUE, 
+FALSE 
+)</errorConditionFormula>
+    <errorMessage>Cannot Create Daily Site Job for an expired Contract.</errorMessage>
+</ValidationRule>

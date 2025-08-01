@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Links_checked_for_NICKS_CRACKS_GOUGING__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>Links checked for NICKS, CRACKS, GOUGING</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

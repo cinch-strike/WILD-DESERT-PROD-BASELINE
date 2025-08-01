@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Registration_Trailers</fullName>
+    <columns>Unit__c</columns>
+    <columns>NAME</columns>
+    <columns>Asset_ID_Number__c</columns>
+    <columns>Registration_Number__c</columns>
+    <columns>Registered_Owner__c</columns>
+    <columns>Rego_Expiry_Date__c</columns>
+    <columns>Days_to_rego_expiry__c</columns>
+    <columns>Date_REGO_Paid__c</columns>
+    <columns>Vin_Number__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Asset__c.Trailer</value>
+    </filters>
+    <filters>
+        <field>Inventory_Item__c</field>
+        <operation>notEqual</operation>
+        <value>Obsolete</value>
+    </filters>
+    <filters>
+        <field>Unit__c</field>
+        <operation>notEqual</operation>
+        <value>Obsolete (for Obsolete Assets)</value>
+    </filters>
+    <label>Registration - Trailers</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>Mechanics_Roma</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

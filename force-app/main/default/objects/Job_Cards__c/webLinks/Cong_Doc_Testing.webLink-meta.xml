@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cong_Doc_Testing</fullName>
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Cong Doc Testing</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>https://www.appextremes.com/apps/Conga/Composer.aspx
+?SessionId={!API.Session_ID}
+&amp;ServerUrl={!API.Partner_Server_URL_210}
+&amp;ReportID=[WorkOrderTasks]00O90000006ipxB
+&amp;Id={!Job_Cards__c.Id}
+&amp;DS2=1
+&amp;DS3=1
+&amp;FP0=1
+&amp;DS7=0
+&amp;LG4=1
+&amp;MFTS0=Been_Printed__c
+&amp;MFTSValue0=TRUE
+&amp;TemplateId={!Job_Cards__c.Conga_Template_to_use__c}
+&amp;OFN=Job+&quot; &quot;+Card+&quot; &quot;+{!Job_Cards__c.Name}+&quot; : &quot;+{!Job_Cards__c.Managed_By_DONT__c}</url>
+</WebLink>

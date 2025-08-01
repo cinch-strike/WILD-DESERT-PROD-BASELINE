@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <inlineHelpText>Approval Required - MOC must be reviewed at Senior HSEQ/Ops Meeting and approved
+Open - MOC is approved and responsible Person can begin follow up action
+Closed - The responsible person has completed the Action required to manager satisfaction</inlineHelpText>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+                <label>Not Started</label>
+            </value>
+            <value>
+                <fullName>Pending Approval</fullName>
+                <default>false</default>
+                <label>Pending Approval</label>
+            </value>
+            <value>
+                <fullName>Open</fullName>
+                <default>false</default>
+                <label>Approved for Action</label>
+            </value>
+            <value>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <label>In Progress</label>
+            </value>
+            <value>
+                <fullName>Complete</fullName>
+                <default>false</default>
+                <label>Complete</label>
+            </value>
+            <value>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+                <label>Rejected</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

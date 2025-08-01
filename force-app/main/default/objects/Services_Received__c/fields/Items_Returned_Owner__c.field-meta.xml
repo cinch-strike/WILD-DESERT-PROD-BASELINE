@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Items_Returned_Owner__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Only Tick when CERTAIN that ITEM is RETURNED to WD Base or to 3rd Party if it was hired in</inlineHelpText>
+    <label>Item Returned to Owner</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SubmitForApproval_Invalid</fullName>
+    <active>true</active>
+    <description>The Driver Assignment can not submit for approval if the current status is not Ready to Submit.</description>
+    <errorConditionFormula>AND(
+   ISCHANGED(Driver_Status__c),
+   ISPICKVAL(Driver_Status__c, &apos;Completed&apos;),
+   NOT(ISPICKVAL( PRIORVALUE(Driver_Status__c), &apos;Ready to Submit&apos;))
+)</errorConditionFormula>
+    <errorMessage>Driver Assignment is not yet ready to submit. Make sure the Start Date/Time and End Date/Time are populated.</errorMessage>
+</ValidationRule>

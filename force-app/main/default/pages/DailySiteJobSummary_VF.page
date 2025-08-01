@@ -1,0 +1,672 @@
+<!--
+  @description       : 
+  @author            : Donnie Banez
+  @group             : 
+  @last modified on  : 06-09-2020
+  @last modified by  : Donnie Banez
+  Modifications Log 
+  Ver   Date         Author         Modification
+  1.0   06-09-2020   Donnie Banez   Initial Version
+-->
+<apex:page id="DailySiteJobSummary_VF" standardController="Daily_Summary_Report__c"
+           extensions="DailySiteJobSummaryDetail_Controller" standardStylesheets="true" showHeader="{!IF(AND(userTypeGuest),'false','')}">
+    
+    <apex:includeScript value="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"/>
+    
+    <style>
+        .hideButtons{
+        display:none;
+        }
+        
+        .editButtonClass{
+        display:none !important;
+        }
+        
+        a {
+        pointer-events: {!IF(AND(userTypeGuest),'none','')};
+        color: {!IF(AND(userTypeGuest),'#16325c !important','')};
+
+
+    </style>
+    
+    <apex:slds />
+
+    <div class="slds-scope {!IF(AND(userTypeGuest),'slds-p-around_x-small','')}">
+        <apex:form id="formId">
+            <apex:actionstatus id="counterStatus">
+                <apex:facet name="start">
+                    <div class="slds-spinner_container" style="position:fixed !important;">
+                        <div class="slds-spinner--brand slds-spinner slds-spinner--large" role="alert">
+                            <span class="slds-assistive-text">Loading</span>
+                            <div class="slds-spinner__dot-a"></div>
+                            <div class="slds-spinner__dot-b"></div>
+                        </div>
+                    </div>
+                </apex:facet>
+            </apex:actionstatus>
+
+            <apex:pageMessages id="errorMsg" />
+            <div class="slds-grid slds-wrap">
+                <div class="slds-size_12-of-12 slds-medium-size_12-of-12 slds-large-size_12-of-12">
+                    
+                    <apex:outputPanel id="headerId">
+                        <div class="slds-p-around_x-small" style="border-bottom: 1px solid black;">
+                            <div class="slds-media">
+                                <div class="slds-media__figure">
+                                    <span class="slds-icon_container slds-icon-standard-drafts">
+                                        <apex:image styleClass="slds-icon slds-page-header__icon"
+                                                    url="/resource/SLDS232/assets/icons/standard/drafts_60.png"/>
+                                    </span>
+                                </div>
+                                <div class="slds-media__body">
+                                    <h1 class="slds-page-header__title slds-truncate slds-align-middle"
+                                        title="Daily Site Job Summary">Daily Site Job Summary</h1>
+                                    <p class="slds-text-body_small slds-line-height_reset">{!Daily_Summary_Report__c.Name}</p>
+                                </div>
+                                <div class="slds-float_right slds-p-right_medium slds-p-top_x-small slds-p-bottom_xx-small slds-grid slds-grid_align-end slds-wrap slds-size_6-of-12">
+                                    <apex:commandButton styleClass="slds-button slds-button--brand slds-m-around_xx-small" value="Edit" action="{!URLFOR($Action.Daily_Summary_Report__c.Edit,Daily_Summary_Report__c.Id)}" rendered="{!$Profile.Name = 'System Administrator'}" />
+                                    <apex:commandButton styleClass="slds-button slds-button--brand slds-m-around_xx-small" value="Submit to Operations Supervisor" action="{!renderOpsSupConfirmationModal}" reRender="OpsSupConfirmationModalMain,detailPageId,headerId" status="counterStatus" rendered="{!(rigManagerApproval&&!userTypeGuest&&totalDailySiteJobCount!=0)}" disabled="{!disableSubmitToOpsSup}" title="If this is disabled, there are still open Daily Site Jobs" alt="If this is disabled, there are still open Daily Site Jobs"/>
+                                    <apex:commandButton styleClass="slds-button slds-button--brand slds-m-around_xx-small" value="Approve and Send to Company Manager" action="{!renderConfirmationModal}" reRender="ConfirmationModalMain,detailPageId,headerId" status="counterStatus" rendered="{!(opsSupApproval&&!userTypeGuest&&totalDailySiteJobCount!=0)}" disabled="{!disableApproveSendToOCR}" title="If this is disabled, there are still open Daily Site Jobs" alt="If this is disabled, there are still open Daily Site Jobs"/>
+                                    <apex:commandLink target="_blank" style="margin-left: .25rem; pointer-events: auto !important; color:#fff !important;" styleClass="slds-button slds-button--brand slds-m-around_xx-small" value="Preview PDF" action="{!URLFOR($Page.DailySummaryReport_Pdf,null,[id=Daily_Summary_Report__c.Id])}" rendered="{! totalDailySiteJobCount > 0}"/>  <!-- {!createPdfOpenedTask} {!URLFOR($Page.DailySummaryReport_Pdf,null,[id=Daily_Summary_Report__c.Id])}-->
+                                    <apex:commandButton styleClass="slds-button slds-button--brand slds-m-around_xx-small" value="Approve/Reject" action="{!showCancelModal}" reRender="closePopup" status="counterStatus" rendered="{!AND(dailySiteJobSummary.Status__c = 'Ops Mgr - Approved',userTypeGuest)}"/>
+                                    <!-- <apex:commandButton styleClass="slds-button slds-button--brand slds-m-around_xx-small" value="Delete" action="{!URLFOR($Action.Daily_Summary_Report__c.Delete,Daily_Summary_Report__c.Id)}" rendered="{!NOT(userTypeGuest)}" style="display:{!IF(dailySiteJobSummary.Status__c = 'Open','block','none')};" reRender="" /> -->
+                                    <apex:commandButton styleClass="slds-button slds-button--brand slds-m-around_xx-small" value="Delete" action="{!URLFOR($Action.Daily_Summary_Report__c.Delete,Daily_Summary_Report__c.Id)}" rendered="{!showDeleteButton}" reRender="" />
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                    </apex:outputPanel>
+
+                    <apex:outputPanel id="ConfirmationModalMain">
+                        <apex:outputPanel rendered="{!sendEmailConfirmationModal}" >
+                            <div class="slds-modal slds-fade-in-open">
+                                <div class="slds-modal__container">
+    
+                                    <div class="slds-modal__header">
+                                        <apex:commandbutton value=" " styleClass="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"  style="background-size: 100%; background-repeat: initial; background-image: url({!$Resource.SLDS232 + '/assets/icons/utility/close_60.png'});" action="{!renderConfirmationModal}" status="counterStatus" reRender="ConfirmationModalMain,errorMsg,headerId,detailPageId,pageMessage" />
+                                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Please Confirm</h2>
+                                    </div>
+    
+                                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                                        <apex:pageMessages id="pageMessage"/>
+                                        <p>Are you sure you want approve? Once approved, an email will be sent to the OCR with this daily report.</p>
+                                    </div>
+    
+                                    <div class="slds-modal__footer">
+                                        <apex:commandbutton styleClass="slds-button slds-button_neutral" value="No" action="{!renderConfirmationModal}" status="counterStatus" reRender="ConfirmationModalMain,errorMsg,headerId,detailPageId,pageMessage" />
+                                        <apex:commandButton styleClass="slds-button slds-button_brand" value="Yes" action="{!sendEmailToCompanyMan}" status="counterStatus" reRender="formId" />
+                                    </div>
+    
+                                </div>
+                            </div>
+    
+                            <div class="slds-backdrop slds-backdrop_open"></div>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                    
+                    <apex:outputPanel id="OpsSupConfirmationModalMain">
+                        <apex:outputPanel rendered="{!sendOpsSupEmailConfirmationModal}" >
+                            <div class="slds-modal slds-fade-in-open">
+                                <div class="slds-modal__container">
+    
+                                    <div class="slds-modal__header">
+                                        <apex:commandbutton value=" " styleClass="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"  style="background-size: 100%; background-repeat: initial; background-image: url({!$Resource.SLDS232 + '/assets/icons/utility/close_60.png'});" action="{!renderOpsSupConfirmationModal}" status="counterStatus" reRender="OpsSupConfirmationModalMain,errorMsg,headerId,detailPageId,pageMessage" />
+                                        <apex:outputPanel layout="none" rendered="{!!hasOpenTransportJobs}">
+                                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Please Confirm</h2>
+                                        </apex:outputPanel>
+                                        <apex:outputPanel layout="none" rendered="{!hasOpenTransportJobs}">
+                                            <h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate">This site has open transport jobs. Are you sure you want to submit? </h2>
+                                        </apex:outputPanel>
+                                    </div>
+    
+                                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                                        <apex:pageMessages id="pageMessageOpsSup"/>
+                                        <apex:outputPanel layout="none" rendered="{!hasOpenTransportJobs}">
+                                            <b>This site has open billable transport jobs:</b><br/>
+                                            <apex:dataTable value="{!openTransportJobs}" var="tj">
+                                                <apex:column style="text-align:center;" headerValue="Manager" headerClass="ct">
+                                                    <apex:outputField value="{!tj.OwnerId}"/>
+                                                </apex:column>
+                                                <apex:column style="text-align:center;" headerValue="Job Start Date" headerClass="ct">
+                                                    <apex:outputField value="{!tj.Job_Date__c}"/>
+                                                </apex:column>
+                                                <apex:column style="text-align:center;" headerValue="Site" headerClass="ct">
+                                                    <apex:outputField value="{!tj.Site__c}"/>
+                                                </apex:column>
+                                                <apex:column style="text-align:center;" headerValue="Unit" headerClass="ct">
+                                                    <apex:outputField value="{!tj.Unit__c}"/>
+                                                </apex:column>
+                                                <apex:column style="text-align:center;" headerValue="Category" headerClass="ct">
+                                                    <apex:outputField value="{!tj.Category__c}"/>
+                                                </apex:column>
+                                                <apex:column style="text-align:center;" headerValue="Status" headerClass="ct">
+                                                    <apex:outputField value="{!tj.Status__c}"/>
+                                                </apex:column>
+                                            </apex:dataTable>
+                                            <br/>This site has open transport jobs. Are you sure you want to submit? 
+                                        </apex:outputPanel>
+                                    </div>
+                                    
+                                    <div class="slds-modal__footer">
+                                        <apex:commandbutton styleClass="slds-button slds-button_neutral" value="No" action="{!renderOpsSupConfirmationModal}" status="counterStatus" reRender="OpsSupConfirmationModalMain,errorMsg,headerId,detailPageId,pageMessage" />
+                                        <apex:commandButton styleClass="slds-button slds-button_brand" value="Yes" action="{!sendRequestToOpsSupervisor}" status="counterStatus" reRender="formId" />
+                                    </div>
+    
+                                </div>
+                            </div>
+    
+                            <div class="slds-backdrop slds-backdrop_open"></div>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+
+                    <apex:outputPanel id="detailPageId">
+                        
+                        <apex:outputPanel title="Detail Section Fields" id="detailSection">
+                            <div class="slds-m-top_x-small slds-grid slds-wrap slds-size_12-of-12">
+                                
+                                <div class="slds-p-around_xx-small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+                                    <apex:outputLabel styleClass="slds-form-element__label">Report No.
+                                    </apex:outputLabel>
+                                    <div class="slds-form-element__control">
+                                        <apex:outputField value="{!Daily_Summary_Report__c.Name}"/>
+                                    </div>
+                                </div>
+                                
+                                <div class="slds-p-around_xx-small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2" style="display:{!IF(AND(userTypeGuest),'none','block')};">
+                                    <apex:outputLabel styleClass="slds-form-element__label">Contract</apex:outputLabel>
+                                    <div class="slds-form-element__control">
+                                        <apex:outputField value="{!Daily_Summary_Report__c.Contract__c}"/>
+                                    </div>
+                                </div>
+                                
+                                <div class="slds-p-around_xx-small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+                                    <apex:outputLabel styleClass="slds-form-element__label">Summary Report Date
+                                    </apex:outputLabel>
+                                    <div class="slds-form-element__control">
+                                        <apex:outputField value="{!Daily_Summary_Report__c.Summary_Report_Date__c}"/>
+                                    </div>
+                                </div>
+                                
+                                <div class="slds-p-around_xx-small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+                                    <apex:outputLabel styleClass="slds-form-element__label">Site</apex:outputLabel>
+                                    <div class="slds-form-element__control">
+                                        <apex:outputField value="{!Daily_Summary_Report__c.Site__c}"/>
+                                    </div>
+                                </div>
+                                
+                                <div class="slds-p-around_xx-small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+                                    <apex:outputLabel styleClass="slds-form-element__label" rendered="{!NOT(userTypeGuest)}">Status</apex:outputLabel>
+                                    <div class="slds-size_2-of-2 slds-form-element__control">
+                                        <!--div class="slds-size_2-of-2">-->
+                                        <div class="slds-size_1-of-2">
+                                            <div class="slds-grid slds-wrap">
+                                                <div class="slds-size_1-of-2" style="width:35% !important;">
+                                                    
+                                                    <apex:outputField value="{!dailySiteJobSummary.Status__c}"
+                                                                      styleClass="StatusInlineClass" id="statusOutputId" rendered="{!NOT(userTypeGuest)}">
+                                                    </apex:outputField>
+                                                    
+                                                </div>
+                                                <div class="slds-size_1-of-2">
+                                                    
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="slds-p-around_xx-small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+                                    <apex:outputLabel styleClass="slds-form-element__label" rendered="{!NOT(userTypeGuest)}">Invoice</apex:outputLabel>
+                                    <div class="slds-form-element__control">
+                                        <apex:outputField value="{!Daily_Summary_Report__c.Invoice__c}" rendered="{!NOT(userTypeGuest)}"/>
+                                    </div>
+                                </div>
+
+                                <div class="slds-p-around_xx-small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2" style="display:{!IF(AND(userTypeGuest),'none','block')};">
+                                    <apex:outputLabel styleClass="slds-form-element__label">OCR Name</apex:outputLabel>
+                                    <div class="slds-form-element__control">
+                                        <apex:outputField value="{!Daily_Summary_Report__c.Company_Manager_Name__c}"/>
+                                    </div>
+                                </div>
+                                
+                                <div class="slds-p-around_xx-small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2" style="display:{!IF(AND(userTypeGuest),'none','block')};">
+                                    <apex:outputLabel styleClass="slds-form-element__label">OCR Comments</apex:outputLabel>
+                                    <div class="slds-form-element__control">
+                                        <apex:outputField value="{!Daily_Summary_Report__c.Company_Manager_Comments__c}"/>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </apex:outputPanel>
+                        
+                        
+                    </apex:outputPanel>
+                    
+                    <apex:outputPanel id="dailySiteJobViewId">
+                        <div class="slds-section">
+                            <h3 class="slds-section__title slds-page-header__title" style="background:#ffc124; color:black;">
+                                <apex:outputText styleClass="slds-m-left_small " value="Daily Site Jobs"/>
+                            </h3>
+                        </div>
+                        
+                        <div class="slds-tabs_default">
+                            
+                            <ul class="slds-tabs_default__nav" role="tablist">
+                                <li class="slds-tabs_default__item slds-is-active" title="Site Job Summary" role="presentation"><a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-default-0" id="tab-default-0__item">Site Job Summary</a></li>
+                                <apex:repeat value="{!dailyReportList}" var="dailyReport">
+                                    <li class="slds-tabs_default__item" title="{!dailyReport.Unit__r.Name}" role="presentation">
+                                        <a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-1" id="tab-default-1__item{!dailyReport.Id}">
+                                            <apex:outputPanel rendered="{!!(dailyReport.Status__c=='Open'||dailyReport.Status__c=='Submitted'||dailyReport.Status__c=='Rejected')}">
+                                                {!dailyReport.Unit__r.Name}
+                                            </apex:outputPanel>
+                                            <apex:outputPanel rendered="{!(dailyReport.Status__c=='Open'||dailyReport.Status__c=='Submitted'||dailyReport.Status__c=='Rejected')}">
+                                                <apex:outputText value="{!dailyReport.Unit__r.Name}  (Still Open)" style="color:red;font-style:italic"/>
+                                            </apex:outputPanel>
+                                        </a>
+                                    </li>
+                                </apex:repeat>
+                            </ul>
+                            
+                            <!--Tab 1-->
+                            <div id="tab-default-0" class="slds-tabs_default__content slds-show" role="tabpanel" aria-labelledby="tab-default-0__item">
+                                <apex:include pageName="DailySummaryReport_VF"/>
+                            </div>
+                            <apex:repeat value="{!dailyReportList}" var="dailyReport">
+                                <div id="tab-default-1" class="slds-tabs_default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-1__item{!dailyReport.Id}">
+                                    <apex:outputPanel rendered="{!(opsSupApproval&&!userTypeGuest&&totalDailySiteJobCount!=0)}">
+                                        <apex:inputField value="{!dailyReport.OpsSupervisorApprovalNotes__c}" style="width:400px;height:80px;" html-placeholder=" Enter comments for unit manager"/> 
+                                        <br/>
+                                        <apex:commandLink styleClass="slds-button slds-button_destructive slds-m-around_xx-small" value="Send Back to Unit Manager" action="{!rejectSingleDailySiteJob}">
+                                            <apex:param name="siteJobId"
+                                                value="{!dailyReport.Id}"
+                                                assignTo="{!dailySiteJobToRejectId}"/>
+                                        </apex:commandLink>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel rendered="{!(dailyReport.Status__c=='Rejected'&&dailyReport.OpsSupervisorApprovalNotes__c!=null)}">
+                                        <b><apex:outputLabel value="Reject Comments"/> </b>
+                                        <apex:outputField value="{!dailyReport.OpsSupervisorApprovalNotes__c}"/> <br/>
+                                    </apex:outputPanel>
+                                    <div class="slds-tabs_scoped">
+                                        <ul class="slds-tabs_scoped__nav" role="tablist">
+                                            <li class="slds-tabs_scoped__item slds-is-active" title="General Data" role="presentation"><a class="slds-tabs_scoped__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-scoped-1" id="tab1-scoped-1__item{!dailyReport.Id}">General Data</a></li>
+                                            <li class="slds-tabs_scoped__item" title="Site Job Items" role="presentation"><a class="slds-tabs_scoped__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-scoped-5" id="tab1-scoped-5__item{!dailyReport.Id}">Site Job Items</a></li>
+                                            <li class="slds-tabs_scoped__item" style="{!IF(dailyReport.Type__c=='Transport','display:none;','')}" title="Active Personnels" role="presentation"><a class="slds-tabs_scoped__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-scoped-2" id="tab1-scoped-2__item{!dailyReport.Id}">Active Personnels</a></li>
+                                            <li class="{!IF(userTypeGuest,'slds-hide','slds-tabs_scoped__item')}" style="{!IF(dailyReport.Type__c=='Transport','display:none;','')}" title="Hazards" role="presentation"><a class="slds-tabs_scoped__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-scoped-3" id="tab1-scoped-3__item{!dailyReport.Id}">Hazards</a></li>
+                                            <li class="{!IF(userTypeGuest,'slds-hide','slds-tabs_scoped__item')}" style="{!IF(dailyReport.Type__c=='Transport','display:none;','')}" title="HSEQ" role="presentation"><a class="slds-tabs_scoped__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-scoped-4" id="tab1-scoped-4__item{!dailyReport.Id}">HSEQ</a></li>
+                                            <li class="{!IF(userTypeGuest,'slds-hide','slds-tabs_scoped__item')}" style="{!IF(dailyReport.Type__c=='Transport','display:none;','')}" title="Work Order" role="presentation"><a class="slds-tabs_scoped__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-scoped-6" id="tab1-scoped-6__item{!dailyReport.Id}">Work Orders</a></li>
+                                        </ul>
+                                        
+                                        <div id="tab-scoped-1" class="slds-tabs_scoped__content slds-show" role="tabpanel" aria-labelledby="tab1-scoped-1__item{!dailyReport.Id}">
+                                            <div class="slds-grid slds-wrap">
+                                                <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small" style="Display:{!IF(NOT(ISBLANK(dailyReport.Id)),"block","none")};">
+                                                    <apex:outputLabel styleClass="slds-form-element__label">Site Job Name</apex:outputLabel>
+                                                    <div class="slds-form-element__control">
+                                                        <a href="/{!dailyReport.Id}"><apex:outputLabel value="{!dailyReport.Name}"/></a>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                                    <apex:outputLabel styleClass="slds-form-element__label">Contract</apex:outputLabel>
+                                                    <div class="slds-form-element__control">
+                                                        <apex:outputField value="{!dailyReport.Contract__c}"/>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                                    <apex:outputLabel styleClass="slds-form-element__label">Site</apex:outputLabel>
+                                                    <div class="slds-form-element__control">
+                                                        <apex:outputField value="{!dailyReport.Site__c}"/>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                                    <apex:outputLabel styleClass="slds-form-element__label">Type</apex:outputLabel>
+                                                    <div class="slds-form-element__control">
+                                                        <apex:outputField value="{!dailyReport.Type__c}"/>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                                    <apex:outputLabel styleClass="slds-form-element__label">Unit</apex:outputLabel>
+                                                    <div class="slds-form-element__control">
+                                                        <apex:outputField value="{!dailyReport.Unit__c}"/>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                                    <apex:outputLabel styleClass="slds-form-element__label">Report Date</apex:outputLabel>
+                                                    <div class="slds-form-element__control">
+                                                        <apex:outputField value="{!dailyReport.Report_Date__c}"/>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                                    <apex:outputLabel styleClass="slds-form-element__label">Status</apex:outputLabel>
+                                                    <div class="slds-form-element__control">
+                                                        <apex:outputField value="{!dailyReport.Status__c}"/>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                                    <apex:outputLabel styleClass="slds-form-element__label">Description</apex:outputLabel>
+                                                    <div class="slds-form-element__control">
+                                                        <apex:outputField value="{!dailyReport.Description__c}"/>
+                                                    </div>
+                                                </div>
+                                                <div style="{!IF(dailyReport.Type__c=='Transport','display:none;','')}" class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                                    <apex:outputLabel styleClass="slds-form-element__label">Auto Create Daily Report Items</apex:outputLabel>
+                                                    <div class="slds-form-element__control">
+                                                        <apex:outputField value="{!dailyReport.Auto_Create_Daily_Report_Items__c}"/>
+                                                    </div>
+                                                </div>
+                                                <apex:outputPanel layout="none" rendered="{!dailyReport.Type__c!='Transport'}">
+                                                    <div class="slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1 slds-p-top_large slds-m-right_x-small">
+                                                        <div class="slds-section slds-is-open">
+                                                            <h3 class="slds-section__title slds-theme_shade" style="background: #ffc124;color: white;">
+                                                                <span class="slds-truncate slds-p-horizontal_small" title="Section Title">General Data</span>
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    
+                                                    <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small {!IF(dailyReport.Type__c = 'Rig','','slds-hide')} " >
+                                                        <apex:outputLabel styleClass="slds-form-element__label">Previous Site</apex:outputLabel>
+                                                        <div class="slds-form-element__control">
+                                                            <apex:outputField value="{!dailyReport.Previous_Site__c}"/>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small {!IF(dailyReport.Type__c = 'Rig','','slds-hide')} ">
+                                                        <apex:outputLabel styleClass="slds-form-element__label">#No of KM's from Previous Site</apex:outputLabel>
+                                                        <div class="slds-form-element__control">
+                                                            <apex:outputField value="{!dailyReport.No_of_KM_s_from_Previous_Site__c}"/>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small {!IF(dailyReport.Type__c = 'Rig','','slds-hide')} ">
+                                                        <apex:outputLabel styleClass="slds-form-element__label">Line Slipped</apex:outputLabel>
+                                                        <div class="slds-form-element__control">
+                                                            <apex:outputField value="{!dailyReport.Line_Slipped__c}" style=""/>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small {!IF(dailyReport.Type__c = 'Rig','','slds-hide')} ">
+                                                        <apex:outputLabel styleClass="slds-form-element__label">Line on Spool</apex:outputLabel>
+                                                        <div class="slds-form-element__control">
+                                                            <apex:outputField value="{!dailyReport.Line_on_Spool__c}"/>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                                        <apex:outputLabel styleClass="slds-form-element__label">Water Levels (L)</apex:outputLabel>
+                                                        <div class="slds-form-element__control">
+                                                            <apex:outputField value="{!dailyReport.Water_Levels__c}" style=""/>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                                        <apex:outputLabel styleClass="slds-form-element__label">Fuel Levels (L)</apex:outputLabel>
+                                                        <div class="slds-form-element__control">
+                                                            <apex:outputField value="{!dailyReport.Fuel_Levels__c}" style=""/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                                        <apex:outputLabel styleClass="slds-form-element__label">Fuel Delivered</apex:outputLabel>
+                                                        <div class="slds-form-element__control">
+                                                            <apex:outputField value="{!dailyReport.Fuel_Delivered__c}" style=""/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                                        <apex:outputLabel styleClass="slds-form-element__label">Septic Levels (L)</apex:outputLabel>
+                                                        <div class="slds-form-element__control">
+                                                            <apex:outputField value="{!dailyReport.Septic_Levels__c}" style=""/>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-vertical_xx-small">
+                                                        <apex:outputLabel styleClass="slds-form-element__label">Rubbish Levels (%)</apex:outputLabel>
+                                                        <div class="slds-form-element__control">
+                                                            <apex:outputField value="{!dailyReport.Rubbish_Levels__c}" style=""/>
+                                                        </div>
+                                                    </div>
+                                                </apex:outputPanel>
+                                            </div>
+                                        </div>
+                                        <!--Display Site Job Items-->
+                                        <div id="tab-scoped-5" class="slds-tabs_scoped__content slds-hide" role="tabpanel" aria-labelledby="tab1-scoped-5__item{!dailyReport.Id}">
+                                            
+                                            <c:SiteJobItem_VFComponent DailyReportRecordId="{!dailyReport.Id}" ShowSaveNextButtons="false"/>
+                                            
+                                        </div>
+                                        
+                                        <!--Display Active Personnels-->
+                                        <div id="tab-scoped-2" class="slds-tabs_scoped__content slds-hide" role="tabpanel" aria-labelledby="tab1-scoped-2__item{!dailyReport.Id}">
+                                            <div class="slds-size_12-of-12" style="width:100%;">
+
+                                                <apex:repeat value="{!dailyReportIdActivePersonnelsMap}" var="dailyReportId">
+                                                    <apex:outputPanel rendered="{!IF(dailyReportId = dailyReport.Id, true, false)}">
+                                                        <apex:variable var="apSize" value="{!dailyReportIdActivePersonnelsMap[dailyReportId]}"  />
+                                                        <apex:dataTable id="dTab"
+                                                                        value="{!dailyReportIdActivePersonnelsMap[dailyReportId]}"
+                                                                        var="ap" style="width:100%;"
+                                                                        styleclass="slds-table slds-table--bordered slds-table_striped slds-table_bordered slds-no-row-hover" rendered="{!IF(apSize.size > 0,true,false)}">
+                                                            <apex:column headerValue="Employee" id="empHeader1"
+                                                                         styleClass="slds-cell-wrap">
+                                                                <apex:outputField value="{!ap.Employees__c}"
+                                                                                  rendered="{!NOT(ISBLANK(ap.Id))}"/>
+                                                            </apex:column>
+                                                            
+                                                            <apex:column headerValue="Position" id="empHeader2"
+                                                                         styleClass="slds-cell-wrap">
+                                                                <apex:outputField value="{!ap.Position__c}"
+                                                                                  rendered="{!NOT(ISBLANK(ap.Id))}"/>
+                                                            </apex:column>
+
+                                                            <apex:column headerValue="Crew" id="empHeader3"
+                                                                         styleClass="slds-cell-wrap">
+                                                                <apex:outputField value="{!ap.Crew__c}"
+                                                                                  rendered="{!NOT(ISBLANK(ap.Id))}"/>
+                                                            </apex:column>
+                                                            
+                                                            <apex:column headerValue="Shift" id="empHeader4"
+                                                                         styleClass="slds-cell-wrap">
+                                                                <apex:outputField value="{!ap.Shift__c}"
+                                                                                  rendered="{!NOT(ISBLANK(ap.Id))}"/>
+                                                            </apex:column>
+
+                                                            <!--<apex:column headerValue="Locale" id="empHeader4"
+                                                                         styleClass="slds-cell-wrap">
+                                                                <apex:outputField value="{!ap.Locale__c}"
+                                                                                  rendered="{!NOT(ISBLANK(ap.Id))}"/>
+                                                            </apex:column>-->
+
+                                                            <apex:column headerValue="Crew Change" id="empHeader5"
+                                                                         styleClass="slds-cell-wrap">
+                                                                <apex:outputField value="{!ap.Crew_Change__c}"
+                                                                                  rendered="{!NOT(ISBLANK(ap.Id))}"/>
+                                                            </apex:column>
+                                                            <apex:column headerValue="Travel Hours" id="empHeader6">
+    <apex:outputField value="{!ap.Travel_Hrs__c}" rendered="{!NOT(ISBLANK(ap.Id))}"/>
+</apex:column>
+
+<apex:column headerValue="Work Hours" id="empHeader7">
+    <apex:outputField value="{!ap.Work_Hrs__c}" rendered="{!NOT(ISBLANK(ap.Id))}"/>
+</apex:column>
+
+<apex:column headerValue="RM Notes" id="empHeader8">
+    <apex:outputField value="{!ap.RM_Notes__c}" rendered="{!NOT(ISBLANK(ap.Id))}"/>
+</apex:column>
+                                                        </apex:dataTable>
+                                                        <apex:outputPanel id="NoAPsOP" rendered="{!IF(apSize.size = 0,true,false)}" >
+                                                        No records to display.
+                                                        </apex:outputPanel>
+                                                    </apex:outputPanel>
+                                                </apex:repeat>
+
+                                            </div>
+                                        </div>
+                                        
+                                        <!--Display Safety Data-->
+                                        <div id="tab-scoped-3" class="slds-tabs_scoped__content slds-hide" role="tabpanel" aria-labelledby="tab1-scoped-3__item{!dailyReport.Id}">
+                                            <div class="slds-p-around_xxx-small slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+                                                <c:RelatedListComponent_VFC Id="hazardCardId" SObjectAPI="Hazard_Card__c" RelatedToField="Daily_Site_Job__c" RelatedToId="{!dailyReport.Id}" FieldSetName="HazardsRelatedListFieldSet"
+                                                                            RelatedListName="Hazards" NumberOfRecordPerPage="5" ShowNewButton="false" ShowEditButton="false" ShowDeleteButton="false"></c:RelatedListComponent_VFC>
+                                            </div>
+                                        </div>
+
+                                        <div id="tab-scoped-4" class="slds-tabs_scoped__content slds-hide" role="tabpanel" aria-labelledby="tab1-scoped-4__item{!dailyReport.Id}">
+                                            <div class="slds-p-around_xxx-small slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+                                                <c:RelatedListComponent_VFC Id="hseqId" SObjectAPI="HSEQ_Forms__c" RelatedToField="Daily_Site_Job__c" RelatedToId="{!dailyReport.Id}" FieldSetName="HseqRelatedListFieldSet"
+                                                                            RelatedListName="HSEQ Forms" NumberOfRecordPerPage="5" ShowNewButton="false" ShowEditButton="false" ShowDeleteButton="false"></c:RelatedListComponent_VFC>
+                                            </div>
+                                        </div>
+                                        
+                                        <!--Display Work Orders-->
+                                        <div id="tab-scoped-6" class="slds-tabs_scoped__content slds-hide" role="tabpanel" aria-labelledby="tab1-scoped-6__item{!dailyReport.Id}">
+                                            <div class="slds-p-around_xxx-small slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+                                                <c:RelatedListComponent_VFC Id="workIrderId" SObjectAPI="Job_Cards__c" RelatedToField="Daily_Site_Job__c" RelatedToId="{!dailyReport.Id}" FieldSetName="WorkOrderRelatedListFieldSet"
+                                                                            RelatedListName="Work Order" NumberOfRecordPerPage="5" ShowNewButton="false" ShowEditButton="false" ShowDeleteButton="false"></c:RelatedListComponent_VFC>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </apex:repeat>
+                        </div>
+                        
+                    </apex:outputPanel>
+                    
+                    
+                    
+                </div>
+            </div>
+            
+            <!---------------Modal for OCR's Approval ------------------------------------------>
+            <apex:outputPanel id="closePopup">
+                <apex:actionFunction name="closeApprovalModal" id="closeApprovalModalId" action="{!hideApprovalModal}" reRender="closePopup,headerId" status="counterStatus" immediate="true" />
+                <apex:outputPanel rendered="{!showCancelPopup}">
+                    <div role="dialog" tabindex="-1" aria-labelledby="modal-heading-01"
+                         aria-describedby="modal-content-id-1"
+                         class="slds-modal slds-fade-in-open closeDialog">
+                        <div class="slds-modal__container">
+                            <apex:actionstatus id="counterStatus2">
+                        <apex:facet name="start">
+                            <div class="waitingSearchDiv" id="el_loading" style="background-color:#fbfbfbb8; height:100%;opacity:50;width:100%;">
+                                <div class="waitingHolder" style="top: 100px; width: 100px;">
+                                    <div class="slds-spinner_container">
+                                        <div class="slds-spinner slds-spinner_brand slds-spinner--medium" aria-hidden="false" role="alert">
+                                            <div class="slds-spinner__dot-a"></div>
+                                            <div class="slds-spinner__dot-b"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </apex:facet>
+                    </apex:actionstatus>
+                            <div class="slds-modal__header">
+                                <button class="slds-button slds-button--icon-inverse slds-modal__close"
+                                        onclick="closeCancelDialog();return false;">
+                                    <span style="font-size: x-large;">X</span>
+                                    <span class="slds-assistive-text">Close</span>
+                                </button>
+                                <h2 id="header43" class="slds-text-heading--medium">OCR Approval</h2>
+                            </div>
+                            <div id="DealModalBoxContent" class="slds-modal__content slds-p-around--medium">
+                                <p class="slds-text-heading_small slds-text-align_center">A PDF version of this report will be sent to you or you can download it .</p><br/>
+                                <div id="" class="slds-text-heading--small">
+                                    <div class="slds-form slds-form_stacked">
+                                        <div class="slds-form-element">
+                                            <apex:outputLabel styleClass="slds-form-element__label"><abbr class="slds-required" title="required">*</abbr>OCR Name</apex:outputLabel>
+                                            <div class="slds-form-element__control slds-required">
+                                                <apex:inputField ignoreEditPermissionForRendering="true" styleClass="slds-input slds-required" value="{!dailySiteJobSummary.Company_Manager_Name__c}" required="true"/>
+                                            </div>
+                                        </div>
+                                        <div class="slds-form-element">
+                                            <apex:outputLabel styleClass="slds-form-element__label">Comments</apex:outputLabel>
+                                            <div class="slds-form-element__control">
+                                                <apex:inputField ignoreEditPermissionForRendering="true" styleClass="slds-input" value="{!dailySiteJobSummary.Company_Manager_Comments__c}"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slds-modal__footer">
+                                <apex:commandButton reRender="closePopup,detailPageId,formId" styleClass="slds-button slds-button--destructive"
+                                                    status="counterStatus2" action="{!rejectReport}"
+                                                    value="Reject"></apex:commandButton>
+                                <apex:commandButton reRender="closePopup,detailPageId,formId" styleClass="slds-button slds-button--brand"
+                                                    status="counterStatus2" action="{!approveReport}"
+                                                    value="Approve"></apex:commandButton>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="createnewbackdrop" class="slds-backdrop slds-backdrop--open"></div>
+                </apex:outputPanel>
+            </apex:outputPanel>
+            
+        </apex:form>
+        
+        <!--<apex:outputPanel title="Approval History" rendered="{!NOT(userTypeGuest)}">
+            <apex:relatedList list="ProcessSteps" title="Approval History" pageSize="10"/>            
+        </apex:outputPanel>-->
+        
+        <apex:outputPanel title="Attachments" rendered="{!NOT(userTypeGuest)}">
+        <apex:relatedList list="CombinedAttachments" title="Attachments" pageSize="5"/>
+        </apex:outputPanel>
+        
+        <apex:outputPanel title="Activity History" rendered="{!NOT(userTypeGuest)}">
+            <apex:relatedList title="Activity History" list="ActivityHistories"/>
+        </apex:outputPanel>
+        
+    </div>
+    
+    
+    <script>
+    
+    $(document).ready(function() {
+        if($('span').hasClass('twitter-typeahead')){
+            $('table.siteJobItemTable tr:last-child').hide();
+        }
+    });
+    
+    
+    function changeTab(thisObj){
+        var siblingAnchorElementId = thisObj.siblings('li.slds-is-active').find('a').attr('id');
+        var siblingtabElement = "[aria-labelledby=" + siblingAnchorElementId + "]";
+        //$(siblingtabElement).removeClass("slds-show");
+        //$(siblingtabElement).addClass("slds-hide");
+        $(siblingtabElement).toggleClass("slds-show");
+        $(siblingtabElement).toggleClass("slds-hide");
+        
+        
+        thisObj.addClass('slds-is-active');
+        thisObj.find('a').attr('aria-selected', true);
+        thisObj.siblings().removeClass('slds-is-active');
+        thisObj.siblings().find('a').attr('aria-selected', false);
+        
+        var anchorElementId = thisObj.find('a').attr('id');
+        var tabElement = "[aria-labelledby=" + anchorElementId + "]";
+        //$(tabElement).addClass("slds-show");
+        $(tabElement).toggleClass("slds-show");
+        $(tabElement).toggleClass("slds-hide");
+        
+    }
+    
+    $('.slds-tabs_default__item').on('click', function(){
+        changeTab($(this));
+    });
+    
+    
+    $('.slds-tabs_scoped__item').on('click', function(){
+        changeTab($(this));
+    });
+    
+    function closeCancelDialog(){
+        /*$('.closeDialog').removeClass( "slds-fade-in-open" ).addClass( "slds-fade-in-hide" );
+        $('#createnewbackdrop').removeClass( "slds-backdrop--open" ).addClass( "slds-backdrop--hide" );*/
+        closeApprovalModal();
+    }
+    
+    
+    
+    </script>
+    
+</apex:page>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Item_Name__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <label>Item Name</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Item__c.Active__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <filterItems>
+            <field>Item__c.BundledItem__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Item__c</referenceTo>
+    <relationshipLabel>Contract Job Items</relationshipLabel>
+    <relationshipName>Contract_Items</relationshipName>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>true</trackTrending>
+    <type>Lookup</type>
+</CustomField>

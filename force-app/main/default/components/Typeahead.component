@@ -1,0 +1,315 @@
+<!-- Typeahead.js enabled text box component - searches the database using SOSL as you type -->
+<apex:component controller="Typeahead">
+
+    <!--
+SAMPLE OF HOW TO USE THIS COMPONENT TO SEARCH ACCOUNTS:
+
+<h3>Account Name:</h3>
+<c:Typeahead searchBoxId="acctSearchBox" object="Account" destinationForSelectedId="accountId" />   
+<input type="hidden" name="accountId" id="accountId" />     
+-->
+
+    <script type="text/javascript">
+    //window.typeahead || document.write('<script src="{!URLFOR($Resource.Typeahead, '/typeahead.bundle.min.js')}"><\/script>');
+
+
+
+
+    </script>
+    <apex:attribute name="lookupCounter" type="String" description="look up counter" />
+    <apex:attribute name="searchBoxId" type="String" default="searchBox"
+                    description="Id attribute for the search input box."/>
+    <apex:attribute name="styleClass" type="String"
+                    description="CSS class attribute to apply on the search input box."/>
+    <apex:attribute name="style" type="String"
+                    description="CSS style attribute to apply on the search input box."/>
+    <apex:attribute name="placeholder" type="String" default="Search"
+                    description="Text to display as a placeholder in the search input box."/>
+
+    <apex:attribute name="object" type="String" default="Contact"
+                    description="The type of record we are searching."/>
+    <apex:attribute name="objectIdField" type="String" default="Id"
+                    description="The field that provides the object Id."/>
+    <apex:attribute name="primaryField" type="String" default="Name"
+                    description="The field that provides the primary display value."/>
+    <apex:attribute name="secondaryField" type="String" default=""
+                    description="A field to differentiate the display value. Appears in parens."/>
+    <apex:attribute name="serviceTypeField" type="String" default=""
+                    description="Getting the service type for the selected contract item."/>
+    <apex:attribute name="minSearchLength" type="Integer" default="2"
+                    description="How many characters you must type before searching.  Must be 2 or more."/>
+
+    <apex:attribute name="searchScope" type="String" default="ALL"
+                    description="Indicates which types of fields on the object to search. One of ALL, NAME, EMAIL, PHONE, SIDEBAR."/>
+    <apex:attribute name="filterClause" type="String"
+                    description="WHERE clause to filter records. Do not include WHERE."/>
+    <apex:attribute name="orderBy" type="String" default="Name"
+                    description="Name of field to sort records by."/>
+    <apex:attribute name="recordLimit" type="String" default="2000"
+                    description="Maximum number of records to return to the list. "/>
+
+    <apex:attribute name="destinationForSelectedId" type="String"
+                    description="Id of a field, such as an apex:inputHidden, that should get Salesforce Id of the selected item."/>
+    <apex:attribute name="destinationForSelectedValue" type="String"
+                    description="Id of a field, such as an apex:inputHidden, that should get the displayed name/value of the selected item."/>
+    <apex:attribute name="destinationForServiceTypeValue" type="String"
+                    description="Service Type of the selected Contract Job Item."/>
+    <apex:attribute name="destinationForSelectedwdAssetName" type="String"
+                    description="WD Asset of Contract Job I
+                    tem"/>
+    
+    
+
+    <apex:attribute name="stealFocus" type="Boolean" default="true"
+                    description="Whether to automatically move the focus to the search box when the component is displayed."/>
+
+    <style>
+        .twitter-typeahead {
+        width:100%;
+        }
+        .tt-search-box,
+        .tt-query,
+        .tt-hint {
+        display:inline-block;
+        width:97%;
+        font-size: inherit;
+        height: 1.3em;
+        padding: 8px 12px;
+        line-height: 1.3em;
+        border: 2px solid #ccc;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        outline: none;
+        }
+        
+        .tt-search-box:focus {
+        border: 2px solid #0097cf;
+        }
+        
+        .tt-query {
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        }
+        
+        .tt-hint {
+        color: #999
+        }
+
+
+        .tt-dropdown-menu {
+        width: 100%;
+        margin-top: 5px;
+        padding: 8px 0;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+        -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+        box-shadow: 0 5px 10px rgba(0,0,0,.2);
+        }
+        
+        .tt-suggestion {
+        padding: 3px 20px;
+        font-size: inherit;
+        line-height: 1.5em;
+        }
+        
+        .tt-suggestion.tt-cursor {
+        color: #fff;
+        background-color:
+        #0097cf;
+
+
+        }
+
+        
+        .tt-suggestion p {
+        margin: 0;
+        }
+
+
+
+
+    </style>
+    <script>
+    var $ = jQuery.noConflict();
+    var soslRegex = /%3F|%26|%7C|%7B|%7D|%5B|%5D|%5E|%3A|%5C|%22|%2B|['!\(\)~\*-]/g;
+    
+    // different typeaheads need their own data
+    var boxData;
+    var tempId = '';
+    if (!boxData) boxData = {};
+    
+    boxData['{!searchBoxId}'] = { 
+        setSelectedValue : 
+        function( ctrl, id, value, serviceType, wdAssetName, wdAsset ) {
+            
+            $(ctrl).attr('data-id', id);
+            var lookUpCount = '{!lookupCounter}';
+            var destinationElement = $('.din' + lookUpCount).attr('id');
+            
+            //$('[id$={!destinationForSelectedId}_lkid]').val( id );
+            //$('[id$={!destinationForSelectedValue}_lkold]').val( value );
+            //$('[id$={!destinationForSelectedValue}]').val( value );
+            //$('#' + destinationElement + '_lkid').val( id );
+            //$('#' + destinationElement + 'lkold').val( value );
+            // $('#' + destinationElement).val( value );
+            document.getElementById(destinationElement + '_lkid').value = id;
+            document.getElementById(destinationElement + '_lkold').value = value;
+            document.getElementById(destinationElement).value = value;
+                
+            /*if(serviceType !== null){
+                if(serviceType === 'Fixed Price/Hour'){
+                    $('[id$={!destinationForSelectedId}]').closest('tr').find('input.qty')[0].disabled = true;
+                }
+
+                else if(serviceType === 'Fixed Price/Quantity' || serviceType === 'Flexi Price/Quantity'){
+                    $('[id$={!destinationForSelectedId}]').closest('tr').find('input.startdate')[0].disabled = true;
+                    $('[id$={!destinationForSelectedId}]').closest('tr').find('input.enddate')[0].disabled = true;
+                }
+            }*/
+            
+            if(serviceType !== null){
+                if(serviceType === 'Fixed Price/Hour'){
+                    $('.din' + lookUpCount).closest('tr').find('input.qty')[0].disabled = true;
+                    //$('.din' + lookUpCount).closest('tr').find('input.startdate').eq(0).attr("required","required");
+                    //$('.din' + lookUpCount).closest('tr').find('input.enddate').eq(0).attr("required","required");
+                    $('.din' + lookUpCount).closest('tr').find('input.startdate')[0].disabled = false;
+                    $('.din' + lookUpCount).closest('tr').find('input.enddate')[0].disabled = false;
+                }
+
+                else if(serviceType === 'Fixed Price/Quantity' || serviceType === 'Flexi Price/Quantity'){
+                    //$('.din' + lookUpCount).closest('tr').find('input.startdate')[0].disabled = true;
+                    //$('.din' + lookUpCount).closest('tr').find('input.enddate')[0].disabled = true;
+                    //$('.din' + lookUpCount).closest('tr').find('input.qty').eq(0).attr("required","required");
+                    $('.din' + lookUpCount).closest('tr').find('input.startdate')[0].disabled = true;
+                    $('.din' + lookUpCount).closest('tr').find('input.enddate')[0].disabled = true;
+                    $('.din' + lookUpCount).closest('tr').find('input.qty')[0].disabled = false;
+                }
+            }
+
+            if(value !== null){
+                var x = $('.din' + lookUpCount).closest('tr').find('span.displayContractItem')[0];
+
+            if(typeof(x) !== 'undefined'){
+
+                $('.din' + lookUpCount).closest('tr').find('span.displayContractItem')[0].innerText = value;
+                $('.din' + lookUpCount).closest('tr').find('div.typAhdComponent').hide();
+                $('.din' + lookUpCount).closest('tr').find('div.displayContractItemDiv').show();
+
+
+
+                /*var y = $('.din' + lookUpCount).closest('tr').find('.wdAssetDiv input')[0];
+
+            if(typeof(wdAsset) !== 'undefined' && typeof(wdAssetName) !== 'undefined' && typeof(y) !== 'undefined'){
+            $('.din' + lookUpCount).closest('tr').find('[id*="cont2"]')[0].innerText = wdAssetName;
+            $('.din' + lookUpCount).closest('tr').find('div.wdAssetDiv').show();
+            }*/
+
+            }
+            }
+
+
+
+        },
+        
+        fieldList: 
+        ['{!objectIdField}', '{!primaryField}'],
+        
+        boxQuery: 
+        function( queryString, typeaheadCallback ) {
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.Typeahead.searchRecords}', 
+                queryString, 
+                '{!object}', 
+                boxData['{!searchBoxId}'].fieldList,
+                '{!searchScope}',
+                '{!filterClause}',
+                '{!orderBy}',
+                {!recordLimit},
+                function(result, event){
+                    if (event.status) {
+                        var dataList = [];
+                        $.each(result, function(i, r) {
+                            dataList.push({
+                                id: r.{!objectIdField},
+                                          value: r.{!primaryField} +
+
+                                          (('{!secondaryField}'.length && r['{!secondaryField}']) ? 
+                                (' (' + r['{!secondaryField}'] + ')') : ''),
+                                serviceType: r.Service_Type__c,
+                                wdAssetName: r.WD_Asset_Name__c,
+                                wdAsset: r.WD_Asset__c
+                        });
+                    });
+                    typeaheadCallback( dataList );
+                } else {
+                // TODO: deal with error
+                alert('Callout error: ' + event.message);
+            typeaheadCallback( [] );
+        }
+    }, 
+        {escape: false}
+    );
+    }
+    };
+    
+    $(document).ready(function(){
+        console.log('vfc ready');
+        $('#{!searchBoxId}').typeahead({
+            minLength: {!minSearchLength},
+            hint: true,
+            autoselect: true,
+            highlight: true
+        },
+                                       {
+                                           source: boxData['{!searchBoxId}'].boxQuery,  // calls our remoting function
+                                           name: '{!searchBoxId}Typeahead',
+                                           //displayKey: ,
+                                           /*templates: {
+                    suggestion: function(c) { 
+                        return '<p><strong>' + c.name + '</strong><br />' + c.addr + '</p>'; 
+                    }
+                    //, empty: '<p>No results found.</p>'
+                    //, header: '' 
+                    //, footer: ''
+                }
+                */
+                                       }).on('typeahead:selected', function (object, datum) {
+            boxData['{!searchBoxId}'].setSelectedValue( this, datum.id, datum.value, datum.serviceType, datum.wdAssetName, datum.wdAsset );
+            // console.log('typeahead:selected => ' + datum.id);
+            
+        }).on('typeahead:autocompleted', function (object, datum) {
+            boxData['{!searchBoxId}'].setSelectedValue( this, datum.id, datum.value, datum.serviceType, datum.wdAssetName, datum.wdAsset );
+            // console.log('typeahead:autocompleted => ' + datum.id);
+            //}).on('typeahead:cursorchanged', function (object, datum) {
+            //boxData['{!searchBoxId}'].setSelectedValue( this, datum.id, datum.value );
+            // console.log('typeahead:cursorchanged => ' + datum.id);
+            //}).on('typeahead:closed', function (object, datum) {
+            //     console.log('typeahead:closed');
+            // });
+        }).keyup( function(ev) {
+            // if they press backspace or escape, we want to clear the selection
+            if ( ev.which == 8 || ev.which == 27 ) {
+                boxData['{!searchBoxId}'].setSelectedValue( this, null, null );
+            }
+        });
+        
+        if ({!stealFocus}) $('#{!searchBoxId}').focus();
+    });
+    
+    if ('{!secondaryField}'.length) 
+        boxData['{!searchBoxId}'].fieldList.push('{!secondaryField}'); 
+    
+    </script>
+
+    <div>
+        <input id="{!searchBoxId}" placeholder="{!placeholder}" class="tt-search-box {!styleClass}" style="{!style}" onkeydown="if(event.keyCode==13){this.blur();}"/>
+    </div>
+
+</apex:component>

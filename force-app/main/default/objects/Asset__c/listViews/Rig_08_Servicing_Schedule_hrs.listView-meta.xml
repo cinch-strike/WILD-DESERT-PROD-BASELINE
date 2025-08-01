@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_08_Servicing_Schedule_hrs</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>Asset_Family__c</columns>
+    <columns>NAME</columns>
+    <columns>Asset_ID_Number__c</columns>
+    <columns>Engine_Hours__c</columns>
+    <columns>Next_Service_Due_Hrs__c</columns>
+    <columns>Next_Job_Card_creation_reading__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Unit__c</field>
+        <operation>equals</operation>
+        <value>rig 8</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Asset__c.Forklifts,Asset__c.Loaders,Asset__c.Non_Vehicle_Engine,Asset__c.Rigs</value>
+    </filters>
+    <label>Rig #08 - Servicing Schedule (hrs)</label>
+    <sharedTo>
+        <group>OPs_super</group>
+        <group>Rig_8</group>
+    </sharedTo>
+</ListView>

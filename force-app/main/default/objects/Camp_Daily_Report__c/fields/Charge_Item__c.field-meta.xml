@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Charge_Item__c</fullName>
+    <label>Charge Item</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Operating</fullName>
+                <default>false</default>
+                <label>Operating</label>
+            </value>
+            <value>
+                <fullName>Standby (WC)</fullName>
+                <default>false</default>
+                <label>Standby (WC)</label>
+            </value>
+            <value>
+                <fullName>Standby (WOC)</fullName>
+                <default>false</default>
+                <label>Standby (WOC)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

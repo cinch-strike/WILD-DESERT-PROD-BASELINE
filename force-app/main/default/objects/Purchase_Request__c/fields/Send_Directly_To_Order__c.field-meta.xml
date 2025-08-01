@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Directly_To_Order__c</fullName>
+    <description>Check the Inventory Item</description>
+    <formula>Destination_Store_Item__r.Send_Directly_To_Order__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Send Directly To Order</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

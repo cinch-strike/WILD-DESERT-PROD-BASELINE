@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Position</fullName>
+    <active>true</active>
+    <label>Position</label>
+    <picklistValues>
+        <picklist>Employment_Type__c</picklist>
+        <values>
+            <fullName>Casual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract - Fixed Term</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Permanent</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

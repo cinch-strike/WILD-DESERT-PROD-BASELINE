@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>is_PR_Approver__c</fullName>
+    <formula>IF(  Purchase_Request_Approver__c =  $User.Id ,TRUE, FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>is PR Approver</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inspection_Requirement__c</fullName>
+    <label>Inspection Requirement</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 Month Unit Manager</fullName>
+                <default>false</default>
+                <label>1 Month Unit Manager</label>
+            </value>
+            <value>
+                <fullName>3 Month Unit Manager</fullName>
+                <default>false</default>
+                <label>3 Month Unit Manager</label>
+            </value>
+            <value>
+                <fullName>6 month Unit Manager</fullName>
+                <default>false</default>
+                <label>6 month Unit Manager</label>
+            </value>
+            <value>
+                <fullName>12 month Unit Manager</fullName>
+                <default>false</default>
+                <label>12 month Unit Manager</label>
+            </value>
+            <value>
+                <fullName>2 year Unit Manager</fullName>
+                <default>false</default>
+                <label>2 year Unit Manager</label>
+            </value>
+            <value>
+                <fullName>3 year Unit Manager</fullName>
+                <default>false</default>
+                <label>3 year Unit Manager</label>
+            </value>
+            <value>
+                <fullName>6 month 3rd party</fullName>
+                <default>false</default>
+                <label>6 month 3rd party</label>
+            </value>
+            <value>
+                <fullName>12 month 3rd party</fullName>
+                <default>false</default>
+                <label>12 month 3rd party</label>
+            </value>
+            <value>
+                <fullName>2 year 3rd party</fullName>
+                <default>false</default>
+                <label>2 year 3rd party</label>
+            </value>
+            <value>
+                <fullName>3 year 3rd party</fullName>
+                <default>false</default>
+                <label>3 year 3rd party</label>
+            </value>
+            <value>
+                <fullName>4 year 3rd Party</fullName>
+                <default>false</default>
+                <label>4 year 3rd Party</label>
+            </value>
+            <value>
+                <fullName>4.5 year 3rd Party</fullName>
+                <default>false</default>
+                <label>4.5 year 3rd Party</label>
+            </value>
+            <value>
+                <fullName>5 year 3rd Party</fullName>
+                <default>false</default>
+                <label>5 year 3rd Party</label>
+            </value>
+            <value>
+                <fullName>12 year 3rd Party</fullName>
+                <default>false</default>
+                <label>12 year 3rd Party</label>
+            </value>
+            <value>
+                <fullName>Annual NDT - Cat IV</fullName>
+                <default>false</default>
+                <label>As per NDT Inspection - Cat IV</label>
+            </value>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+            <value>
+                <fullName>1 Month 3rd Party</fullName>
+                <default>false</default>
+                <label>1 Month 3rd Party</label>
+            </value>
+            <value>
+                <fullName>2.5 Yrs 3rd Party</fullName>
+                <default>false</default>
+                <label>2.5 Yrs 3rd Party</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

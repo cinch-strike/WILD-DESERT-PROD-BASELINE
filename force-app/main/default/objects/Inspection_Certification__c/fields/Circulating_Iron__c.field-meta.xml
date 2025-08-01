@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Circulating_Iron__c</fullName>
+    <label>Circulating Iron</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Harlines</fullName>
+                <default>false</default>
+                <label>Hardlines</label>
+            </value>
+            <value>
+                <fullName>Chicksans</fullName>
+                <default>false</default>
+                <label>Chicksans</label>
+            </value>
+            <value>
+                <fullName>Chicksans Half Swing</fullName>
+                <default>false</default>
+                <label>Chicksans Half Swing</label>
+            </value>
+            <value>
+                <fullName>Standpipe</fullName>
+                <default>false</default>
+                <label>Standpipe</label>
+            </value>
+            <value>
+                <fullName>Standpipe Dropper</fullName>
+                <default>false</default>
+                <label>Standpipe Dropper</label>
+            </value>
+            <value>
+                <fullName>NPT to Wing 1502</fullName>
+                <default>false</default>
+                <label>NPT to Wing 1502</label>
+            </value>
+            <value>
+                <fullName>NPT to Thread 1502</fullName>
+                <default>false</default>
+                <label>NPT to Thread 1502</label>
+            </value>
+            <value>
+                <fullName>Double Female</fullName>
+                <default>false</default>
+                <label>Double Female</label>
+            </value>
+            <value>
+                <fullName>Double Male</fullName>
+                <default>false</default>
+                <label>Double Male</label>
+            </value>
+            <value>
+                <fullName>Check Valve</fullName>
+                <default>false</default>
+                <label>Check Valve</label>
+            </value>
+            <value>
+                <fullName>Tee Assy</fullName>
+                <default>false</default>
+                <label>Tee Assy</label>
+            </value>
+            <value>
+                <fullName>Choke Assy</fullName>
+                <default>false</default>
+                <label>Choke Assy</label>
+            </value>
+            <value>
+                <fullName>Plug Valve Assy</fullName>
+                <default>false</default>
+                <label>Plug Valve Assy</label>
+            </value>
+            <value>
+                <fullName>Elbow Assy</fullName>
+                <default>false</default>
+                <label>Elbow Assy</label>
+            </value>
+            <value>
+                <fullName>4 Way Cross Assy</fullName>
+                <default>false</default>
+                <label>4 Way Cross Assy</label>
+            </value>
+            <value>
+                <fullName>Night Cap Assy</fullName>
+                <default>false</default>
+                <label>Night Cap Assy</label>
+            </value>
+            <value>
+                <fullName>Crossover</fullName>
+                <default>false</default>
+                <label>Crossover</label>
+            </value>
+            <value>
+                <fullName>Spool</fullName>
+                <default>false</default>
+                <label>Spool</label>
+            </value>
+            <value>
+                <fullName>Gate Valve</fullName>
+                <default>false</default>
+                <label>Gate Valve</label>
+            </value>
+            <value>
+                <fullName>Hammer Union</fullName>
+                <default>false</default>
+                <label>Hammer Union</label>
+            </value>
+            <value>
+                <fullName>Pressure Expansion Chamber</fullName>
+                <default>false</default>
+                <label>Pressure Expansion Chamber</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

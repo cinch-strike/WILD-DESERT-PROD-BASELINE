@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Rigs</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>Unit_Type__c</columns>
+    <columns>NAME</columns>
+    <columns>Destination_Unit__c</columns>
+    <columns>By_pass_Ordering__c</columns>
+    <columns>Base_Store__c</columns>
+    <columns>Cost_Allocation_Unit__c</columns>
+    <columns>Unit_Manager__c</columns>
+    <columns>Manager__c</columns>
+    <columns>Purchase_Request_Approver__c</columns>
+    <columns>PR_PO_Admin__c</columns>
+    <columns>Business_Operations_Officer__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Scheduled Start,Active</value>
+    </filters>
+    <label>All | Units</label>
+    <sharedTo>
+        <group>BOO</group>
+        <group>Finance</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Transport</group>
+    </sharedTo>
+</ListView>

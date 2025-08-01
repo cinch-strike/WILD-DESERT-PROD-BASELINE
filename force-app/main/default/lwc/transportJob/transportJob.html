@@ -1,0 +1,97 @@
+<template>
+    <lightning-card>
+        <template if:true={tjstatusdraft}>
+            <lightning-button label="Move to Assigned" slot="actions" onclick={assignedTransportJob}></lightning-button>
+        </template>
+
+        <template if:true={isTJStatusCompleted}>
+        <!-- lightning button for Approve Transport Job - open modal window-->
+        <lightning-button label="Approve Transport Job" slot="actions" onclick={openModal}></lightning-button>
+        </template>
+        <template if:true={isResubmitButtonDisplay}>
+        <!-- lightning button for Resubmit Transport Job to Daily Site Job -->
+        <lightning-button variant="brand" label="Resubmit to Daily Site Job" slot="actions" onclick={openModalResubmit}></lightning-button>
+        </template>
+
+
+    <!--Use template if:true to display/hide popup based on isModalOpen value--> 
+    <template if:true={isModalOpen}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Approve Transport Job</h2>
+                </header>
+                <!-- Modal/Popup Box LWC body starts here -->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <p><b>Approval Notes
+                    </b>
+                    <lightning-textarea type="text" label="Approval Notes" variant="label-hidden" data-field="ApprovalNotes" value={approvalnotes}></lightning-textarea>
+                    </p>
+                </div>
+                <!-- Modal/Popup Box LWC footer starts here -->
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={submitDetails} title="Approve">Approve</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <!--Use template if:true to display/hide popup based on isModalOpen value--> 
+    <template if:true={isModalResubmitOpen}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-02" aria-modal="true" aria-describedby="modal-content-id-2" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeResubmitModal}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate">Resubmit to Daily Site Job</h2>
+                </header>
+                <!-- Modal/Popup Box LWC body starts here -->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+                    <p><b>Are you sure to resubmit to Daily Site Job?</b>
+                    </p>
+                </div>
+                <!-- Modal/Popup Box LWC footer starts here -->
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={closeResubmitModal} title="Cancel">Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={resubmitToDSJ} title="Resubmit">Resubmit</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+        <lightning-record-form
+            record-id={recordId} 
+            object-api-name={objectTransportJob}
+            fields={TJfields}
+            mode="view"
+            onsubmit={handleSubmit}
+            >
+        </lightning-record-form>
+        <lightning-record-form
+        record-id={recordId} 
+        object-api-name={objectTransportJob}
+        fields={TJfieldsreadonly}
+        mode="readonly"
+        >
+        </lightning-record-form>
+    </lightning-card>
+</template>

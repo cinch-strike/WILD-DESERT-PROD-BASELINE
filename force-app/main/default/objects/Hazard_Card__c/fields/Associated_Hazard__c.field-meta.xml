@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Associated_Hazard__c</fullName>
+    <description>Identify the associated hazards with the type of hazard indentified</description>
+    <label>Associated Hazard</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Hazard_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BOP or wellhead pressure risks</fullName>
+                <default>false</default>
+                <label>BOP or wellhead pressure risks</label>
+            </value>
+            <value>
+                <fullName>Caught between/moving equipment</fullName>
+                <default>false</default>
+                <label>Caught between/moving equipment</label>
+            </value>
+            <value>
+                <fullName>Caught between rig tongs, pipe, or moving equipment</fullName>
+                <default>false</default>
+                <label>Caught between rig tongs, pipe, or moving equipment</label>
+            </value>
+            <value>
+                <fullName>Cluttered work area</fullName>
+                <default>false</default>
+                <label>Cluttered work area</label>
+            </value>
+            <value>
+                <fullName>Correct use of tools, controls, or PPE</fullName>
+                <default>false</default>
+                <label>Correct use of tools, controls, or PPE</label>
+            </value>
+            <value>
+                <fullName>Damaged cables, poor grounding</fullName>
+                <default>false</default>
+                <label>Damaged cables, poor grounding</label>
+            </value>
+            <value>
+                <fullName>Fuel or oil spills</fullName>
+                <default>false</default>
+                <label>Fuel or oil spills</label>
+            </value>
+            <value>
+                <fullName>Gas releases or lack of gas detection</fullName>
+                <default>false</default>
+                <label>Gas releases or lack of gas detection</label>
+            </value>
+            <value>
+                <fullName>Good catch, stop-work use</fullName>
+                <default>false</default>
+                <label>Good catch, stop-work use</label>
+            </value>
+            <value>
+                <fullName>H2S exposure risk areas</fullName>
+                <default>false</default>
+                <label>H2S exposure risk areas</label>
+            </value>
+            <value>
+                <fullName>Handling of mud, fuel, or solvents</fullName>
+                <default>false</default>
+                <label>Handling of mud, fuel, or solvents</label>
+            </value>
+            <value>
+                <fullName>Hot work near flammables</fullName>
+                <default>false</default>
+                <label>Hot work near flammables</label>
+            </value>
+            <value>
+                <fullName>Improper isolation or pressure release</fullName>
+                <default>false</default>
+                <label>Improper isolation or pressure release</label>
+            </value>
+            <value>
+                <fullName>Improper rigging or lifting gear</fullName>
+                <default>false</default>
+                <label>Improper rigging or lifting gear</label>
+            </value>
+            <value>
+                <fullName>Improper waste handling</fullName>
+                <default>false</default>
+                <label>Improper waste handling</label>
+            </value>
+            <value>
+                <fullName>Inadequate PPE use</fullName>
+                <default>false</default>
+                <label>Inadequate PPE use</label>
+            </value>
+            <value>
+                <fullName>Inadequate ventilation or monitoring</fullName>
+                <default>false</default>
+                <label>Inadequate ventilation or monitoring</label>
+            </value>
+            <value>
+                <fullName>Incomplete ladder safety</fullName>
+                <default>false</default>
+                <label>Incomplete ladder safety</label>
+            </value>
+            <value>
+                <fullName>Lack of fall protection or harness use</fullName>
+                <default>false</default>
+                <label>Lack of fall protection or harness use</label>
+            </value>
+            <value>
+                <fullName>Lack of gas testing or entry permits</fullName>
+                <default>false</default>
+                <label>Lack of gas testing or entry permits</label>
+            </value>
+            <value>
+                <fullName>Lack of spotters or poor communication</fullName>
+                <default>false</default>
+                <label>Lack of spotters or poor communication</label>
+            </value>
+            <value>
+                <fullName>Leaking valves, hoses, or fittings</fullName>
+                <default>false</default>
+                <label>Leaking valves, hoses, or fittings</label>
+            </value>
+            <value>
+                <fullName>Lifting heavy items without aids</fullName>
+                <default>false</default>
+                <label>Lifting heavy items without aids</label>
+            </value>
+            <value>
+                <fullName>Light vehicle or forklift movement on site</fullName>
+                <default>false</default>
+                <label>Light vehicle or forklift movement on site</label>
+            </value>
+            <value>
+                <fullName>Missing handrails or guardrails</fullName>
+                <default>false</default>
+                <label>Missing handrails or guardrails</label>
+            </value>
+            <value>
+                <fullName>Missing or inadequate use of required PPE</fullName>
+                <default>false</default>
+                <label>Missing or inadequate use of required PPE</label>
+            </value>
+            <value>
+                <fullName>Muscle Sprain / Strain</fullName>
+                <default>false</default>
+                <label>Muscle Sprain / Strain</label>
+            </value>
+            <value>
+                <fullName>Not following SOPs or JSA deviations</fullName>
+                <default>false</default>
+                <label>Not following SOPs or JSA deviations</label>
+            </value>
+            <value>
+                <fullName>Poor storage, cluttered work zones</fullName>
+                <default>false</default>
+                <label>Poor storage, cluttered work zones</label>
+            </value>
+            <value>
+                <fullName>Power swivel or drawworks risks</fullName>
+                <default>false</default>
+                <label>Power swivel or drawworks risks</label>
+            </value>
+            <value>
+                <fullName>Pressurised fluid release direction</fullName>
+                <default>false</default>
+                <label>Pressurised fluid release direction</label>
+            </value>
+            <value>
+                <fullName>Smoking or spark sources in restricted zones</fullName>
+                <default>false</default>
+                <label>Smoking or spark sources in restricted zones</label>
+            </value>
+            <value>
+                <fullName>Spills, mud, unsafe walking surface</fullName>
+                <default>false</default>
+                <label>Spills, mud, unsafe walking surface</label>
+            </value>
+            <value>
+                <fullName>Struck-by hazards (pipe, hoist, winch, tongs)</fullName>
+                <default>false</default>
+                <label>Struck-by hazards (pipe, hoist, winch, tongs)</label>
+            </value>
+            <value>
+                <fullName>Tanks, pits, cellars, or mud tanks</fullName>
+                <default>false</default>
+                <label>Tanks, pits, cellars, or mud tanks</label>
+            </value>
+            <value>
+                <fullName>Teamwork and safety leadership</fullName>
+                <default>false</default>
+                <label>Teamwork and safety leadership</label>
+            </value>
+            <value>
+                <fullName>Trip hazards or blocked emergency exits</fullName>
+                <default>false</default>
+                <label>Trip hazards or blocked emergency exits</label>
+            </value>
+            <value>
+                <fullName>Unauthorized access to electrical panels</fullName>
+                <default>false</default>
+                <label>Unauthorized access to electrical panels</label>
+            </value>
+            <value>
+                <fullName>Uncertified or overloaded equipment</fullName>
+                <default>false</default>
+                <label>Uncertified or overloaded equipment</label>
+            </value>
+            <value>
+                <fullName>Unguarded belts, chains, or gears</fullName>
+                <default>false</default>
+                <label>Unguarded belts, chains, or gears</label>
+            </value>
+            <value>
+                <fullName>Unplanned or unsafe teamwork lifts</fullName>
+                <default>false</default>
+                <label>Unplanned or unsafe teamwork lifts</label>
+            </value>
+            <value>
+                <fullName>Unsafe hands-on handling near moving parts</fullName>
+                <default>false</default>
+                <label>Unsafe hands-on handling near moving parts</label>
+            </value>
+            <value>
+                <fullName>Unsecured tools or materials at height</fullName>
+                <default>false</default>
+                <label>Unsecured tools or materials at height</label>
+            </value>
+            <value>
+                <fullName>Wet conditions near live equipment</fullName>
+                <default>false</default>
+                <label>Wet conditions near live equipment</label>
+            </value>
+            <value>
+                <fullName>Work done without a valid permit</fullName>
+                <default>false</default>
+                <label>Work done without a valid permit</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Tool Misuse</controllingFieldValue>
+            <controllingFieldValue>Slip/Trip/Fall</controllingFieldValue>
+            <valueName>Cluttered work area</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Slip/Trip/Fall</controllingFieldValue>
+            <valueName>Missing handrails or guardrails</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Slip/Trip/Fall</controllingFieldValue>
+            <valueName>Spills, mud, unsafe walking surface</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non Routine Task</controllingFieldValue>
+            <valueName>H2S exposure risk areas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vehicles</controllingFieldValue>
+            <valueName>Light vehicle or forklift movement on site</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Equipment</controllingFieldValue>
+            <valueName>BOP or wellhead pressure risks</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Housekeeping</controllingFieldValue>
+            <valueName>Poor storage, cluttered work zones</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Housekeeping</controllingFieldValue>
+            <valueName>Trip hazards or blocked emergency exits</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PPE Related</controllingFieldValue>
+            <valueName>Missing or inadequate use of required PPE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Environmental</controllingFieldValue>
+            <valueName>Fuel or oil spills</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Environmental</controllingFieldValue>
+            <valueName>Improper waste handling</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

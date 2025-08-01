@@ -1,0 +1,152 @@
+<apex:page id="myPage" applyBodyTag="false" applyHtmlTag="true" standardController="Daily_Report__c" standardStylesheets="true" docType="html-5.0" showHeader="false" sidebar="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+        
+        <!--<apex:stylesheet value="{!URLFOR($Resource.SLDS232, 'assets/styles/salesforce-lightning-design-system.min.css')}"/>-->
+        <!--<apex:stylesheet value="{!URLFOR($Resource.SLDS232, 'assets/styles/salesforce-lightning-design-system.css')}"/>-->
+        <apex:stylesheet value="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css"/>
+        
+        <apex:includeScript value="https://code.jquery.com/jquery-1.11.1.min.js"/>
+        <apex:includeScript value="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"/>
+        <apex:stylesheet value="https://cdn.datatables.net/1.10.7/css/jquery.dataTables.css"/>
+        <apex:includeScript value="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"/>
+        <!--apex:includeScript value="{!URLFOR($Resource.jQueryV12,'/jquery-1.12.0.min.js')}"/-->
+        <apex:includeScript value="{!URLFOR($Resource.Typeahead, '/typeahead.bundle.min.js')}"/>
+        
+        <style>
+            .lookupHoverDetail , #InlineEditDialogX, #InlineEditDialog_buttons, #InlineEditDialog{
+            display:none !important;
+            }
+            
+            a.slds-inputdisplaynone{
+            display:none;
+            }
+            
+            .dateFormat{
+            display:none;
+            }
+            
+            .slds-input-custom{
+            width: 40px;
+            }
+            input.slds-lookup{
+            width: 105px !important;
+            }
+            .slds-lookup{
+            width: 80% !important;
+            }
+            a.slds-lookup{
+            background-size: 20px 20px;
+            border: 0px;
+            background: transparent;
+            padding: 0 0rem 0 0rem !important;
+            width:30px !important;
+            }
+            img.lookupIcon{
+            background: url("/resource/SLDS232/assets/icons/utility/search_60.png") no-repeat 6px center;
+            background-size: 20px 20px;
+            //margin-left: -13px;
+            width: 100% !important;
+            }
+            .lookupadjust{
+            margin-left: -5px !important;
+            }
+            img.lookupIconOn{
+            background: url("/resource/SLDS232/assets/icons/utility/search_60.png") no-repeat 6px center;
+            background-size: 20px 20px;
+            //margin-left: -13px;
+            width: 100% !important;
+            }
+            .headerWidth{
+            width:1px;
+            }
+            .slds-spinner:before, .slds-spinner:after, .slds-spinner__dot-a:before, .slds-spinner__dot-b:before, .slds-spinner__dot-a:after, .slds-spinner__dot-b:after {
+            background: #0070d2;
+            }
+            
+             .tt-search-box, .tt-query, .tt-hint {
+            width: 170% !important;
+            }
+            .tt-dropdown-menu{
+            width: max-content !important;
+            }
+        </style>
+
+        <apex:slds />
+        <div class="slds-scope">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-size_12-of-12">
+                
+                <apex:form id="frm" >
+                    <apex:actionstatus id="counterStatus">
+                        <apex:facet name="start">
+                                <div class="waitingSearchDiv" id="el_loading" style="background-color:#fbfbfb; height:100%;opacity:50;width:100%;">
+                                <div class="waitingHolder" style="top: 100px; width: 100px;">
+                                    <div class="slds-spinner_container">
+                                        <div class="slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
+                                            <div class="slds-spinner__dot-a"></div>
+                                            <div class="slds-spinner__dot-b"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </apex:facet>
+                    </apex:actionstatus> 
+                    <apex:outputPanel id="mainPanel">
+                        <apex:pagemessages id="errorMsg"/>
+                        <div class="slds-size_2-of-2 slds-medium-size_2-of-2 slds-large-size_2-of-2">
+                            <div class="slds-size_1-of-2 slds-medium-size_1-of-1 slds-large-size_1-of-2">
+                                <div class="slds-float_left slds-p-right_x-medium slds-p-top_x-small slds-p-bottom_xx-small" >
+                                    <span class="slds-icon_container slds-icon_container--circle slds-icon-text-default">
+                                        <apex:image url="/resource/SLDS232/assets/icons/utility/custom_apps_120.png" style="height:30px; width:auto;" />
+                                    </span>
+                                    <apex:outputText styleClass="slds-text-heading_small" value="Site Job Items"></apex:outputText>
+                                </div>
+                            </div>
+                            <div class="slds-size_1-of-2 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-float_right">
+                                <div class="slds-float_right slds-p-right_medium slds-p-top_x-small slds-p-bottom_xx-small">
+                                    <!--apex:commandButton status="counterStatus" styleClass="slds-button slds-button--brand" onClick="addSiteJobItm();applyLookup(); return false;" value="Add Item" reRender="dTab,mainPanel" rendered="{!AND( Daily_Report__c.Status__c != 'Submitted', Daily_Report__c.Status__c != 'Invoiced', Daily_Report__c.Status__c != 'Approved')}"/-->
+                                    <!--<apex:commandButton status="counterStatus" styleClass="slds-button slds-button--brand" value="Edit Items" action="{!editInVf}" reRender="dTab, mainPanel" rendered="{!AND( Daily_Report__c.Status__c != 'Submitted', Daily_Report__c.Status__c != 'Invoiced',Daily_Report__c.Status__c != 'Approved',NOT(displayInputFields))}"/>
+                                    <apex:commandButton status="counterStatus" styleClass="slds-button slds-button--brand" action="{!resetItemList}" reRender="dTab,mainPanel" value="Cancel" rendered="{!OR(displayInputFields,displaySaveCancel)}"/>
+                                    <apex:commandButton status="counterStatus" styleClass="slds-button slds-button--brand" value="Save" reRender="dTab,mainPanel" action="{!saveSiteJobItem}" rendered="{!AND( Daily_Report__c.Status__c != 'Submitted', Daily_Report__c.Status__c != 'Invoiced',Daily_Report__c.Status__c != 'Approved')}"/>-->
+                                    <!--<apex:commandButton status="counterStatus" styleClass="slds-button slds-button--brand" value="Save" reRender="dTab,mainPanel" action="{!saveSiteJobItem}" rendered="{!AND( Daily_Report__c.Status__c != 'Submitted', Daily_Report__c.Status__c != 'Invoiced',Daily_Report__c.Status__c != 'Approved')}"/>-->
+                                </div>    
+                            </div>
+                        </div>
+                        
+                        <div class="slds-size_4-of-4 slds-grid slds-wrap slds-p-around--small">
+                            
+                            <div class="slds-size_1-of-4 slds-text-heading_small slds-m-bottom--xx-small">
+                                <label>Site: </label><apex:outputField value="{!Daily_Report__c.Site__c}"></apex:outputField>
+                            </div>
+                            <div class="slds-size_1-of-4 slds-text-heading_small slds-m-bottom--xx-small">
+                                <label>Status: </label><apex:outputField value="{!Daily_Report__c.Status__c}"></apex:outputField>
+                            </div>
+                            <div class="slds-size_2-of-4">
+                            </div>
+                            
+                            <div class="slds-size_1-of-4 slds-text-heading_small slds-m-bottom--xx-small" >
+                                <label>Type: </label><apex:outputField value="{!Daily_Report__c.Type__c}"></apex:outputField>
+                            </div>
+                            <div class="slds-size_2-of-4 slds-text-heading_small slds-m-bottom--xx-small">
+                                <label>Report Date: </label><apex:outputText value="{0, date, MMMM d','yyyy}">
+                                <apex:param value="{!Daily_Report__c.Report_Date__c}"/>
+                                </apex:outputText>
+                            </div>
+                            <div class="slds-size_1-of-4">
+                            </div>
+                            
+                            <div class="slds-size_1-of-4 slds-text-heading_small">
+                                <label>Unit: </label><apex:outputField value="{!Daily_Report__c.Unit__c}"></apex:outputField>
+                            </div>
+                        </div>
+                        
+                        <c:SiteJobItem_VFComponent DailyReportRecordId="{!Daily_Report__c.Id}" ShowSaveNextButtons="false" id="myComponent"/>
+                        
+                     </apex:outputPanel>
+				</apex:form>
+                
+            </div>
+        </div>
+        </div>
+    </html>
+</apex:page>

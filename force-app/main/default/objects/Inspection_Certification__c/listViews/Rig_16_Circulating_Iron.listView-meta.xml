@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_16_Circulating_Iron</fullName>
+    <columns>NAME</columns>
+    <columns>Serial_ID__c</columns>
+    <columns>Circulating_Iron__c</columns>
+    <columns>Description__c</columns>
+    <columns>Certificate_Number__c</columns>
+    <columns>WD_Asset__c</columns>
+    <columns>Asset_ID__c</columns>
+    <columns>Location__c</columns>
+    <columns>Inspection_Requirement__c</columns>
+    <columns>Date_Last_Inspection__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Inspection_Certification__c.Circulating_Iron</value>
+    </filters>
+    <filters>
+        <field>WD_Unit__c</field>
+        <operation>equals</operation>
+        <value>Rig 16</value>
+    </filters>
+    <label>Rig #16 - Circulating Iron Register</label>
+    <sharedTo>
+        <group>OPs_super</group>
+        <group>Purchasing</group>
+        <group>Rig_16</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

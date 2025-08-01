@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Configuration_pklist__c</fullName>
+    <label>Configuration</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Primemover</fullName>
+                <default>false</default>
+                <label>Primemover</label>
+            </value>
+            <value>
+                <fullName>Primemover + Dolly</fullName>
+                <default>false</default>
+                <label>Primemover + Dolly</label>
+            </value>
+            <value>
+                <fullName>Flat Top Single</fullName>
+                <default>false</default>
+                <label>Flat Top Single</label>
+            </value>
+            <value>
+                <fullName>Flat Top B Double</fullName>
+                <default>false</default>
+                <label>Flat Top B Double</label>
+            </value>
+            <value>
+                <fullName>Flat Top Double</fullName>
+                <default>false</default>
+                <label>Flat Top Double</label>
+            </value>
+            <value>
+                <fullName>Flat Top AB Triple</fullName>
+                <default>false</default>
+                <label>Flat Top AB Triple</label>
+            </value>
+            <value>
+                <fullName>Flat Top Triple</fullName>
+                <default>false</default>
+                <label>Flat Top Triple</label>
+            </value>
+            <value>
+                <fullName>Bed Truck</fullName>
+                <default>false</default>
+                <label>Bed Truck</label>
+            </value>
+            <value>
+                <fullName>Bed Truck + 1 Trailer</fullName>
+                <default>false</default>
+                <label>Bed Truck + 1 Trailer</label>
+            </value>
+            <value>
+                <fullName>Bed Truck + B Double</fullName>
+                <default>false</default>
+                <label>Bed Truck + B Double</label>
+            </value>
+            <value>
+                <fullName>Bed Truck + 2 Trailers</fullName>
+                <default>false</default>
+                <label>Bed Truck + 2 Trailers</label>
+            </value>
+            <value>
+                <fullName>Water Tanker Single</fullName>
+                <default>false</default>
+                <label>Water Tanker Single</label>
+            </value>
+            <value>
+                <fullName>Water Tanker B Double</fullName>
+                <default>false</default>
+                <label>Water Tanker B Double</label>
+            </value>
+            <value>
+                <fullName>Water Tanker Double</fullName>
+                <default>false</default>
+                <label>Water Tanker Double</label>
+            </value>
+            <value>
+                <fullName>Water Tanker AB Triple</fullName>
+                <default>false</default>
+                <label>Water Tanker AB Triple</label>
+            </value>
+            <value>
+                <fullName>Water Tanker Triple</fullName>
+                <default>false</default>
+                <label>Water Tanker Triple</label>
+            </value>
+            <value>
+                <fullName>Fuel Tanker Single</fullName>
+                <default>false</default>
+                <label>Fuel Tanker Single</label>
+            </value>
+            <value>
+                <fullName>Fuel Tanker B Double</fullName>
+                <default>false</default>
+                <label>Fuel Tanker B Double</label>
+            </value>
+            <value>
+                <fullName>Fuel Tanker Double</fullName>
+                <default>false</default>
+                <label>Fuel Tanker Double</label>
+            </value>
+            <value>
+                <fullName>Fuel Tanker AB Triple</fullName>
+                <default>false</default>
+                <label>Fuel Tanker AB Triple</label>
+            </value>
+            <value>
+                <fullName>Fuel Tanker Triple</fullName>
+                <default>false</default>
+                <label>Fuel Tanker Triple</label>
+            </value>
+            <value>
+                <fullName>Quad Float</fullName>
+                <default>false</default>
+                <label>Quad Float</label>
+            </value>
+            <value>
+                <fullName>Quad Float + Dolly</fullName>
+                <default>false</default>
+                <label>Quad Float + Dolly</label>
+            </value>
+            <value>
+                <fullName>Vac Truck</fullName>
+                <default>false</default>
+                <label>Vac Truck</label>
+            </value>
+            <value>
+                <fullName>Cattle Crate Single</fullName>
+                <default>false</default>
+                <label>Cattle Crate Single</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

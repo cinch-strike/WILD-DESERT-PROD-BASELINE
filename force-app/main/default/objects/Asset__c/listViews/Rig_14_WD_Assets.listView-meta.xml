@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_14_WD_Assets</fullName>
+    <columns>Asset_Family__c</columns>
+    <columns>NAME</columns>
+    <columns>Asset_ID_Number__c</columns>
+    <columns>Inventory_Item__c</columns>
+    <columns>Date_Acquired__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Unit__c</field>
+        <operation>equals</operation>
+        <value>Rig 14</value>
+    </filters>
+    <label>Rig #14 - WD Assets</label>
+    <sharedTo>
+        <group>Finance</group>
+    </sharedTo>
+</ListView>

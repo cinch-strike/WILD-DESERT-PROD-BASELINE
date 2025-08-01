@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <rules>
+        <fullName>Inspection Reminder %287 days%29</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Inspection_Certification__c.Days_to_Inspection__c</field>
+            <operation>lessOrEqual</operation>
+            <value>7</value>
+        </criteriaItems>
+        <description>7 days until inspection is due</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>update last inspection date from MI Inspection</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Inspection_Certification__c.Date_Last_Inspection__c</field>
+            <operation>greaterThan</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

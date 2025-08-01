@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Daily_Site_Jobs_for_My_Approval</fullName>
+    <columns>NAME</columns>
+    <columns>Report_Date__c</columns>
+    <columns>Type__c</columns>
+    <columns>Site__c</columns>
+    <columns>Status__c</columns>
+    <columns>Submitter__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>DSJ_For_My_Approval__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Submitted,Rejected</value>
+    </filters>
+    <label>Daily Site Jobs for My Approval</label>
+</ListView>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <label>Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Operating</fullName>
+                <default>false</default>
+                <label>Operating</label>
+            </value>
+            <value>
+                <fullName>Rig Move</fullName>
+                <default>false</default>
+                <label>Rig Move</label>
+            </value>
+            <value>
+                <fullName>SBWC</fullName>
+                <default>false</default>
+                <label>SBWC</label>
+            </value>
+            <value>
+                <fullName>SBWOC</fullName>
+                <default>false</default>
+                <label>SBWOC</label>
+            </value>
+            <value>
+                <fullName>Repair</fullName>
+                <default>false</default>
+                <label>Repair</label>
+            </value>
+            <value>
+                <fullName>Inspection/PMS</fullName>
+                <default>false</default>
+                <label>Inspection/PMS</label>
+            </value>
+            <value>
+                <fullName>Crew Travel</fullName>
+                <default>false</default>
+                <label>Crew Travel</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inventory_Item__c</fullName>
+    <label>Asset Category</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>EquipListContract</fullName>
+                <default>true</default>
+                <label>Equip List (Contract)</label>
+            </value>
+            <value>
+                <fullName>Additional_(QA)</fullName>
+                <default>false</default>
+                <label>Additional (QA)</label>
+            </value>
+            <value>
+                <fullName>Stacked</fullName>
+                <default>false</default>
+                <label>Stacked</label>
+            </value>
+            <value>
+                <fullName>Obsolete</fullName>
+                <default>false</default>
+                <label>Obsolete</label>
+            </value>
+            <value>
+                <fullName>Rural</fullName>
+                <default>false</default>
+                <label>Rural</label>
+            </value>
+            <value>
+                <fullName>3rd Party Equip (Billable)</fullName>
+                <default>false</default>
+                <label>3rd Party Equip (Billable)</label>
+            </value>
+            <value>
+                <fullName>3rd Party Equip (Non-Billable)</fullName>
+                <default>false</default>
+                <label>3rd Party Equip (Non-Billable)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

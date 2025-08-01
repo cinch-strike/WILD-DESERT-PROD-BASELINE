@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_26_Servicing_Schedule_kms</fullName>
+    <columns>Unit__c</columns>
+    <columns>Asset_Family__c</columns>
+    <columns>NAME</columns>
+    <columns>Asset_ID_Number__c</columns>
+    <columns>Registration_Number__c</columns>
+    <columns>Date_Of_Last_Service__c</columns>
+    <columns>Current_Odometer_Reading__c</columns>
+    <columns>Next_Service_Due_km__c</columns>
+    <columns>Next_Job_Card_creation_reading__c</columns>
+    <columns>Vin_Number__c</columns>
+    <columns>ST_Compliant__c</columns>
+    <columns>Safer_Together_Compliance_No__c</columns>
+    <columns>Safer_Together_Date_of_Assessment__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Asset__c.Trailer,Asset__c.Rigs,Asset__c.Light_Vehicles,Asset__c.Prime_Mover</value>
+    </filters>
+    <filters>
+        <field>Unit__c</field>
+        <operation>equals</operation>
+        <value>Rig 26</value>
+    </filters>
+    <label>Rig #26 - Servicing Schedule (kms)</label>
+    <sharedTo>
+        <group>OPs_super</group>
+        <group>Rig_26</group>
+    </sharedTo>
+</ListView>

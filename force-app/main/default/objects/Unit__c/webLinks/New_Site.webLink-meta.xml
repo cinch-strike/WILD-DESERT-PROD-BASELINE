@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Site</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Site</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/a17/e?CF00N90000003cfRD={!Unit__c.Client__c}&amp;CF00N0o00000MpknX={!Unit__c.Contract_New__c}&amp;retURL={!Unit__c.Id}
+&amp;CF00N9000000EPefh_lkid={!IF(TEXT(Unit__c.Unit_Type__c) = &apos;Field - Rig&apos;, Unit__c.Id,&apos;&apos;)}
+&amp;CF00N9000000EQUjR_lkid={!IF(TEXT(Unit__c.Unit_Type__c) = &apos;Field - Camp&apos;,Unit__c.Id, &apos;&apos;)}
+&amp;CF00N9000000EPefh={!IF(TEXT(Unit__c.Unit_Type__c) = &apos;Field - Rig&apos;, Unit__c.Name,&apos;&apos;)}
+&amp;CF00N9000000EQUjR={!IF(TEXT(Unit__c.Unit_Type__c) = &apos;Field - Camp&apos;, Unit__c.Name,&apos;&apos;)}</url>
+</WebLink>

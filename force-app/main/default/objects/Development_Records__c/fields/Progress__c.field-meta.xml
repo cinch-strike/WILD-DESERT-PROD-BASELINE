@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Progress__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(Status__c,&apos;InProgress&apos;),
+
+IMAGE ( &quot;/servlet/servlet.ImageServer?id=01590000001nPKb&amp;oid=00D90000000chuS&quot;,&quot;Booked&quot;),
+
+IF(ISPICKVAL(Status__c,&apos;submitted&apos;),
+
+IMAGE ( &quot;/servlet/servlet.ImageServer?id=01590000001nPKb&amp;oid=00D90000000chuS&quot;,&quot;Submitted&quot;),
+
+IF(ISPICKVAL(Status__c,&apos;booked&apos;),
+
+IMAGE ( &quot;/servlet/servlet.ImageServer?id=01590000001nPKc&amp;oid=00D90000000chuS&quot;,&quot;Booked&quot;),
+
+IF(ISPICKVAL(Status__c,&apos;complete&apos;),
+
+IMAGE ( &quot;/servlet/servlet.ImageServer?id=01590000001nPKd&amp;oid=00D90000000chuS&quot;,&quot;Complete&quot;),
+
+IF(ISPICKVAL(Status__c,&apos;expired&apos;),
+
+IMAGE ( &quot;/servlet/servlet.ImageServer?id=01590000001nPKe&amp;oid=00D90000000chuS&quot;,&quot;Expired&quot;),
+
+
+IMAGE ( &quot;/servlet/servlet.ImageServer?id=01590000001nPKf&amp;oid=00D90000000chuS&quot;,&quot;Incomplete&quot;))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Progress</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

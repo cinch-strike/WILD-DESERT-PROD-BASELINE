@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>By_Item_Code</fullName>
+    <columns>Store_Item_Code__c</columns>
+    <columns>NAME</columns>
+    <columns>Supplier_Part_Number__c</columns>
+    <columns>Base_Store__c</columns>
+    <columns>Cost_Price__c</columns>
+    <columns>Preferred_Supplier_1st__c</columns>
+    <columns>Item_Notes__c</columns>
+    <columns>Active__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Store_Item_Code__c</field>
+        <operation>equals</operation>
+        <value>S22863</value>
+    </filters>
+    <label>By Item Code</label>
+</ListView>

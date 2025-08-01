@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Test_2_Pressure_Difference__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Identify the number by which the operational gauge is more or less than the Master Gauge (eg -2 if the Operational Gauge is two PSI less than Master Gauge or +2 if it it is 2 more than the Master Gauge)</inlineHelpText>
+    <label>Test 2 Pressure Difference (+/-)</label>
+    <length>30</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

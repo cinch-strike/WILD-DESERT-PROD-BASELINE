@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Load_Details__c</fullName>
+    <description>Driver Assignment Load Details</description>
+    <externalId>false</externalId>
+    <formula>Driver_Assignment__r.Load_Details__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Driver Assignment Load Details</inlineHelpText>
+    <label>Load Details</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

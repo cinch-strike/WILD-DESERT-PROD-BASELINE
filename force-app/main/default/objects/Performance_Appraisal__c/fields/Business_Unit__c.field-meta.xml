@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Unit__c</fullName>
+    <label>Business Unit</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Rigs</fullName>
+                <default>false</default>
+                <label>Rigs</label>
+            </value>
+            <value>
+                <fullName>Camps</fullName>
+                <default>false</default>
+                <label>Camps</label>
+            </value>
+            <value>
+                <fullName>Transport</fullName>
+                <default>false</default>
+                <label>Transport</label>
+            </value>
+            <value>
+                <fullName>Workshop</fullName>
+                <default>false</default>
+                <label>Workshop</label>
+            </value>
+            <value>
+                <fullName>Brisbane Office</fullName>
+                <default>false</default>
+                <label>Brisbane Office</label>
+            </value>
+            <value>
+                <fullName>Roma Office</fullName>
+                <default>false</default>
+                <label>Roma Office</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

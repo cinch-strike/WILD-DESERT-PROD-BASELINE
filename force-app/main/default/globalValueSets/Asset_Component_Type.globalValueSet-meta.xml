@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Crown</fullName>
+        <default>false</default>
+        <label>Crown</label>
+    </customValue>
+    <customValue>
+        <fullName>Mast</fullName>
+        <default>false</default>
+        <label>Mast</label>
+    </customValue>
+    <customValue>
+        <fullName>Subbase</fullName>
+        <default>false</default>
+        <label>Subbase</label>
+    </customValue>
+    <customValue>
+        <fullName>Deadman</fullName>
+        <default>false</default>
+        <label>Deadman</label>
+    </customValue>
+    <customValue>
+        <fullName>Winches</fullName>
+        <default>false</default>
+        <label>Winches</label>
+    </customValue>
+    <customValue>
+        <fullName>Headache Rack</fullName>
+        <default>false</default>
+        <label>Headache Rack</label>
+    </customValue>
+    <customValue>
+        <fullName>Tie Back Lugs</fullName>
+        <default>false</default>
+        <label>Tie Back Lugs</label>
+    </customValue>
+    <customValue>
+        <fullName>Tong Arm Mounts</fullName>
+        <default>false</default>
+        <label>Tong Arm Mounts</label>
+    </customValue>
+    <customValue>
+        <fullName>Monkey Board</fullName>
+        <default>false</default>
+        <label>Monkey Board</label>
+    </customValue>
+    <customValue>
+        <fullName>Raising Ram</fullName>
+        <default>false</default>
+        <label>Raising Ram</label>
+    </customValue>
+    <customValue>
+        <fullName>Jack Legs</fullName>
+        <default>false</default>
+        <label>Jack Legs</label>
+    </customValue>
+    <customValue>
+        <fullName>OutRiggers</fullName>
+        <default>false</default>
+        <label>OutRiggers</label>
+    </customValue>
+    <customValue>
+        <fullName>Drill Floor</fullName>
+        <default>false</default>
+        <label>Drill Floor</label>
+    </customValue>
+    <customValue>
+        <fullName>Rod Board</fullName>
+        <default>false</default>
+        <label>Rod Board</label>
+    </customValue>
+    <customValue>
+        <fullName>Drawworks</fullName>
+        <default>false</default>
+        <label>Drawworks</label>
+    </customValue>
+    <customValue>
+        <fullName>Sandline</fullName>
+        <default>false</default>
+        <label>Sandline</label>
+    </customValue>
+    <masterLabel>Asset Component Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

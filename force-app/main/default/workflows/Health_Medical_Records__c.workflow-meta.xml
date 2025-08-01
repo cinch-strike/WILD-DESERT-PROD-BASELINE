@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Medical_Expiry</fullName>
+        <description>Medical Expiry</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>amy.webster@wilddesert.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>carmen.roberts@wilddesert.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>glenda.spinks@wilddesert.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>servicing@wilddesert.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Medical_Expiry_Alert_1699243173595</template>
+    </alerts>
+</Workflow>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_Type__c</fullName>
+    <label>Service Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Operating</fullName>
+                <default>false</default>
+                <label>Operating</label>
+            </value>
+            <value>
+                <fullName>Rig Move</fullName>
+                <default>false</default>
+                <label>Rig Move</label>
+            </value>
+            <value>
+                <fullName>SBWC</fullName>
+                <default>false</default>
+                <label>SBWC</label>
+            </value>
+            <value>
+                <fullName>SBWOC</fullName>
+                <default>false</default>
+                <label>SBWOC</label>
+            </value>
+            <value>
+                <fullName>Repair</fullName>
+                <default>false</default>
+                <label>Repair</label>
+            </value>
+            <value>
+                <fullName>Crew Travel</fullName>
+                <default>false</default>
+                <label>Crew Travel</label>
+            </value>
+            <value>
+                <fullName>Inspection/PMS</fullName>
+                <default>false</default>
+                <label>Inspection/PMS</label>
+            </value>
+            <value>
+                <fullName>Primemover</fullName>
+                <default>false</default>
+                <label>Primemover</label>
+            </value>
+            <value>
+                <fullName>Single</fullName>
+                <default>false</default>
+                <label>Single</label>
+            </value>
+            <value>
+                <fullName>Double</fullName>
+                <default>false</default>
+                <label>Double</label>
+            </value>
+            <value>
+                <fullName>Water Tanker (Single)</fullName>
+                <default>false</default>
+                <label>Water Tanker (Single)</label>
+            </value>
+            <value>
+                <fullName>Bed Truck (30T)</fullName>
+                <default>false</default>
+                <label>Bed Truck (30T)</label>
+            </value>
+            <value>
+                <fullName>Prime Mover/Standby</fullName>
+                <default>false</default>
+                <label>Prime Mover/Standby</label>
+            </value>
+            <value>
+                <fullName>Single/Standby</fullName>
+                <default>false</default>
+                <label>Single/Standby</label>
+            </value>
+            <value>
+                <fullName>Double/Standby</fullName>
+                <default>false</default>
+                <label>Double/Standby</label>
+            </value>
+            <value>
+                <fullName>Bed Truck (30T)/Standby</fullName>
+                <default>false</default>
+                <label>Bed Truck (30T)/Standby</label>
+            </value>
+            <value>
+                <fullName>Water Tanker/Standby</fullName>
+                <default>false</default>
+                <label>Water Tanker/Standby</label>
+            </value>
+            <value>
+                <fullName>Primemover + Dolly</fullName>
+                <default>false</default>
+                <label>Primemover + Dolly</label>
+            </value>
+            <value>
+                <fullName>Triple</fullName>
+                <default>false</default>
+                <label>Triple</label>
+            </value>
+            <value>
+                <fullName>Bed Truck (30T) + 2 Trailer</fullName>
+                <default>false</default>
+                <label>Bed Truck (30T) + 2 Trailer</label>
+            </value>
+            <value>
+                <fullName>Bed Truck (30T) + Trailer</fullName>
+                <default>false</default>
+                <label>Bed Truck (30T) + Trailer</label>
+            </value>
+            <value>
+                <fullName>Bed Truck (50T)</fullName>
+                <default>false</default>
+                <label>Bed Truck (50T)</label>
+            </value>
+            <value>
+                <fullName>Float</fullName>
+                <default>false</default>
+                <label>Float</label>
+            </value>
+            <value>
+                <fullName>Float + Dolly</fullName>
+                <default>false</default>
+                <label>Float + Dolly</label>
+            </value>
+            <value>
+                <fullName>Hot Shot</fullName>
+                <default>false</default>
+                <label>Hot Shot</label>
+            </value>
+            <value>
+                <fullName>Loader</fullName>
+                <default>false</default>
+                <label>Loader</label>
+            </value>
+            <value>
+                <fullName>Fridge Van</fullName>
+                <default>false</default>
+                <label>Fridge Van</label>
+            </value>
+            <value>
+                <fullName>Escort Driver</fullName>
+                <default>false</default>
+                <label>Escort Driver</label>
+            </value>
+            <value>
+                <fullName>Prime Mover + Dolly/Standby</fullName>
+                <default>false</default>
+                <label>Prime Mover + Dolly/Standby</label>
+            </value>
+            <value>
+                <fullName>Triple/Standby</fullName>
+                <default>false</default>
+                <label>Triple/Standby</label>
+            </value>
+            <value>
+                <fullName>Bed Truck (30T) + Trailer/Standby</fullName>
+                <default>false</default>
+                <label>Bed Truck (30T) + Trailer/Standby</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

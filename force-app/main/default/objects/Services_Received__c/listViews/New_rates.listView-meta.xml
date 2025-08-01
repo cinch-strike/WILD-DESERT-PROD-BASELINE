@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_rates</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>Contract__c</columns>
+    <columns>Contract_unit__c</columns>
+    <columns>WD_Unit__c</columns>
+    <columns>NAME</columns>
+    <columns>Description__c</columns>
+    <columns>Rate__c</columns>
+    <columns>Operations__c</columns>
+    <columns>Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contract_unit__c</field>
+        <operation>equals</operation>
+        <value>022</value>
+    </filters>
+    <filters>
+        <field>Operations__c</field>
+        <operation>equals</operation>
+        <value>12hr,12hr/24hr</value>
+    </filters>
+    <label>022-Santos GLNG Rig#4/Camp #3 12hr</label>
+    <sharedTo>
+        <group>Finance</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WD_SO__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>WD SO #</label>
+    <referenceTo>Job_Orders__c</referenceTo>
+    <relationshipName>Truck_Dockets</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

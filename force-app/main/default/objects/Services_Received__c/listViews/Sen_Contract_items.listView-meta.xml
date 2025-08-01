@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sen_Contract_items</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>Contract__c</columns>
+    <columns>Contract_unit__c</columns>
+    <columns>WD_Unit__c</columns>
+    <columns>NAME</columns>
+    <columns>Description__c</columns>
+    <columns>Rate__c</columns>
+    <columns>Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Client__c</field>
+        <operation>equals</operation>
+        <value>senex energy ltd</value>
+    </filters>
+    <filters>
+        <field>WD_Unit__c</field>
+        <operation>equals</operation>
+        <value>rig 16,transport,camp 7</value>
+    </filters>
+    <filters>
+        <field>Contract_unit__c</field>
+        <operation>equals</operation>
+        <value>009</value>
+    </filters>
+    <label>009-Senex Rig #16/Camp #7</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>OPs_super</group>
+        <group>Rig_16</group>
+    </sharedTo>
+</ListView>

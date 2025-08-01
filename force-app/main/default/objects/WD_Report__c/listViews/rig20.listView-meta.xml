@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>rig20</fullName>
+    <columns>Sales_Order__c</columns>
+    <columns>Client__c</columns>
+    <columns>NAME</columns>
+    <columns>Date__c</columns>
+    <columns>Site__c</columns>
+    <columns>Hard_Copy__c</columns>
+    <columns>LTI_Free_Days__c</columns>
+    <columns>Status__c</columns>
+    <columns>Approved_By__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>WD_Unit__c</field>
+        <operation>equals</operation>
+        <value>rig 20</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>notEqual</operation>
+        <value>WD_Report__c.Transport,WD_Report__c.Transport_Approved</value>
+    </filters>
+    <label>Rig 20</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Rig_20</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

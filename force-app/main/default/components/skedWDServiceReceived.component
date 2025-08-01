@@ -1,0 +1,202 @@
+<apex:component controller="skedWDServicesReceive">
+
+<apex:attribute name="componentKey"
+    type="String"
+    assignTo="{!Key}"
+    description="The key given to this component so the page can easily get access to it" />
+
+    <apex:attribute name="WDPpageController"
+      type="skedPageControllerBase"
+      assignTo="{!pageController}"
+      required="true"
+      description="The controller for the page." />
+      
+     <apex:attribute name="WDSRWrappers"
+      type="WDSRWrapper[]"
+      assignTo="{!WDSRWrapperList}"      
+      description="Existing Service Received Line Item." />
+
+     
+<apex:outputPanel id="tstpopup">
+
+ <apex:outputPanel id="panelWithVar">
+    <apex:variable value="{!0}" var="rowNumber" />
+</apex:outputPanel>
+
+<apex:pageBlock title="WD Services Received" >  
+
+<apex:pageBlockSection columns="1" collapsible="false">
+
+<apex:pageBlockSectionItem >
+    <apex:selectList value="{!selectedRecordType}" multiselect="false" size="1" >
+        <apex:selectOptions value="{!RecordTypeList}" />
+    </apex:selectList>
+    <apex:commandButton value="Create" action="{!showPopup}" rerender="tstpopup"/>
+</apex:pageBlockSectionItem>
+
+
+<!-- A list of WD Service Receivedl -->
+<apex:pageBlockTable value="{!WDSRWrapperList}" var="item" id="newWDSR">
+
+<apex:column width="5%">
+        <apex:commandButton action="{!editNewObject}" value=" Edit " reRender="tstpopup">
+            <apex:param name="p1" value="{!rowNumber}" assignTo="{!numberOfRowToEdit}"/>
+        </apex:commandButton>
+    </apex:column>
+
+     <apex:column width="5%">
+        <apex:commandButton action="{!removeNewObject}" value=" Remove " reRender="tstpopup" rendered="{!If (item.SR.Id  == null, true, false)}">
+            <apex:param name="p1" value="{!rowNumber}" assignTo="{!numberOfRowToRemove}"/>
+        </apex:commandButton>
+        <apex:commandButton action="{!deleteNewObject}" value=" Delete " reRender="tstpopup" rendered="{!If (item.SR.Id  == null, false, true)}">
+            <apex:param name="p1" value="{!rowNumber}" assignTo="{!numberOfRowToRemove}"/>
+        </apex:commandButton>
+    </apex:column>
+
+   <apex:column headerValue="Date">
+    <apex:outputField value="{!item.SR.Date__c}"/>                      
+    </apex:column>
+    <apex:column headerValue="Record Type">   
+    <apex:outputText >{!item.RecordTypeName}</apex:outputText>                        
+    </apex:column>
+    <apex:column headerValue="Item">
+        <apex:outputLink target="_top" value="/{!item.SR.Id}" >{!item.ItemName} </apex:outputLink>
+    </apex:column> 
+    <apex:column headerValue="Description of Operations">
+        <apex:outputField value="{!item.SR.Description_of_Operations__c}"/>
+    </apex:column>     
+    <apex:column headerValue="Start Time">
+        <apex:outputField value="{!item.SR.Start_time__c}"/>
+    </apex:column>     
+    <apex:column headerValue="Finish Time">
+        <apex:outputField value="{!item.SR.Finish_Time__c}"/>
+    </apex:column> 
+     <apex:column headerValue="Item Total">
+        <apex:outputField value="{!item.SR.Item_total__c}"/>
+    </apex:column>  
+      <apex:column headerValue="Item Rate">
+        <apex:outputField value="{!item.SR.Item_Rate__c}"/>
+    </apex:column> 
+      <apex:column headerValue="Total Cost">
+        <apex:outputField value="{!item.SR.Total_Cost__c}"/>
+        <apex:variable var="rowNumber" value="{!rowNumber+1}"/>
+
+    </apex:column>   
+  
+</apex:pageBlockTable>
+
+</apex:pageblockSection>
+
+</apex:pageBlock>
+
+<!------------------------------------------------------------------------------------------------>
+
+        <apex:outputPanel styleClass="popupBackground3" layout="block" rendered="{!displayPopup}"/>
+            <apex:outputPanel styleClass="custPopup3" layout="block" rendered="{!displayPopup}">
+                 <apex:pageBlock >
+                    <apex:pageBlockSection title="New Service Received" collapsible="false" columns="2">
+                    <apex:pageBlockSectionItem rendered="{!showError}" >
+                      <apex:outputText value="Please complete all required fields." style="color:red"/>                          
+                    </apex:pageBlockSectionItem>
+                      <apex:pageBlockSectionItem rendered="{!showError}" >                                                      
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem rendered="{!IF (displayDaily == true, false, true)}" >    
+                            <apex:outputLabel value="Category:"/>
+                             <apex:outputPanel styleClass="requiredInput" layout="block" >
+                             <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                            <apex:inputField value="{!NewLineItem.Category__c}" />
+                            </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Date:"/>
+                            <apex:inputField value="{!NewLineItem.Date__c}" />
+                    </apex:pageBlockSectionItem>
+                      <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Record Type:"/>
+                            <apex:outputtext value="{!selectedRecordType}" />
+                    </apex:pageBlockSectionItem>
+                       <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Item:" />
+                            <apex:outputPanel styleClass="requiredInput" layout="block" >
+                             <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                            <apex:inputField value="{!NewLineItem.Item__c}"  />
+                            </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+              <!--         <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Item Rate:"/>
+                            <apex:inputField value="{!NewLineItem.Item_Rate__c}" />
+                    </apex:pageBlockSectionItem>  -->
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Description of Operations:"/>
+                            <apex:inputField value="{!NewLineItem.Description_of_Operations__c}" />
+                    </apex:pageBlockSectionItem>
+             <!--       <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Total Cost:"/>
+                            <apex:inputField value="{!NewLineItem.Total_Cost__c}" />
+                    </apex:pageBlockSectionItem>  -->
+                    <apex:pageBlockSectionItem rendered="{!IF (displayHourly == true, true, false)}" >   
+                            <apex:outputLabel value="Start Time:"/>
+                            <apex:outputPanel styleClass="requiredInput" layout="block" >
+                            <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                            <apex:inputText html-type="time"  value="{!NewLineItem.Start_time__c}" />
+                            </apex:OutputPanel>
+                    </apex:pageBlockSectionItem>
+                       <apex:pageBlockSectionItem >                            
+                    </apex:pageBlockSectionItem>
+                       <apex:pageBlockSectionItem rendered="{!IF (displayHourly == true, true, false)}" >   
+                            <apex:outputLabel value="Finish Time:"/>
+                            <apex:outputPanel styleClass="requiredInput" layout="block" >
+                            <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                            <apex:inputText html-type="time" value="{!NewLineItem.Finish_Time__c}"  />
+                            </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                              <apex:pageBlockSectionItem >                            
+                    </apex:pageBlockSectionItem>
+                     <apex:pageBlockSectionItem rendered="{!IF (displayDaily == true, true, false)}" >  
+                            <apex:outputLabel value="Item Total:"/>
+                            <apex:inputField value="{!NewLineItem.Item_total__c}" />
+                    </apex:pageBlockSectionItem> 
+                    
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+                <apex:commandButton value="Done"   action="{!AddWDSR}" rerender="tstpopup"/>
+                <apex:commandButton value="Cancel" immediate="true"  action="{!closePopup}" rerender="tstpopup" rendered="{!IF (NewLineItem.Id == null, true, false)}" />
+         </apex:outputPanel>
+
+
+</apex:outputPanel>
+
+
+<style type="text/css">
+        .custPopup3{
+            background-color: white;
+            border-width: 2px;
+            border-style: solid;
+            z-index: 9999;
+            left: 50%;
+            padding:10px;
+            position: absolute;
+            /* These are the 3 css properties you will need to change so the popup 
+            displays in the center of the screen. First set the width. Then set 
+            margin-left to negative half of what the width is. You can add 
+            the height property for a fixed size pop up if you want.*/
+            width: 600px;
+            margin-left: -250px;
+            top:60%;
+        }
+        .popupBackground3{
+            background-color:black;
+            opacity: 0.20;
+            filter: alpha(opacity = 20);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9998;
+        }
+
+    </style>
+
+</apex:component>

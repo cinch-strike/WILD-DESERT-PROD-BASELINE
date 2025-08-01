@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Asset_Hire</fullName>
+    <active>true</active>
+    <description>Mark wd asset required</description>
+    <errorConditionFormula>(Item_Name__r.Name = &apos;Asset Hire&apos;)  &amp;&amp;  ISBLANK( WD_Asset__c )</errorConditionFormula>
+    <errorDisplayField>WD_Asset__c</errorDisplayField>
+    <errorMessage>It&apos;s mandatory to select a WD Asset when select Item selected is Asset Hire</errorMessage>
+</ValidationRule>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WD_Order_Combination</fullName>
+    <active>true</active>
+    <label>WD Order - Combination</label>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Invoiced</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Job Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>SO Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WD Internal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>WD_Unit_s__c</picklist>
+        <values>
+            <fullName>Camp %231</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp %232</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp %233</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp %234</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp %236</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camp %237</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fabrication</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flusbhy %232</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hire Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig %2316</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rig %236</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Servicing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transport</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

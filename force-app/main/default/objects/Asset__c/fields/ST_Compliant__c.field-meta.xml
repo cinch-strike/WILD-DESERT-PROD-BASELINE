@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ST_Compliant__c</fullName>
+    <label>ST Compliant</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <label>Yes</label>
+            </value>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+            <value>
+                <fullName>Exempt</fullName>
+                <default>false</default>
+                <label>Exempt</label>
+            </value>
+            <value>
+                <fullName>90 Day Exemption</fullName>
+                <default>false</default>
+                <label>90 Day Exemption</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

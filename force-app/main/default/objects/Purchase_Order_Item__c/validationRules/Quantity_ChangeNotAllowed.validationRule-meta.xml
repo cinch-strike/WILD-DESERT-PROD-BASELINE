@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quantity_ChangeNotAllowed</fullName>
+    <active>true</active>
+    <description>User not allowed to change the quantity value.</description>
+    <errorConditionFormula>AND(
+   ISCHANGED( Quantity__c ),
+   NOT(ISPICKVAL( PO_Item_Status__c , &apos;Non-PR Related&apos;)) 
+)</errorConditionFormula>
+    <errorDisplayField>Quantity__c</errorDisplayField>
+    <errorMessage>You are not allowed to change the quantity value. Update the quantity of the Purchase Request instead, delete the existing Purchase Order then create new Purchase Order.</errorMessage>
+</ValidationRule>

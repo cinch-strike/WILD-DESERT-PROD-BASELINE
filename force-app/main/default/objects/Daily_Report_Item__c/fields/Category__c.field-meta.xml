@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <label>Category</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BD BHA</fullName>
+                <default>false</default>
+                <label>BD BHA</label>
+            </value>
+            <value>
+                <fullName>Bleed / Kill Well</fullName>
+                <default>false</default>
+                <label>Bleed / Kill Well</label>
+            </value>
+            <value>
+                <fullName>Cement</fullName>
+                <default>false</default>
+                <label>Cement</label>
+            </value>
+            <value>
+                <fullName>Circulate / Flush Hole</fullName>
+                <default>false</default>
+                <label>Circulate / Flush Hole</label>
+            </value>
+            <value>
+                <fullName>Client Directed Work</fullName>
+                <default>false</default>
+                <label>Client Directed Work</label>
+            </value>
+            <value>
+                <fullName>Drill Bridge Plug</fullName>
+                <default>false</default>
+                <label>Drill Bridge Plug</label>
+            </value>
+            <value>
+                <fullName>Finger Print Well</fullName>
+                <default>false</default>
+                <label>Finger Print Well</label>
+            </value>
+            <value>
+                <fullName>Fishing</fullName>
+                <default>false</default>
+                <label>Fishing</label>
+            </value>
+            <value>
+                <fullName>Flow check well</fullName>
+                <default>false</default>
+                <label>Flow check well</label>
+            </value>
+            <value>
+                <fullName>Install Surface Equipment</fullName>
+                <default>false</default>
+                <label>Install Surface Equipment</label>
+            </value>
+            <value>
+                <fullName>Land Tubing Hanger</fullName>
+                <default>false</default>
+                <label>Land Tubing Hanger</label>
+            </value>
+            <value>
+                <fullName>Laydown / Breakout BHA</fullName>
+                <default>false</default>
+                <label>Laydown / Breakout BHA</label>
+            </value>
+            <value>
+                <fullName>Layout Tubing Hanger</fullName>
+                <default>false</default>
+                <label>Layout Tubing Hanger</label>
+            </value>
+            <value>
+                <fullName>Make Up/Pick Up BHA</fullName>
+                <default>false</default>
+                <label>Make Up/Pick Up BHA</label>
+            </value>
+            <value>
+                <fullName>Meeting / Drills</fullName>
+                <default>false</default>
+                <label>Meeting / Drills</label>
+            </value>
+            <value>
+                <fullName>Meeting (Safety, Training)</fullName>
+                <default>false</default>
+                <label>Meeting (Safety, Training)</label>
+            </value>
+            <value>
+                <fullName>MU BHA</fullName>
+                <default>false</default>
+                <label>MU BHA</label>
+            </value>
+            <value>
+                <fullName>ND BOP</fullName>
+                <default>false</default>
+                <label>ND BOP (PT, function test, draw down test)</label>
+            </value>
+            <value>
+                <fullName>No Activity</fullName>
+                <default>false</default>
+                <label>No Activity</label>
+            </value>
+            <value>
+                <fullName>NU BOP</fullName>
+                <default>false</default>
+                <label>NU BOP</label>
+            </value>
+            <value>
+                <fullName>Planned Maintenance</fullName>
+                <default>false</default>
+                <label>Planned Maintenance</label>
+            </value>
+            <value>
+                <fullName>POOH Completion String</fullName>
+                <default>false</default>
+                <label>POOH Completion String</label>
+            </value>
+            <value>
+                <fullName>POOH Rod String</fullName>
+                <default>false</default>
+                <label>POOH Rod String</label>
+            </value>
+            <value>
+                <fullName>POOH Workstring</fullName>
+                <default>false</default>
+                <label>POOH Workstring</label>
+            </value>
+            <value>
+                <fullName>Prep, Strap, Tally String</fullName>
+                <default>false</default>
+                <label>Prep, Strap, Tally String</label>
+            </value>
+            <value>
+                <fullName>Pressure test (not including BOP)</fullName>
+                <default>false</default>
+                <label>Pressure test (not including BOP)</label>
+            </value>
+            <value>
+                <fullName>Pressure test BOP</fullName>
+                <default>false</default>
+                <label>Pressure test BOP</label>
+            </value>
+            <value>
+                <fullName>Pressure test client equipment</fullName>
+                <default>false</default>
+                <label>Pressure test client equipment</label>
+            </value>
+            <value>
+                <fullName>Pressure test WD Well Servicing Equipment</fullName>
+                <default>false</default>
+                <label>Pressure test WD Well Servicing Equipment</label>
+            </value>
+            <value>
+                <fullName>Pre start / Toolbox</fullName>
+                <default>false</default>
+                <label>Pre start / Toolbox</label>
+            </value>
+            <value>
+                <fullName>R/D Running Equipment</fullName>
+                <default>false</default>
+                <label>R/D Running Equipment</label>
+            </value>
+            <value>
+                <fullName>R/U Running Equipment</fullName>
+                <default>false</default>
+                <label>R/U Running Equipment</label>
+            </value>
+            <value>
+                <fullName>RD Surface Equipment</fullName>
+                <default>false</default>
+                <label>RD Surface Equipment</label>
+            </value>
+            <value>
+                <fullName>RD Work Floor</fullName>
+                <default>false</default>
+                <label>RD Work Floor</label>
+            </value>
+            <value>
+                <fullName>Rig Down</fullName>
+                <default>false</default>
+                <label>Rig Down</label>
+            </value>
+            <value>
+                <fullName>Rig Move</fullName>
+                <default>false</default>
+                <label>Rig Move</label>
+            </value>
+            <value>
+                <fullName>Rig Up</fullName>
+                <default>false</default>
+                <label>Rig Up</label>
+            </value>
+            <value>
+                <fullName>RIH Completion String</fullName>
+                <default>false</default>
+                <label>RIH Completion String</label>
+            </value>
+            <value>
+                <fullName>RIH Rod String</fullName>
+                <default>false</default>
+                <label>RIH Rod String</label>
+            </value>
+            <value>
+                <fullName>RIH Workstring</fullName>
+                <default>false</default>
+                <label>RIH Workstring</label>
+            </value>
+            <value>
+                <fullName>RU Suface Equipment</fullName>
+                <default>false</default>
+                <label>RU Suface Equipment</label>
+            </value>
+            <value>
+                <fullName>RU Work Floor</fullName>
+                <default>false</default>
+                <label>RU Work Floor</label>
+            </value>
+            <value>
+                <fullName>Sensor Cable</fullName>
+                <default>false</default>
+                <label>Sensor Cable</label>
+            </value>
+            <value>
+                <fullName>Space out Rotor with Polished rods</fullName>
+                <default>false</default>
+                <label>Space out Rotor with Polished rods</label>
+            </value>
+            <value>
+                <fullName>Standby</fullName>
+                <default>false</default>
+                <label>Standby</label>
+            </value>
+            <value>
+                <fullName>Stump test</fullName>
+                <default>false</default>
+                <label>Stump test</label>
+            </value>
+            <value>
+                <fullName>Travel</fullName>
+                <default>false</default>
+                <label>Travel</label>
+            </value>
+            <value>
+                <fullName>Unplanned Maintenance</fullName>
+                <default>false</default>
+                <label>Unplanned Maintenance</label>
+            </value>
+            <value>
+                <fullName>Wait on Cement</fullName>
+                <default>false</default>
+                <label>Wait on Cement</label>
+            </value>
+            <value>
+                <fullName>Weed and Seed</fullName>
+                <default>false</default>
+                <label>Weed and Seed</label>
+            </value>
+            <value>
+                <fullName>Wet Weather</fullName>
+                <default>false</default>
+                <label>Wet Weather</label>
+            </value>
+            <value>
+                <fullName>Wireline</fullName>
+                <default>false</default>
+                <label>Wireline</label>
+            </value>
+            <value>
+                <fullName>Bleed Well</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bleed Well</label>
+            </value>
+            <value>
+                <fullName>Client Pressure Test</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Client Pressure Test</label>
+            </value>
+            <value>
+                <fullName>N/U N/D BOP</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>N/U N/D BOP</label>
+            </value>
+            <value>
+                <fullName>NU &amp; Pressure test BOP</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>NU &amp; Pressure test BOP</label>
+            </value>
+            <value>
+                <fullName>NU&amp;Pressure Test BOP</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>NU&amp;Pressure Test BOP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

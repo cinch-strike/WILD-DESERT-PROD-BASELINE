@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exceeds_Maximum_Limit__c</fullName>
+    <description>Total Price exceeds the maximum limit of $10K</description>
+    <formula>IF(Total_Price__c &gt; 10000, TRUE, FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Total Price exceeds the maximum limit of $10K</inlineHelpText>
+    <label>Exceeds Maximum Limit</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Team_Unit__c</fullName>
+    <externalId>false</externalId>
+    <formula>CCM__r.Team__r.Name &amp; 
+IF(
+  NOT(ISBLANK(CCM__r.Unit__r.Name)),
+  &quot; | &quot; &amp; CCM__r.Unit__r.Name,
+  &quot;&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Team &amp; Unit</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>For_Approval_Training</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Quantity__c</columns>
+    <columns>Item_Name_Hyperlink__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Supplier__c</columns>
+    <columns>Details_for_Supplier__c</columns>
+    <columns>Cost_Price_GST_exc__c</columns>
+    <columns>Destination_Store__c</columns>
+    <columns>Purchase_Request_Approver__c</columns>
+    <columns>PR_PO_Admin__c</columns>
+    <columns>Purchase_Order__c</columns>
+    <columns>PO_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>For Approval,For Quoting,For Pricing Approval,For Item Approval</value>
+    </filters>
+    <filters>
+        <field>Approval_Comments__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Destination_Store__c</field>
+        <operation>equals</operation>
+        <value>Training</value>
+    </filters>
+    <label>For Approval | Training</label>
+</ListView>

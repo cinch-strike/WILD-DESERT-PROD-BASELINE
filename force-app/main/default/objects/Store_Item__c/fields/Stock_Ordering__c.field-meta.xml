@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stock_Ordering__c</fullName>
+    <label>Stock – Ordering</label>
+    <summarizedField>Purchase_Request__c.Quantity__c</summarizedField>
+    <summaryFilterItems>
+        <field>Purchase_Request__c.Status__c</field>
+        <operation>equals</operation>
+        <value>For Ordering</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Purchase_Request__c.Source_Store_Item__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

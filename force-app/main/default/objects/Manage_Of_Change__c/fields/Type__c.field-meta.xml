@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <label>Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Modify Existing Form</fullName>
+                <default>false</default>
+                <label>Modify Existing Form</label>
+            </value>
+            <value>
+                <fullName>Create New Form</fullName>
+                <default>false</default>
+                <label>Create New Form</label>
+            </value>
+            <value>
+                <fullName>Modify Procedure</fullName>
+                <default>false</default>
+                <label>Modify Procedure</label>
+            </value>
+            <value>
+                <fullName>Create New Procedure</fullName>
+                <default>false</default>
+                <label>Create New Procedure</label>
+            </value>
+            <value>
+                <fullName>Equipment Modification</fullName>
+                <default>false</default>
+                <label>Equipment Modification</label>
+            </value>
+            <value>
+                <fullName>New Equipment Purchase</fullName>
+                <default>false</default>
+                <label>New Equipment Purchase</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

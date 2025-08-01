@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recharge_PR_s</fullName>
+    <columns>NAME</columns>
+    <columns>Item_Name_Formula__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Supplier__c</columns>
+    <columns>Total_Cost_Price_GST_exc__c</columns>
+    <columns>Cost_Allocation_Unit__c</columns>
+    <columns>Destination_Requested_by__c</columns>
+    <columns>Status__c</columns>
+    <columns>PO_Number__c</columns>
+    <columns>PO_Link__c</columns>
+    <columns>Recharge__c</columns>
+    <columns>Recharge_Items_Invoiced__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Recharge__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Recharge_Items_Invoiced__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Cancelled</value>
+    </filters>
+    <label>14 All Recharge PR&apos;s</label>
+    <sharedTo>
+        <group>Finance</group>
+    </sharedTo>
+</ListView>

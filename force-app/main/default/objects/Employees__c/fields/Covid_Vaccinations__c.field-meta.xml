@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Covid_Vaccinations__c</fullName>
+    <label>Covid Vaccinations</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1st</fullName>
+                <default>true</default>
+                <label>1st Vax</label>
+            </value>
+            <value>
+                <fullName>Ist Vax_cert</fullName>
+                <default>false</default>
+                <label>1st Vax + Cert</label>
+            </value>
+            <value>
+                <fullName>2nd Vax -cert</fullName>
+                <default>false</default>
+                <label>2nd Vax</label>
+            </value>
+            <value>
+                <fullName>2nd_vac</fullName>
+                <default>false</default>
+                <label>2nd Vax + Cert</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

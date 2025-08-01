@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lifting_Equipment__c</fullName>
+    <label>Lifting Equipment</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>2 Leg Lifting Chain</fullName>
+                <default>false</default>
+                <label>Double Lifting Chain-3mth</label>
+            </value>
+            <value>
+                <fullName>Winch Line Chain</fullName>
+                <default>false</default>
+                <label>Winch Chain-3mth</label>
+            </value>
+            <value>
+                <fullName>Sling</fullName>
+                <default>false</default>
+                <label>Soft Sling-3mth</label>
+            </value>
+            <value>
+                <fullName>Stinger Hold Back Chain</fullName>
+                <default>false</default>
+                <label>Stinger Hold Back Chain-12mth</label>
+            </value>
+            <value>
+                <fullName>Single Leg Chain</fullName>
+                <default>false</default>
+                <label>Single Lifting Chain-6mth</label>
+            </value>
+            <value>
+                <fullName>BOP Lifting Chain</fullName>
+                <default>false</default>
+                <label>Manual Tong Chain-12mth</label>
+            </value>
+            <value>
+                <fullName>Turnbuckle - 12mth</fullName>
+                <default>false</default>
+                <label>Turnbuckle-12mth</label>
+            </value>
+            <value>
+                <fullName>D Shackle</fullName>
+                <default>false</default>
+                <label>Shackle-12mth</label>
+            </value>
+            <value>
+                <fullName>2 piece Bow Shackle-12mth</fullName>
+                <default>false</default>
+                <label>2 piece Bow Shackle-12mth</label>
+            </value>
+            <value>
+                <fullName>2 piece D Shackle-12mth</fullName>
+                <default>false</default>
+                <label>2 piece D Shackle-12mth</label>
+            </value>
+            <value>
+                <fullName>4 piece Bow Shackle-12mth</fullName>
+                <default>false</default>
+                <label>4 piece Bow Shackle-12mth</label>
+            </value>
+            <value>
+                <fullName>4 piece D Shackle-12mth</fullName>
+                <default>false</default>
+                <label>4 piece D Shackle-12mth</label>
+            </value>
+            <value>
+                <fullName>Winch</fullName>
+                <default>false</default>
+                <label>Winch</label>
+            </value>
+            <value>
+                <fullName>Three Leg Lifting Chain – 12mth</fullName>
+                <default>false</default>
+                <label>Three Leg Lifting Chain – 12mth</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

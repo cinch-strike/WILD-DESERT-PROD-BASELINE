@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_22_Shell_609</fullName>
+    <columns>Contract__c</columns>
+    <columns>NAME</columns>
+    <columns>Summary_Report_Date__c</columns>
+    <columns>Status__c</columns>
+    <columns>Site__c</columns>
+    <columns>WD_Notes__c</columns>
+    <columns>WD_Invoice_number__c</columns>
+    <columns>Date_Approved__c</columns>
+    <columns>Company_Manager_Comments__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contract__c</field>
+        <operation>equals</operation>
+        <value>609</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Invoiced - Paid</value>
+    </filters>
+    <label>Rig 22/Camp 6 - Shell (609)</label>
+    <sharedTo>
+        <group>Finance</group>
+        <group>HR</group>
+        <group>OPs_super</group>
+        <group>Rig_22</group>
+        <group>Safety</group>
+    </sharedTo>
+</ListView>

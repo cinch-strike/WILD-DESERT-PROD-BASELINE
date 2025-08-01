@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Today_Roma</fullName>
+    <columns>NAME</columns>
+    <columns>Unit__c</columns>
+    <columns>Date__c</columns>
+    <columns>Employee__c</columns>
+    <columns>Position__c</columns>
+    <columns>On_Shift_formula__c</columns>
+    <columns>Timesheet_Approved__c</columns>
+    <columns>Crew_Change__c</columns>
+    <columns>Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Unit__c</field>
+        <operation>equals</operation>
+        <value>Depot - Roma,Office - Roma</value>
+    </filters>
+    <filters>
+        <field>Date__c</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>Today | Roma</label>
+</ListView>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingGuestRules>
+        <fullName>Guest_profile</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Guest profile</label>
+        <sharedTo>
+            <guestUser>ClientRepresentativeApproval</guestUser>
+        </sharedTo>
+        <criteriaItems>
+            <field>Report_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>1/1/1971</value>
+        </criteriaItems>
+        <includeHVUOwnedRecords>false</includeHVUOwnedRecords>
+    </sharingGuestRules>
+</SharingRules>

@@ -1,0 +1,24 @@
+{
+    "name": "Wild Desert Driver Portal",
+    "background_color": "#ffe000",
+    "theme_color": "#ffe000",
+    "display": "fullscreen",
+    "short_name": "Wild Desert",
+    "start_url": "/",
+    "Scope": "/",
+    "icons": [
+        {
+            "src": "/drivers/resource/favicon_io/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/drivers/resource/favicon_io/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
+
