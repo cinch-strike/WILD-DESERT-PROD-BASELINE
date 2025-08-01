@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>For_Approval_Review_Complete</fullName>
+    <columns>NAME</columns>
+    <columns>Approval_Comments__c</columns>
+    <columns>Item_Name_Formula__c</columns>
+    <columns>New_Item_Formula__c</columns>
+    <columns>Quantity__c</columns>
+    <columns>PR_Cost_Price_GST_exc__c</columns>
+    <columns>Total_Cost_Price_GST_exc__c</columns>
+    <columns>Cost_Allocation_Unit__c</columns>
+    <columns>Destination_Store__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>For Approval - Review Complete</value>
+    </filters>
+    <filters>
+        <field>is_PR_Approver__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>PR- For Approval-Review Complete</label>
+</ListView>

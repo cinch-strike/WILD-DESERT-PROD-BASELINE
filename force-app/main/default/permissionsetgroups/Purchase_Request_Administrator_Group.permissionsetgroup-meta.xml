@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission Set Group for Purchase Request Administrator permissions</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Purchase Request Administrator Group</label>
+    <mutingPermissionSets>Purchase_Request_Administrator_Group_Muted</mutingPermissionSets>
+    <permissionSets>Purchase_Request_Administrator_Permission_Set</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

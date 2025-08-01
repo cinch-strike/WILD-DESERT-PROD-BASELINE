@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsSecondLimitLessthanTotalCost__c</fullName>
+    <description>FLOOR value</description>
+    <formula>IF(AND(Second_Approver_Limit__c &gt; 0, Second_Approver_Limit__c &lt;=  Total_Cost_Price_GST_exc__c), TRUE, FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>IsSecondLimitLessthanTotalCost</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

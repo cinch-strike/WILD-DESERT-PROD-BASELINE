@@ -15,9 +15,9 @@
     <columns>CREATEDBY_USER</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>Destination_Store__c</field>
+        <field>Cost_Allocation_Unit__c</field>
         <operation>equals</operation>
-        <value>rig 6</value>
+        <value>Rig 6</value>
     </filters>
     <filters>
         <field>Status__c</field>
@@ -29,9 +29,9 @@
         <group>Electrician</group>
         <group>Fabrication</group>
         <group>Managing_Director</group>
-        <group>Mechanics_Roma</group>
+        <group>Mechanics</group>
         <group>OPs_super</group>
-        <group>Projects_and_Maintenance</group>
+        <group>Projects</group>
         <group>Purchasing</group>
         <group>Rig_6</group>
     </sharedTo>

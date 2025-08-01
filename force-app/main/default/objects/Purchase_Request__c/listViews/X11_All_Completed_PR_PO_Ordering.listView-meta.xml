@@ -5,7 +5,8 @@
     <columns>CREATED_DATE</columns>
     <columns>Quantity__c</columns>
     <columns>Item_Name_Hyperlink__c</columns>
-    <columns>PO_Number__c</columns>
+    <columns>Work_Order__c</columns>
+    <columns>Asset__c</columns>
     <columns>PO_Link__c</columns>
     <columns>Supplier__c</columns>
     <columns>Cost_Price_GST_exc__c</columns>
@@ -31,7 +32,7 @@
         <operation>greaterOrEqual</operation>
         <value>YESTERDAY</value>
     </filters>
-    <label>11 All Completed (PR) - PO Outstanding</label>
+    <label>11 All Completed (PR) - PO Part Filled</label>
     <sharedTo>
         <group>Purchasing</group>
     </sharedTo>

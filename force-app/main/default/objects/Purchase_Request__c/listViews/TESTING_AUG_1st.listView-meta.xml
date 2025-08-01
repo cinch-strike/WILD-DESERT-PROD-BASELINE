@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TESTING_AUG_1st</fullName>
+    <columns>NAME</columns>
+    <columns>Item__c</columns>
+    <columns>Cost_Allocation_Unit__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Department__c</columns>
+    <columns>Destination_Store__c</columns>
+    <columns>First_Approver__c</columns>
+    <columns>Second_Approver__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>6/1/2025 12:00 AM</value>
+    </filters>
+    <label>TESTING AUG 1st</label>
+</ListView>

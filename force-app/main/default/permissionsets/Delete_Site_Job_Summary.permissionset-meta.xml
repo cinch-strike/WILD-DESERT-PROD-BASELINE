@@ -6,6 +6,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Template_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Active_Driver__c.Best_Contact__c</field>
         <readable>true</readable>
@@ -443,6 +448,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Purchase_Request__c.Assets_Current_Unit__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Purchase_Request__c.Destination_Brand__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

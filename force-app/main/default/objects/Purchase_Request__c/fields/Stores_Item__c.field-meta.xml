@@ -7,5 +7,6 @@
     <inlineHelpText>Inventory Item Available Check</inlineHelpText>
     <label>Stores Item</label>
     <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
     <type>Checkbox</type>
 </CustomField>

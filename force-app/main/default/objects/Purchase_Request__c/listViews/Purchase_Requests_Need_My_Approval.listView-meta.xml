@@ -23,7 +23,7 @@
     <filters>
         <field>Status__c</field>
         <operation>equals</operation>
-        <value>For Approval,For Pricing Approval</value>
+        <value>Submitted</value>
     </filters>
     <label>Purchase Requests - Needs My Approval</label>
 </ListView>

@@ -2,6 +2,7 @@
 <PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
     <hasActivationRequired>false</hasActivationRequired>
     <label>Business Operations Officer</label>
+    <mutingPermissionSets>Business_Operations_Officer_Muted</mutingPermissionSets>
     <permissionSets>Active_Personnel_Full_Access</permissionSets>
     <permissionSets>Active_Trades</permissionSets>
     <permissionSets>Asset_Edit_and_Create</permissionSets>

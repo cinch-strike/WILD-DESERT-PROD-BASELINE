@@ -18,8 +18,11 @@ public with sharing class PurchaseRequestListController {
         }
         
         /**Querying on the Selected records and fetching fields which are required in Flow **/
-        this.lstSelectedPRs = [select Id, Supplier__c, PO_Creation_Checker__c, Item__c, Item_Name_Formula__c, Quantity__c, Status__c, Quoted_Created__c from Purchase_Request__c 
+        // 5/31/2023 : Added additional fields for querying
+        this.lstSelectedPRs = [select Id, Item__c, Item_Name_Formula__c, PO_Creation_Checker__c , Part_Number__c,  Quantity__c, Item_Master_Cost_Category__c, PR_Cost_Price_GST_exc__c, Total_Cost_Price_GST_exc__c, Details_for_Supplier__c,
+            Supplier__c, Destination_Store__c  from Purchase_Request__c 
             where Id in: prSelectedIdSet order by Supplier__c, Item__c asc];
+        system.debug(lstSelectedPRs);
     }
     
 }

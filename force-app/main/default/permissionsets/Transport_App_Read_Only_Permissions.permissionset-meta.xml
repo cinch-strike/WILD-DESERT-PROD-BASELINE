@@ -442,6 +442,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Template_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Terms__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3497,6 +3502,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Purchase_Request__c.Destination_Brand__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Purchase_Request__c.ETA__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3762,6 +3772,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Unit__c.Account_Brand__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Unit__c.Average_Fuel_Used__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3923,6 +3938,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Unit__c.Sat_Phone__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Unit__c.Second_Approver_Limit__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

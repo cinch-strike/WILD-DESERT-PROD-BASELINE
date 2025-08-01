@@ -11,26 +11,25 @@
     <columns>Status__c</columns>
     <columns>Date_Sent_for_In_Transit__c</columns>
     <columns>CREATEDBY_USER</columns>
-    <columns>Total_Cost_Price_GST_exc__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>Destination_Store__c</field>
+        <field>Cost_Allocation_Unit__c</field>
         <operation>equals</operation>
-        <value>rig 24</value>
+        <value>Rig 24</value>
     </filters>
     <filters>
         <field>Status__c</field>
         <operation>equals</operation>
         <value>In Transit</value>
     </filters>
-    <label>Rig 24 | 6 | In Transit To Rig</label>
+    <label>Rig 24 | In Transit</label>
     <sharedTo>
         <group>Electrician</group>
         <group>Fabrication</group>
         <group>Managing_Director</group>
-        <group>Mechanics_Roma</group>
+        <group>Mechanics</group>
         <group>OPs_super</group>
-        <group>Projects_and_Maintenance</group>
+        <group>Projects</group>
         <group>Purchasing</group>
         <group>Rig_24</group>
     </sharedTo>

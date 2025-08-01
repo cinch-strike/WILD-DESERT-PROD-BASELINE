@@ -11,10 +11,9 @@
     <columns>Cost_Price_GST_exc__c</columns>
     <columns>Total_Cost_Price_GST_exc__c</columns>
     <columns>Notes__c</columns>
+    <columns>Cost_Allocation_Unit__c</columns>
     <columns>Status__c</columns>
     <columns>CREATEDBY_USER</columns>
-    <columns>Cost_Allocation_Unit__c</columns>
-    <columns>Destination_Store__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Cost_Allocation_Unit__c</field>
@@ -31,8 +30,8 @@
         <group>Electrician</group>
         <group>Fabrication</group>
         <group>Managing_Director</group>
-        <group>Mechanics_Roma</group>
-        <group>Projects_and_Maintenance</group>
+        <group>Mechanics</group>
+        <group>Projects</group>
         <group>Purchasing</group>
         <group>YLE</group>
     </sharedTo>

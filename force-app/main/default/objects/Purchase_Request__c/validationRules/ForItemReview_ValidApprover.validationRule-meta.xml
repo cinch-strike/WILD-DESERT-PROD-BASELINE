@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ForItemReview_ValidApprover</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(PRIORVALUE(Status__c), &apos;For Approval - Review Complete&apos;)
+&amp;&amp;
+ISPICKVAL(Status__c, &apos;For Item Review&apos;)
+&amp;&amp;
+$User.Id !=  First_Approver__c</errorConditionFormula>
+    <errorMessage>Only the first approver is allowed to mark this record as For Item Review</errorMessage>
+</ValidationRule>

@@ -175,24 +175,23 @@
         <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
         <excludedStandardButtons>Import</excludedStandardButtons>
         <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>IsotopeSubscription</excludedStandardButtons>
         <listViewButtons>Create_Quotes</listViewButtons>
         <listViewButtons>Create_Purchase_Orders</listViewButtons>
-        <massQuickActions>Approve_Reject</massQuickActions>
+        <massQuickActions>Approver_Review</massQuickActions>
         <massQuickActions>For_Packing</massQuickActions>
         <massQuickActions>Enter_Manifest</massQuickActions>
         <massQuickActions>Set_to_In_Transit</massQuickActions>
         <massQuickActions>Accept_Complete</massQuickActions>
         <massQuickActions>Update_Supplier</massQuickActions>
         <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Quantity_Received__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Quantity__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Item_Name_Formula__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Work_Order__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Asset__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Total_Cost_Price_GST_exc__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Supplier__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Notes__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Cost_Allocation_Unit__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATEDBY_USER</searchResultsAdditionalFields>
         <searchResultsCustomButtons>Create_Purchase_Orders</searchResultsCustomButtons>
         <searchResultsCustomButtons>Create_Quotes</searchResultsCustomButtons>
     </searchLayouts>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Price_cant_be_changed_if_override_not_al</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISCHANGED(PR_Cost_Price_GST_exc__c) 
+&amp;&amp;
+NOT(Item__r.PR_Price_Override__c)</errorConditionFormula>
+    <errorDisplayField>PR_Cost_Price_GST_exc__c</errorDisplayField>
+    <errorMessage>Unit Cost Price cannot be changed.</errorMessage>
+</ValidationRule>

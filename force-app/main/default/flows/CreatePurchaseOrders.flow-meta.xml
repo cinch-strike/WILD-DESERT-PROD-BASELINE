@@ -3,14 +3,20 @@
     <actionCalls>
         <name>Create_PO_s</name>
         <label>Create PO&apos;s</label>
-        <locationX>490</locationX>
-        <locationY>830</locationY>
+        <locationX>1018</locationX>
+        <locationY>1034</locationY>
         <actionName>CreatePOsFromPRs</actionName>
         <actionType>apex</actionType>
         <connector>
             <targetReference>Assign_PO_Count</targetReference>
         </connector>
         <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>AccountId</name>
+            <value>
+                <elementReference>AccountBrandId</elementReference>
+            </value>
+        </inputParameters>
         <inputParameters>
             <name>purchaseRequestList</name>
             <value>
@@ -25,8 +31,8 @@
     <assignments>
         <name>Add_PR_with_no_Supplier</name>
         <label>Add PR with no Supplier</label>
-        <locationX>688</locationX>
-        <locationY>398</locationY>
+        <locationX>1084</locationX>
+        <locationY>350</locationY>
         <assignmentItems>
             <assignToReference>intPRWithoutSupplier</assignToReference>
             <operator>Add</operator>
@@ -35,14 +41,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Loop_each_PR</targetReference>
+            <targetReference>Check_if_PR_has_different_BrandAcc</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Add_PR_with_no_Supplier_and_with_PO</name>
         <label>Add PR with no Supplier and with PO</label>
-        <locationX>424</locationX>
-        <locationY>398</locationY>
+        <locationX>820</locationX>
+        <locationY>350</locationY>
         <assignmentItems>
             <assignToReference>intPRWithoutSupplier</assignToReference>
             <operator>Add</operator>
@@ -58,16 +64,48 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Loop_each_PR</targetReference>
+            <targetReference>Check_if_PR_has_different_BrandAcc</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Add_PR_with_PO</name>
         <label>Add PR with PO</label>
-        <locationX>952</locationX>
-        <locationY>398</locationY>
+        <locationX>1348</locationX>
+        <locationY>350</locationY>
         <assignmentItems>
             <assignToReference>intPRWithExistingPO</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_if_PR_has_different_BrandAcc</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>AddDiffAccBrand</name>
+        <label>AddDiffAccBrand</label>
+        <locationX>1568</locationX>
+        <locationY>650</locationY>
+        <assignmentItems>
+            <assignToReference>intPRWithDiffAccBrand</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_each_PR</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>AddNoAccBrand</name>
+        <label>AddNoAccBrand</label>
+        <locationX>1304</locationX>
+        <locationY>650</locationY>
+        <assignmentItems>
+            <assignToReference>intPRWithNoAccBrand</assignToReference>
             <operator>Add</operator>
             <value>
                 <numberValue>1.0</numberValue>
@@ -80,8 +118,8 @@
     <assignments>
         <name>Assign_PO_Count</name>
         <label>Assign PO Count</label>
-        <locationX>490</locationX>
-        <locationY>950</locationY>
+        <locationX>1018</locationX>
+        <locationY>1142</locationY>
         <assignmentItems>
             <assignToReference>POCount</assignToReference>
             <operator>AssignCount</operator>
@@ -94,10 +132,104 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Update_Error_Message</name>
+        <name>Copy_1_of_AddDiffAccBrand</name>
+        <label>AddDiffAccBrand</label>
+        <locationX>578</locationX>
+        <locationY>1742</locationY>
+        <assignmentItems>
+            <assignToReference>intPRWithDiffAccBrand</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>intPRWithNoAccBrand</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_3_of_Update_Error_Message</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_1_of_Update_Error_Message</name>
         <label>Update Error Message</label>
         <locationX>50</locationX>
-        <locationY>950</locationY>
+        <locationY>1742</locationY>
+        <assignmentItems>
+            <assignToReference>strErrorMessage</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>forErrorMessageDifferentAccountBrand</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>PO_Creation_Error</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_2_of_Update_Error_Message</name>
+        <label>Update Error Message</label>
+        <locationX>314</locationX>
+        <locationY>1742</locationY>
+        <assignmentItems>
+            <assignToReference>strErrorMessage</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>forErrorMessageDifferentAccountBrand</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>PO_Creation_Error</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_3_of_Update_Error_Message</name>
+        <label>Update Error Message</label>
+        <locationX>578</locationX>
+        <locationY>1850</locationY>
+        <assignmentItems>
+            <assignToReference>strErrorMessage</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>forErrorMessageDifferentAccountBrand</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>PO_Creation_Error</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Account_Name</name>
+        <label>Set Account Name</label>
+        <locationX>864</locationX>
+        <locationY>650</locationY>
+        <assignmentItems>
+            <assignToReference>AccountBrandName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_each_PR.Destination_Brand__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AccountBrandId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_each_PR.Destination_Store__r.Account_Brand__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>intPRWithDiffAccBrand</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_each_PR</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Error_Message</name>
+        <label>Update Error Message</label>
+        <locationX>314</locationX>
+        <locationY>1142</locationY>
         <assignmentItems>
             <assignToReference>strErrorMessage</assignToReference>
             <operator>Add</operator>
@@ -112,8 +244,8 @@
     <assignments>
         <name>Update_Error_Message_0</name>
         <label>Update Error Message</label>
-        <locationX>50</locationX>
-        <locationY>1286</locationY>
+        <locationX>314</locationX>
+        <locationY>1442</locationY>
         <assignmentItems>
             <assignToReference>strErrorMessage</assignToReference>
             <operator>Add</operator>
@@ -122,14 +254,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>PO_Creation_Error</targetReference>
+            <targetReference>Check_Destination_Store</targetReference>
         </connector>
     </assignments>
     <decisions>
         <name>Assign_No_Supplier_Message</name>
         <label>Assign No Supplier Message</label>
-        <locationX>182</locationX>
-        <locationY>830</locationY>
+        <locationX>446</locationX>
+        <locationY>1034</locationY>
         <defaultConnector>
             <targetReference>Assign_With_PO_Message</targetReference>
         </defaultConnector>
@@ -153,10 +285,10 @@
     <decisions>
         <name>Assign_With_PO_Message</name>
         <label>Assign With PO Message</label>
-        <locationX>182</locationX>
-        <locationY>1166</locationY>
+        <locationX>446</locationX>
+        <locationY>1334</locationY>
         <defaultConnector>
-            <targetReference>PO_Creation_Error</targetReference>
+            <targetReference>Check_Destination_Store</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
@@ -176,12 +308,81 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Check_Destination_Store</name>
+        <label>Check Destination Store</label>
+        <locationX>446</locationX>
+        <locationY>1634</locationY>
+        <defaultConnector>
+            <targetReference>PO_Creation_Error</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Different_AccBrand</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>intPRWithDiffAccBrand</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>1.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Update_Error_Message</targetReference>
+            </connector>
+            <label>Different AccBrand</label>
+        </rules>
+        <rules>
+            <name>No_AccBrand_Selected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>intPRWithDiffAccBrand</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>selectedPurchaseRequests</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_2_of_Update_Error_Message</targetReference>
+            </connector>
+            <label>No AccBrand Selected</label>
+        </rules>
+        <rules>
+            <name>Different_AccBrand_w_blanks</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>intPRWithNoAccBrand</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AccountBrandName</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_AddDiffAccBrand</targetReference>
+            </connector>
+            <label>Different AccBrand w/ blanks</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Check_Error</name>
         <label>Check Error</label>
-        <locationX>820</locationX>
-        <locationY>278</locationY>
+        <locationX>1216</locationX>
+        <locationY>242</locationY>
         <defaultConnector>
-            <targetReference>Loop_each_PR</targetReference>
+            <targetReference>Check_if_PR_has_different_BrandAcc</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>N/A</defaultConnectorLabel>
         <rules>
@@ -231,17 +432,104 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Check_if_PR_has_different_BrandAcc</name>
+        <label>Check if PR has different BrandAcc</label>
+        <locationX>1216</locationX>
+        <locationY>542</locationY>
+        <defaultConnector>
+            <targetReference>AddDiffAccBrand</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Different</defaultConnectorLabel>
+        <rules>
+            <name>First_Brand</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AccountBrandName</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AccountBrandId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Loop_each_PR.Destination_Store__r.Account_Brand__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Account_Name</targetReference>
+            </connector>
+            <label>First Brand</label>
+        </rules>
+        <rules>
+            <name>Same_AccBrand</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop_each_PR.Destination_Brand__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>AccountBrandName</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Loop_each_PR.Destination_Store__r.Account_Brand__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>AccountBrandId</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AccountBrandName</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_each_PR</targetReference>
+            </connector>
+            <label>Same AccBrand</label>
+        </rules>
+        <rules>
+            <name>No_AccBrand</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop_each_PR.Destination_Store__r.Account_Brand__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Loop_each_PR.Destination_Store__r.Account_Brand__c</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>AddNoAccBrand</targetReference>
+            </connector>
+            <label>No AccBrand</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>is_valid_PR_Selection</name>
         <label>is valid PR Selection</label>
-        <locationX>336</locationX>
-        <locationY>710</locationY>
+        <locationX>732</locationX>
+        <locationY>926</locationY>
         <defaultConnector>
             <targetReference>Create_PO_s</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Yes</defaultConnectorLabel>
         <rules>
             <name>PR_with_no_Supplier_or_with_PO</name>
-            <conditionLogic>or</conditionLogic>
+            <conditionLogic>1 OR 2 OR 3 OR (4 AND 5)</conditionLogic>
             <conditions>
                 <leftValueReference>intPRWithoutSupplier</leftValueReference>
                 <operator>NotEqualTo</operator>
@@ -256,13 +544,47 @@
                     <numberValue>0.0</numberValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>intPRWithDiffAccBrand</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <numberValue>1.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>intPRWithNoAccBrand</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AccountBrandName</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Assign_No_Supplier_Message</targetReference>
             </connector>
             <label>PR with no Supplier or with PO</label>
         </rules>
     </decisions>
-    <description>18 APR 2022: Add logic for existing PO.</description>
+    <description>5/31/2023:
+&gt; Add validation if selected Purchase request have different Account Brand
+&gt; Add validation if selected Purchase request have no Account Brand</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>forErrorMessageDifferentAccountBrand</name>
+        <dataType>String</dataType>
+        <expression>&quot;You have selected &lt;b&gt;&quot; + TEXT({!intPRWithDiffAccBrand}) + &quot;&lt;/b&gt; distinct brands from the purchasing request; please select just one brand. &lt;br /&gt;&lt;br /&gt;&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>forErrorMessageNoAccountBrand</name>
+        <dataType>String</dataType>
+        <expression>&quot;You did not select any brands from any of the purchasing requests. Please select at least 1 purchasing request with a brand.&quot;</expression>
+    </formulas>
     <formulas>
         <name>forErrorMessageNoSupplier</name>
         <dataType>String</dataType>
@@ -271,7 +593,7 @@
     <formulas>
         <name>forErrorMessageWithPO</name>
         <dataType>String</dataType>
-        <expression>&quot;You selected &lt;b&gt;&quot; + TEXT({!intPRWithExistingPO}) + &quot;&lt;/b&gt; purchase request(s) with purchase order. Make sure to select purchase request(s) with no or cancelled purchase order only.&quot;</expression>
+        <expression>&quot;You selected &lt;b&gt;&quot; + TEXT({!intPRWithExistingPO}) + &quot;&lt;/b&gt; purchase request(s) with purchase order. Make sure to select purchase request(s) with no or cancelled purchase order only. &lt;br /&gt;&lt;br /&gt;&quot;</expression>
     </formulas>
     <formulas>
         <name>intCheckError</name>
@@ -296,8 +618,8 @@
     <loops>
         <name>Loop_each_PR</name>
         <label>Loop each PR</label>
-        <locationX>336</locationX>
-        <locationY>158</locationY>
+        <locationX>732</locationX>
+        <locationY>134</locationY>
         <collectionReference>selectedPurchaseRequests</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -329,8 +651,8 @@
     <screens>
         <name>PO_Creation_Error</name>
         <label>PO Creation Error</label>
-        <locationX>182</locationX>
-        <locationY>1502</locationY>
+        <locationX>446</locationX>
+        <locationY>2042</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -366,8 +688,8 @@
     <screens>
         <name>PO_Creation_Successful</name>
         <label>PO Creation Successful</label>
-        <locationX>490</locationX>
-        <locationY>1070</locationY>
+        <locationX>1018</locationX>
+        <locationY>1250</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -389,15 +711,52 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>210</locationX>
+        <locationX>606</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Loop_each_PR</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
+    <variables>
+        <name>AccountBrandId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>BrandName associated with Purchase Order</description>
+        <name>AccountBrandName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>intPRWithDiffAccBrand</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
     <variables>
         <name>intPRWithExistingPO</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <name>intPRWithNoAccBrand</name>
         <dataType>Number</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

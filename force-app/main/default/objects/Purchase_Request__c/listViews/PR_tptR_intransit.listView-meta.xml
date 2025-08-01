@@ -13,22 +13,22 @@
     <columns>CREATEDBY_USER</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>Destination_Store__c</field>
-        <operation>contains</operation>
-        <value>Rma HV,transport - roma</value>
+        <field>Cost_Allocation_Unit__c</field>
+        <operation>equals</operation>
+        <value>transport - roma</value>
     </filters>
     <filters>
         <field>Status__c</field>
         <operation>equals</operation>
         <value>In Transit</value>
     </filters>
-    <label>Rma HV | In Transit</label>
+    <label>TPT | Roma | In Transit</label>
     <sharedTo>
         <group>Electrician</group>
         <group>Fabrication</group>
         <group>Managing_Director</group>
-        <group>Mechanics_Roma</group>
-        <group>Projects_and_Maintenance</group>
+        <group>Mechanics</group>
+        <group>Projects</group>
         <group>Purchasing</group>
         <group>Transport</group>
     </sharedTo>

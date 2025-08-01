@@ -15,9 +15,9 @@
     <columns>CREATEDBY_USER</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>Destination_Store__c</field>
+        <field>Cost_Allocation_Unit__c</field>
         <operation>equals</operation>
-        <value>flushby 2</value>
+        <value>Flushby 2</value>
     </filters>
     <filters>
         <field>Status__c</field>

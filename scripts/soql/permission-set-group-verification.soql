@@ -1,0 +1,48 @@
+-- VERIFICATION QUERIES for Permission Set Group Assignment
+-- Run these in Developer Console or Workbench to verify before/after deployment
+
+-- 1. Check Permission Set details
+SELECT Id, Name, DeveloperName, Type
+FROM PermissionSet 
+WHERE Name = 'Purchase Request Standard User Permission Set';
+
+-- 2. Check Permission Set Group details  
+SELECT Id, DeveloperName, MasterLabel, Status
+FROM PermissionSetGroup 
+WHERE DeveloperName = 'Purchase_Request_Standard_User_Permission_Group';
+
+-- 3. Current users in Permission Set
+SELECT psa.Id, psa.AssigneeId, u.Username, u.Name, u.IsActive
+FROM PermissionSetAssignment psa
+JOIN User u ON u.Id = psa.AssigneeId
+JOIN PermissionSet ps ON ps.Id = psa.PermissionSetId
+WHERE ps.Name = 'Purchase Request Standard User Permission Set'
+AND u.IsActive = true
+ORDER BY u.Username;
+
+-- 4. Current users in Permission Set Group
+SELECT psga.Id, psga.AssigneeId, u.Username, u.Name, u.IsActive
+FROM PermissionSetGroupAssignment psga
+JOIN User u ON u.Id = psga.AssigneeId
+JOIN PermissionSetGroup psg ON psg.Id = psga.PermissionSetGroupId
+WHERE psg.DeveloperName = 'Purchase_Request_Standard_User_Permission_Group'
+AND u.IsActive = true
+ORDER BY u.Username;
+
+-- 5. Users in Permission Set but NOT in Permission Set Group (gap analysis)
+SELECT u.Id, u.Username, u.Name
+FROM User u
+WHERE u.Id IN (
+    SELECT psa.AssigneeId
+    FROM PermissionSetAssignment psa
+    JOIN PermissionSet ps ON ps.Id = psa.PermissionSetId
+    WHERE ps.Name = 'Purchase Request Standard User Permission Set'
+)
+AND u.Id NOT IN (
+    SELECT psga.AssigneeId
+    FROM PermissionSetGroupAssignment psga
+    JOIN PermissionSetGroup psg ON psg.Id = psga.PermissionSetGroupId
+    WHERE psg.DeveloperName = 'Purchase_Request_Standard_User_Permission_Group'
+)
+AND u.IsActive = true
+ORDER BY u.Username;

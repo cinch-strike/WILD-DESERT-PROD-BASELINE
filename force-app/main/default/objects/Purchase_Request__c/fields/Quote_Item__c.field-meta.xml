@@ -2,12 +2,13 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Quote_Item__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
-    <label>Quote Item</label>
+    <label>Quote Item - Not Needed</label>
     <referenceTo>Quote_Item__c</referenceTo>
     <relationshipLabel>Purchase Requests</relationshipLabel>
     <relationshipName>Purchase_Requests</relationshipName>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
-    <trackHistory>false</trackHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
     <type>Lookup</type>
 </CustomField>

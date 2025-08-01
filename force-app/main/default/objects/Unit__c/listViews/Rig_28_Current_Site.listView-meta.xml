@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rig_28_Current_Site</fullName>
+    <columns>Unit_Type__c</columns>
+    <columns>NAME</columns>
+    <columns>Mobile__c</columns>
+    <columns>Email__c</columns>
+    <columns>Client__c</columns>
+    <columns>Site__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>equals</operation>
+        <value>Rig 10</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Unit__c.Location</value>
+    </filters>
+    <label>Rig #28 - Current Site</label>
+    <sharedTo>
+        <group>Camp_Supervisor</group>
+        <group>Finance</group>
+        <group>Managing_Director</group>
+        <group>OPs_super</group>
+        <group>Rig_28</group>
+    </sharedTo>
+</ListView>

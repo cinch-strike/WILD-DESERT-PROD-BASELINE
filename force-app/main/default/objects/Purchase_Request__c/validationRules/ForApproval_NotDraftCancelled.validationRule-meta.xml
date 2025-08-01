@@ -4,7 +4,7 @@
     <active>true</active>
     <errorConditionFormula>AND(
     ISCHANGED(Status__c ) ,
-    ISPICKVAL( Status__c , &apos;For Approval&apos;) ,
+    ISPICKVAL( Status__c , &apos;Submitted&apos;) ,
     NOT(ISPICKVAL( PRIORVALUE(Status__c), &apos;Draft&apos;)),
     NOT(ISPICKVAL( PRIORVALUE(Status__c), &apos;Cancelled&apos;))
 )</errorConditionFormula>
