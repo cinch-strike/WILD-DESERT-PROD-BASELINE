@@ -16,19 +16,19 @@
     <columns>CREATEDBY_USER</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>Destination_Store__c</field>
+        <field>CREATEDBY_USER</field>
         <operation>contains</operation>
-        <value>Rma Fab,Fab</value>
+        <value>roma.fab</value>
     </filters>
     <filters>
         <field>Status__c</field>
         <operation>equals</operation>
-        <value>Completed</value>
+        <value>For Ordering</value>
     </filters>
     <label>TR | Fab Roma | In Transit</label>
     <sharedTo>
         <group>Fabrication</group>
-        <group>Projects_and_Maintenance</group>
+        <group>Projects</group>
         <group>Purchasing</group>
     </sharedTo>
 </ListView>

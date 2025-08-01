@@ -1,5 +1,6 @@
 public with sharing class PRCreationScreenController {
     public PRCreationScreenController() {}
+     
 
     @AuraEnabled
     public static List<sObject> getFullItemMasterList(String value) {
@@ -15,7 +16,7 @@ public with sharing class PRCreationScreenController {
         List<sObject> sObjectsList = new List<sObject>();
         
         //BUILD SOSL STRING AND PERFORM SOSL ON INVENTORY ITEM OBJECT
-        String soslQuery = 'FIND \'' + String.escapeSingleQuotes(value) + '\' IN ALL FIELDS RETURNING Inventory_Item__c (Id, Name, Store_Item_Code__c, Supplier_Part_Number__c, Active__c, Cost_Price__c, Cost_Price_formula__c, Non_Searchable_Item__c WHERE Active__c = TRUE AND Non_Searchable_Item__c = FALSE)';
+        String soslQuery = 'FIND \'' + String.escapeSingleQuotes(value) + '\' IN ALL FIELDS RETURNING Inventory_Item__c (Id, Name, Store_Item_Code__c, Supplier_Part_Number__c, Active__c, Cost_Price__c, Cost_Price_formula__c, Non_Searchable_Item__c,PR_Price_Override__c WHERE Active__c = TRUE AND Non_Searchable_Item__c = FALSE)';
         sObjectsList = Search.query(soslQuery).get(0);
                                                  
         return sObjectsList;
@@ -23,9 +24,10 @@ public with sharing class PRCreationScreenController {
 
     @AuraEnabled
     public static List<Unit__c> getValidUnits(){
-        String UserId = UserInfo.getUserId();
-        List<User> returnedUserInfo = [select Id, Name FROM User WHERE Id =: UserId and Limit_to_Units_I_am_PR_Approver__c = TRUE WITH SECURITY_ENFORCED];
         List<Unit__c> returnedUnitList = new List<Unit__c>();
+        String UserId = UserInfo.getUserId();
+        /* 20 April 2023: Using the Unit Assignment Object
+        List<User> returnedUserInfo = [select Id, Name FROM User WHERE Id =: UserId and Limit_to_Units_I_am_PR_Approver__c = TRUE WITH SECURITY_ENFORCED];
         List<Unit__c> assignedUnitList = [select Id, Name FROM Unit__c WHERE Unit_Manager__c =: UserId and Purchase_Request_Approver__c != '' WITH SECURITY_ENFORCED];
         if(returnedUserInfo.isEmpty()){    
             if(assignedUnitList.isEmpty()){
@@ -37,7 +39,16 @@ public with sharing class PRCreationScreenController {
         }
         else{
             returnedUnitList = [Select Id, Name FROM Unit__c WHERE Purchase_Request_Approver__c =: UserId and RecordType.Name = 'Location' and Status__c = 'Active' and Destination_Unit__c = true WITH SECURITY_ENFORCED ORDER BY Name ];
-        }                             
+        }*/
+        List<Unit_Assignment__c> assignmentList  = [SELECT Id, User__c, Unit__c FROM Unit_Assignment__c WHERE Active__c = TRUE AND User__c = : UserId];
+        system.debug('## assignmentList: ' + assignmentList);
+        Set<Id> unitIdSet = new Set<Id>();
+        for (Unit_Assignment__c ua : assignmentList){
+            unitIdSet.add(ua.Unit__c);
+        }
+        returnedUnitList = [select Id, Name FROM Unit__c WHERE Id IN :unitIdSet WITH SECURITY_ENFORCED];
+        system.debug('## returnedUnitList: ' + returnedUnitList);
+
         return returnedUnitList;
     }
 
@@ -122,8 +133,7 @@ public with sharing class PRCreationScreenController {
         Purchase_Request__c pr = new Purchase_Request__c();
         pr.Status__c = 'Draft';
         pr.Quantity__c = quantity;
-        //pr.PR_Cost_Price_GST_exc__c = prCostPrice;  01 DEC 2022: Code for new Cost Price
-        pr.Quoted_Cost_Price__c = prCostPrice; //01 DEC 2022: Remove code for new Cost Price
+        pr.PR_Cost_Price_GST_exc__c = prCostPrice;  //01 DEC 2022: Code for new Cost Price
         pr.Staff_Name__c = staffName;
         pr.Asset__c = assetId;
         pr.Work_Order__c = workOrderId;
@@ -164,9 +174,8 @@ public with sharing class PRCreationScreenController {
 
         try {
             insert pr;
-            //UPDATED QUERY - JOAL TO INCLUDE NEW FIELDS
-            //01 DEC 2022: Code for new Cost Price --> pr = [select Id, Status__c,Quantity__c,Name,Item__c,Item_Name_Formula__c, Item__r.Name,New_Item_Name__c, PR_Cost_Price_GST_exc__c, Total_Cost_Price_GST_exc__c from Purchase_Request__c where Id = :pr.Id WITH SECURITY_ENFORCED LIMIT 1];
-            pr = [select Id, Status__c,Quantity__c,Name,Item__c,Item_Name_Formula__c, Item__r.Name,New_Item_Name__c, Cost_Price_GST_exc__c, Total_Cost_Price_GST_exc__c from Purchase_Request__c where Id = :pr.Id WITH SECURITY_ENFORCED LIMIT 1];
+            
+            pr = [select Id, Status__c,Quantity__c,Name,Item__c,Item_Name_Formula__c, Item__r.Name,New_Item_Name__c, PR_Cost_Price_GST_exc__c, Total_Cost_Price_GST_exc__c from Purchase_Request__c where Id = :pr.Id LIMIT 1];
         }
         catch (DmlException e){
             system.debug('## Error: ' + e.getMessage());
@@ -181,11 +190,13 @@ public with sharing class PRCreationScreenController {
         for (Purchase_Request__c eachPR : prsToSubmit){
                 Purchase_Request__c tempPr = new Purchase_Request__c();
                 tempPr.id = eachPr.id;
-                tempPr.Status__c = 'For Approval';
+                tempPr.Status__c=Label.PR_Submitted;
+                //tempPr.Status__c = 'For Approval';
                 prListToUpdate.add(tempPr);
                 
         }
-        update prListToUpdate;
+        if(prListToUpdate.size()>0)
+            update prListToUpdate;
     }
 
     @AuraEnabled
@@ -207,7 +218,7 @@ public with sharing class PRCreationScreenController {
     public static List<Purchase_Request__c> fetchDraftPRs(){
         //UPDATED BY JOAL - INCLUDED FIELDS WHEN QUERYING
         List<Purchase_Request__c> prList = [SELECT Id, Name, Item_Name_Formula__c, Source_Store__r.Name, Destination_Store__r.Name, Status__c, Quantity__c, 
-                         Item__r.Name, New_Item_Name__c, Item__c, Cost_Price_GST_exc__c, Total_Cost_Price_GST_exc__c // PR_Cost_Price_GST_exc__c, Total_Cost_Price_GST_exc__c 01 DEC 2022: Code for new Cost Price
+                         Item__r.Name, New_Item_Name__c, Item__c, Cost_Price_GST_exc__c, PR_Cost_Price_GST_exc__c, Total_Cost_Price_GST_exc__c 
                     FROM Purchase_Request__c 
                     WHERE CreatedById = :UserInfo.getUserId()
                     AND Status__c = 'Draft'

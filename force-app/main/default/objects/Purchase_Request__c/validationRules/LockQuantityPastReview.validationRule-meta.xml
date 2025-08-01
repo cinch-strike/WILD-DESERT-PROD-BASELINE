@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LockQuantityPastReview</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISCHANGED(Quantity__c)
+&amp;&amp;
+NOT(ISPICKVAL(Status__c, &apos;Draft&apos;))
+&amp;&amp;
+NOT(ISPICKVAL(Status__c, &apos;Submitted&apos;))
+&amp;&amp;
+NOT(ISPICKVAL(Status__c, &apos;Purchasing Review&apos;))
+&amp;&amp;
+NOT(ISPICKVAL(Status__c, &apos;Approver Review&apos;))
+&amp;&amp;
+NOT(
+ISPICKVAL(Status__c, &apos;For Ordering&apos;)
+&amp;&amp;  (PO_Status__c = &apos;Sent to Supplier&apos; || PO_Status__c = &apos;Partially Fulfilled&apos;)
+)</errorConditionFormula>
+    <errorDisplayField>Quantity__c</errorDisplayField>
+    <errorMessage>You are no longer allowed to edit quantity.</errorMessage>
+</ValidationRule>

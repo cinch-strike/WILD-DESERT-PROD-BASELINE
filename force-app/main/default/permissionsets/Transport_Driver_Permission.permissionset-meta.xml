@@ -14,6 +14,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Template_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Active_Driver__c.Best_Contact__c</field>
         <readable>true</readable>
@@ -1490,6 +1495,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Purchase_Request__c.Destination_Brand__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Purchase_Request__c.ETA__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1724,6 +1734,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Unit__c.Account_Brand__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Unit__c.Business_Operations_Officer__c</field>
         <readable>true</readable>
@@ -1741,6 +1756,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Unit__c.PR_PO_Admin__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Unit__c.Second_Approver_Limit__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

@@ -8,13 +8,13 @@
     <columns>Asset__c</columns>
     <columns>Supplier__c</columns>
     <columns>PO_Number__c</columns>
-    <columns>Status__c</columns>
     <columns>Quantity__c</columns>
     <columns>Cost_Price_GST_exc__c</columns>
     <columns>Total_Cost_Price_GST_exc__c</columns>
+    <columns>Notes__c</columns>
     <columns>Cost_Allocation_Unit__c</columns>
+    <columns>Status__c</columns>
     <columns>PO_Link__c</columns>
-    <columns>PO_Date__c</columns>
     <columns>CREATEDBY_USER</columns>
     <filterScope>Everything</filterScope>
     <filters>
@@ -32,8 +32,8 @@
         <group>Electrician</group>
         <group>Fabrication</group>
         <group>Managing_Director</group>
-        <group>Mechanics_Roma</group>
-        <group>Projects_and_Maintenance</group>
+        <group>Mechanics</group>
+        <group>Projects</group>
         <group>Purchasing</group>
         <group>YLE</group>
     </sharedTo>

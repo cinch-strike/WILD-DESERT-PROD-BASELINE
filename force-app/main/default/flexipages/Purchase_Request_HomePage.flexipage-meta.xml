@@ -13,6 +13,204 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>filterName</name>
+                    <value>PR_3_All_For_Quoting</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideActionBar</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideSearchBar</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>pageSize</name>
+                    <value>5</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:filterListCard</componentName>
+                <identifier>flexipage_filterListCard18</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-g4lpypx42me</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-g4lpypx42me</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>For Quoting [Alice]</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>name</name>
+                    <value>accordionSection--s6wvmncv8n</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:accordionSection</componentName>
+                <identifier>flexipage_accordionSection16</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-4lhhwd3tpky</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>enableInlineEdit</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>entityName</name>
+                    <value>Purchase_Request__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>filterName</name>
+                    <value>PR_4_All_For_Quoting</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideActionBar</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideSearchBar</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>pageSize</name>
+                    <value>5</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:filterListCard</componentName>
+                <identifier>flexipage_filterListCard</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-e941e50a-d58b-4d8f-a57a-4fb2e0e94a34</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-e941e50a-d58b-4d8f-a57a-4fb2e0e94a34</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>For Item Approval [Alice]</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>name</name>
+                    <value>accordionSection2</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:accordionSection</componentName>
+                <identifier>flexipage_accordionSection2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-f2825ad9-84cd-491e-a8a7-a4ac37436a73</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>enableInlineEdit</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>entityName</name>
+                    <value>Purchase_Request__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>filterName</name>
+                    <value>PR_6_All_For_Ordering</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideActionBar</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideSearchBar</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>pageSize</name>
+                    <value>5</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:filterListCard</componentName>
+                <identifier>flexipage_filterListCard17</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>enableInlineEdit</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>entityName</name>
+                    <value>Purchase_Request__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>filterName</name>
+                    <value>PR_6_All_Sent_to_Supplier</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideActionBar</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideSearchBar</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>pageSize</name>
+                    <value>5</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:filterListCard</componentName>
+                <identifier>flexipage_filterListCard3</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-0qz0ynxvvihj</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-0qz0ynxvvihj</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>For Ordering [Jacey]</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>name</name>
+                    <value>accordionSection--aabeugqm308</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:accordionSection</componentName>
+                <identifier>flexipage_accordionSection19</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-hbfph5s2na7</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>enableInlineEdit</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>entityName</name>
+                    <value>Purchase_Request__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>filterName</name>
                     <value>Purchase_Requests_Need_My_Approval</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -65,7 +263,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;strong style=&quot;font-size: 10pt; font-family: tahoma, sans-serif;&quot;&gt;Monday [Quick Links - Click]&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://forms.monday.com/forms/125f2ff501a2f85f160cace54c4ae299?r=use1&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 9pt; font-family: Verdana, sans-serif; color: rgb(5, 99, 193);&quot;&gt;IT Support - WD Systems [Salesforce, Monday, Dropbox]&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://forms.monday.com/forms/39748dba593f9fdee7f825518df37af4?r=use1&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 9pt; font-family: Verdana, sans-serif; color: rgb(0, 120, 215);&quot;&gt;IT Support - WLD Managed TSD [Tech]&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://wilddesert.monday.com/boards/1201214391/views/88090878&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 9pt; font-family: Verdana, sans-serif;&quot;&gt;Monday - Ops Action Tracker&lt;/a&gt;&lt;/p&gt;</value>
+                    <value>&lt;p&gt;&lt;b style=&quot;font-size: 20px;&quot;&gt;Purchase Request Home&lt;/b&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText3</identifier>
@@ -75,22 +273,59 @@
             <componentInstance>
                 <componentName>PRCreationScreen</componentName>
                 <identifier>c_PRCreationScreen1</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>accordionSections</name>
+                    <value>Facet-4lhhwd3tpky</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:accordion</componentName>
+                <identifier>flexipage_accordion2</identifier>
                 <visibilityRule>
-                    <booleanFilter>1 AND 2 AND 3</booleanFilter>
                     <criteria>
-                        <leftValue>{!$User.UserRole.Name}</leftValue>
-                        <operator>NE</operator>
-                        <rightValue>Trade-Mechanic</rightValue>
+                        <leftValue>{!$User.FirstName}</leftValue>
+                        <operator>CONTAINS</operator>
+                        <rightValue>Alice</rightValue>
                     </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>accordionSections</name>
+                    <value>Facet-f2825ad9-84cd-491e-a8a7-a4ac37436a73</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:accordion</componentName>
+                <identifier>flexipage_accordion</identifier>
+                <visibilityRule>
                     <criteria>
-                        <leftValue>{!$User.UserRole.Name}</leftValue>
-                        <operator>NE</operator>
-                        <rightValue>Trade-Fabrication</rightValue>
+                        <leftValue>{!$User.FirstName}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Alice</rightValue>
                     </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>accordionSections</name>
+                    <value>Facet-hbfph5s2na7</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>defaultSectionName</name>
+                    <value>accordionSection--aabeugqm308</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:accordion</componentName>
+                <identifier>flexipage_accordion4</identifier>
+                <visibilityRule>
                     <criteria>
-                        <leftValue>{!$User.UserRole.Name}</leftValue>
-                        <operator>NE</operator>
-                        <rightValue>Trade-Electrician</rightValue>
+                        <leftValue>{!$User.FirstName}</leftValue>
+                        <operator>CONTAINS</operator>
+                        <rightValue>Jacey</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
@@ -108,51 +343,18 @@
                 <componentName>flexipage:accordion</componentName>
                 <identifier>flexipage_accordion5</identifier>
                 <visibilityRule>
-                    <booleanFilter>1 AND 2 AND 3</booleanFilter>
+                    <booleanFilter>1 AND 2</booleanFilter>
                     <criteria>
-                        <leftValue>{!$User.UserRole.Name}</leftValue>
+                        <leftValue>{!$User.FirstName}</leftValue>
                         <operator>NE</operator>
-                        <rightValue>Trade-Mechanic</rightValue>
+                        <rightValue>Jacey</rightValue>
                     </criteria>
                     <criteria>
-                        <leftValue>{!$User.UserRole.Name}</leftValue>
+                        <leftValue>{!$User.FirstName}</leftValue>
                         <operator>NE</operator>
-                        <rightValue>Trade-Fabrication</rightValue>
-                    </criteria>
-                    <criteria>
-                        <leftValue>{!$User.UserRole.Name}</leftValue>
-                        <operator>NE</operator>
-                        <rightValue>Trade-Electrician</rightValue>
+                        <rightValue>Alice</rightValue>
                     </criteria>
                 </visibilityRule>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>dashboardName</name>
-                    <value>xyjlTVBFqCMAueDIYjIZPWzIIGwtQg</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>hideOnError</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>desktopDashboards:embeddedDashboard</componentName>
-                <identifier>desktopDashboards_embeddedDashboard</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>dashboardName</name>
-                    <value>xyjlTVBFqCMAueDIYjIZPWzIIGwtQg1</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>hideOnError</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>desktopDashboards:embeddedDashboard</componentName>
-                <identifier>desktopDashboards_embeddedDashboard2</identifier>
             </componentInstance>
         </itemInstances>
         <name>main</name>

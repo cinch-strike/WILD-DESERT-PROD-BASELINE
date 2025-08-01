@@ -29,7 +29,7 @@
     <label>TR | Elec Moomba | Rejected (Cancelled)</label>
     <sharedTo>
         <group>Electrician</group>
-        <group>Projects_and_Maintenance</group>
+        <group>Projects</group>
         <group>Purchasing</group>
     </sharedTo>
 </ListView>

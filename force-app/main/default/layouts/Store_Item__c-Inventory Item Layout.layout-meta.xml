@@ -151,6 +151,7 @@
         <fields>NAME</fields>
         <fields>Quantity__c</fields>
         <fields>Destination_Store__c</fields>
+        <fields>Status__c</fields>
         <relatedList>Purchase_Request__c.Destination_Store_Item__c</relatedList>
     </relatedLists>
     <relatedLists>

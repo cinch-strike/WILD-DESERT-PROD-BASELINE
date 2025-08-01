@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Units_Inactive</fullName>
+    <columns>Unit_Type__c</columns>
+    <columns>NAME</columns>
+    <columns>Cost_Allocation_Unit__c</columns>
+    <columns>Destination_Unit__c</columns>
+    <columns>Purchase_Request_Approver__c</columns>
+    <columns>Unit_Manager__c</columns>
+    <columns>Client__c</columns>
+    <columns>Site__c</columns>
+    <columns>Email__c</columns>
+    <columns>Mobile__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Unit__c.Location</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Scheduled Start,Project Incomplete,Inactive</value>
+    </filters>
+    <label>All Units - Inactive</label>
+    <sharedTo>
+        <group>Managing_Director</group>
+    </sharedTo>
+</ListView>

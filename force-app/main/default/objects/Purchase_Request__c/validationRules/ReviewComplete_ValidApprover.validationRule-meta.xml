@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ReviewComplete_ValidApprover</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(PRIORVALUE(Status__c), &apos;Purchasing Review&apos;)
+&amp;&amp;
+ISPICKVAL(Status__c, &apos;For Approval - Review Complete&apos;)
+&amp;&amp;
+NOT($Permission.Purchase_Request_Item_Reviewer)</errorConditionFormula>
+    <errorMessage>Only authorised purchasing team members are allowed to mark this record as Review Complete.</errorMessage>
+</ValidationRule>

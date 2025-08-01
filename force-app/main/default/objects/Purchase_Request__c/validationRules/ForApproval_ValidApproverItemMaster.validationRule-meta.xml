@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ForApproval_ValidApproverItemMaster</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(PRIORVALUE(Status__c), &apos;Submitted&apos;)
+&amp;&amp;
+ISPICKVAL(Status__c, &apos;For Approval&apos;)
+&amp;&amp;
+$User.Id !=  First_Approver__c
+&amp;&amp;
+NOT(New_Item_Formula__c)</errorConditionFormula>
+    <errorMessage>Only the first approver is allowed to approve/reject this record.</errorMessage>
+</ValidationRule>

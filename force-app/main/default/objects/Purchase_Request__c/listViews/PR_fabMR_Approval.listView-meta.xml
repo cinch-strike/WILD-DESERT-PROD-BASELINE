@@ -17,9 +17,9 @@
     <columns>CREATEDBY_USER</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>Destination_Store__c</field>
+        <field>CREATEDBY_USER</field>
         <operation>contains</operation>
-        <value>Rma Fab,Fab</value>
+        <value>roma.fab</value>
     </filters>
     <filters>
         <field>Status__c</field>
@@ -30,7 +30,7 @@
     <sharedTo>
         <group>Fabrication</group>
         <group>Managing_Director</group>
-        <group>Projects_and_Maintenance</group>
+        <group>Projects</group>
         <group>Purchasing</group>
     </sharedTo>
 </ListView>

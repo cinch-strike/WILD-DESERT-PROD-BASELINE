@@ -30,8 +30,7 @@
     <sharedTo>
         <group>Electrician</group>
         <group>Managing_Director</group>
-        <group>OPs_super</group>
-        <group>Projects_and_Maintenance</group>
+        <group>Projects</group>
         <group>Purchasing</group>
     </sharedTo>
 </ListView>

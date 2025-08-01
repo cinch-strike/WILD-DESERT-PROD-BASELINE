@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission Set Group for Purchase Order Send functionality</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Purchase Order - Send Group</label>
+    <mutingPermissionSets>Purchase_Order_Send_Group_Muted</mutingPermissionSets>
+    <permissionSets>Purchase_Order_Send</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

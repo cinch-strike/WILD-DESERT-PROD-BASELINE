@@ -15,7 +15,7 @@
     <columns>CREATEDBY_USER</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>Destination_Store__c</field>
+        <field>Cost_Allocation_Unit__c</field>
         <operation>equals</operation>
         <value>camp 8</value>
     </filters>
@@ -31,8 +31,8 @@
         <group>Electrician</group>
         <group>Fabrication</group>
         <group>Managing_Director</group>
-        <group>Mechanics_Roma</group>
-        <group>Projects_and_Maintenance</group>
+        <group>Mechanics</group>
+        <group>Projects</group>
         <group>Purchasing</group>
     </sharedTo>
 </ListView>

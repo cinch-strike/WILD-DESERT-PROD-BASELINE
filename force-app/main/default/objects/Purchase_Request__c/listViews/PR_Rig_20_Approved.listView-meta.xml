@@ -3,36 +3,37 @@
     <fullName>PR_Rig_20_Approved</fullName>
     <columns>NAME</columns>
     <columns>CREATED_DATE</columns>
-    <columns>Quantity__c</columns>
     <columns>Item_Name_Hyperlink__c</columns>
+    <columns>Bin_Location__c</columns>
     <columns>Work_Order__c</columns>
     <columns>Asset__c</columns>
-    <columns>Notes__c</columns>
     <columns>Supplier__c</columns>
-    <columns>Status__c</columns>
+    <columns>Quantity__c</columns>
     <columns>Cost_Price_GST_exc__c</columns>
     <columns>Total_Cost_Price_GST_exc__c</columns>
-    <columns>Purchase_Order__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Status__c</columns>
+    <columns>PO_Link__c</columns>
     <columns>CREATEDBY_USER</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>Destination_Store__c</field>
+        <field>Cost_Allocation_Unit__c</field>
         <operation>equals</operation>
-        <value>rig 20</value>
+        <value>Rig 20</value>
     </filters>
     <filters>
         <field>Status__c</field>
         <operation>equals</operation>
         <value>For Ordering,Pick List,Packing List</value>
     </filters>
-    <label>Rig 20 | Approved - PO Required</label>
+    <label>Rig 20 | Approved</label>
     <sharedTo>
         <group>Electrician</group>
         <group>Fabrication</group>
         <group>Managing_Director</group>
-        <group>Mechanics_Roma</group>
+        <group>Mechanics</group>
         <group>OPs_super</group>
-        <group>Projects_and_Maintenance</group>
+        <group>Projects</group>
         <group>Purchasing</group>
         <group>Rig_20</group>
     </sharedTo>

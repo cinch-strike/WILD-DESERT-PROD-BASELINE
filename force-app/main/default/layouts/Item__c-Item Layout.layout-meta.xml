@@ -29,10 +29,6 @@
                 <behavior>Edit</behavior>
                 <field>Add_to_NDT__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Item_Type__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -90,13 +86,11 @@
         <fields>NAME</fields>
         <fields>Start_Date__c</fields>
         <fields>Job_Item_Description__c</fields>
-        <fields>Client_Contract_Reference__c</fields>
         <fields>Item_Frequency__c</fields>
+        <fields>Service_Type__c</fields>
         <fields>Rate__c</fields>
         <fields>Contract__c</fields>
-        <fields>Account__c</fields>
         <fields>Active__c</fields>
-        <fields>LAST_UPDATE</fields>
         <relatedList>Contract_Item__c.Item_Name__c</relatedList>
         <sortField>Start_Date__c</sortField>
         <sortOrder>Desc</sortOrder>

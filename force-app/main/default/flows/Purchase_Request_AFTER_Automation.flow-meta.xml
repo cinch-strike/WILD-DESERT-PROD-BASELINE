@@ -1,35 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
-        <name>Approve_a_Record</name>
-        <label>Approve a Record</label>
-        <locationX>5418</locationX>
-        <locationY>1055</locationY>
-        <actionName>ApprovalApprove</actionName>
-        <actionType>apex</actionType>
-        <connector>
-            <targetReference>Process_PR_After_Approval</targetReference>
-        </connector>
-        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
-        <inputParameters>
-            <name>approvalComments</name>
-            <value>
-                <elementReference>strApprovalComment</elementReference>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>recordId</name>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputParameters>
-        <nameSegment>ApprovalApprove</nameSegment>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </actionCalls>
-    <actionCalls>
         <name>Dispute_Chatter</name>
         <label>Dispute Chatter</label>
-        <locationX>2778</locationX>
+        <locationX>1106</locationX>
         <locationY>1391</locationY>
         <actionName>chatterPost</actionName>
         <actionType>chatterPost</actionType>
@@ -52,89 +26,8 @@
         <nameSegment>chatterPost</nameSegment>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
-    <actionCalls>
-        <name>Reject_a_Record</name>
-        <label>Reject a Record</label>
-        <locationX>5682</locationX>
-        <locationY>1055</locationY>
-        <actionName>ApprovalReject</actionName>
-        <actionType>apex</actionType>
-        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
-        <inputParameters>
-            <name>approvalComments</name>
-            <value>
-                <elementReference>strApprovalComment</elementReference>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>recordId</name>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputParameters>
-        <nameSegment>ApprovalReject</nameSegment>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </actionCalls>
-    <actionCalls>
-        <name>Submit_for_Approval</name>
-        <label>Submit for Approval</label>
-        <locationX>1430</locationX>
-        <locationY>1919</locationY>
-        <actionName>submit</actionName>
-        <actionType>submit</actionType>
-        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
-        <inputParameters>
-            <name>processDefinitionNameOrId</name>
-            <value>
-                <elementReference>Submit_for_Approval.entityId</elementReference>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>objectId</name>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>comment</name>
-            <value>
-                <stringValue>For Approval</stringValue>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>submitterId</name>
-            <value>
-                <elementReference>$Record.CreatedBy.Id</elementReference>
-            </value>
-        </inputParameters>
-        <nameSegment>submit</nameSegment>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </actionCalls>
     <apiVersion>52.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
-    <assignments>
-        <name>Assign_Approval_Status</name>
-        <label>Assign Approval Status</label>
-        <locationX>5682</locationX>
-        <locationY>695</locationY>
-        <assignmentItems>
-            <assignToReference>strApproveReject</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Approve_Reject__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>strApprovalComment</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Approval_Comments__c</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Update_PR_Clear_Approval</targetReference>
-        </connector>
-    </assignments>
     <assignments>
         <name>Assign_Destination_Store_Item</name>
         <label>Assign Destination Store Item</label>
@@ -176,13 +69,13 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Assign_PR_Approver_from_Unit</targetReference>
+            <targetReference>Update_Purchase_Request</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Assign_Destination_Store_Item_Completed</name>
         <label>Assign Destination Store Item</label>
-        <locationX>3284</locationX>
+        <locationX>1612</locationX>
         <locationY>815</locationY>
         <assignmentItems>
             <assignToReference>$Record.Destination_Store_Item__c</assignToReference>
@@ -200,23 +93,6 @@
         </assignmentItems>
         <connector>
             <targetReference>Check_Completion_Status</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Assign_For_Ordering</name>
-        <label>Assign For Ordering</label>
-        <locationX>2008</locationX>
-        <locationY>1547</locationY>
-        <assignmentItems>
-            <assignToReference>$Record.Status__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>For Ordering</stringValue>
-            </value>
-        </assignmentItems>
-        <connector>
-            <isGoTo>true</isGoTo>
-            <targetReference>Update_Purchase_Request</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -239,30 +115,13 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Assign_PR_Approver_from_Unit</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Assign_Pick_List</name>
-        <label>Assign Pick List</label>
-        <locationX>2250</locationX>
-        <locationY>1055</locationY>
-        <assignmentItems>
-            <assignToReference>$Record.Status__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Pick List</stringValue>
-            </value>
-        </assignmentItems>
-        <connector>
-            <isGoTo>true</isGoTo>
             <targetReference>Update_Purchase_Request</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Assign_PO_Items_equal_to_Quantity</name>
         <label>Assign PO Items (equal to Quantity)</label>
-        <locationX>4714</locationX>
+        <locationX>3042</locationX>
         <locationY>815</locationY>
         <assignmentItems>
             <assignToReference>strPOItemStatus</assignToReference>
@@ -292,7 +151,7 @@
     <assignments>
         <name>Assign_PO_Items_more_than_Quantity</name>
         <label>Assign PO Items (more than Quantity)</label>
-        <locationX>4978</locationX>
+        <locationX>3306</locationX>
         <locationY>815</locationY>
         <assignmentItems>
             <assignToReference>strPOItemStatus</assignToReference>
@@ -321,63 +180,9 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Assign_PR_Approver_from_Unit</name>
-        <label>Assign PR Approver from Unit</label>
-        <locationX>314</locationX>
-        <locationY>1031</locationY>
-        <assignmentItems>
-            <assignToReference>$Record.Purchase_Request_Approver__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Destination_Store__r.Purchase_Request_Approver__c</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Update_Purchase_Request</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Assign_Source_Store_and_Pick_List_status</name>
-        <label>Assign Source Store and Pick List status</label>
-        <locationX>842</locationX>
-        <locationY>1175</locationY>
-        <assignmentItems>
-            <assignToReference>$Record.Status__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Pick List</stringValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>$Record.Source_Store__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Destination_Store__r.Source_Store__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>$Record.Notes__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Bypass ordering</stringValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>$Record.Source_Store_Item__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Source_Store_Inventory_Item.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <isGoTo>true</isGoTo>
-            <targetReference>Update_Purchase_Request</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <name>Change_status_to_Dispute</name>
         <label>Change status to Dispute</label>
-        <locationX>3416</locationX>
+        <locationX>1744</locationX>
         <locationY>1979</locationY>
         <assignmentItems>
             <assignToReference>$Record.Status__c</assignToReference>
@@ -404,13 +209,13 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Assign_PR_Approver_from_Unit</targetReference>
+            <targetReference>Update_Purchase_Request</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Remove_Auto_PR</name>
         <label>Remove Auto-PR</label>
-        <locationX>4846</locationX>
+        <locationX>3174</locationX>
         <locationY>1391</locationY>
         <assignmentItems>
             <assignToReference>Get_Destination_Store_Item.Active_Auto_Purchase_Request__c</assignToReference>
@@ -426,7 +231,7 @@
     <assignments>
         <name>Update_for_Stock_Take</name>
         <label>Update for Stock Take</label>
-        <locationX>3658</locationX>
+        <locationX>1986</locationX>
         <locationY>1391</locationY>
         <assignmentItems>
             <assignToReference>$Record.Category__c</assignToReference>
@@ -457,7 +262,7 @@
     <decisions>
         <name>Check_Completion_Status</name>
         <label>Check Completion Status</label>
-        <locationX>3416</locationX>
+        <locationX>1744</locationX>
         <locationY>1031</locationY>
         <defaultConnector>
             <targetReference>Type_of_Transaction</targetReference>
@@ -502,63 +307,9 @@
         </rules>
     </decisions>
     <decisions>
-        <name>Check_for_Auto_Approve</name>
-        <label>Check for Auto-Approve</label>
-        <locationX>2008</locationX>
-        <locationY>935</locationY>
-        <defaultConnector>
-            <targetReference>Assign_Pick_List</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>For Pick List</defaultConnectorLabel>
-        <rules>
-            <name>Bypass_Ordering</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Destination_Store__r.By_pass_Ordering__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Item__r.Send_Directly_To_Order__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Get_Source_Store_Inventory_Item_1</targetReference>
-            </connector>
-            <label>Bypass Ordering</label>
-        </rules>
-        <rules>
-            <name>For_Ordering_AutoApprove</name>
-            <conditionLogic>or</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Send_Directly_To_Order__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Is_Source_Non_Inventory_Item__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Assign_For_Ordering</targetReference>
-            </connector>
-            <label>For Ordering</label>
-        </rules>
-    </decisions>
-    <decisions>
         <name>Check_if_Active_PR</name>
         <label>Check if Active PR</label>
-        <locationX>4978</locationX>
+        <locationX>3306</locationX>
         <locationY>1271</locationY>
         <defaultConnector>
             <targetReference>Update_Purchase_Request</targetReference>
@@ -583,7 +334,7 @@
     <decisions>
         <name>Check_PO_Item</name>
         <label>Check PO Item</label>
-        <locationX>4978</locationX>
+        <locationX>3306</locationX>
         <locationY>695</locationY>
         <defaultConnector>
             <targetReference>Check_if_Active_PR</targetReference>
@@ -637,7 +388,7 @@
     <decisions>
         <name>Check_Status</name>
         <label>Check Status</label>
-        <locationX>3262</locationX>
+        <locationX>2030</locationX>
         <locationY>575</locationY>
         <defaultConnectorLabel>N/A</defaultConnectorLabel>
         <rules>
@@ -654,22 +405,6 @@
                 <targetReference>is_Destination_Store_not_existing</targetReference>
             </connector>
             <label>Draft</label>
-        </rules>
-        <rules>
-            <name>For_Approval</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Status__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>For Approval</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>is_PR_Approver_not_the_Submitter</targetReference>
-            </connector>
-            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
-            <label>For Approval</label>
         </rules>
         <rules>
             <name>For_Ordering</name>
@@ -718,76 +453,26 @@
             <label>Completed</label>
         </rules>
         <rules>
-            <name>Cancelled</name>
+            <name>Canceled</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Status__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Cancelled</stringValue>
+                    <stringValue>Canceled</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>Check_PO_Item</targetReference>
             </connector>
             <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
-            <label>Cancelled</label>
-        </rules>
-        <rules>
-            <name>Mass_Approve_Reject</name>
-            <conditionLogic>(1 OR 2 OR 3 OR 4) AND 5 AND 6</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Status__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>For Approval</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Status__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>For Quoting</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Status__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>For Pricing Approval</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Status__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>For Item Approval</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Approve_Reject__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Approve_Reject__c</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue></stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Assign_Approval_Status</targetReference>
-            </connector>
-            <label>Mass Approve / Reject</label>
+            <label>Canceled</label>
         </rules>
     </decisions>
     <decisions>
         <name>If_Destination_Inventory_Item</name>
         <label>If Destination Inventory Item?</label>
-        <locationX>4054</locationX>
+        <locationX>2382</locationX>
         <locationY>1391</locationY>
         <defaultConnector>
             <isGoTo>true</isGoTo>
@@ -811,48 +496,9 @@
         </rules>
     </decisions>
     <decisions>
-        <name>is_By_Pass_Ordering_and_Existing_Item</name>
-        <label>is Bypass Ordering and Existing Item?</label>
-        <locationX>1128</locationX>
-        <locationY>815</locationY>
-        <defaultConnector>
-            <targetReference>Submit_for_Approval</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>No</defaultConnectorLabel>
-        <rules>
-            <name>Yes_bypassordering</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Destination_Store__r.By_pass_Ordering__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Item__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Item__r.Send_Directly_To_Order__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Get_Source_Store_Inventory_Item</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <decisions>
         <name>is_Destination_Store_Item_exists</name>
         <label>is Destination Store Item exists?</label>
-        <locationX>3416</locationX>
+        <locationX>1744</locationX>
         <locationY>695</locationY>
         <defaultConnector>
             <targetReference>Check_Completion_Status</targetReference>
@@ -922,117 +568,9 @@
         </rules>
     </decisions>
     <decisions>
-        <name>is_Enough_Stocks</name>
-        <label>is Enough Stocks?</label>
-        <locationX>974</locationX>
-        <locationY>1055</locationY>
-        <defaultConnector>
-            <targetReference>Submit_for_Approval</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>No</defaultConnectorLabel>
-        <rules>
-            <name>Yes_enoughstocks</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Source_Store_Inventory_Item</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Assign_Source_Store_and_Pick_List_status</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>is_Enough_Stocks_0</name>
-        <label>is Enough Stocks?</label>
-        <locationX>1766</locationX>
-        <locationY>1175</locationY>
-        <defaultConnector>
-            <targetReference>Assign_For_Ordering</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>No</defaultConnectorLabel>
-        <rules>
-            <name>Yes_enoughstocks_0</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Source_Store_Inventory_Item_1</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <isGoTo>true</isGoTo>
-                <targetReference>Assign_Source_Store_and_Pick_List_status</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>is_New_Item</name>
-        <label>is New Item?</label>
-        <locationX>1733</locationX>
-        <locationY>815</locationY>
-        <defaultConnector>
-            <targetReference>Check_for_Auto_Approve</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Existing Item</defaultConnectorLabel>
-        <rules>
-            <name>Yes_new_item</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.New_Item_Formula__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Submit_for_Approval</targetReference>
-            </connector>
-            <label>Yes, new item</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>is_PR_Approver_not_the_Submitter</name>
-        <label>is PR Approver not the Submitter?</label>
-        <locationX>1430</locationX>
-        <locationY>695</locationY>
-        <defaultConnector>
-            <targetReference>is_New_Item</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>No</defaultConnectorLabel>
-        <rules>
-            <name>Yes_withApprover</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Purchase_Request_Approver__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Is_Submitter_the_Approver__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>is_By_Pass_Ordering_and_Existing_Item</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <decisions>
         <name>is_User_existing</name>
         <label>is User existing?</label>
-        <locationX>2910</locationX>
+        <locationX>1238</locationX>
         <locationY>1271</locationY>
         <defaultConnector>
             <targetReference>Change_status_to_Dispute</targetReference>
@@ -1055,46 +593,9 @@
         </rules>
     </decisions>
     <decisions>
-        <name>Mass_Approval</name>
-        <label>Mass Approval</label>
-        <locationX>5682</locationX>
-        <locationY>935</locationY>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Approve</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Approve_Reject__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Approve</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Approve_a_Record</targetReference>
-            </connector>
-            <label>Approve</label>
-        </rules>
-        <rules>
-            <name>Reject</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Approve_Reject__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Reject</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Reject_a_Record</targetReference>
-            </connector>
-            <label>Reject</label>
-        </rules>
-    </decisions>
-    <decisions>
         <name>Type_of_Transaction</name>
         <label>Type of Transaction</label>
-        <locationX>3922</locationX>
+        <locationX>2250</locationX>
         <locationY>1151</locationY>
         <defaultConnector>
             <isGoTo>true</isGoTo>
@@ -1175,7 +676,7 @@
             <label>Purchase Request</label>
         </rules>
     </decisions>
-    <description>25 JULY 2022: Changed intPOItemCancelled and intPOItemStillFulfilled to decimal(2)</description>
+    <description>1 April 2023: Removed approval related early stages</description>
     <environments>Default</environments>
     <formulas>
         <name>intSourceItemStock</name>
@@ -1212,7 +713,7 @@
     <recordCreates>
         <name>Destination_Item_PO</name>
         <label>Destination Item - PO</label>
-        <locationX>3394</locationX>
+        <locationX>1722</locationX>
         <locationY>1271</locationY>
         <connector>
             <isGoTo>true</isGoTo>
@@ -1248,7 +749,7 @@
     <recordCreates>
         <name>Destination_Item_PR</name>
         <label>Destination Item - PR</label>
-        <locationX>3922</locationX>
+        <locationX>2250</locationX>
         <locationY>1511</locationY>
         <connector>
             <isGoTo>true</isGoTo>
@@ -1284,7 +785,7 @@
     <recordCreates>
         <name>Source_Item_PR</name>
         <label>Source Item - PR</label>
-        <locationX>4054</locationX>
+        <locationX>2382</locationX>
         <locationY>1271</locationY>
         <connector>
             <targetReference>If_Destination_Inventory_Item</targetReference>
@@ -1319,7 +820,7 @@
     <recordCreates>
         <name>Source_Item_Stock_Take</name>
         <label>Source Item - Stock Take</label>
-        <locationX>3658</locationX>
+        <locationX>1986</locationX>
         <locationY>1271</locationY>
         <connector>
             <targetReference>Update_for_Stock_Take</targetReference>
@@ -1354,7 +855,7 @@
     <recordLookups>
         <name>Get_Destination_Store_Item</name>
         <label>Get Destination Store Item</label>
-        <locationX>3262</locationX>
+        <locationX>2030</locationX>
         <locationY>455</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1382,7 +883,7 @@
     <recordLookups>
         <name>Get_Source_Inventory_Item</name>
         <label>Get Source Inventory Item</label>
-        <locationX>3262</locationX>
+        <locationX>2030</locationX>
         <locationY>335</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1408,93 +909,9 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <name>Get_Source_Store_Inventory_Item</name>
-        <label>Get Source Store Inventory Item</label>
-        <locationX>974</locationX>
-        <locationY>935</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>is_Enough_Stocks</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Store_Unit__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.Destination_Store__r.Source_Store__c</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>Inventory_Item__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.Item__c</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>Send_Directly_To_Order__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Stock_Available_formula__c</field>
-            <operator>GreaterThanOrEqualTo</operator>
-            <value>
-                <elementReference>$Record.Quantity__c</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Store_Item__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Source_Store_Inventory_Item_1</name>
-        <label>Get Source Store Inventory Item</label>
-        <locationX>1766</locationX>
-        <locationY>1055</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>is_Enough_Stocks_0</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Store_Unit__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.Destination_Store__r.Source_Store__c</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>Inventory_Item__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.Item__c</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>Send_Directly_To_Order__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Stock_Available_formula__c</field>
-            <operator>GreaterThanOrEqualTo</operator>
-            <value>
-                <elementReference>$Record.Quantity__c</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Store_Item__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
         <name>Get_User_Purchase</name>
         <label>Get User - Purchase</label>
-        <locationX>2910</locationX>
+        <locationX>1238</locationX>
         <locationY>1151</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1523,7 +940,7 @@
     <recordUpdates>
         <name>Cancel_PO_if_same_quantity</name>
         <label>Cancel PO if same quantity</label>
-        <locationX>4714</locationX>
+        <locationX>3042</locationX>
         <locationY>935</locationY>
         <connector>
             <targetReference>Update_PO_Item</targetReference>
@@ -1561,7 +978,7 @@
     <recordUpdates>
         <name>Update_Destination_Item</name>
         <label>Update Destination Item</label>
-        <locationX>4846</locationX>
+        <locationX>3174</locationX>
         <locationY>1511</locationY>
         <connector>
             <targetReference>Update_Purchase_Request</targetReference>
@@ -1571,7 +988,7 @@
     <recordUpdates>
         <name>Update_PO_Item</name>
         <label>Update PO Item</label>
-        <locationX>4714</locationX>
+        <locationX>3042</locationX>
         <locationY>1055</locationY>
         <connector>
             <targetReference>Check_if_Active_PR</targetReference>
@@ -1612,44 +1029,14 @@
         <object>Purchase_Order_Item__c</object>
     </recordUpdates>
     <recordUpdates>
-        <name>Update_PR_Clear_Approval</name>
-        <label>Update PR - Clear Approval</label>
-        <locationX>5682</locationX>
-        <locationY>815</locationY>
-        <connector>
-            <targetReference>Mass_Approval</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Approval_Comments__c</field>
-            <value>
-                <stringValue></stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Approve_Reject__c</field>
-            <value>
-                <stringValue></stringValue>
-            </value>
-        </inputAssignments>
-        <object>Purchase_Request__c</object>
-    </recordUpdates>
-    <recordUpdates>
         <name>Update_Purchase_Request</name>
         <label>Update Purchase Request</label>
-        <locationX>3262</locationX>
+        <locationX>2030</locationX>
         <locationY>2255</locationY>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>3136</locationX>
+        <locationX>1904</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Source_Inventory_Item</targetReference>
@@ -1662,7 +1049,7 @@
     <subflows>
         <name>PR_Splits_from_PO_Receipt</name>
         <label>PR Splits from PO Receipt</label>
-        <locationX>2514</locationX>
+        <locationX>842</locationX>
         <locationY>695</locationY>
         <flowName>Purchase_Request_Splits_from_PO_Receipt_INVOCABLE</flowName>
         <inputAssignments>
@@ -1671,20 +1058,6 @@
                 <elementReference>$Record</elementReference>
             </value>
         </inputAssignments>
-    </subflows>
-    <subflows>
-        <name>Process_PR_After_Approval</name>
-        <label>Process PR After Approval</label>
-        <locationX>5418</locationX>
-        <locationY>1175</locationY>
-        <flowName>Process_Purchase_Request_after_Approval</flowName>
-        <inputAssignments>
-            <name>PRRecord</name>
-            <value>
-                <elementReference>$Record</elementReference>
-            </value>
-        </inputAssignments>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
     </subflows>
     <variables>
         <name>intPOItemCancelled</name>

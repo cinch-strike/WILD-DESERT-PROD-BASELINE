@@ -15,9 +15,9 @@
     <columns>CREATEDBY_USER</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>Destination_Store__c</field>
+        <field>CREATEDBY_USER</field>
         <operation>contains</operation>
-        <value>Mba Mech,Moomba mech</value>
+        <value>moomba.mech</value>
     </filters>
     <filters>
         <field>Status__c</field>
@@ -26,8 +26,8 @@
     </filters>
     <label>TR | Mech Moomba | In Transit</label>
     <sharedTo>
-        <group>Mechanics_Roma</group>
-        <group>Projects_and_Maintenance</group>
+        <group>Mechanics</group>
+        <group>Projects</group>
         <group>Purchasing</group>
     </sharedTo>
 </ListView>

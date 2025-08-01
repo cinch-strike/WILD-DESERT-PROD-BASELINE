@@ -3,17 +3,16 @@
     <fullName>PR_4_All_For_Quoting</fullName>
     <columns>NAME</columns>
     <columns>CREATED_DATE</columns>
-    <columns>Quantity__c</columns>
     <columns>Item_Name_Hyperlink__c</columns>
     <columns>Work_Order__c</columns>
     <columns>Asset__c</columns>
     <columns>Supplier__c</columns>
-    <columns>Notes__c</columns>
-    <columns>Details_for_Supplier__c</columns>
-    <columns>Destination_Store__c</columns>
+    <columns>Quantity__c</columns>
     <columns>Cost_Price_GST_exc__c</columns>
     <columns>Total_Cost_Price_GST_exc__c</columns>
+    <columns>Notes__c</columns>
     <columns>Cost_Allocation_Unit__c</columns>
+    <columns>Destination_Store__c</columns>
     <columns>CREATEDBY_USER</columns>
     <filterScope>Everything</filterScope>
     <filters>
@@ -22,4 +21,8 @@
         <value>For Item Approval</value>
     </filters>
     <label>04 All For Item Approval</label>
+    <sharedTo>
+        <group>Managing_Director</group>
+        <group>Purchasing</group>
+    </sharedTo>
 </ListView>

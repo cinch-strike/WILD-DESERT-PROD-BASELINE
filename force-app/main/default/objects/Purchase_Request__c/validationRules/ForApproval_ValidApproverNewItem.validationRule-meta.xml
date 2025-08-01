@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ForApproval_ValidApproverNewItem</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(PRIORVALUE(Status__c), &apos;For Item Review&apos;)
+&amp;&amp;
+ISPICKVAL(Status__c, &apos;For Approval&apos;)
+&amp;&amp;
+NOT( $Permission.Purchase_Request_Item_Reviewer )
+&amp;&amp;
+NOT(ISBLANK(New_Item_Name__c))</errorConditionFormula>
+    <errorMessage>Only authorised purchasing team members are allowed to mark this record For Approval from Item review.</errorMessage>
+</ValidationRule>

@@ -17,14 +17,9 @@
     <columns>CREATEDBY_USER</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>Approval_Comments__c</field>
+        <field>Status__c</field>
         <operation>equals</operation>
-        <value>rig 30</value>
-    </filters>
-    <filters>
-        <field>Destination_Requested_by__c</field>
-        <operation>equals</operation>
-        <value>Rig 30</value>
+        <value>In Transit</value>
     </filters>
     <label>10 All For Transit</label>
     <sharedTo>

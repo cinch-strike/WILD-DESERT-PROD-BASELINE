@@ -75,10 +75,17 @@
         <name>Clear_Quantity_Received_0</name>
         <label>Clear Quantity Received</label>
         <locationX>314</locationX>
-        <locationY>1670</locationY>
+        <locationY>1550</locationY>
         <assignmentItems>
             <assignToReference>varInputPurchaseRequest.Quantity_Received__c</assignToReference>
             <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varInputPurchaseRequest.Purchase_Order_Item__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Parent_PO_Item.Id</elementReference>
+            </value>
         </assignmentItems>
         <connector>
             <targetReference>Update_Input_Purchase_Request</targetReference>
@@ -113,7 +120,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Update_Parent_PO_Item_Count</targetReference>
+            <targetReference>Clear_Quantity_Received_0</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -129,7 +136,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Update_Quantity_Received_0</targetReference>
+            <targetReference>Update_Quantity_Received</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -160,22 +167,6 @@
         </assignmentItems>
         <connector>
             <targetReference>Create_New_Purchase_Request</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Update_Parent_PO_Item_Count</name>
-        <label>Update Parent PO Item Count</label>
-        <locationX>314</locationX>
-        <locationY>1550</locationY>
-        <assignmentItems>
-            <assignToReference>Parent_PO_Item.No_of_Items_Still_Pending__c</assignToReference>
-            <operator>Subtract</operator>
-            <value>
-                <elementReference>varInputPurchaseRequest.Quantity_Received__c</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Clear_Quantity_Received_0</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -328,7 +319,7 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>25 JULY 2022: Changed the integer variables to decimal(2)</description>
+    <description>13 OCT 2022: Removed Update of PO Item on quantity receipt.</description>
     <environments>Default</environments>
     <formulas>
         <name>strPRStatus</name>
@@ -487,9 +478,9 @@
         <name>Update_Input_Purchase_Request</name>
         <label>Update Input Purchase Request</label>
         <locationX>314</locationX>
-        <locationY>1790</locationY>
+        <locationY>1670</locationY>
         <connector>
-            <targetReference>Update_Quantity_Received</targetReference>
+            <targetReference>Update_Parent_PO_Item</targetReference>
         </connector>
         <inputReference>varInputPurchaseRequest</inputReference>
     </recordUpdates>
@@ -518,8 +509,22 @@
         <name>Update_Parent_PO_Item</name>
         <label>Update Parent PO Item</label>
         <locationX>314</locationX>
-        <locationY>2030</locationY>
-        <inputReference>Parent_PO_Item</inputReference>
+        <locationY>1790</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Parent_PO_Item.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Recalculate_Pending_Items__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Purchase_Order_Item__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Parent_PO_Item_reset</name>
@@ -591,30 +596,9 @@
         <name>Update_Quantity_Received</name>
         <label>Update Quantity Received</label>
         <locationX>314</locationX>
-        <locationY>1910</locationY>
-        <connector>
-            <targetReference>Update_Parent_PO_Item</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>varInputPurchaseRequest.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Quantity_Received__c</field>
-        </inputAssignments>
-        <object>Purchase_Request__c</object>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Quantity_Received_0</name>
-        <label>Update Quantity Received</label>
-        <locationX>314</locationX>
         <locationY>1334</locationY>
         <connector>
-            <targetReference>Update_Parent_PO_Item_Count</targetReference>
+            <targetReference>Clear_Quantity_Received_0</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>

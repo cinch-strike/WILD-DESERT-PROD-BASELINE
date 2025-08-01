@@ -3,8 +3,24 @@ public with sharing class PurchaseRequestListControllerTest {
     static testmethod void testPurchaseListController() {
         List<Purchase_Request__c> prList = [select Id from Purchase_Request__c];
         ApexPages.StandardSetController stdSetController = new ApexPages.StandardSetController(prList);
-        PurchaseRequestListController pr = new PurchaseRequestListController(stdSetController);
-        String finUrl = pr.finishURL;
+        
+        // Test with no selected records
+        PurchaseRequestListController controller1 = new PurchaseRequestListController(stdSetController);
+        System.assertEquals(0, controller1.lstSelectedPRs.size(), 'Should have no selected items');
+        String finUrl = controller1.finishURL;
+        System.assertNotEquals(null, finUrl, 'Finish URL should not be null');
+        
+        // Test with selected records
+        stdSetController.setSelected(prList);
+        PurchaseRequestListController controller2 = new PurchaseRequestListController(stdSetController);
+        System.assertEquals(prList.size(), controller2.lstSelectedPRs.size(), 'Should have selected items');
+        
+        // Verify the fields are properly queried
+        if (!controller2.lstSelectedPRs.isEmpty()) {
+            Purchase_Request__c pr = controller2.lstSelectedPRs[0];
+            System.assertNotEquals(null, pr.Id, 'Id should be populated');
+            // Other fields might be null if not set in test data
+        }
     } 
 
     @TestSetup
@@ -12,8 +28,8 @@ public with sharing class PurchaseRequestListControllerTest {
         TestDataFactory testData = new TestDataFactory();
         Id supplierRecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Supplier').getRecordTypeId();
         
-        Account Supplier1 = new Account(Name = 'Test Supplier 1', Email__c = 'Test1@suplier.com', RecordTypeId = supplierRecordTypeId);
-        Account Supplier2 = new Account(Name = 'Test Supplier 2', Email__c = 'Test2@suplier.com', RecordTypeId = supplierRecordTypeId);
+        Account Supplier1 = new Account(Name = 'Test Supplier 1', Email__c = 'Test1@suplier.com', RecordTypeId = supplierRecordTypeId, Regions_LG_Area__c  ='Adelaide');
+        Account Supplier2 = new Account(Name = 'Test Supplier 2', Email__c = 'Test2@suplier.com', RecordTypeId = supplierRecordTypeId, Regions_LG_Area__c  ='Adelaide');
         insert Supplier1;
         insert Supplier2;
         System.debug('Suppliers Created : 1st - '+Supplier1.Id +' , 2nd - '+ Supplier2.Id);
@@ -39,9 +55,9 @@ public with sharing class PurchaseRequestListControllerTest {
         insert invItem2;
         System.debug('Inventory Items Created : 1st - '+invItem1.Id +' , 2nd - '+ invItem2.Id);
         
-        Unit__c unit = new Unit__c(Name = 'Test Unit');
+        Unit__c unit = new Unit__c(Name = 'Test Unit', First_Approver__c = testUser.Id);
         insert unit;
-        Unit__c unit2 = new Unit__c(Name = 'Test Unit2');
+        Unit__c unit2 = new Unit__c(Name = 'Test Unit2', First_Approver__c = testUser.Id);
         insert unit2;
         System.debug('Unit Created : '+unit2.Id);
         

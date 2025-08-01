@@ -2,11 +2,12 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>PO_Status__c</fullName>
     <externalId>false</externalId>
-    <formula>IF(TEXT( Purchase_Order__r.Status__c) = &apos;Canceled&apos;, &apos;Cancelled&apos;, TEXT( Purchase_Order__r.Status__c))</formula>
+    <formula>TEXT( Purchase_Order__r.Status__c)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>PO Status</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
     <type>Text</type>
     <unique>false</unique>
 </CustomField>

@@ -3,6 +3,7 @@ public with sharing class CreatePOsFromPRs {
     public static List<InvocableOutput> createPOs(List<InvocableInput> inputList) {
         List<InvocableOutput> outputList = new List<InvocableOutput>();
         List<Purchase_Request__c> requestList = new List<Purchase_Request__c>();
+        Id AccBrandId;
         for (InvocableInput input : inputList){
             requestList.addAll(input.purchaseRequestList);
         }
@@ -21,6 +22,13 @@ public with sharing class CreatePOsFromPRs {
                 supplierIdPRListMap.put(pr.Supplier__c, tempList);
             }
         }
+           
+        // 1.5 5/31/2023 : Associate Brand Name
+        InvocableInput param = inputList[0];
+        if(param.AccountId!=null){
+        AccBrandId = param.AccountId;
+        }
+ 
         // 2. Create PO headers
         List<Purchase_Order__c> poList = new List<Purchase_Order__c>();
         for (Id supplierId : supplierIdPRListMap.keySet()){
@@ -28,6 +36,7 @@ public with sharing class CreatePOsFromPRs {
             po.Status__c = 'Draft';
             po.Supplier__c = supplierId;
             po.PO_Date__c = system.today();
+            po.Account_Brand__c = AccBrandId;
             poList.add(po);
         }
         if (poList.size() > 0){
@@ -116,6 +125,10 @@ public with sharing class CreatePOsFromPRs {
     public class InvocableInput {
 		@InvocableVariable(label='List of Purchase Requests' required=true)
 		public List<Purchase_Request__c> purchaseRequestList;
+        
+        //5/31/2023 : Added new variable to accept AccountId
+        @InvocableVariable(label='Account Brand associated with Purchase Requests')
+        public String AccountId;
     }
 
     public class InvocableOutput {

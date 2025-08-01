@@ -5,14 +5,12 @@
     <columns>CREATED_DATE</columns>
     <columns>Quantity__c</columns>
     <columns>Item_Name_Hyperlink__c</columns>
-    <columns>Bin_Location_del__c</columns>
-    <columns>Destination_Store__c</columns>
+    <columns>Bin_Location__c</columns>
+    <columns>Destination_Requested_by__c</columns>
     <columns>Notes__c</columns>
     <columns>Work_Order__c</columns>
     <columns>Asset__c</columns>
-    <columns>Cost_Allocation_Unit__c</columns>
     <columns>CREATEDBY_USER</columns>
-    <columns>Source_Store__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Status__c</field>

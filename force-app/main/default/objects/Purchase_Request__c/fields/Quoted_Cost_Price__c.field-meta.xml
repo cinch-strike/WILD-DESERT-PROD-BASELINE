@@ -3,11 +3,12 @@
     <fullName>Quoted_Cost_Price__c</fullName>
     <description>Cost Price manually entered during the Purchase Request creation. GST not included.</description>
     <inlineHelpText>Cost Price manually entered during the Purchase Request creation. GST not included.</inlineHelpText>
-    <label>Quoted Cost Price</label>
+    <label>Quoted Cost Price - Not Needed</label>
     <precision>18</precision>
     <required>false</required>
     <scale>2</scale>
     <trackFeedHistory>false</trackFeedHistory>
-    <trackHistory>false</trackHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
     <type>Currency</type>
 </CustomField>

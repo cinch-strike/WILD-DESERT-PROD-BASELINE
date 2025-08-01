@@ -16,20 +16,20 @@
     <columns>CREATEDBY_USER</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>Destination_Store__c</field>
+        <field>Cost_Allocation_Unit__c</field>
         <operation>equals</operation>
-        <value>Depot - Moomba</value>
+        <value>depot - moomba</value>
     </filters>
     <filters>
         <field>Status__c</field>
         <operation>equals</operation>
         <value>Cancelled</value>
     </filters>
-    <label>Depot Moomba | Rejected (Cancelled)</label>
+    <label>Depot Moomba| Rejected (Cancelled)</label>
     <sharedTo>
         <group>Electrician</group>
         <group>Fabrication</group>
-        <group>Mechanics_Roma</group>
+        <group>Mechanics</group>
         <group>OPs_super</group>
         <group>Purchasing</group>
         <group>Transport</group>

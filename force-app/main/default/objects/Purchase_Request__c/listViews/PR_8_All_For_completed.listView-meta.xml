@@ -20,11 +20,6 @@
         <operation>equals</operation>
         <value>Completed</value>
     </filters>
-    <filters>
-        <field>Staff_Name__c</field>
-        <operation>equals</operation>
-        <value>Amy Webster</value>
-    </filters>
     <label>11 All Completed (PR)</label>
     <sharedTo>
         <group>Purchasing</group>

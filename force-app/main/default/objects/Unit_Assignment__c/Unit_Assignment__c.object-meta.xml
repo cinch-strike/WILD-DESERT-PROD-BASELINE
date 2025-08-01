@@ -158,7 +158,7 @@
     <nameField>
         <displayFormat>U-{00000}</displayFormat>
         <label>Assignment No.</label>
-        <trackHistory>true</trackHistory>
+        <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Unit Assignments</pluralLabel>

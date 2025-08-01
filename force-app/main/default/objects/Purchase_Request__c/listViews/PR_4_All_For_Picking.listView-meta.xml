@@ -22,11 +22,6 @@
         <operation>notContain</operation>
         <value>bypass ordering</value>
     </filters>
-    <filters>
-        <field>Source_Store__c</field>
-        <operation>notEqual</operation>
-        <value>Stores - Roma</value>
-    </filters>
     <label>08 All For Picking</label>
     <sharedTo>
         <group>Managing_Director</group>

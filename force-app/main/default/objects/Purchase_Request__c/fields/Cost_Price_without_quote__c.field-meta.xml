@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Cost_Price_without_quote__c</fullName>
-    <label>Cost Price (without quote)</label>
+    <label>Cost Price (without quote) - Not Needed</label>
     <precision>18</precision>
     <required>false</required>
     <scale>2</scale>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
     <type>Currency</type>
 </CustomField>

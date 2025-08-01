@@ -86,6 +86,13 @@
             <targetReference>Update_Purchase_Order</targetReference>
         </connector>
     </assignments>
+    <constants>
+        <name>Submitted</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Submitted</stringValue>
+        </value>
+    </constants>
     <decisions>
         <name>Check_Status_of_PO_Items</name>
         <label>Check Status of PO Items</label>
@@ -432,5 +439,5 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
 </Flow>

@@ -22,4 +22,7 @@
         <value>Dispute Complete</value>
     </filters>
     <label>12 All Dispute</label>
+    <sharedTo>
+        <group>Purchasing</group>
+    </sharedTo>
 </ListView>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission Set Group for Transport and Driver full access permissions</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Transport &amp; Driver Full Access Group</label>
+    <mutingPermissionSets>Transport_Driver_Full_Access_Group_Muted</mutingPermissionSets>
+    <permissionSets>Transport_Driver_Full_Access</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>
